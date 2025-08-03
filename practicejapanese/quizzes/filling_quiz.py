@@ -1,35 +1,29 @@
+from practicejapanese.core.vocab import load_vocab
 import random
 import requests
-import json
+import os
 
-# Load JMdict data (assumed to be a dict: {reading: kanji})
-def load_jmdict(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
+CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
 
-# Fetch sentences from Tatoeba containing the target reading
 def fetch_sentences(reading, kanji, limit=5):
     url = f"https://tatoeba.org/en/api_v0/search?from=jpn&query={reading}&limit={limit}"
-    resp = requests.get(url)
-    data = resp.json()
+    try:
+        resp = requests.get(url)
+        data = resp.json()
+    except Exception:
+        return []
     sentences = []
     for item in data.get("results", []):
         text = item.get("text", "")
-        # Accept sentences containing either the reading or the kanji
         if reading in text or kanji in text:
             sentences.append(text)
     return sentences
 
-# Generate quiz questions
-def generate_questions(jmdict, readings):
+def generate_questions(vocab_list):
     questions = []
-    for reading in readings:
-        kanji = jmdict.get(reading)
-        if not kanji:
-            continue
+    for kanji, reading, _ in vocab_list:
         sentences = fetch_sentences(reading, kanji)
         for sentence in sentences:
-            # Highlight the reading or kanji in the sentence
             if reading in sentence:
                 formatted = sentence.replace(reading, f"[{reading}]")
             elif kanji in sentence:
@@ -43,27 +37,23 @@ def quiz(questions):
     print("=== Kanji Fill-in Quiz ===")
     score = 0
     random.shuffle(questions)
-
     for sentence, answer in questions:
+        print()  # Add empty line before the first question
         print("\nReplace the highlighted hiragana with the correct kanji:")
         print(sentence)
         user_input = input("Your answer (kanji): ").strip()
-
         if user_input == answer:
             print("Correct!")
             score += 1
         else:
             print(f"Wrong. Correct kanji: {answer}")
-
     print(f"\nYour score: {score}/{len(questions)}")
 
-if __name__ == "__main__":
-    # Example readings to quiz
-    readings = ["みず", "がっこう", "やま", "えいが"]
-    # Load JMdict (provide path to your processed JMdict JSON)
-    jmdict = load_jmdict("jmdict.json")
-    questions = generate_questions(jmdict, readings)
+def run():
+    vocab_list = load_vocab(CSV_PATH)
+    vocab_list = random.sample(vocab_list, min(10, len(vocab_list)))
+    questions = generate_questions(vocab_list)
     if questions:
         quiz(questions)
     else:
-        print("No questions generated. Check JMdict and Tatoeba API.")
+        print("No questions generated. Check API or vocab data.")
