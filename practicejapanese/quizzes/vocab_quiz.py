@@ -5,9 +5,10 @@ import os
 
 CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
 
-def quiz(vocab_list):
+def ask_question():
+    vocab_list = load_vocab(CSV_PATH)
     item = random.choice(vocab_list)
-    print()  # Add empty line before the first question
+    print()  # Add empty line before the question
     if random.choice([True, False]):
         print(f"Reading: {item[1]}")
         print(f"Meaning: {item[2]}")
@@ -24,7 +25,10 @@ def quiz(vocab_list):
             print("Correct!")
         else:
             print(f"Incorrect. The correct Reading is: {item[1]}")
-    print()  # Add empty line after each question
+    print()  # Add empty line after the question
+
+def quiz(vocab_list):
+    ask_question()
 
 def run():
     vocab_list = load_vocab(CSV_PATH)

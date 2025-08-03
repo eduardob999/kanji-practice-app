@@ -30,21 +30,28 @@ def generate_questions(vocab_list):
                 questions.append((formatted, kanji))
     return questions
 
+def ask_question():
+    vocab_list = load_vocab(CSV_PATH)
+    # Try up to 100 times to get a question
+    for _ in range(100):
+        sample = random.sample(vocab_list, min(10, len(vocab_list)))
+        questions = generate_questions(sample)
+        if questions:
+            sentence, answer = random.choice(questions)
+            print("\n=== Kanji Fill-in Quiz ===")
+            print("Replace the highlighted hiragana with the correct kanji:")
+            print(sentence)
+            user_input = input("Your answer (kanji): ").strip()
+            if user_input == answer:
+                print("Correct!")
+            else:
+                print(f"Wrong. Correct kanji: {answer}")
+            print()
+            return
+    print("No fill-in questions generated. Skipping this round.\n")
+
 def quiz(questions):
-    print()  # Add empty line before the first question
-    print("=== Kanji Fill-in Quiz ===")
-    score = 0
-    random.shuffle(questions)
-    for sentence, answer in questions:
-        print("\nReplace the highlighted hiragana with the correct kanji:")
-        print(sentence)
-        user_input = input("Your answer (kanji): ").strip()
-        if user_input == answer:
-            print("Correct!")
-            score += 1
-        else:
-            print(f"Wrong. Correct kanji: {answer}")
-    print(f"\nYour score: {score}/{len(questions)}")
+    ask_question()
 
 def run():
     vocab_list = load_vocab(CSV_PATH)
