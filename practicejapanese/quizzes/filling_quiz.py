@@ -3,30 +3,35 @@ import random
 import requests
 import os
 from practicejapanese.core.utils import quiz_loop
+from functools import lru_cache
 
 CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
 
-def fetch_sentences(reading, kanji, limit=5):
+@lru_cache(maxsize=128)
+def cached_fetch_sentences(reading, kanji, limit=5):
     url = f"https://tatoeba.org/en/api_v0/search?from=jpn&query={reading}&limit={limit}"
     try:
         resp = requests.get(url)
         data = resp.json()
     except Exception:
-        return []
+        return tuple()
     sentences = []
     for item in data.get("results", []):
         text = item.get("text", "")
         if reading in text or kanji in text:
             sentences.append(text)
-    return sentences
+    return tuple(sentences)
 
 def generate_questions(vocab_list):
+    import concurrent.futures
     questions = []
-    for kanji, reading, _ in vocab_list:
-        sentences = fetch_sentences(reading, kanji)
+    # Prepare args for parallel fetch
+    args = [(reading, kanji, 5) for kanji, reading, _ in vocab_list]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        results = list(executor.map(lambda arg: cached_fetch_sentences(*arg), args))
+    for (kanji, reading, _), sentences in zip(vocab_list, results):
         for sentence in sentences:
             if kanji in sentence:
-                # Replace kanji with hiragana reading, highlighted
                 formatted = sentence.replace(kanji, f"[{reading}]")
                 questions.append((formatted, kanji))
     return questions

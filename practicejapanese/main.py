@@ -19,9 +19,19 @@ def random_quiz():
         ("Kanji Quiz", lambda: kanji_quiz.ask_question(kanji_list)),
         ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(vocab_list))
     ]
-    try:
+    import threading
+    import queue
+    def preload_question(q):
         while True:
             selected_name, selected_quiz = random.choice(quizzes)
+            q.put((selected_name, selected_quiz))
+
+    q = queue.Queue(maxsize=1)
+    loader_thread = threading.Thread(target=preload_question, args=(q,), daemon=True)
+    loader_thread.start()
+    try:
+        while True:
+            selected_name, selected_quiz = q.get()  # Wait for next question to be ready
             print(f"Selected: {selected_name}")
             selected_quiz()
             print()  # Add empty line after each question
