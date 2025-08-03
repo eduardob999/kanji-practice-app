@@ -1,669 +1,504 @@
-毎月,まいげつ/まいつき,every month,FALSE,,
-太い,ふとい,fat,FALSE,,
-五日,いつか,"five days, fifth day",FALSE,,
-出る,でる,"to appear,to leave",FALSE,,
-話,はなし,"talk,story",FALSE,,
-写真,しゃしん,photograph,FALSE,,
-大きな,おおきな,big,FALSE,,
-曇り,くもり,cloudy weather,FALSE,,
-白い,しろい,White,FALSE,,
-,かかる,to take time or money,FALSE,,
-,どう,"how,in what way",FALSE,,
-,ドア,Western style door,FALSE,,
-飲み物,のみもの,a drink,FALSE,,
-掃除,そうじする,"to clean, to sweep",FALSE,,
-,たいへん,very,FALSE,,
-時間,じかん,Time,FALSE,,
-昼御飯,ひるごはん,midday meal,FALSE,,
-店,みせ,shop,FALSE,,
-火曜日,かようび,Tuesday,FALSE,,
-,あさって,day after tomorrow,FALSE,,
-誰,だれか,somebody,FALSE,,
-,ええ,yes,FALSE,,
-丈夫,じょうぶ,"strong, durable",FALSE,,
-,ほんとう,truth,FALSE,,
-先週,せんしゅう,last week,FALSE,,
-,ワイシャツ,business shirt,FALSE,,
-会う,あう,to meet,FALSE,,
-西,にし,west,FALSE,,
-狭い,せまい,Narrow,FALSE,,
-覚える,おぼえる,to remember,FALSE,,
-入れる,いれる,to put in,FALSE,,
-道,みち,street,FALSE,,
-電気,でんき,"electricity,electric light",FALSE,,
-学生,がくせい,Student,FALSE,,
-御飯,ごはん,"cooked rice, meal",FALSE,,
-,テープレコーダー,tape recorder,FALSE,,
-近い,ちかい,near,FALSE,,
-昨日,きのう,Yesterday,FALSE,,
-後,あと,afterwards,FALSE,,
-作文,さくぶん,"composition, writing",FALSE,,
-終る,おわる,to finish,FALSE,,
-,もっと,more,FALSE,,
-お兄さん,おにいさん,(honorable) older brother,FALSE,,
-目,め,eye,FALSE,,
-門,もん,gate,FALSE,,
-,スリッパ,Slippers,FALSE,,
-読む,よむ,to read,FALSE,,
-,ニュース,news,FALSE,,
-冷たい,つめたい,cold to the touch,FALSE,,
-地図,ちず,map,FALSE,,
-学校,がっこう,School,FALSE,,
-煩い,うるさい,"noisy, annoying",FALSE,,
-三日,みっか,"three days, third day of the month",FALSE,,
-大使館,たいしかん,embassy,FALSE,,
-青い,あおい,blue,FALSE,,
-駅,えき,station,FALSE,,
-,パーティー,party,FALSE,,
-座る,すわる,to sit,FALSE,,
-二人,ふたり,two people,FALSE,,
-来年,らいねん,next year,FALSE,,
-飛ぶ,とぶ,"to fly,to hop",FALSE,,
-起きる,おきる,to get up,FALSE,,
-四,し / よん,Four,FALSE,,
-私,わたし,"I,myself",FALSE,,
-毎晩,まいばん,every night,FALSE,,
-八,はち,eight,FALSE,,
-喫茶店,きっさてん,coffee lounge,FALSE,,
-二つ,ふたつ,two,FALSE,,
-,フィルム,roll of film,FALSE,,
-古い,ふるい,old (not used for people),FALSE,,
-二日,ふつか,"two days, second day of the month",FALSE,,
-外国,がいこく,foreign country,FALSE,,
-,みんな,everyone,FALSE,,
-庭,にわ,garden,FALSE,,
-,たいへん,difficult situation,FALSE,,
-広い,ひろい,"spacious,wide",FALSE,,
-,こっち,this person or way,FALSE,,
-,ペン,pen,FALSE,,
-置く,おく,to put,FALSE,,
-一緒,いっしょ,together,FALSE,,
-,じゃ/じゃあ,well then…,FALSE,,
-,バス,bus,FALSE,,
-洗う,あらう,to wash,FALSE,,
-映画館,えいがかん,cinema,FALSE,,
-,それから,after that,FALSE,,
-低い,ひくい,"short,low",FALSE,,
-卵,たまご,egg,FALSE,,
-言葉,ことば,"word, language",FALSE,,
-青,あお,blue,FALSE,,
-降る,ふる,"to fall, e.g. rain or snow",FALSE,,
-,ナイフ,knife,FALSE,,
-暇,ひま,free time,FALSE,,
-飴,あめ,candy,FALSE,,
-,なぜ,why,FALSE,,
-灰皿,はいざら,ashtray,FALSE,,
-違う,ちがう,to differ,FALSE,,
-,カップ,Cup,FALSE,,
-交差点,こうさてん,intersection,FALSE,,
-宿題,しゅくだい,homework,FALSE,,
-漢字,かんじ,Chinese character,FALSE,,
-,セーター,"sweater, jumper",FALSE,,
-地下鉄,ちかてつ,underground train,FALSE,,
-,テープ,tape,FALSE,,
-水,みず,water,FALSE,,
-,プール,swimming pool,FALSE,,
-帽子,ぼうし,hat,FALSE,,
-持つ,もつ,to hold,FALSE,,
-渡す,わたす,to hand over,FALSE,,
-朝御飯,あさごはん,breakfast,FALSE,,
-温い,ぬるい,luke warm,FALSE,,
-上着,うわぎ,jacket,FALSE,,
-,なる,to become,FALSE,,
-文章,ぶんしょう,"sentence,text",FALSE,,
-九つ,ここのつ,Nine,FALSE,,
-,ちょうど,exactly,FALSE,,
-有名,ゆうめい,famous,FALSE,,
-万,まん,ten thousand,FALSE,,
-戸,と,Japanese style door,FALSE,,
-村,むら,village,FALSE,,
-午前,ごぜん,morning,FALSE,,
-,ネクタイ,"tie,necktie",FALSE,,
-,かける,to call by phone,FALSE,,
-前,まえ,before,FALSE,,
-姉,あね,(humble) older sister,FALSE,,
-閉める,しめる,to close something,FALSE,,
-大人,おとな,Adult,FALSE,,
-お金,おかね,money,FALSE,,
-一月,ひとつき,one month,FALSE,,
-自動車,じどうしゃ,Automobile,FALSE,,
-切手,きって,postage stamp,FALSE,,
-晴れ,はれ,clear weather,FALSE,,
-,ズボン,Trousers,FALSE,,
-,あびる,"to bathe, to shower",FALSE,,
-,そうして/そして,And,FALSE,,
-,ストーブ,Heater,FALSE,,
-洋服,ようふく,western-style clothes,FALSE,,
-木,き,"tree, wood",FALSE,,
-名前,なまえ,name,FALSE,,
-,まだ,"yet,still",FALSE,,
-書く,かく,to write,FALSE,,
-,どうも,thanks,FALSE,,
-友達,ともだち,friend,FALSE,,
-一日,ついたち,first of month,FALSE,,
-切符,きっぷ,Ticket,FALSE,,
-一つ,ひとつ,one,FALSE,,
-八日,ようか,"eight days, eighth day of the month",FALSE,,
-一人,ひとり,one person,FALSE,,
-,しかし,However,FALSE,,
-,メートル,metre,FALSE,,
-食べ物,たべもの,food,FALSE,,
-磨く,みがく,"to brush teeth, to polish",FALSE,,
-自分,じぶん,Oneself,FALSE,,
-魚,さかな,Fish,FALSE,,
-,テスト,test,FALSE,,
-出口,でぐち,exit,FALSE,,
-,つける,to turn on,FALSE,,
-英語,えいご,English language,FALSE,,
-暑い,あつい,hot,FALSE,,
-,いい/よい,good,FALSE,,
-少ない,すくない,a few,FALSE,,
-葉書,はがき,postcard,FALSE,,
-,ギター,Guitar,FALSE,,
-朝,あさ,morning,FALSE,,
-近く,ちかく,near,FALSE,,
-東,ひがし,east,FALSE,,
-中,なか,middle,FALSE,,
-欲しい,ほしい,want,FALSE,,
-誕生日,たんじょうび,birthday,FALSE,,
-細い,ほそい,thin,FALSE,,
-無くす,なくす,to lose something,FALSE,,
-時計,とけい,"watch,clock",FALSE,,
-行く,ゆく,to go,FALSE,,
-鳥,とり,bird,FALSE,,
-開ける,あける,to open,FALSE,,
-春,はる,spring,FALSE,,
-咲く,さく,to bloom,FALSE,,
-日曜日,にちようび,Sunday,FALSE,,
-女,おんな,Woman,FALSE,,
-閉まる,しまる,"to close, to be closed",FALSE,,
-,あそこ,over there,FALSE,,
-言う,いう,to say,FALSE,,
-風,かぜ,Wind,FALSE,,
-女の子,おんなのこ,Girl,FALSE,,
-,あっち,over there,FALSE,,
-今朝,けさ,this morning,FALSE,,
-夏,なつ,summer,FALSE,,
-,あまり,not very,FALSE,,
-,かぎ,Key,FALSE,,
-着る,きる,to put on from the shoulders down,FALSE,,
-授業,じゅぎょう,"lesson, class work",FALSE,,
-空,そら,Sky,FALSE,,
-働く,はたらく,to work,FALSE,,
-次,つぎ,next,FALSE,,
-横,よこ,"beside,side,width",FALSE,,
-声,こえ,Voice,FALSE,,
-人,ひと,person,FALSE,,
-食堂,しょくどう,dining hall,FALSE,,
-,もう,already,FALSE,,
-毎年,まいねん/まいとし,every year,FALSE,,
-四つ,よっつ,four,FALSE,,
-池,いけ,pond,FALSE,,
-貸す,かす,to lend,FALSE,,
-,どちら,which of two,FALSE,,
-,ノート,"notebook,exercise book",FALSE,,
-半,はん,half,FALSE,,
-電話,でんわ,telephone,FALSE,,
-入口,いりぐち,entrance,FALSE,,
-色,いろ,colour,FALSE,,
-,いつ,when,FALSE,,
-三つ,みっつ,three,FALSE,,
-,やる,to do,FALSE,,
-今晩,こんばん,this evening,FALSE,,
-さ来年,さらいねん,year after next,FALSE,,
-二十歳,はたち,"20 years old,20th year",FALSE,,
-入る,はいる,"to enter,to contain",FALSE,,
-,おいしい,delicious,FALSE,,
-,どうぞ,please,FALSE,,
-熱い,あつい,hot to the touch,FALSE,,
-黒い,くろい,black,FALSE,,
-,はく,"to wear,to put on trousers",FALSE,,
-静か,しずか,Quiet,FALSE,,
-泳ぐ,およぐ,to swim,FALSE,,
-,ちゃわん,rice bowl,FALSE,,
-,どうして,for what reason,FALSE,,
-辛い,からい,Spicy,FALSE,,
-練習,れんしゅうする,to practice,FALSE,,
-牛乳,ぎゅうにゅう,Milk,FALSE,,
-歌う,うたう,to sing,FALSE,,
-,でも,but,FALSE,,
-一昨年,おととし,year before last,FALSE,,
-箱,はこ,box,FALSE,,
-同じ,おなじ,same,FALSE,,
-困る,こまる,to be worried,FALSE,,
-封筒,ふうとう,envelope,FALSE,,
-,はい,yes,FALSE,,
-,あの,that over there,FALSE,,
-歌,うた,song,FALSE,,
-,あちら,there,FALSE,,
-,どこ,where,FALSE,,
-大好き,だいすき,to be very likeable,FALSE,,
-,スプーン,Spoon,FALSE,,
-お母さん,おかあさん,(honorable) mother,FALSE,,
-誰,だれ,who,FALSE,,
-,カメラ,camera,FALSE,,
-七つ,ななつ,seven,FALSE,,
-方,かた,"person, way of doing",FALSE,,
-先生,せんせい,"teacher, doctor",FALSE,,
-新聞,しんぶん,newspaper,FALSE,,
-,どなた,who,FALSE,,
-靴,くつ,Shoes,FALSE,,
-玄関,げんかん,entry hall,FALSE,,
-お父さん,おとうさん,(honorable) father,FALSE,,
-,フォーク,fork,FALSE,,
-午後,ごご,afternoon,FALSE,,
-走る,はしる,to run,FALSE,,
-,この,This,FALSE,,
-黄色い,きいろい,yellow,FALSE,,
-お手洗い,おてあらい,bathroom,FALSE,,
-今週,こんしゅう,this week,FALSE,,
-物,もの,thing,FALSE,,
-弾く,ひく,"to play an instrument with strings, including piano",FALSE,,
-図書館,としょかん,library,FALSE,,
-外国人,がいこくじん,Foreigner,FALSE,,
-時々,ときどき,sometimes,FALSE,,
-冬,ふゆ,winter,FALSE,,
-,ホテル,hotel,FALSE,,
-洗濯,せんたく,Washing,FALSE,,
-早い,はやい,early,FALSE,,
-,かばん,"bag, basket",FALSE,,
-楽しい,たのしい,enjoyable,FALSE,,
-音楽,おんがく,Music,FALSE,,
-長い,ながい,long,FALSE,,
-,より、ほう,Used for comparison.,FALSE,,
-,テレビ,television,FALSE,,
-鼻,はな,nose,FALSE,,
-六つ,むっつ,six,FALSE,,
-曲る,まがる,"to turn,to bend",FALSE,,
-花,はな,flower,FALSE,,
-犬,いぬ,dog,FALSE,,
-着く,つく,to arrive at,FALSE,,
-,その,That,FALSE,,
-橋,はし,bridge,FALSE,,
-階段,かいだん,Stairs,FALSE,,
-来週,らいしゅう,next week,FALSE,,
-大丈夫,だいじょうぶ,all right,FALSE,,
-取る,とる,to take something,FALSE,,
-警官,けいかん,policeman,FALSE,,
-大学,だいがく,university,FALSE,,
-晩,ばん,evening,FALSE,,
-,エレベーター,elevator,FALSE,,
-居る,いる,"to be, to have (used for people and animals)",FALSE,,
-家,いえ,house,FALSE,,
-,たて,"length,height",FALSE,,
-遅い,おそい,"late, slow",FALSE,,
-猫,ねこ,cat,FALSE,,
-帰る,かえる,to go back,FALSE,,
-今,いま,now,FALSE,,
-待つ,まつ,to wait,FALSE,,
-,グラム,Gram,FALSE,,
-意味,いみ,meaning,FALSE,,
-全部,ぜんぶ,All,FALSE,,
-電車,でんしゃ,electric train,FALSE,,
-,かわいい,Cute,FALSE,,
-,きれい,"pretty, clean",FALSE,,
-買い物,かいもの,Shopping,FALSE,,
-大きい,おおきい,big,FALSE,,
-緑,みどり,green,FALSE,,
-,ラジカセ / ラジオカセット,radio cassette player,FALSE,,
-買う,かう,to buy,FALSE,,
-生まれる,うまれる,to be born,FALSE,,
-足,あし,"foot, leg",FALSE,,
-零,れい,zero,FALSE,,
-,りっぱ,splendid,FALSE,,
-,ペット,pet,FALSE,,
-暗い,くらい,Gloomy,FALSE,,
-奥さん,おくさん,(honorable) wife,FALSE,,
-黄色,きいろ,yellow,FALSE,,
-乗る,のる,"to get on,to ride",FALSE,,
-今月,こんげつ,this month,FALSE,,
-高い,たかい,"tall, expensive",FALSE,,
-開く,あく,"to open, to become open",FALSE,,
-財布,さいふ,Wallet,FALSE,,
-押す,おす,"to push, to stamp something",FALSE,,
-軽い,かるい,Light,FALSE,,
-医者,いしゃ,medical doctor,FALSE,,
-下手,へた,unskillful,FALSE,,
-赤い,あかい,red,FALSE,,
-,こちら,this person or way,FALSE,,
-,ここ,Here,FALSE,,
-短い,みじかい,short,FALSE,,
-家庭,かてい,Household,FALSE,,
-,そっち,over there,FALSE,,
-,だんだん,gradually,FALSE,,
-後ろ,うしろ,behind,FALSE,,
-安い,やすい,cheap,FALSE,,
-,ゆっくりと,slowly,FALSE,,
-妹,いもうと,(humble) younger sister,FALSE,,
-頼む,たのむ,to ask,FALSE,,
-料理,りょうり,cuisine,FALSE,,
-,スポーツ,Sport,FALSE,,
-食べる,たべる,to eat,FALSE,,
-賑やか,にぎやか,"bustling,busy",FALSE,,
-,また,"again,and",FALSE,,
-背広,せびろ,business suit,FALSE,,
-,クラス,Class,FALSE,,
-,ゼロ,Zero,FALSE,,
-上手,じょうず,Skillful,FALSE,,
-,ページ,page,FALSE,,
-国,くに,Country,FALSE,,
-手紙,てがみ,letter,FALSE,,
-,タクシー,taxi,FALSE,,
-茶色,ちゃいろ,brown,FALSE,,
-飲む,のむ,to drink,FALSE,,
-上げる,あげる,to give,FALSE,,
-傘,かさ,Umbrella,FALSE,,
-所,ところ,place,FALSE,,
-銀行,ぎんこう,Bank,FALSE,,
-,どっち,which,FALSE,,
-手,て,hand,FALSE,,
-,いいえ,no,FALSE,,
-,いつも,always,FALSE,,
-六,ろく,six,FALSE,,
-夕方,ゆうがた,evening,FALSE,,
-若い,わかい,young,FALSE,,
-明い,あかるい,bright,FALSE,,
-吹く,ふく,to blow,FALSE,,
-,こんな,Such,FALSE,,
-,ほか,"other, the rest",FALSE,,
-夕飯,ゆうはん,dinner,FALSE,,
-,どの,which,FALSE,,
-百,ひゃく,hundred,FALSE,,
-,キロ/キログラム,Kilogram,FALSE,,
-,できる,to be able to,FALSE,,
-遠い,とおい,far,FALSE,,
-薬,くすり,medicine,FALSE,,
-,コーヒー,Coffee,FALSE,,
-出かける,でかける,to go out,FALSE,,
-天気,てんき,weather,FALSE,,
-自転車,じてんしゃ,Bicycle,FALSE,,
-,ボールペン,ball-point pen,FALSE,,
-,レストラン,restaurant,FALSE,,
-撮る,とる,to take a photo or record a film,FALSE,,
-消す,けす,"to erase, to turn off power",FALSE,,
-,マッチ,match,FALSE,,
-明日,あした,tomorrow,FALSE,,
-嫌,いや,unpleasant,FALSE,,
-嫌い,きらい,Hate,FALSE,,
-来る,くる,to come,FALSE,,
-留学生,りゅうがくせい,overseas student,FALSE,,
-,シャツ,Shirt,FALSE,,
-借りる,かりる,to borrow,FALSE,,
-散歩,さんぽする,to stroll,FALSE,,
-結婚,けっこん,Marriage,FALSE,,
-夏休み,なつやすみ,summer holiday,FALSE,,
-病院,びょういん,hospital,FALSE,,
-,トイレ,toilet,FALSE,,
-果物,くだもの,Fruit,FALSE,,
-私,わたくし,"(humble) I,myself",FALSE,,
-一昨日,おととい,day before yesterday,FALSE,,
-,いす,chair,FALSE,,
-初め/始め,はじめ,beginning,FALSE,,
-,これ,This,FALSE,,
-,キロ/キロメートル,Kilometer,FALSE,,
-,そば,"near, beside",FALSE,,
-木曜日,もくようび,Thursday,FALSE,,
-黒,くろ,Black,FALSE,,
-海,うみ,sea,FALSE,,
-お酒,おさけ,"alcohol, rice wine",FALSE,,
-,シャワー,Shower,FALSE,,
-昼,ひる,"noon, daytime",FALSE,,
-,どれ,which (of three or more),FALSE,,
-小さな,ちいさな,little,FALSE,,
-作る,つくる,to make,FALSE,,
-三,さん,Three,FALSE,,
-もう一度,もういちど,again,FALSE,,
-差す,さす,"to stretch out hands, to raise an umbrella",FALSE,,
-耳,みみ,ear,FALSE,,
-消える,きえる,to disappear,FALSE,,
-建物,たてもの,building,FALSE,,
-出す,だす,to put out,FALSE,,
-四日,よっか,"four days, fouth day of the month",FALSE,,
-窓,まど,window,FALSE,,
-,しょうゆ,soy sauce,FALSE,,
-七日,なのか,"seven days,the seventh day",FALSE,,
-立つ,たつ,to stand,FALSE,,
-,テーブル,table,FALSE,,
-本,ほん,book,FALSE,,
-,カレー,Curry,FALSE,,
-砂糖,さとう,Sugar,FALSE,,
-塩,しお,Salt,FALSE,,
-,いろいろ,various,FALSE,,
-見せる,みせる,to show,FALSE,,
-,スカート,Skirt,FALSE,,
-見る 観る,みる,"to see, to watch",FALSE,,
-毎朝,まいあさ,every morning,FALSE,,
-知る,しる,to know,FALSE,,
-強い,つよい,powerful,FALSE,,
-郵便局,ゆうびんきょく,post office,FALSE,,
-寝る,ねる,"to go to bed,to sleep",FALSE,,
-今日,きょう,Today,FALSE,,
-伯母さん/叔母さん,おばさん,Aunt,FALSE,,
-毎日,まいにち,every day,FALSE,,
-金曜日,きんようび,Friday,FALSE,,
-,ハンカチ,handkerchief,FALSE,,
-,あれ,that,FALSE,,
-伯父/叔父,おじいさん,"grandfather, male senior citizen",FALSE,,
-八百屋,やおや,greengrocer,FALSE,,
-土曜日,どようび,Saturday,FALSE,,
-,はし,chopsticks,FALSE,,
-町,まち,"town,city",FALSE,,
-体,からだ,Body,FALSE,,
-降りる,おりる,"to get off, to descend",FALSE,,
-,とても,very,FALSE,,
-元気,げんき,"health, vitality",FALSE,,
-夜,よる,"evening,night",FALSE,,
-並ぶ,ならぶ,"to line up,to stand in a line",FALSE,,
-牛肉,ぎゅうにく,Beef,FALSE,,
-とり肉,とりにく,chicken meat,FALSE,,
-,レコード,record,FALSE,,
-月曜日,げつようび,Monday,FALSE,,
-左,ひだり,left hand side,FALSE,,
-切る,きる,to cut,FALSE,,
-習う,ならう,to learn,FALSE,,
-皆さん,みなさん,everyone,FALSE,,
-角,かど,a corner,FALSE,,
-十,じゅう とお,Ten,FALSE,,
-遊ぶ,あそぶ,"to play, to make a visit",FALSE,,
-去年,きょねん,last year,FALSE,,
-先,さき,"the future, previous",FALSE,,
-休む,やすむ,to rest,FALSE,,
-,ラジオ,radio,FALSE,,
-年,とし,year,FALSE,,
-,いかが,how,FALSE,,
-渡る,わたる,to go across,FALSE,,
-涼しい,すずしい,Refreshing,FALSE,,
-,おまわりさん,friendly term for policeman,FALSE,,
-頭,あたま,head,FALSE,,
-,おばあさん,"grandmother, female senior-citizen",FALSE,,
-男,おとこ,Man,FALSE,,
-,アパート,apartment,FALSE,,
-大切,たいせつ,important,FALSE,,
-教える,おしえる,"to teach, to tell",FALSE,,
-始まる,はじまる,to begin,FALSE,,
-白,しろ,White,FALSE,,
-九,きゅう / く,Nine,FALSE,,
-下,した,Below,FALSE,,
-痛い,いたい,painful,FALSE,,
-部屋,へや,room,FALSE,,
-水曜日,すいようび,Wednesday,FALSE,,
-秋,あき,autumn,FALSE,,
-厚い,あつい,"kind, deep, thick",FALSE,,
-少し,すこし,Few,FALSE,,
-,など,et cetera,FALSE,,
-野菜,やさい,vegetable,FALSE,,
-何,なん/なに,what,FALSE,,
-,さあ,well…,FALSE,,
-,よく,"often, well",FALSE,,
-花瓶,かびん,a vase,FALSE,,
-貼る,はる,to stick,FALSE,,
-,では,with that...,FALSE,,
-お風呂,おふろ,Bath,FALSE,,
-疲れる,つかれる,to get tired,FALSE,,
-悪い,わるい,bad,FALSE,,
-紙,かみ,paper,FALSE,,
-,おもしろい,Interesting,FALSE,,
-紅茶,こうちゃ,black tea,FALSE,,
-風邪,かぜ,a cold,FALSE,,
-眼鏡,めがね,glasses,FALSE,,
-,そこ,that place,FALSE,,
-好き,すき,Likeable,FALSE,,
-男の子,おとこのこ,Boy,FALSE,,
-忙しい,いそがしい,"busy, irritated",FALSE,,
-売る,うる,to sell,FALSE,,
-要る,いる,to need,FALSE,,
-豚肉,ぶたにく,pork,FALSE,,
-,コピーする,to copy,FALSE,,
-歩く,あるく,to walk,FALSE,,
-お茶,おちゃ,green tea,FALSE,,
-荷物,にもつ,luggage,FALSE,,
-返す,かえす,to return something,FALSE,,
-脱ぐ,ぬぐ,to take off clothes,FALSE,,
-廊下,ろうか,corridor,FALSE,,
-鉛筆,えんぴつ,pencil,FALSE,,
-公園,こうえん,Park,FALSE,,
-五,ご,Five,FALSE,,
-六日,むいか,"six days, sixth day of the month",FALSE,,
-,ちょっと,somewhat,FALSE,,
-映画,えいが,movie,FALSE,,
-お姉さん,おねえさん,(honorable) older sister,FALSE,,
-机,つくえ,desk,FALSE,,
-,それでは,in that situation,FALSE,,
-,デパート,department store,FALSE,,
-絵,え,picture,FALSE,,
-暖かい,あたたかい,warm,FALSE,,
-,バター,butter,FALSE,,
-締める,しめる,to tie,FALSE,,
-休み,やすみ,"rest,holiday",FALSE,,
-甘い,あまい,sweet,FALSE,,
-台所,だいどころ,kitchen,FALSE,,
-多い,おおい,many,FALSE,,
-曇る,くもる,"to become cloudy, to become dim",FALSE,,
-半分,はんぶん,half minute,FALSE,,
-本棚,ほんだな,bookshelves,FALSE,,
-五つ,いつつ,five,FALSE,,
-,まずい,unpleasant,FALSE,,
-,ある,"to be,to have (used for inanimate objects)",FALSE,,
-新しい,あたらしい,new,FALSE,,
-,いくつ,"how many?,how old?",FALSE,,
-雑誌,ざっし,Magazine,FALSE,,
-,あなた,you,FALSE,,
-番号,ばんごう,number,FALSE,,
-千,せん,Thousand,FALSE,,
-昨夜,ゆうべ,last night,FALSE,,
-九日,ここのか,"nine days, ninth day",FALSE,,
-動物,どうぶつ,animal,FALSE,,
-,コート,"coat, tennis court",FALSE,,
-,する,to do,FALSE,,
-兄弟,きょうだい,(humble) siblings,FALSE,,
-北,きた,North,FALSE,,
-問題,もんだい,problem,FALSE,,
-,ベッド,bed,FALSE,,
-弱い,よわい,weak,FALSE,,
-,いちばん,"best, first",FALSE,,
-分かる,わかる,to be understood,FALSE,,
-住む,すむ,to live in,FALSE,,
-仕事,しごと,Job,FALSE,,
-兄,あに,(humble) older brother,FALSE,,
-重い,おもい,Heavy,FALSE,,
-,つまらない,boring,FALSE,,
-来月,らいげつ,next month,FALSE,,
-,それ,that,FALSE,,
-お菓子,おかし,"sweets, candy",FALSE,,
-使う,つかう,to use,FALSE,,
-一,いち,one,FALSE,,
-,あの,um...,FALSE,,
-丸い/円い,まるい,"round,circular",FALSE,,
-危ない,あぶない,dangerous,FALSE,,
-口,くち,"mouth, opening",FALSE,,
-答える,こたえる,to answer,FALSE,,
-万年筆,まんねんひつ,fountain pen,FALSE,,
-辺,へん,area,FALSE,,
-今年,ことし,this year,FALSE,,
-十日,とおか,"ten days,the tenth day",FALSE,,
-,コップ,a glass,FALSE,,
-毎週,まいしゅう,every week,FALSE,,
-赤,あか,red,FALSE,,
-,たくさん,many,FALSE,,
-お皿,おさら,"plate, dish",FALSE,,
-大勢,おおぜい,great number of people,FALSE,,
-鳴く,なく,"animal noise. to chirp, roar or croak etc.",FALSE,,
-死ぬ,しぬ,to die,FALSE,,
-一日,いちにち,first of the month,FALSE,,
-先月,せんげつ,last month,FALSE,,
-交番,こうばん,police box,FALSE,,
-,カレンダー,calendar,FALSE,,
-初めて,はじめて,for the first time,FALSE,,
-山,やま,mountain,FALSE,,
-車,くるま,"car, vehicle",FALSE,,
-,ポスト,post,FALSE,,
-吸う,すう,"to smoke, to suck",FALSE,,
-病気,びょうき,illness,FALSE,,
-お弁当,おべんとう,boxed lunch,FALSE,,
-聞く,きく,"to hear, to listen to, to ask",FALSE,,
-,ポケット,pocket,FALSE,,
-七,しち / なな,Seven,FALSE,,
-右,みぎ,right side,FALSE,,
-弟,おとうと,younger brother,FALSE,,
-歯,は,tooth,FALSE,,
-,たぶん,probably,FALSE,,
-,まっすぐ,"straight ahead,direct",FALSE,,
-飛行機,ひこうき,aeroplane,FALSE,,
-南,みなみ,south,FALSE,,
-,いくら,how much?,FALSE,,
-,ください,Please,FALSE,,
-行く,いく,to go,FALSE,,
-川/河,かわ,River,FALSE,,
-薄い,うすい,"thin,weak",FALSE,,
-登る,のぼる,to climb,FALSE,,
-結構,けっこう,"splendid, enough",FALSE,,
-教室,きょうしつ,Classroom,FALSE,,
-小さい,ちいさい,little,FALSE,,
-辞書,じしょ,Dictionary,FALSE,,
-子供,こども,Child,FALSE,,
-,たばこ,"tobacco,cigarettes",FALSE,,
-会社,かいしゃ,Company,FALSE,,
-晴れる,はれる,to be sunny,FALSE,,
-肉,にく,meat,FALSE,,
-汚い,きたない,Dirty,FALSE,,
-忘れる,わすれる,to forget,FALSE,,
-難しい,むずかしい,difficult,FALSE,,
-引く,ひく,to pull,FALSE,,
-外,そと,Outside,FALSE,,
-両親,りょうしん,both parents,FALSE,,
-背,せ,"height, stature",FALSE,,
-勤める,つとめる,to work for someone,FALSE,,
-服,ふく,clothes,FALSE,,
-二十日,はつか,"twenty days,twentieth",FALSE,,
-寒い,さむい,Cold,FALSE,,
-字引,じびき,Dictionary,FALSE,,
-雨,あめ,rain,FALSE,,
-晩御飯,ばんごはん,evening meal,FALSE,,
-話す,はなす,to speak,FALSE,,
-,ふろ,bath,FALSE,,
-生徒,せいと,Pupil,FALSE,,
-雪,ゆき,snow,FALSE,,
-伯父/叔父,おじさん,"uncle, middle aged gentleman",FALSE,,
-靴下,くつした,Socks,FALSE,,
-勉強,べんきょうする,to study,FALSE,,
-旅行,りょこう,travel,FALSE,,
-,すぐに,Instantly,FALSE,,
-並べる,ならべる,"to line up,to set up",FALSE,,
-家族,かぞく,Family,FALSE,,
-隣,となり,next door to,FALSE,,
-,せっけん,Economy,FALSE,,
-止まる,とまる,to come to a halt,FALSE,,
-便利,べんり,"useful, convenient",FALSE,,
-冷蔵庫,れいぞうこ,refrigerator,FALSE,,
-向こう,むこう,over there,FALSE,,
-,そちら,over there,FALSE,,
-質問,しつもん,Question,FALSE,,
-易しい,やさしい,"easy, simple",FALSE,,
-呼ぶ,よぶ,"to call out,to invite",FALSE,,
-速い,はやい,quick,FALSE,,
-,パン,bread,FALSE,,
-上,うえ,on top of,FALSE,,
-八つ,やっつ,eight,FALSE,,
-二,に,two,FALSE,,
-,ボタン,button,FALSE,,
-,おなか,stomach,FALSE,,
+毎月,まいげつ/まいつき,every month,0
+太い,ふとい,fat,0
+五日,いつか,"five days, fifth day",0
+出る,でる,"to appear,to leave",0
+話,はなし,"talk,story",0
+写真,しゃしん,photograph,0
+大きな,おおきな,big,0
+曇り,くもり,cloudy weather,0
+白い,しろい,White,0
+飲み物,のみもの,a drink,0
+掃除,そうじする,"to clean, to sweep",0
+時間,じかん,Time,0
+昼御飯,ひるごはん,midday meal,0
+店,みせ,shop,0
+火曜日,かようび,Tuesday,0
+誰,だれか,somebody,0
+丈夫,じょうぶ,"strong, durable",0
+先週,せんしゅう,last week,0
+会う,あう,to meet,0
+西,にし,west,0
+狭い,せまい,Narrow,0
+覚える,おぼえる,to remember,0
+入れる,いれる,to put in,0
+道,みち,street,0
+電気,でんき,"electricity,electric light",0
+学生,がくせい,Student,0
+御飯,ごはん,"cooked rice, meal",0
+近い,ちかい,near,0
+昨日,きのう,Yesterday,0
+後,あと,afterwards,0
+作文,さくぶん,"composition, writing",0
+終る,おわる,to finish,0
+お兄さん,おにいさん,(honorable) older brother,0
+目,め,eye,0
+門,もん,gate,0
+読む,よむ,to read,0
+冷たい,つめたい,cold to the touch,0
+地図,ちず,map,0
+学校,がっこう,School,0
+煩い,うるさい,"noisy, annoying",0
+三日,みっか,"three days, third day of the month",0
+大使館,たいしかん,embassy,0
+青い,あおい,blue,0
+駅,えき,station,0
+座る,すわる,to sit,0
+二人,ふたり,two people,0
+来年,らいねん,next year,0
+飛ぶ,とぶ,"to fly,to hop",0
+起きる,おきる,to get up,0
+四,し / よん,Four,0
+私,わたし,"I,myself",0
+毎晩,まいばん,every night,0
+八,はち,eight,0
+喫茶店,きっさてん,coffee lounge,0
+二つ,ふたつ,two,0
+古い,ふるい,old (not used for people),0
+二日,ふつか,"two days, second day of the month",0
+外国,がいこく,foreign country,0
+庭,にわ,garden,0
+広い,ひろい,"spacious,wide",0
+置く,おく,to put,0
+一緒,いっしょ,together,0
+洗う,あらう,to wash,0
+映画館,えいがかん,cinema,0
+低い,ひくい,"short,low",0
+卵,たまご,egg,0
+言葉,ことば,"word, language",0
+青,あお,blue,0
+降る,ふる,"to fall, e.g. rain or snow",0
+暇,ひま,free time,0
+飴,あめ,candy,0
+灰皿,はいざら,ashtray,0
+違う,ちがう,to differ,0
+交差点,こうさてん,intersection,0
+宿題,しゅくだい,homework,0
+漢字,かんじ,Chinese character,0
+地下鉄,ちかてつ,underground train,0
+水,みず,water,0
+帽子,ぼうし,hat,0
+持つ,もつ,to hold,0
+渡す,わたす,to hand over,0
+朝御飯,あさごはん,breakfast,0
+温い,ぬるい,luke warm,0
+上着,うわぎ,jacket,0
+文章,ぶんしょう,"sentence,text",0
+九つ,ここのつ,Nine,0
+有名,ゆうめい,famous,0
+万,まん,ten thousand,0
+戸,と,Japanese style door,0
+村,むら,village,0
+午前,ごぜん,morning,0
+前,まえ,before,0
+姉,あね,(humble) older sister,0
+閉める,しめる,to close something,0
+大人,おとな,Adult,0
+お金,おかね,money,0
+一月,ひとつき,one month,0
+自動車,じどうしゃ,Automobile,0
+切手,きって,postage stamp,0
+晴れ,はれ,clear weather,0
+洋服,ようふく,western-style clothes,0
+木,き,"tree, wood",1
+名前,なまえ,name,0
+書く,かく,to write,0
+友達,ともだち,friend,0
+一日,ついたち,first of month,0
+切符,きっぷ,Ticket,0
+一つ,ひとつ,one,0
+八日,ようか,"eight days, eighth day of the month",0
+一人,ひとり,one person,0
+食べ物,たべもの,food,0
+磨く,みがく,"to brush teeth, to polish",0
+自分,じぶん,Oneself,0
+魚,さかな,Fish,0
+出口,でぐち,exit,0
+英語,えいご,English language,0
+暑い,あつい,hot,0
+少ない,すくない,a few,0
+葉書,はがき,postcard,0
+朝,あさ,morning,0
+近く,ちかく,near,0
+東,ひがし,east,0
+中,なか,middle,0
+欲しい,ほしい,want,0
+誕生日,たんじょうび,birthday,0
+細い,ほそい,thin,0
+無くす,なくす,to lose something,0
+時計,とけい,"watch,clock",0
+行く,ゆく,to go,0
+鳥,とり,bird,0
+開ける,あける,to open,0
+春,はる,spring,0
+咲く,さく,to bloom,0
+日曜日,にちようび,Sunday,0
+女,おんな,Woman,0
+閉まる,しまる,"to close, to be closed",0
+言う,いう,to say,0
+風,かぜ,Wind,0
+女の子,おんなのこ,Girl,0
+今朝,けさ,this morning,0
+夏,なつ,summer,0
+着る,きる,to put on from the shoulders down,0
+授業,じゅぎょう,"lesson, class work",0
+空,そら,Sky,0
+働く,はたらく,to work,0
+次,つぎ,next,0
+横,よこ,"beside,side,width",0
+声,こえ,Voice,0
+人,ひと,person,0
+食堂,しょくどう,dining hall,0
+毎年,まいねん/まいとし,every year,0
+四つ,よっつ,four,0
+池,いけ,pond,0
+貸す,かす,to lend,0
+半,はん,half,0
+電話,でんわ,telephone,0
+入口,いりぐち,entrance,0
+色,いろ,colour,0
+三つ,みっつ,three,0
+今晩,こんばん,this evening,0
+さ来年,さらいねん,year after next,0
+二十歳,はたち,"20 years old,20th year",0
+入る,はいる,"to enter,to contain",1
+熱い,あつい,hot to the touch,0
+黒い,くろい,black,0
+静か,しずか,Quiet,0
+泳ぐ,およぐ,to swim,0
+辛い,からい,Spicy,0
+練習,れんしゅうする,to practice,0
+牛乳,ぎゅうにゅう,Milk,0
+歌う,うたう,to sing,0
+一昨年,おととし,year before last,0
+箱,はこ,box,0
+同じ,おなじ,same,0
+困る,こまる,to be worried,0
+封筒,ふうとう,envelope,0
+歌,うた,song,0
+大好き,だいすき,to be very likeable,0
+お母さん,おかあさん,(honorable) mother,0
+誰,だれ,who,0
+七つ,ななつ,seven,0
+方,かた,"person, way of doing",0
+先生,せんせい,"teacher, doctor",0
+新聞,しんぶん,newspaper,0
+靴,くつ,Shoes,0
+玄関,げんかん,entry hall,0
+お父さん,おとうさん,(honorable) father,0
+午後,ごご,afternoon,0
+走る,はしる,to run,0
+黄色い,きいろい,yellow,0
+お手洗い,おてあらい,bathroom,0
+今週,こんしゅう,this week,0
+物,もの,thing,0
+弾く,ひく,"to play an instrument with strings, including piano",0
+図書館,としょかん,library,0
+外国人,がいこくじん,Foreigner,0
+時々,ときどき,sometimes,0
+冬,ふゆ,winter,0
+洗濯,せんたく,Washing,0
+早い,はやい,early,0
+楽しい,たのしい,enjoyable,0
+音楽,おんがく,Music,0
+長い,ながい,long,0
+鼻,はな,nose,0
+六つ,むっつ,six,0
+曲る,まがる,"to turn,to bend",0
+花,はな,flower,0
+犬,いぬ,dog,0
+着く,つく,to arrive at,0
+橋,はし,bridge,0
+階段,かいだん,Stairs,0
+来週,らいしゅう,next week,0
+大丈夫,だいじょうぶ,all right,0
+取る,とる,to take something,0
+警官,けいかん,policeman,0
+大学,だいがく,university,0
+晩,ばん,evening,0
+居る,いる,"to be, to have (used for people and animals)",0
+家,いえ,house,0
+遅い,おそい,"late, slow",0
+猫,ねこ,cat,0
+帰る,かえる,to go back,0
+今,いま,now,0
+待つ,まつ,to wait,0
+意味,いみ,meaning,0
+全部,ぜんぶ,All,0
+電車,でんしゃ,electric train,0
+買い物,かいもの,Shopping,0
+大きい,おおきい,big,0
+緑,みどり,green,0
+買う,かう,to buy,0
+生まれる,うまれる,to be born,0
+足,あし,"foot, leg",0
+零,れい,zero,0
+暗い,くらい,Gloomy,0
+奥さん,おくさん,(honorable) wife,0
+黄色,きいろ,yellow,0
+乗る,のる,"to get on,to ride",0
+今月,こんげつ,this month,0
+高い,たかい,"tall, expensive",0
+開く,あく,"to open, to become open",0
+財布,さいふ,Wallet,0
+押す,おす,"to push, to stamp something",0
+軽い,かるい,Light,0
+医者,いしゃ,medical doctor,0
+下手,へた,unskillful,0
+赤い,あかい,red,0
+短い,みじかい,short,0
+家庭,かてい,Household,0
+後ろ,うしろ,behind,0
+安い,やすい,cheap,0
+妹,いもうと,(humble) younger sister,0
+頼む,たのむ,to ask,0
+料理,りょうり,cuisine,0
+食べる,たべる,to eat,0
+賑やか,にぎやか,"bustling,busy",0
+背広,せびろ,business suit,0
+上手,じょうず,Skillful,0
+国,くに,Country,0
+手紙,てがみ,letter,0
+茶色,ちゃいろ,brown,0
+飲む,のむ,to drink,0
+上げる,あげる,to give,0
+傘,かさ,Umbrella,0
+所,ところ,place,0
+銀行,ぎんこう,Bank,0
+手,て,hand,0
+六,ろく,six,0
+夕方,ゆうがた,evening,0
+若い,わかい,young,0
+明い,あかるい,bright,0
+吹く,ふく,to blow,0
+夕飯,ゆうはん,dinner,0
+百,ひゃく,hundred,0
+遠い,とおい,far,0
+薬,くすり,medicine,0
+出かける,でかける,to go out,0
+天気,てんき,weather,0
+自転車,じてんしゃ,Bicycle,0
+撮る,とる,to take a photo or record a film,0
+消す,けす,"to erase, to turn off power",0
+明日,あした,tomorrow,0
+嫌,いや,unpleasant,0
+嫌い,きらい,Hate,0
+来る,くる,to come,0
+留学生,りゅうがくせい,overseas student,0
+借りる,かりる,to borrow,0
+散歩,さんぽする,to stroll,0
+結婚,けっこん,Marriage,0
+夏休み,なつやすみ,summer holiday,0
+病院,びょういん,hospital,0
+果物,くだもの,Fruit,0
+私,わたくし,"(humble) I,myself",0
+一昨日,おととい,day before yesterday,0
+初め/始め,はじめ,beginning,0
+木曜日,もくようび,Thursday,0
+黒,くろ,Black,0
+海,うみ,sea,0
+お酒,おさけ,"alcohol, rice wine",0
+昼,ひる,"noon, daytime",0
+小さな,ちいさな,little,0
+作る,つくる,to make,0
+三,さん,Three,0
+もう一度,もういちど,again,0
+差す,さす,"to stretch out hands, to raise an umbrella",0
+耳,みみ,ear,0
+消える,きえる,to disappear,0
+建物,たてもの,building,0
+出す,だす,to put out,0
+四日,よっか,"four days, fouth day of the month",0
+窓,まど,window,0
+七日,なのか,"seven days,the seventh day",0
+立つ,たつ,to stand,0
+本,ほん,book,0
+砂糖,さとう,Sugar,0
+塩,しお,Salt,0
+見せる,みせる,to show,0
+見る 観る,みる,"to see, to watch",0
+毎朝,まいあさ,every morning,0
+知る,しる,to know,0
+強い,つよい,powerful,0
+郵便局,ゆうびんきょく,post office,0
+寝る,ねる,"to go to bed,to sleep",0
+今日,きょう,Today,0
+伯母さん/叔母さん,おばさん,Aunt,0
+毎日,まいにち,every day,0
+金曜日,きんようび,Friday,0
+伯父/叔父,おじいさん,"grandfather, male senior citizen",0
+八百屋,やおや,greengrocer,0
+土曜日,どようび,Saturday,0
+町,まち,"town,city",0
+体,からだ,Body,0
+降りる,おりる,"to get off, to descend",0
+元気,げんき,"health, vitality",0
+夜,よる,"evening,night",0
+並ぶ,ならぶ,"to line up,to stand in a line",0
+牛肉,ぎゅうにく,Beef,0
+とり肉,とりにく,chicken meat,0
+月曜日,げつようび,Monday,0
+左,ひだり,left hand side,0
+切る,きる,to cut,0
+習う,ならう,to learn,0
+皆さん,みなさん,everyone,0
+角,かど,a corner,0
+十,じゅう とお,Ten,0
+遊ぶ,あそぶ,"to play, to make a visit",0
+去年,きょねん,last year,0
+先,さき,"the future, previous",0
+休む,やすむ,to rest,0
+年,とし,year,0
+渡る,わたる,to go across,0
+涼しい,すずしい,Refreshing,0
+頭,あたま,head,0
+男,おとこ,Man,0
+大切,たいせつ,important,0
+教える,おしえる,"to teach, to tell",0
+始まる,はじまる,to begin,0
+白,しろ,White,0
+九,きゅう / く,Nine,0
+下,した,Below,0
+痛い,いたい,painful,0
+部屋,へや,room,0
+水曜日,すいようび,Wednesday,0
+秋,あき,autumn,0
+厚い,あつい,"kind, deep, thick",0
+少し,すこし,Few,0
+野菜,やさい,vegetable,0
+何,なん/なに,what,0
+花瓶,かびん,a vase,0
+貼る,はる,to stick,0
+お風呂,おふろ,Bath,0
+疲れる,つかれる,to get tired,0
+悪い,わるい,bad,0
+紙,かみ,paper,0
+紅茶,こうちゃ,black tea,0
+風邪,かぜ,a cold,0
+眼鏡,めがね,glasses,0
+好き,すき,Likeable,0
+男の子,おとこのこ,Boy,0
+忙しい,いそがしい,"busy, irritated",0
+売る,うる,to sell,0
+要る,いる,to need,0
+豚肉,ぶたにく,pork,0
+歩く,あるく,to walk,0
+お茶,おちゃ,green tea,0
+荷物,にもつ,luggage,0
+返す,かえす,to return something,0
+脱ぐ,ぬぐ,to take off clothes,0
+廊下,ろうか,corridor,0
+鉛筆,えんぴつ,pencil,0
+公園,こうえん,Park,0
+五,ご,Five,0
+六日,むいか,"six days, sixth day of the month",0
+映画,えいが,movie,0
+お姉さん,おねえさん,(honorable) older sister,0
+机,つくえ,desk,0
+絵,え,picture,0
+暖かい,あたたかい,warm,0
+締める,しめる,to tie,0
+休み,やすみ,"rest,holiday",0
+甘い,あまい,sweet,0
+台所,だいどころ,kitchen,0
+多い,おおい,many,0
+曇る,くもる,"to become cloudy, to become dim",0
+半分,はんぶん,half minute,0
+本棚,ほんだな,bookshelves,0
+五つ,いつつ,five,0
+新しい,あたらしい,new,0
+雑誌,ざっし,Magazine,0
+番号,ばんごう,number,0
+千,せん,Thousand,0
+昨夜,ゆうべ,last night,0
+九日,ここのか,"nine days, ninth day",0
+動物,どうぶつ,animal,0
+兄弟,きょうだい,(humble) siblings,0
+北,きた,North,0
+問題,もんだい,problem,0
+弱い,よわい,weak,0
+分かる,わかる,to be understood,0
+住む,すむ,to live in,0
+仕事,しごと,Job,0
+兄,あに,(humble) older brother,0
+重い,おもい,Heavy,0
+来月,らいげつ,next month,0
+お菓子,おかし,"sweets, candy",0
+使う,つかう,to use,0
+一,いち,one,0
+丸い/円い,まるい,"round,circular",0
+危ない,あぶない,dangerous,0
+口,くち,"mouth, opening",0
+答える,こたえる,to answer,0
+万年筆,まんねんひつ,fountain pen,0
+辺,へん,area,0
+今年,ことし,this year,0
+十日,とおか,"ten days,the tenth day",0
+毎週,まいしゅう,every week,0
+赤,あか,red,0
+お皿,おさら,"plate, dish",0
+大勢,おおぜい,great number of people,0
+鳴く,なく,"animal noise. to chirp, roar or croak etc.",0
+死ぬ,しぬ,to die,0
+一日,いちにち,first of the month,0
+先月,せんげつ,last month,0
+交番,こうばん,police box,0
+初めて,はじめて,for the first time,0
+山,やま,mountain,0
+車,くるま,"car, vehicle",0
+吸う,すう,"to smoke, to suck",0
+病気,びょうき,illness,0
+お弁当,おべんとう,boxed lunch,0
+聞く,きく,"to hear, to listen to, to ask",0
+七,しち / なな,Seven,0
+右,みぎ,right side,0
+弟,おとうと,younger brother,0
+歯,は,tooth,0
+飛行機,ひこうき,aeroplane,0
+南,みなみ,south,0
+行く,いく,to go,0
+川/河,かわ,River,0
+薄い,うすい,"thin,weak",0
+登る,のぼる,to climb,0
+結構,けっこう,"splendid, enough",0
+教室,きょうしつ,Classroom,0
+小さい,ちいさい,little,0
+辞書,じしょ,Dictionary,0
+子供,こども,Child,0
+会社,かいしゃ,Company,0
+晴れる,はれる,to be sunny,0
+肉,にく,meat,0
+汚い,きたない,Dirty,0
+忘れる,わすれる,to forget,0
+難しい,むずかしい,difficult,0
+引く,ひく,to pull,0
+外,そと,Outside,0
+両親,りょうしん,both parents,0
+背,せ,"height, stature",0
+勤める,つとめる,to work for someone,0
+服,ふく,clothes,0
+二十日,はつか,"twenty days,twentieth",0
+寒い,さむい,Cold,0
+字引,じびき,Dictionary,0
+雨,あめ,rain,0
+晩御飯,ばんごはん,evening meal,0
+話す,はなす,to speak,0
+生徒,せいと,Pupil,0
+雪,ゆき,snow,0
+伯父/叔父,おじさん,"uncle, middle aged gentleman",0
+靴下,くつした,Socks,0
+勉強,べんきょうする,to study,0
+旅行,りょこう,travel,0
+並べる,ならべる,"to line up,to set up",0
+家族,かぞく,Family,0
+隣,となり,next door to,0
+止まる,とまる,to come to a halt,0
+便利,べんり,"useful, convenient",0
+冷蔵庫,れいぞうこ,refrigerator,0
+向こう,むこう,over there,0
+質問,しつもん,Question,0
+易しい,やさしい,"easy, simple",0
+呼ぶ,よぶ,"to call out,to invite",0
+速い,はやい,quick,0
+上,うえ,on top of,0
+八つ,やっつ,eight,0
+二,に,two,0

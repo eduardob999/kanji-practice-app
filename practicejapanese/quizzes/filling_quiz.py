@@ -45,10 +45,12 @@ def ask_question(vocab_list):
         print("Replace the highlighted hiragana with the correct kanji:")
         print(sentence)
         user_input = input("Your answer (kanji): ").strip()
-        if user_input == answer:
+        correct = (user_input == answer)
+        if correct:
             print("Correct!")
         else:
             print(f"Wrong. Correct kanji: {answer}")
+        update_score(CSV_PATH, answer, correct)
         print()
     else:
         print("No fill-in questions generated. Check API or vocab data.")
@@ -56,6 +58,27 @@ def ask_question(vocab_list):
 def run():
     vocab_list = load_vocab(CSV_PATH)
     quiz_loop(ask_question, vocab_list)
+
+import csv
+def update_score(csv_path, key, correct):
+    temp_path = csv_path + '.temp'
+    updated_rows = []
+    with open(csv_path, 'r', encoding='utf-8') as infile:
+        reader = csv.reader(infile)
+        for row in reader:
+            if row and row[0] == key:
+                if correct:
+                    try:
+                        row[-1] = str(int(row[-1]) + 1)
+                    except ValueError:
+                        row[-1] = '1'
+                else:
+                    row[-1] = '0'
+            updated_rows.append(row)
+    with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
+        writer = csv.writer(outfile)
+        writer.writerows(updated_rows)
+    os.replace(temp_path, csv_path)
 
 if __name__ == "__main__":
     print("Running Kanji Fill-in Quiz in DEV mode...")

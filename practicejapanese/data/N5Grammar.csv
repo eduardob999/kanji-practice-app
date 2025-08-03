@@ -1,40 +1,40 @@
-つもりです,FALSE,intend to (do something),want to (do something)
-～んです,FALSE,explanatory tone / giving reason,is / am / are (polite)
-ので,FALSE,because / since,after (doing something)
-は,FALSE,topic marker,object marker
-～ましょう,FALSE,let's (do something),probably / I guess
-～のがじょうずです,FALSE,be good at (doing something),be bad at (doing something)
-～まえに,FALSE,before (doing something),after (doing something)
-～のほうが～より,FALSE,more ~ than ~,~ is the most ~ among ~
-～にいく,FALSE,go to (do something),go to (see someone)
-～がいます,FALSE,there is/are (living things),there is/are (non-living things)
-～く/ ～になる,FALSE,become (adjective/noun),be doing (continuous)
-～のがへたです,FALSE,be bad at (doing something),be good at (doing something)
-～てください,FALSE,please (do something),please don't (do something)
-～たり …～たりする,FALSE,do things like ~ and ~,do only one thing
-～てもいいです,FALSE,it's okay to (do something),must not do (something)
-～があります,FALSE,there is/are (non-living things),there is/are (living things)
-です,FALSE,is / am / are (polite),topic marker
-～なくちゃいけない,FALSE,must / have to (do something),it's okay to (do something)
-～のがすきです,FALSE,like (doing something),want to (do something)
-～ている,FALSE,be doing / is doing (continuous),become (adjective/noun)
-や,FALSE,and (used to list items),also / too
-を,FALSE,object marker,topic marker
-～てはいけません,FALSE,must not / may not (do something),it's okay to (do something)
-stem +たいです,FALSE,want to (do something),intend to (do something)
-ないでください,FALSE,please don't (do something),please (do something)
-でしょう,FALSE,probably / I guess,let's (do something)
-～ませんか,FALSE,would you like to / shall we,had better do (something)
-まだ～ていません,FALSE,have not yet (done something),have done (experience)
-で,FALSE,at / in / by (location, means),to / at / on (direction, time)
-～から,FALSE,because / from (time/place),before (doing something)
-も,FALSE,also / too,and (used to list items)
-と,FALSE,and / with (listing, together),object marker
-～すぎる,FALSE,too much / excessively,more ~ than ~
-～ほうがいい,FALSE,had better / it's better to,probably / I guess
-に,FALSE,to / at / on (direction, time),at / in / by (location, means)
-～のなかで～がいちばん～,FALSE,~ is the most ~ among ~,more ~ than ~
-～ましょうか,FALSE,shall I/we (do something)?,let's do (something)
-～てから,FALSE,after (doing something),before doing (something)
-～たことがある,FALSE,have done (experience),have not yet done (something)
-に/へ,FALSE,to / toward (direction),from (time or place)
+つもりです,intend to (do something),want to (do something)
+～んです,explanatory tone / giving reason,is / am / are (polite)
+ので,because / since,after (doing something)
+は,topic marker,object marker
+～ましょう,let's (do something),probably / I guess
+～のがじょうずです,be good at (doing something),be bad at (doing something)
+～まえに,before (doing something),after (doing something)
+～のほうが～より,more ~ than ~,~ is the most ~ among ~
+～にいく,go to (do something),go to (see someone)
+～がいます,there is/are (living things),there is/are (non-living things)
+～く/ ～になる,become (adjective/noun),be doing (continuous)
+～のがへたです,be bad at (doing something),be good at (doing something)
+～てください,please (do something),please don't (do something)
+～たり …～たりする,do things like ~ and ~,do only one thing
+～てもいいです,it's okay to (do something),must not do (something)
+～があります,there is/are (non-living things),there is/are (living things)
+です,is / am / are (polite),topic marker
+～なくちゃいけない,must / have to (do something),it's okay to (do something)
+～のがすきです,like (doing something),want to (do something)
+～ている,be doing / is doing (continuous),become (adjective/noun)
+や,and (used to list items),also / too
+を,object marker,topic marker
+～てはいけません,must not / may not (do something),it's okay to (do something)
+stem +たいです,want to (do something),intend to (do something)
+ないでください,please don't (do something),please (do something)
+でしょう,probably / I guess,let's (do something)
+～ませんか,would you like to / shall we,had better do (something)
+まだ～ていません,have not yet (done something),have done (experience)
+で,at / in / by (location, means),to / at / on (direction, time)
+～から,because / from (time/place),before (doing something)
+も,also / too,and (used to list items)
+と,and / with (listing, together),object marker
+～すぎる,too much / excessively,more ~ than ~
+～ほうがいい,had better / it's better to,probably / I guess
+に,to / at / on (direction, time),at / in / by (location, means)
+～のなかで～がいちばん～,~ is the most ~ among ~,more ~ than ~
+～ましょうか,shall I/we (do something)?,let's do (something)
+～てから,after (doing something),before doing (something)
+～たことがある,have done (experience),have not yet done (something)
+に/へ,to / toward (direction),from (time or place)
