@@ -23,6 +23,9 @@ new_version="${major}.${minor}.${patch}"
 sed -i "s/__version__ = \".*\"/__version__ = \"${new_version}\"/" "$version_file"
 echo "Version bumped to $new_version"
 
+# Reset all scores before build/upload
+python3 -c "from practicejapanese.core.utils import reset_scores; reset_scores()"
+
 # Build and upload the package
 python3 -m build
 twine upload dist/*

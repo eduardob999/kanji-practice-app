@@ -48,6 +48,7 @@ def main():
     print("2. Vocab Quiz")
     print("3. Kanji Quiz")
     print("4. Kanji Fill-in Quiz")
+    print("5. Reset all scores to zero")
     choice = input("Enter number: ").strip()
     try:
         if choice == "1":
@@ -61,6 +62,9 @@ def main():
         elif choice == "4":
             filling_quiz.run()
             print()  # Add empty line after each question
+        elif choice == "5":
+            from practicejapanese.core.utils import reset_scores
+            reset_scores()
         else:
             print("Invalid choice.")
     except KeyboardInterrupt:

@@ -99,7 +99,7 @@
 切手,きって,postage stamp,0
 晴れ,はれ,clear weather,0
 洋服,ようふく,western-style clothes,0
-木,き,"tree, wood",1
+木,き,"tree, wood",0
 名前,なまえ,name,0
 書く,かく,to write,0
 友達,ともだち,friend,0
@@ -160,7 +160,7 @@
 今晩,こんばん,this evening,0
 さ来年,さらいねん,year after next,0
 二十歳,はたち,"20 years old,20th year",0
-入る,はいる,"to enter,to contain",1
+入る,はいる,"to enter,to contain",0
 熱い,あつい,hot to the touch,0
 黒い,くろい,black,0
 静か,しずか,Quiet,0
@@ -486,7 +486,7 @@
 雪,ゆき,snow,0
 伯父/叔父,おじさん,"uncle, middle aged gentleman",0
 靴下,くつした,Socks,0
-勉強,べんきょうする,to study,0
+勉強,べんきょう,to study,0
 旅行,りょこう,travel,0
 並べる,ならべる,"to line up,to set up",0
 家族,かぞく,Family,0

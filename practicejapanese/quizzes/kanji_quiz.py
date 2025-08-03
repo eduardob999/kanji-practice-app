@@ -21,7 +21,17 @@ def ask_question(kanji_list):
 
 def run():
     kanji_list = load_kanji(CSV_PATH)
-    quiz_loop(ask_question, kanji_list)
+    # Load scores
+    import csv
+    with open(CSV_PATH, encoding="utf-8") as f:
+        reader = csv.reader(f)
+        scores = [(row[0], int(row[-1]) if row[-1].isdigit() else 0) for row in reader if row and row[0]]
+    if not scores:
+        print("No kanji found.")
+        return
+    min_score = min(score for _, score in scores)
+    lowest_kanji = [item for item in kanji_list if item[0] in [k for k, s in scores if s == min_score]]
+    quiz_loop(ask_question, lowest_kanji)
 
 # --- Score update helper ---
 import csv

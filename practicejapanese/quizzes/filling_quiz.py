@@ -57,7 +57,17 @@ def ask_question(vocab_list):
 
 def run():
     vocab_list = load_vocab(CSV_PATH)
-    quiz_loop(ask_question, vocab_list)
+    # Load scores
+    import csv
+    with open(CSV_PATH, encoding="utf-8") as f:
+        reader = csv.reader(f)
+        scores = [(row[0], int(row[-1]) if row[-1].isdigit() else 0) for row in reader if row and row[0]]
+    if not scores:
+        print("No vocab found.")
+        return
+    min_score = min(score for _, score in scores)
+    lowest_vocab = [item for item in vocab_list if item[0] in [k for k, s in scores if s == min_score]]
+    quiz_loop(ask_question, lowest_vocab)
 
 import csv
 def update_score(csv_path, key, correct):
