@@ -2,12 +2,22 @@ import sys
 from practicejapanese import __version__ as VERSION
 from practicejapanese.quizzes import vocab_quiz, kanji_quiz, filling_quiz
 import random
+import os
 
 def random_quiz():
+    from practicejapanese.core.vocab import load_vocab
+    from practicejapanese.core.kanji import load_kanji
+
+    vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "N5Vocab.csv"))
+    kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "N5Kanji.csv"))
+
+    vocab_list = load_vocab(vocab_path)
+    kanji_list = load_kanji(kanji_path)
+
     quizzes = [
-        ("Vocab Quiz", vocab_quiz.ask_question),
-        ("Kanji Quiz", kanji_quiz.ask_question),
-        ("Kanji Fill-in Quiz", filling_quiz.ask_question)
+        ("Vocab Quiz", lambda: vocab_quiz.ask_question(vocab_list)),
+        ("Kanji Quiz", lambda: kanji_quiz.ask_question(kanji_list)),
+        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(vocab_list))
     ]
     try:
         while True:
