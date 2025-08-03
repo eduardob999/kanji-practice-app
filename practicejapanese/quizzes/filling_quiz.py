@@ -24,21 +24,18 @@ def generate_questions(vocab_list):
     for kanji, reading, _ in vocab_list:
         sentences = fetch_sentences(reading, kanji)
         for sentence in sentences:
-            if reading in sentence:
-                formatted = sentence.replace(reading, f"[{reading}]")
-            elif kanji in sentence:
+            if kanji in sentence:
+                # Replace kanji with hiragana reading, highlighted
                 formatted = sentence.replace(kanji, f"[{reading}]")
-            else:
-                formatted = sentence
-            questions.append((formatted, kanji))
+                questions.append((formatted, kanji))
     return questions
 
 def quiz(questions):
+    print()  # Add empty line before the first question
     print("=== Kanji Fill-in Quiz ===")
     score = 0
     random.shuffle(questions)
     for sentence, answer in questions:
-        print()  # Add empty line before the first question
         print("\nReplace the highlighted hiragana with the correct kanji:")
         print(sentence)
         user_input = input("Your answer (kanji): ").strip()
@@ -57,3 +54,7 @@ def run():
         quiz(questions)
     else:
         print("No questions generated. Check API or vocab data.")
+
+if __name__ == "__main__":
+    print("Running Kanji Fill-in Quiz in DEV mode...")
+    run()
