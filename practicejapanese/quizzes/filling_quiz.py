@@ -23,7 +23,7 @@ def ask_question(vocab_list):
         selected = [questions[0]]
     print("Replace the highlighted hiragana with the correct kanji:")
     for idx, (sentence, answer) in enumerate(selected):
-        print(f"Context {idx+1}: {sentence}")
+        print(f"{sentence}")
     # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji): ").strip()
