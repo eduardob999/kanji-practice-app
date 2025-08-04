@@ -14,8 +14,8 @@ def random_quiz():
 
     from practicejapanese.core.utils import lowest_score_items
     quizzes = [
-        ("Vocab Quiz", lambda: vocab_quiz.ask_question(vocab_list)),
-        ("Kanji Quiz", lambda: kanji_quiz.ask_question(kanji_list)),
+        ("Vocab Quiz", lambda: vocab_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=3))),
+        ("Kanji Quiz", lambda: kanji_quiz.ask_question(lowest_score_items(kanji_path, kanji_list, score_col=3))),
         ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4)))
     ]
     import threading
@@ -25,7 +25,7 @@ def random_quiz():
             selected_name, selected_quiz = random.choice(quizzes)
             q.put((selected_name, selected_quiz))
 
-    q = queue.Queue(maxsize=1)
+    q = queue.Queue(maxsize=3)
     loader_thread = threading.Thread(target=preload_question, args=(q,), daemon=True)
     loader_thread.start()
     try:
