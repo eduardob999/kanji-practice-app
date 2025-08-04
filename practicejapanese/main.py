@@ -1,6 +1,6 @@
 import sys
 from practicejapanese import __version__ as VERSION
-from practicejapanese.quizzes import vocab_quiz, kanji_quiz, filling_quiz
+from practicejapanese.quizzes import audio_quiz, vocab_quiz, kanji_quiz
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.dev_mode import run_dev_mode
 import os
@@ -31,7 +31,7 @@ def main():
             kanji_quiz.run()
             print()  # Add empty line after each question
         elif choice == "4":
-            filling_quiz.run()
+            audio_quiz.run()
             print()  # Add empty line after each question
         elif choice == "5":
             from practicejapanese.core.utils import reset_scores

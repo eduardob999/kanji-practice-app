@@ -1,6 +1,6 @@
 import os
 import random
-from practicejapanese.quizzes import vocab_quiz, kanji_quiz, filling_quiz
+from practicejapanese.quizzes import audio_quiz, vocab_quiz, kanji_quiz
 
 def random_quiz():
     from practicejapanese.core.vocab import load_vocab
@@ -16,7 +16,7 @@ def random_quiz():
     quizzes = [
         ("Vocab Quiz", lambda: vocab_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=3))),
         ("Kanji Quiz", lambda: kanji_quiz.ask_question(lowest_score_items(kanji_path, kanji_list, score_col=3))),
-        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4)))
+        ("Kanji Fill-in Quiz", lambda: audio_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4)))
     ]
     import threading
     import queue

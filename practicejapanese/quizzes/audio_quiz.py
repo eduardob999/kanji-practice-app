@@ -2,6 +2,9 @@ import os
 import random
 import requests
 from functools import lru_cache
+from gtts import gTTS
+import pygame
+import tempfile
 from practicejapanese.core.vocab import load_vocab
 from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
 
@@ -9,8 +12,22 @@ CSV_PATH = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
 
 
+def play_tts(sentence):
+    try:
+        tts = gTTS(text=sentence, lang='ja')
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
+            tts.save(fp.name)
+            pygame.mixer.init()
+            pygame.mixer.music.load(fp.name)
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy():
+                pygame.time.Clock().tick(10)
+        os.remove(fp.name)
+    except Exception as e:
+        print(f"[TTS Error] {e}")
+
 def ask_question(vocab_list):
-    """Ask the user to replace hiragana with the correct kanji."""
+    """Ask the user to replace hiragana with the correct kanji, with TTS audio playback."""
     word = random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
@@ -25,6 +42,7 @@ def ask_question(vocab_list):
     print("Replace the highlighted hiragana with the correct kanji:")
     for idx, (sentence, answer) in enumerate(selected):
         print(f"{sentence}")
+        play_tts(sentence)
     # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji): ").strip()
