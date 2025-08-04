@@ -27,22 +27,34 @@ def play_tts(sentence):
         print(f"[TTS Error] {e}")
 
 def ask_question(vocab_list):
-    """Ask the user to replace hiragana with the correct kanji, with TTS audio playback."""
+    """Audio quiz: print instructions and cues, only play sentences as audio."""
     word = random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
         print(f"Attempted to generate questions for: {word}")
         print("No fill-in questions generated. Check API or vocab data.")
+        print()  # Add empty line before the question
+        print("Replace the highlighted hiragana with the correct kanji:")
+        play_tts("問題の漢字は")
+        play_tts(word[0])
+        play_tts("問題の漢字は")
+        play_tts(word[0])
         return
     # Select two distinct questions for context
     if len(questions) >= 2:
         selected = random.sample(questions, 2)
     else:
         selected = [questions[0]]
+    kanji = selected[0][1]
+    print()  # Add empty line before the question
     print("Replace the highlighted hiragana with the correct kanji:")
+    print("(The sentences will be played as audio)")
+    play_tts("問題の漢字は")
+    play_tts(kanji)
     for idx, (sentence, answer) in enumerate(selected):
-        print(f"{sentence}")
         play_tts(sentence)
+    play_tts("問題の漢字は")
+    play_tts(kanji)
     # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji): ").strip()
@@ -93,8 +105,7 @@ def generate_questions(vocab_list):
     sentences = cached_fetch_sentences(reading, kanji, 5)
     for sentence in sentences:
         if kanji in sentence:
-            formatted = sentence.replace(kanji, f"[{reading}]")
-            questions.append((formatted, kanji))
+            questions.append((sentence, kanji))
     return questions
 
 
