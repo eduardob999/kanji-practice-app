@@ -26,10 +26,12 @@ def generate_questions(vocab_list):
     import concurrent.futures
     questions = []
     # Prepare args for parallel fetch
-    args = [(reading, kanji, 5) for kanji, reading, _ in vocab_list]
+    args = [(item[1], item[0], 5) for item in vocab_list]
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         results = list(executor.map(lambda arg: cached_fetch_sentences(*arg), args))
-    for (kanji, reading, _), sentences in zip(vocab_list, results):
+    for item, sentences in zip(vocab_list, results):
+        kanji = item[0]
+        reading = item[1]
         for sentence in sentences:
             if kanji in sentence:
                 formatted = sentence.replace(kanji, f"[{reading}]")
@@ -57,11 +59,11 @@ def ask_question(vocab_list):
 
 def run():
     vocab_list = load_vocab(CSV_PATH)
-    # Load scores
+    # Load filling quiz scores (column 5)
     import csv
     with open(CSV_PATH, encoding="utf-8") as f:
         reader = csv.reader(f)
-        scores = [(row[0], int(row[-1]) if row[-1].isdigit() else 0) for row in reader if row and row[0]]
+        scores = [(row[0], int(row[4]) if len(row) > 4 and row[4].isdigit() else 0) for row in reader if row and row[0]]
     if not scores:
         print("No vocab found.")
         return
@@ -77,13 +79,14 @@ def update_score(csv_path, key, correct):
         reader = csv.reader(infile)
         for row in reader:
             if row and row[0] == key:
+                # Update filling quiz score (column 5, index 4)
                 if correct:
                     try:
-                        row[-1] = str(int(row[-1]) + 1)
+                        row[4] = str(int(row[4]) + 1)
                     except ValueError:
-                        row[-1] = '1'
+                        row[4] = '1'
                 else:
-                    row[-1] = '0'
+                    row[4] = '0'
             updated_rows.append(row)
     with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
         writer = csv.writer(outfile)

@@ -2,8 +2,4 @@
 
 ## Known issues:
 
-```
-戻[した]の？
-Your answer (kanji): 下   
-Correct!
-```
+En la versión de teléfono parece no guardarse el score (confirmado, no se guarda)

@@ -5,10 +5,8 @@ def load_kanji(path):
     with open(path, encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
-            if len(row) < 3:
+            if len(row) < 4:
                 continue
-            kanji = row[0].strip()
-            readings = row[1].strip()
-            meaning = row[2].strip()
-            kanji_list.append((kanji, readings, meaning))
+            # Only take kanji, readings, meaning, score
+            kanji_list.append((row[0].strip(), row[1].strip(), row[2].strip(), row[3].strip()))
     return kanji_list

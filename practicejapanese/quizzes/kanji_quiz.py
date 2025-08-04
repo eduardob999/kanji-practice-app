@@ -21,7 +21,7 @@ def ask_question(kanji_list):
 
 def run():
     kanji_list = load_kanji(CSV_PATH)
-    # Load scores
+    # Load scores (only one score column now)
     import csv
     with open(CSV_PATH, encoding="utf-8") as f:
         reader = csv.reader(f)

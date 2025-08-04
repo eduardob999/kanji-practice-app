@@ -5,11 +5,9 @@ def load_vocab(path):
     with open(path, encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
-            if len(row) < 3:
+            if len(row) < 5:
                 continue
-            kanji = row[0].strip()
-            reading = row[1].strip()
-            meaning = row[2].strip()
-            if kanji:
-                vocab_list.append((kanji, reading, meaning))
+            if row[0].strip():
+                # word, reading, meaning, vocab_score, filling_score
+                vocab_list.append((row[0].strip(), row[1].strip(), row[2].strip(), row[3].strip(), row[4].strip()))
     return vocab_list

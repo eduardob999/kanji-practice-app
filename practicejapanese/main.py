@@ -1,47 +1,18 @@
 import sys
 from practicejapanese import __version__ as VERSION
 from practicejapanese.quizzes import vocab_quiz, kanji_quiz, filling_quiz
-import random
+from practicejapanese.core.quiz_runner import random_quiz
+from practicejapanese.core.dev_mode import run_dev_mode
 import os
 
-def random_quiz():
-    from practicejapanese.core.vocab import load_vocab
-    from practicejapanese.core.kanji import load_kanji
-
-    vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "N5Vocab.csv"))
-    kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "N5Kanji.csv"))
-
-    vocab_list = load_vocab(vocab_path)
-    kanji_list = load_kanji(kanji_path)
-
-    quizzes = [
-        ("Vocab Quiz", lambda: vocab_quiz.ask_question(vocab_list)),
-        ("Kanji Quiz", lambda: kanji_quiz.ask_question(kanji_list)),
-        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(vocab_list))
-    ]
-    import threading
-    import queue
-    def preload_question(q):
-        while True:
-            selected_name, selected_quiz = random.choice(quizzes)
-            q.put((selected_name, selected_quiz))
-
-    q = queue.Queue(maxsize=1)
-    loader_thread = threading.Thread(target=preload_question, args=(q,), daemon=True)
-    loader_thread.start()
-    try:
-        while True:
-            selected_name, selected_quiz = q.get()  # Wait for next question to be ready
-            print(f"Selected: {selected_name}")
-            selected_quiz()
-            print()  # Add empty line after each question
-    except KeyboardInterrupt:
-        print("\nQuiz interrupted. Goodbye!")
-
 def main():
-    if len(sys.argv) > 1 and sys.argv[1] == "-v":
-        print(f"PracticeJapanese version {VERSION}")
-        return
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "-v":
+            print(f"PracticeJapanese version {VERSION}")
+            return
+        elif sys.argv[1] == "-dev":
+            run_dev_mode()
+            return
 
     print("Select quiz type:")
     print("1. Random Quiz (random category each time)")
