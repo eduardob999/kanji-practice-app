@@ -105,7 +105,7 @@
 友達,ともだち,friend,0,0
 一日,ついたち,first of month,0,0
 切符,きっぷ,Ticket,0,0
-一つ,ひとつ,one,1,0
+一つ,ひとつ,one,0,0
 八日,ようか,"eight days, eighth day of the month",0,0
 一人,ひとり,one person,0,0
 食べ物,たべもの,food,0,0
@@ -208,7 +208,7 @@
 犬,いぬ,dog,0,0
 着く,つく,to arrive at,0,0
 橋,はし,bridge,0,0
-階段,かいだん,Stairs,1,0
+階段,かいだん,Stairs,0,0
 来週,らいしゅう,next week,0,0
 大丈夫,だいじょうぶ,all right,0,0
 取る,とる,to take something,0,0
@@ -269,7 +269,7 @@
 夕方,ゆうがた,evening,0,0
 若い,わかい,young,0,0
 明い,あかるい,bright,0,0
-吹く,ふく,to blow,1,0
+吹く,ふく,to blow,0,0
 夕飯,ゆうはん,dinner,0,0
 百,ひゃく,hundred,0,0
 遠い,とおい,far,0,0
@@ -308,7 +308,7 @@
 建物,たてもの,building,0,0
 出す,だす,to put out,0,0
 四日,よっか,"four days, fouth day of the month",0,0
-窓,まど,window,1,0
+窓,まど,window,0,0
 七日,なのか,"seven days,the seventh day",0,0
 立つ,たつ,to stand,0,0
 本,ほん,book,0,0

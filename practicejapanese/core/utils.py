@@ -12,7 +12,14 @@ def reset_scores():
             reader = csv.reader(infile)
             for row in reader:
                 if row:
-                    row[-1] = '0'
+                    if os.path.basename(csv_path) == "N5Vocab.csv":
+                        # Last two columns are scores
+                        if len(row) >= 2:
+                            row[-1] = '0'
+                            row[-2] = '0'
+                    else:
+                        # Only last column is score
+                        row[-1] = '0'
                 updated_rows.append(row)
         with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
             writer = csv.writer(outfile)
