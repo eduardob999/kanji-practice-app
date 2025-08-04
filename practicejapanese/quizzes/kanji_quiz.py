@@ -21,11 +21,17 @@ def ask_question(kanji_list):
     print()  # Add empty line after the question
 
 def run():
-    kanji_list = load_kanji(CSV_PATH)
-    lowest_kanji = lowest_score_items(CSV_PATH, kanji_list, score_col=3)
-    if not lowest_kanji:
-        print("No kanji found.")
-        return
-    quiz_loop(ask_question, lowest_kanji)
+    def dynamic_quiz_loop():
+        try:
+            while True:
+                kanji_list = load_kanji(CSV_PATH)
+                lowest_kanji = lowest_score_items(CSV_PATH, kanji_list, score_col=3)
+                if not lowest_kanji:
+                    print("No kanji found.")
+                    return
+                ask_question(lowest_kanji)
+        except KeyboardInterrupt:
+            print("\nExiting quiz. Goodbye!")
+    dynamic_quiz_loop()
 
 # --- Score update helper removed, now using core.utils ---

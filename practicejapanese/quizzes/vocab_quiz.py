@@ -31,9 +31,15 @@ def ask_question(vocab_list):
     print()  # Add empty line after the question
 
 def run():
-    vocab_list = load_vocab(CSV_PATH)
-    lowest_vocab = lowest_score_items(CSV_PATH, vocab_list, score_col=3)
-    if not lowest_vocab:
-        print("No vocab found.")
-        return
-    quiz_loop(ask_question, lowest_vocab)
+    def dynamic_quiz_loop():
+        try:
+            while True:
+                vocab_list = load_vocab(CSV_PATH)
+                lowest_vocab = lowest_score_items(CSV_PATH, vocab_list, score_col=3)
+                if not lowest_vocab:
+                    print("No vocab found.")
+                    return
+                ask_question(lowest_vocab)
+        except KeyboardInterrupt:
+            print("\nExiting quiz. Goodbye!")
+    dynamic_quiz_loop()

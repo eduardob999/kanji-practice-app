@@ -16,9 +16,16 @@ def ask_question(vocab_list):
     if not questions:
         print("No fill-in questions generated. Check API or vocab data.")
         return
-    sentence, answer = random.choice(questions)
+    # Select two distinct questions for context
+    if len(questions) >= 2:
+        selected = random.sample(questions, 2)
+    else:
+        selected = [questions[0]]
     print("Replace the highlighted hiragana with the correct kanji:")
-    print(sentence)
+    for idx, (sentence, answer) in enumerate(selected):
+        print(f"Context {idx+1}: {sentence}")
+    # Use the first question's answer for checking
+    answer = selected[0][1]
     user_input = input("Your answer (kanji): ").strip()
     correct = (user_input == answer)
     if correct:
@@ -30,12 +37,18 @@ def ask_question(vocab_list):
 
 
 def run():
-    vocab_list = load_vocab(CSV_PATH)
-    lowest_vocab = lowest_score_items(CSV_PATH, vocab_list, score_col=4)
-    if not lowest_vocab:
-        print("No vocab found.")
-        return
-    quiz_loop(ask_question, lowest_vocab)
+    def dynamic_quiz_loop():
+        try:
+            while True:
+                vocab_list = load_vocab(CSV_PATH)
+                lowest_vocab = lowest_score_items(CSV_PATH, vocab_list, score_col=4)
+                if not lowest_vocab:
+                    print("No vocab found.")
+                    return
+                ask_question(lowest_vocab)
+        except KeyboardInterrupt:
+            print("\nExiting quiz. Goodbye!")
+    dynamic_quiz_loop()
 
 
 @lru_cache(maxsize=128)
