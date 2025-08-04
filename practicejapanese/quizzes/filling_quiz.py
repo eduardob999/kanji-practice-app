@@ -14,6 +14,7 @@ def ask_question(vocab_list):
     word = random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
+        print(f"Attempted to generate questions for: {word}")
         print("No fill-in questions generated. Check API or vocab data.")
         return
     # Select two distinct questions for context
