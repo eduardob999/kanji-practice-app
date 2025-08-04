@@ -12,10 +12,11 @@ def random_quiz():
     vocab_list = load_vocab(vocab_path)
     kanji_list = load_kanji(kanji_path)
 
+    from practicejapanese.core.utils import lowest_score_items
     quizzes = [
         ("Vocab Quiz", lambda: vocab_quiz.ask_question(vocab_list)),
         ("Kanji Quiz", lambda: kanji_quiz.ask_question(kanji_list)),
-        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(vocab_list))
+        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4)))
     ]
     import threading
     import queue
