@@ -3,7 +3,7 @@ import random
 import requests
 from functools import lru_cache
 from gtts import gTTS
-import pygame
+import subprocess
 import tempfile
 from practicejapanese.core.vocab import load_vocab
 from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
@@ -17,11 +17,16 @@ def play_tts(sentence):
         tts = gTTS(text=sentence, lang='ja')
         with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
             tts.save(fp.name)
-            pygame.mixer.init()
-            pygame.mixer.music.load(fp.name)
-            pygame.mixer.music.play()
-            while pygame.mixer.music.get_busy():
-                pygame.time.Clock().tick(10)
+            # Detect Termux by checking for the environment variable
+            if 'com.termux' in os.environ.get('PREFIX', '') or os.environ.get('TERMUX_VERSION'):
+                # Use termux-media-player
+                subprocess.run(['termux-media-player', 'play', fp.name], check=True)
+            else:
+                # Use mpv for Linux
+                try:
+                    subprocess.run(['mpv', '--really-quiet', fp.name], check=True)
+                except Exception as e:
+                    print(f"[TTS Error] {e}")
         os.remove(fp.name)
     except Exception as e:
         print(f"[TTS Error] {e}")
