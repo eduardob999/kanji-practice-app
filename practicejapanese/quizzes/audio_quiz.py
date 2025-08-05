@@ -18,19 +18,12 @@ def play_tts(sentence):
         tts = gTTS(text=sentence, lang='ja')
         with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
             tts.save(fp.name)
-            # Detect Termux by checking for the environment variable
-            if 'com.termux' in os.environ.get('PREFIX', '') or os.environ.get('TERMUX_VERSION'):
-                # Use termux-media-player in background
-                subprocess.Popen(['termux-media-player', 'play', fp.name])
-                time.sleep(2)  # Wait before deleting file so playback can start
-                os.remove(fp.name)
-            else:
-                # Use mpv for Linux
-                try:
-                    subprocess.run(['mpv', '--really-quiet', fp.name], check=True)
-                except Exception as e:
-                    print(f"[TTS Error] {e}")
-                os.remove(fp.name)
+            # Only use mpv for audio playback
+            try:
+                subprocess.run(['mpv', '--really-quiet', fp.name], check=True)
+            except Exception as e:
+                print(f"[TTS Error] {e}")
+            os.remove(fp.name)
     except Exception as e:
         print(f"[TTS Error] {e}")
 
