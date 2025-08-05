@@ -1,4 +1,5 @@
-毎月,まいげつ/まいつき,every month,0,0
+毎月,まいげつ,every month,0,0
+毎月,まいつき,every month,0,0
 太い,ふとい,fat,0,0
 五日,いつか,"five days, fifth day",0,0
 出る,でる,"to appear,to leave",0,0
@@ -47,7 +48,7 @@
 来年,らいねん,next year,0,0
 飛ぶ,とぶ,"to fly,to hop",0,0
 起きる,おきる,to get up,0,0
-四,し / よん,Four,0,0
+四,よん,Four,0,0
 私,わたし,"I,myself",0,0
 毎晩,まいばん,every night,0,0
 八,はち,eight,0,0
@@ -148,7 +149,8 @@
 声,こえ,Voice,0,0
 人,ひと,person,0,0
 食堂,しょくどう,dining hall,0,0
-毎年,まいねん/まいとし,every year,0,0
+毎年,まいねん,every year,0,0
+毎年,まいとし,every year,0,0
 四つ,よっつ,four,0,0
 池,いけ,pond,0,0
 貸す,かす,to lend,0,0
@@ -292,7 +294,8 @@
 果物,くだもの,Fruit,0,0
 私,わたくし,"(humble) I,myself",0,0
 一昨日,おととい,day before yesterday,0,0
-初め/始め,はじめ,beginning,0,0
+初め,はじめ,beginning,0,0
+始め,はじめ,beginning,0,0
 木曜日,もくようび,Thursday,0,0
 黒,くろ,Black,0,0
 海,うみ,sea,0,0
@@ -315,17 +318,17 @@
 砂糖,さとう,Sugar,0,0
 塩,しお,Salt,0,0
 見せる,みせる,to show,0,0
-見る 観る,みる,"to see, to watch",0,0
+見る,みる,"to see, to watch",0,0
 毎朝,まいあさ,every morning,0,0
 知る,しる,to know,0,0
 強い,つよい,powerful,0,0
 郵便局,ゆうびんきょく,post office,0,0
 寝る,ねる,"to go to bed,to sleep",0,0
 今日,きょう,Today,0,0
-伯母さん/叔母さん,おばさん,Aunt,0,0
+叔母さん,おばさん,Aunt,0,0
 毎日,まいにち,every day,0,0
 金曜日,きんようび,Friday,0,0
-伯父/叔父,おじいさん,"grandfather, male senior citizen",0,0
+叔父,おじいさん,"grandfather, male senior citizen",0,0
 八百屋,やおや,greengrocer,0,0
 土曜日,どようび,Saturday,0,0
 町,まち,"town,city",0,0
@@ -356,7 +359,7 @@
 教える,おしえる,"to teach, to tell",0,0
 始まる,はじまる,to begin,0,0
 白,しろ,White,0,0
-九,きゅう / く,Nine,0,0
+九,きゅう,Nine,0,0
 下,した,Below,0,0
 痛い,いたい,painful,0,0
 部屋,へや,room,0,0
@@ -365,7 +368,7 @@
 厚い,あつい,"kind, deep, thick",0,0
 少し,すこし,Few,0,0
 野菜,やさい,vegetable,0,0
-何,なん/なに,what,0,0
+何,なに,what,0,0
 花瓶,かびん,a vase,0,0
 貼る,はる,to stick,0,0
 お風呂,おふろ,Bath,0,0
@@ -425,7 +428,7 @@
 お菓子,おかし,"sweets, candy",0,0
 使う,つかう,to use,0,0
 一,いち,one,0,0
-丸い/円い,まるい,"round,circular",0,0
+丸い,まるい,"round,circular",0,0
 危ない,あぶない,dangerous,0,0
 口,くち,"mouth, opening",0,0
 答える,こたえる,to answer,0,0
@@ -449,14 +452,14 @@
 病気,びょうき,illness,0,0
 お弁当,おべんとう,boxed lunch,0,0
 聞く,きく,"to hear, to listen to, to ask",0,0
-七,しち / なな,Seven,0,0
+七,なな,Seven,0,0
 右,みぎ,right side,0,0
 弟,おとうと,younger brother,0,0
 歯,は,tooth,0,0
 飛行機,ひこうき,aeroplane,0,0
 南,みなみ,south,0,0
 行く,いく,to go,0,0
-川/河,かわ,River,0,0
+川,かわ,River,0,0
 薄い,うすい,"thin,weak",0,0
 登る,のぼる,to climb,0,0
 結構,けっこう,"splendid, enough",0,0
@@ -484,7 +487,7 @@
 話す,はなす,to speak,0,0
 生徒,せいと,Pupil,0,0
 雪,ゆき,snow,0,0
-伯父/叔父,おじさん,"uncle, middle aged gentleman",0,0
+叔父,おじさん,"uncle, middle aged gentleman",0,0
 靴下,くつした,Socks,0,0
 勉強,べんきょう,to study,0,0
 旅行,りょこう,travel,0,0
