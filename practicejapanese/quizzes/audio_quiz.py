@@ -5,6 +5,7 @@ from functools import lru_cache
 from gtts import gTTS
 import subprocess
 import tempfile
+import time
 from practicejapanese.core.vocab import load_vocab
 from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
 
@@ -21,13 +22,15 @@ def play_tts(sentence):
             if 'com.termux' in os.environ.get('PREFIX', '') or os.environ.get('TERMUX_VERSION'):
                 # Use termux-media-player in background
                 subprocess.Popen(['termux-media-player', 'play', fp.name])
+                time.sleep(2)  # Wait before deleting file so playback can start
+                os.remove(fp.name)
             else:
                 # Use mpv for Linux
                 try:
                     subprocess.run(['mpv', '--really-quiet', fp.name], check=True)
                 except Exception as e:
                     print(f"[TTS Error] {e}")
-        os.remove(fp.name)
+                os.remove(fp.name)
     except Exception as e:
         print(f"[TTS Error] {e}")
 
