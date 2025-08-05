@@ -19,8 +19,8 @@ def play_tts(sentence):
             tts.save(fp.name)
             # Detect Termux by checking for the environment variable
             if 'com.termux' in os.environ.get('PREFIX', '') or os.environ.get('TERMUX_VERSION'):
-                # Use termux-media-player
-                subprocess.run(['termux-media-player', 'play', fp.name], check=True)
+                # Use termux-media-player in background
+                subprocess.Popen(['termux-media-player', 'play', fp.name])
             else:
                 # Use mpv for Linux
                 try:
