@@ -32,14 +32,24 @@ def ask_question(vocab_list):
     word = random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
-        print(f"Attempted to generate questions for: {word}")
-        print("No fill-in questions generated. Check API or vocab data.")
-        print()  # Add empty line before the question
-        print("Replace the highlighted hiragana with the correct kanji:")
+        print()
         play_tts("問題の漢字は")
-        play_tts(word[0])
+        play_tts(kanji)
+        reading = word[1]
+        meaning = word[2]
+        kanji = word[0]
+        play_tts(f"読み方は {reading}")
+        play_tts(f"意味は {meaning}")
         play_tts("問題の漢字は")
-        play_tts(word[0])
+        play_tts(kanji)
+        user_input = input("Your answer (kanji): ").strip()
+        correct = (user_input == kanji)
+        if correct:
+            print("Correct!")
+        else:
+            print(f"Wrong. Correct kanji: {kanji}")
+        update_score(CSV_PATH, kanji, correct, score_col=4)
+        print()
         return
     # Select two distinct questions for context
     if len(questions) >= 2:
