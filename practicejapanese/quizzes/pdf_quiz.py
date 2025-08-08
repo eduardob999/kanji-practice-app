@@ -3,6 +3,7 @@
 
 import PyPDF2
 import os
+import importlib.resources
 
 
 def split_pdf(input_pdf_path, output_pdf_path, start_page, end_page):
@@ -25,11 +26,15 @@ def extract_text_from_pdf(pdf_path):
 
 
 def quiz_from_pdf(input_pdf_path, start_page, end_page):
-    package_dir = os.path.dirname(os.path.abspath(__file__))
-    public_dir = os.path.join(os.path.dirname(package_dir), 'public')
-    input_pdf_path = os.path.join(public_dir, os.path.basename(input_pdf_path))
-    output_pdf_path = os.path.join(public_dir, 'split_output.pdf')
-    split_pdf(input_pdf_path, output_pdf_path, start_page, end_page)
+    # Use importlib.resources to access bundled PDFs
+    pdf_name = os.path.basename(input_pdf_path)
+    try:
+        with importlib.resources.path('practicejapanese.public', pdf_name) as pdf_path:
+            output_pdf_path = os.path.join(os.path.dirname(pdf_path), 'split_output.pdf')
+            split_pdf(str(pdf_path), output_pdf_path, start_page, end_page)
+    except FileNotFoundError:
+        print(f"PDF file '{pdf_name}' not found in package resources. Please provide a valid PDF.")
+        return []
     # Open the split PDF file
     def open_pdf(filepath):
         if 'TERMUX_VERSION' in os.environ:
@@ -54,9 +59,7 @@ def quiz_from_pdf(input_pdf_path, start_page, end_page):
 
 # Example usage
 if __name__ == "__main__":
-    package_dir = os.path.dirname(os.path.abspath(__file__))
-    public_dir = os.path.join(os.path.dirname(package_dir), 'public')
-    input_pdf_path = os.path.join(public_dir, '2Shin_Kanzen_Masuta_N2-Goi.pdf')
+    input_pdf_path = '2Shin_Kanzen_Masuta_N2-Goi.pdf'
     start_page = 10
     end_page = 13
     quiz_from_pdf(input_pdf_path, start_page, end_page)
