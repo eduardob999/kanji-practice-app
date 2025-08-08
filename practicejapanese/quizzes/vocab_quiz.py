@@ -27,6 +27,7 @@ def ask_question(vocab_list):
             print("Correct!")
         else:
             print(f"Incorrect. The correct Reading is: {item[1]}")
+    # Score column is 'VocabScore' (index 3)
     update_score(CSV_PATH, item[0], correct, score_col=3)
     print()  # Add empty line after the question
 

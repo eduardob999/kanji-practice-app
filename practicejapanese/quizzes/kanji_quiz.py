@@ -17,6 +17,7 @@ def ask_question(kanji_list):
         print("Correct!")
     else:
         print(f"Incorrect. The correct Kanji is: {item[0]}")
+    # Score column is 'Score' (index 3)
     update_score(CSV_PATH, item[0], correct, score_col=3)
     print()  # Add empty line after the question
 
