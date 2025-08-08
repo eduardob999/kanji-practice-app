@@ -28,13 +28,29 @@ def extract_text_from_pdf(pdf_path):
 def quiz_from_pdf(input_pdf_path, start_page, end_page):
     # Use importlib.resources to access bundled PDFs
     pdf_name = os.path.basename(input_pdf_path)
+    output_pdf_path = None
+    pdf_path = None
+    # Try package resources first
     try:
-        with importlib.resources.path('practicejapanese.public', pdf_name) as pdf_path:
+        with importlib.resources.path('practicejapanese.public', pdf_name) as pkg_pdf_path:
+            pdf_path = str(pkg_pdf_path)
             output_pdf_path = os.path.join(os.path.dirname(pdf_path), 'split_output.pdf')
-            split_pdf(str(pdf_path), output_pdf_path, start_page, end_page)
     except FileNotFoundError:
-        print(f"PDF file '{pdf_name}' not found in package resources. Please provide a valid PDF.")
+        # Fallback: check current working directory
+        cwd_pdf_path = os.path.join(os.getcwd(), pdf_name)
+        if os.path.exists(cwd_pdf_path):
+            pdf_path = cwd_pdf_path
+            output_pdf_path = os.path.join(os.getcwd(), 'split_output.pdf')
+        else:
+            # Fallback: check $HOME/public/
+            home_pdf_path = os.path.join(os.path.expanduser('~'), 'public', pdf_name)
+            if os.path.exists(home_pdf_path):
+                pdf_path = home_pdf_path
+                output_pdf_path = os.path.join(os.path.dirname(home_pdf_path), 'split_output.pdf')
+    if not pdf_path or not os.path.exists(pdf_path):
+        print(f"PDF file '{pdf_name}' not found in package resources, current directory, or $HOME/public/. Please provide a valid PDF.")
         return []
+    split_pdf(pdf_path, output_pdf_path, start_page, end_page)
     # Open the split PDF file
     def open_pdf(filepath):
         if 'TERMUX_VERSION' in os.environ:
