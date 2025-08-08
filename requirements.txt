@@ -1,2 +1,3 @@
 requests
 gtts
+PyPDF2
