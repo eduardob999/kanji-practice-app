@@ -21,6 +21,7 @@ def main():
     print("4. Kanji Fill-in Quiz")
     print("5. Audio Quiz")
     print("6. Reset all scores to zero")
+    print("7. PDF Quiz (from split PDF)")
     choice = input("Enter number: ").strip()
     try:
         if choice == "1":
@@ -41,6 +42,13 @@ def main():
         elif choice == "6":
             from practicejapanese.core.utils import reset_scores
             reset_scores()
+        elif choice == "7":
+            from practicejapanese.quizzes import pdf_quiz
+            # You can adjust these values or prompt the user for them
+            input_pdf_path = 'public/2Shin_Kanzen_Masuta_N2-Goi.pdf'
+            start_page = 10
+            end_page = 13
+            pdf_quiz.quiz_from_pdf(input_pdf_path, start_page, end_page)
         else:
             print("Invalid choice.")
     except KeyboardInterrupt:
