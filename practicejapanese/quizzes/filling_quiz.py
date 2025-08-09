@@ -18,7 +18,6 @@ def ask_question(vocab_list):
         reading = word[1]
         meaning = word[2]
         kanji = word[0]
-        print(f"No fill-in questions generated for: {kanji}")
         print(f"Reading: {reading}")
         print(f"Meaning: {meaning}")
         user_input = input("Your answer (kanji): ").strip()

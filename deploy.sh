@@ -9,11 +9,11 @@ current_version=$(grep -Po "(?<=__version__ = \")([0-9]+\.[0-9]+\.[0-9]+)" "$ver
 IFS='.' read -r major minor patch <<< "$current_version"
 
 patch=$((patch + 1))
-if (( patch >= 20 )); then
+if (( patch >= 100 )); then
   patch=0
   minor=$((minor + 1))
 fi
-if (( minor >= 20 )); then
+if (( minor >= 100 )); then
   minor=0
   major=$((major + 1))
 fi
