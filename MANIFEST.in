@@ -1,4 +1,2 @@
 include requirements.txt
 recursive-include practicejapanese/data *.csv
-# Include only specific PDFs; avoids warnings for missing files
-recursive-include practicejapanese/public *.pdf
