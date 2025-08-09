@@ -10,7 +10,7 @@ from practicejapanese.core.vocab import load_vocab
 from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
 
 CSV_PATH = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
+    os.path.dirname(__file__), "..", "data", "Vocab.csv"))
 
 
 def play_tts(sentence):
@@ -33,15 +33,13 @@ def ask_question(vocab_list):
     questions = generate_questions(word)
     if not questions:
         print()
-        play_tts("問題の漢字は")
-        play_tts(kanji)
+        # Define variables before using them
+        kanji = word[0]
         reading = word[1]
         meaning = word[2]
-        kanji = word[0]
-        play_tts(f"読み方は {reading}")
-        play_tts(f"意味は {meaning}")
-        play_tts("問題の漢字は")
-        play_tts(kanji)
+        play_tts(f"読み方は{reading}")
+        play_tts(f"意味は{meaning}")
+        play_tts(f"問題の漢字は{kanji}")
         user_input = input("Your answer (kanji): ").strip()
         correct = (user_input == kanji)
         if correct:
@@ -60,12 +58,10 @@ def ask_question(vocab_list):
     print()  # Add empty line before the question
     print("Replace the highlighted hiragana with the correct kanji:")
     print("(The sentences will be played as audio)")
-    play_tts("問題の漢字は")
-    play_tts(kanji)
+    play_tts(f"問題の漢字は{kanji}")
     for idx, (sentence, answer) in enumerate(selected):
         play_tts(sentence)
-    play_tts("問題の漢字は")
-    play_tts(kanji)
+    play_tts(f"問題の漢字は{kanji}")
     # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji): ").strip()

@@ -4,10 +4,10 @@ import csv
 
 
 def reset_scores():
-    print("Resetting all scores to zero...")
+    print("Resetting scores based on Level (5→0, 4→1, 3→2, 2→3, 1→4)...")
     for csv_path in [
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Kanji.csv")),
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Vocab.csv")),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Kanji.csv")),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Vocab.csv")),
     ]:
         temp_path = csv_path + '.temp'
         updated_rows = []
@@ -16,20 +16,34 @@ def reset_scores():
             fieldnames = reader.fieldnames
             for row in reader:
                 if row:
-                    if os.path.basename(csv_path) == "N5Vocab.csv":
-                        # Reset both score columns
-                        row['VocabScore'] = '0'
-                        row['FillingScore'] = '0'
+                    # Determine reset value from Level column: 5->0, 4->1, 3->2, 2->3, 1->4
+                    level_raw = (row.get('Level') or '').strip()
+                    try:
+                        level = int(level_raw)
+                        # Map so higher level number -> lower starting score
+                        # For typical JLPT levels (1..5), this yields: 5→0, 4→1, 3→2, 2→3, 1→4
+                        reset_value = max(0, 5 - level)
+                    except ValueError:
+                        # Fallback if Level is missing/invalid
+                        reset_value = 0
+
+                    if os.path.basename(csv_path) == "Vocab.csv":
+                        # Reset both score columns if present
+                        if 'VocabScore' in fieldnames:
+                            row['VocabScore'] = str(reset_value)
+                        if 'FillingScore' in fieldnames:
+                            row['FillingScore'] = str(reset_value)
                     else:
-                        # Only last column is score
-                        row['Score'] = '0'
+                        # Only last column is score or explicit Score column
+                        if 'Score' in fieldnames:
+                            row['Score'] = str(reset_value)
                 updated_rows.append(row)
         with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
             writer = csv.DictWriter(outfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(updated_rows)
         os.replace(temp_path, csv_path)
-    print("All scores reset to zero.")
+    print("All scores reset based on Level.")
 
 
 def quiz_loop(quiz_func, data):

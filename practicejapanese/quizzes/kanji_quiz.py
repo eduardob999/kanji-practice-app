@@ -4,7 +4,7 @@ import random
 import os
 
 
-CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Kanji.csv"))
+CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Kanji.csv"))
 
 def ask_question(kanji_list):
     item = random.choice(kanji_list)

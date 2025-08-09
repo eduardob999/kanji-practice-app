@@ -17,8 +17,8 @@ class PostInstallCommand(install):
 
         try:
             home_dir = os.path.expanduser("~")
-            public_dir = os.path.join(home_dir, "Public")
-            target_dir = os.path.join(public_dir, "PracticeJapanese")
+            public_dir = os.path.join(home_dir, "public")
+            target_dir = os.path.join(public_dir, "practiceJapanese")
 
             source_dir = os.path.join(os.path.dirname(__file__), "practicejapanese", "public")
 

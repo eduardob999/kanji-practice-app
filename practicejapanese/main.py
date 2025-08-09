@@ -3,7 +3,6 @@ from practicejapanese import __version__ as VERSION
 from practicejapanese.quizzes import audio_quiz, vocab_quiz, kanji_quiz
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.dev_mode import run_dev_mode
-import os
 
 def main():
     if len(sys.argv) > 1:
@@ -20,9 +19,9 @@ def main():
     print("3. Kanji Quiz")
     print("4. Kanji Fill-in Quiz")
     print("5. Audio Quiz")
-    print("6. Reset all scores to zero")
-    choice = input("Enter number: ").strip()
+    print("6. Reset all scores")
     try:
+        choice = input("Enter number: ").strip()
         if choice == "1":
             random_quiz()
         elif choice == "2":
@@ -44,7 +43,10 @@ def main():
         else:
             print("Invalid choice.")
     except KeyboardInterrupt:
-        print("\nQuiz interrupted. Goodbye!")
+        print("\nInterrupted. Goodbye!")
+    except EOFError:
+        # Handle Ctrl+D (EOF) gracefully
+        print("\nNo input received. Goodbye!")
 
 if __name__ == "__main__":
     main()

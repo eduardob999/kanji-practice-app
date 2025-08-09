@@ -3,7 +3,7 @@ from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_it
 import random
 import os
 
-CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "N5Vocab.csv"))
+CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Vocab.csv"))
 
 def ask_question(vocab_list):
     item = random.choice(vocab_list)

@@ -14,8 +14,8 @@ def run_dev_mode():
     if dev_choice == "1":
         from practicejapanese.core.vocab import load_vocab
         from practicejapanese.core.kanji import load_kanji
-        vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/N5Vocab.csv"))
-        kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/N5Kanji.csv"))
+        vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
+        kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
         vocab_list = load_vocab(vocab_path)
         kanji_list = load_kanji(kanji_path)
         print("\nKanji Scores:")
