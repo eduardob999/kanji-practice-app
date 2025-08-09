@@ -37,8 +37,9 @@ def ask_question(vocab_list):
         kanji = word[0]
         reading = word[1]
         meaning = word[2]
+        play_tts(f"問題の漢字は{kanji}")
+        print(f"Meaning: {meaning}")
         play_tts(f"読み方は{reading}")
-        play_tts(f"意味は{meaning}")
         play_tts(f"問題の漢字は{kanji}")
         user_input = input("Your answer (kanji): ").strip()
         correct = (user_input == kanji)
