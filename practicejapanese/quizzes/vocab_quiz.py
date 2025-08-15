@@ -40,8 +40,11 @@ def ask_question(vocab_list):
     level = item[-1] if len(item) > 5 else ""
     # Vocab score index 3
     vocab_score = item[3] if len(item) > 3 else ""
-    if level and is_verbose():
-        print(f"[Level {level} | Score {vocab_score}]")
+    if level:
+        if is_verbose():
+            print(f"[Level {level} | Score {vocab_score}]")
+        else:
+            print(f"[Level {level}]")
     print(f"Kanji: {item[0]}")
     print(f"Meaning: {item[2]}")
     answer = _normalize_reading(input("What is the Reading? "))

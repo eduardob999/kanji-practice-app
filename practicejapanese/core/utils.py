@@ -97,7 +97,9 @@ def update_score(csv_path, key, correct, score_col=-1):
 
 def lowest_score_items(csv_path, vocab_list, score_col):
     """
-    Returns items from vocab_list whose key (row[0]) has the lowest score in score_col.
+    Returns only those items whose Kanji has the global minimum score AND whose
+    own tuple score equals that minimum (prevents higher-score duplicates of the
+    same Kanji from being selected randomly).
     """
     with open(csv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -108,5 +110,18 @@ def lowest_score_items(csv_path, vocab_list, score_col):
     if not scores:
         return []
     min_score = min(score for _, score in scores)
-    lowest_keys = [k for k, s in scores if s == min_score]
-    return [item for item in vocab_list if item[0] in lowest_keys]
+    # For quick lookup of min score per key
+    key_min_scores = {}
+    for k, s in scores:
+        if k not in key_min_scores or s < key_min_scores[k]:
+            key_min_scores[k] = s
+    score_index = score_col  # tuple index aligns with csv order in loaders
+    filtered = []
+    for item in vocab_list:
+        try:
+            item_score = int(item[score_index])
+        except (ValueError, IndexError):
+            item_score = 0
+        if item_score == min_score and key_min_scores.get(item[0], None) == min_score:
+            filtered.append(item)
+    return filtered
