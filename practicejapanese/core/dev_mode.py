@@ -13,12 +13,9 @@ def run_dev_mode():
     print("3. Exit dev mode")
     dev_choice = input("Enter dev option: ").strip()
     if dev_choice == "1":
-        from practicejapanese.core.vocab import load_vocab
-        from practicejapanese.core.kanji import load_kanji
+        # Use CSV headers directly (DictReader) so we don't depend on tuple ordering
         vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
         kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
-        vocab_list = load_vocab(vocab_path)
-        kanji_list = load_kanji(kanji_path)
         # Determine output directory and ensure it exists
         home_dir = os.path.expanduser("~")
         out_dir = os.path.join(home_dir, "public", "practicejapanese")
@@ -29,20 +26,33 @@ def run_dev_mode():
         lines = []
         lines.append(f"PracticeJapanese Scores (version {VERSION})")
         lines.append("")
+        import csv
         lines.append("Kanji Scores:")
-        for entry in kanji_list:
-            if isinstance(entry, tuple) and len(entry) >= 4:
-                kanji = entry[0]
-                score = entry[-1]
-                lines.append(f"{kanji}: {score}")
+        try:
+            with open(kanji_path, encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    kanji = (row.get("Kanji") or "").strip()
+                    if not kanji:
+                        continue
+                    score = (row.get("Score") or "").strip()
+                    lines.append(f"{kanji}: {score}")
+        except OSError as e:
+            lines.append(f"[Error reading Kanji.csv: {e}]")
         lines.append("")
         lines.append("Vocab Scores:")
-        for entry in vocab_list:
-            if isinstance(entry, tuple) and len(entry) >= 5:
-                word = entry[0]
-                vocab_score = entry[3]
-                filling_score = entry[4]
-                lines.append(f"{word}: Vocab Quiz Score = {vocab_score}, Filling Quiz Score = {filling_score}")
+        try:
+            with open(vocab_path, encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    word = (row.get("Kanji") or "").strip()
+                    if not word:
+                        continue
+                    vocab_score = (row.get("VocabScore") or "").strip()
+                    filling_score = (row.get("FillingScore") or "").strip()
+                    lines.append(f"{word}: Vocab Quiz Score = {vocab_score}, Filling Quiz Score = {filling_score}")
+        except OSError as e:
+            lines.append(f"[Error reading Vocab.csv: {e}]")
 
         try:
             with open(out_file, "w", encoding="utf-8") as f:

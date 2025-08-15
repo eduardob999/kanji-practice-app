@@ -67,10 +67,22 @@ def quiz_loop(quiz_func, data):
 # --- DRY helpers for quizzes ---
 
 
-def update_score(csv_path, key, correct, score_col=-1):
-    """
-    Update the score for a given key in the specified column (score_col).
-    If correct, increment; else, set to zero.
+def update_score(csv_path, key, correct, score_col=-1, reading=None, level=None):
+    """Update the score for a given row.
+
+    Parameters:
+        csv_path (str): Path to CSV.
+        key (str): Kanji (primary key).
+        correct (bool): If True increment, else reset to 0.
+        score_col (int): Index of score column to mutate.
+        reading (str|None): Optional reading to disambiguate duplicates.
+        level (str|int|None): Optional level to disambiguate duplicates.
+
+    Behavior:
+        If reading/level supplied, only the row whose Kanji matches AND whose
+        reading (matches either 'Reading' or 'Readings' column) AND/OR level
+        (if provided) matches will be updated. Other duplicate variants keep
+        their scores, preventing unintended resets.
     """
     temp_path = csv_path + '.temp'
     updated_rows = []
@@ -79,14 +91,30 @@ def update_score(csv_path, key, correct, score_col=-1):
         fieldnames = reader.fieldnames
         for row in reader:
             if row and row.get("Kanji") == key:
-                score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
-                if correct:
-                    try:
-                        row[score_field] = str(int(row[score_field]) + 1)
-                    except (ValueError, IndexError):
-                        row[score_field] = '1'
-                else:
-                    row[score_field] = '0'
+                do_update = True
+                # Reading disambiguation
+                if reading is not None:
+                    r_match = False
+                    for rf in ("Reading", "Readings"):
+                        if rf in row and (row.get(rf) or '').strip() == str(reading).strip():
+                            r_match = True
+                            break
+                    if not r_match:
+                        do_update = False
+                # Level disambiguation
+                if level is not None:
+                    lvl_val = (row.get('Level') or '').strip()
+                    if lvl_val != str(level).strip():
+                        do_update = False
+                if do_update:
+                    score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
+                    if correct:
+                        try:
+                            row[score_field] = str(int(row[score_field]) + 1)
+                        except (ValueError, IndexError):
+                            row[score_field] = '1'
+                    else:
+                        row[score_field] = '0'
             updated_rows.append(row)
     with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
