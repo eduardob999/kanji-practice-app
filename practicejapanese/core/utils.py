@@ -2,6 +2,16 @@ import random
 import os
 import csv
 
+# --- Global config flags ---
+VERBOSE = False
+
+def set_verbose(flag: bool):
+    global VERBOSE
+    VERBOSE = bool(flag)
+
+def is_verbose() -> bool:
+    return VERBOSE
+
 
 def reset_scores():
     print("Resetting scores based on Level (5→0, 4→1, 3→2, 2→3, 1→4)...")

@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 import time
 from practicejapanese.core.vocab import load_vocab
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
+from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
 
 CSV_PATH = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "data", "Vocab.csv"))
@@ -39,7 +39,7 @@ def ask_question(vocab_list):
         meaning = word[2]
         level = word[-1] if len(word) > 5 else ""
         filling_score = word[4] if len(word) > 4 else ""
-        if level:
+        if level and is_verbose():
             print(f"[Level {level} | Score {filling_score}]")
         play_tts(f"問題の漢字は{kanji}")
         print(f"Meaning: {meaning}")
@@ -63,7 +63,7 @@ def ask_question(vocab_list):
     print()  # Add empty line before the question
     level = word[-1] if len(word) > 5 else ""
     filling_score = word[4] if len(word) > 4 else ""
-    if level:
+    if level and is_verbose():
         print(f"[Level {level} | Score {filling_score}]")
     print("Replace the highlighted hiragana with the correct kanji:")
     print("(The sentences will be played as audio)")

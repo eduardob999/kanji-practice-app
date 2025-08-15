@@ -1,5 +1,5 @@
 from practicejapanese.core.kanji import load_kanji
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
+from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
 import random
 import os
 
@@ -11,7 +11,7 @@ def ask_question(kanji_list):
     print()  # Add empty line before the question
     level = item[-1] if len(item) > 4 else ""
     score = item[3] if len(item) > 3 else ""
-    if level:
+    if level and is_verbose():
         print(f"[Level {level} | Score {score}]")
     print(f"Readings: {item[1]}")
     print(f"Meaning: {item[2]}")

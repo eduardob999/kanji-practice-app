@@ -9,32 +9,46 @@ def random_quiz():
     vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
     kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
 
-    vocab_list = load_vocab(vocab_path)
-    kanji_list = load_kanji(kanji_path)
-
     from practicejapanese.core.utils import lowest_score_items
     from practicejapanese.quizzes import filling_quiz
-    quizzes = [
-        ("Vocab Quiz", lambda: vocab_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=3))),
-        ("Kanji Quiz", lambda: kanji_quiz.ask_question(lowest_score_items(kanji_path, kanji_list, score_col=3))),
-        ("Kanji Fill-in Quiz", lambda: filling_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4))),
-        ("Audio Quiz", lambda: audio_quiz.ask_question(lowest_score_items(vocab_path, vocab_list, score_col=4)))
-    ]
-    import threading
-    import queue
-    def preload_question(q):
-        while True:
-            selected_name, selected_quiz = random.choice(quizzes)
-            q.put((selected_name, selected_quiz))
 
-    q = queue.Queue(maxsize=3)
-    loader_thread = threading.Thread(target=preload_question, args=(q,), daemon=True)
-    loader_thread.start()
+    # Always reload latest scores before each question so displayed score is accurate.
+    def next_vocab_question():
+        vocab_list = load_vocab(vocab_path)
+        lowest = lowest_score_items(vocab_path, vocab_list, score_col=3)
+        if lowest:
+            vocab_quiz.ask_question(lowest)
+
+    def next_kanji_question():
+        kanji_list = load_kanji(kanji_path)
+        lowest = lowest_score_items(kanji_path, kanji_list, score_col=3)
+        if lowest:
+            kanji_quiz.ask_question(lowest)
+
+    def next_fill_question():
+        vocab_list = load_vocab(vocab_path)
+        lowest = lowest_score_items(vocab_path, vocab_list, score_col=4)
+        if lowest:
+            filling_quiz.ask_question(lowest)
+
+    def next_audio_question():
+        vocab_list = load_vocab(vocab_path)
+        lowest = lowest_score_items(vocab_path, vocab_list, score_col=4)
+        if lowest:
+            audio_quiz.ask_question(lowest)
+
+    quizzes = [
+        ("Vocab Quiz", next_vocab_question),
+        ("Kanji Quiz", next_kanji_question),
+        ("Kanji Fill-in Quiz", next_fill_question),
+        ("Audio Quiz", next_audio_question),
+    ]
+
     try:
         while True:
-            selected_name, selected_quiz = q.get()  # Wait for next question to be ready
-            print(f"Selected: {selected_name}")
-            selected_quiz()
-            print()  # Add empty line after each question
+            name, func = random.choice(quizzes)
+            print(f"Selected: {name}")
+            func()
+            print()
     except KeyboardInterrupt:
         print("\nQuiz interrupted. Goodbye!")

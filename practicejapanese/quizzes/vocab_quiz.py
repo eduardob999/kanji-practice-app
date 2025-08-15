@@ -1,5 +1,5 @@
 from practicejapanese.core.vocab import load_vocab
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
+from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
 import random
 import os
 import re
@@ -40,8 +40,7 @@ def ask_question(vocab_list):
     level = item[-1] if len(item) > 5 else ""
     # Vocab score index 3
     vocab_score = item[3] if len(item) > 3 else ""
-    if level:
-        # Show level then current quiz score so user can see selection rationale
+    if level and is_verbose():
         print(f"[Level {level} | Score {vocab_score}]")
     print(f"Kanji: {item[0]}")
     print(f"Meaning: {item[2]}")

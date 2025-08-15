@@ -3,7 +3,7 @@ import random
 import requests
 from functools import lru_cache
 from practicejapanese.core.vocab import load_vocab
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items
+from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
 
 CSV_PATH = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "data", "Vocab.csv"))
@@ -20,7 +20,7 @@ def ask_question(vocab_list):
         kanji = word[0]
         level = word[-1] if len(word) > 5 else ""
         filling_score = word[4] if len(word) > 4 else ""
-        if level:
+        if level and is_verbose():
             print(f"[Level {level} | Score {filling_score}]")
         print(f"Reading: {reading}")
         print(f"Meaning: {meaning}")
@@ -40,7 +40,7 @@ def ask_question(vocab_list):
         selected = [questions[0]]
     level = word[-1] if len(word) > 5 else ""
     filling_score = word[4] if len(word) > 4 else ""
-    if level:
+    if level and is_verbose():
         print(f"[Level {level} | Score {filling_score}]")
     print("Replace the highlighted hiragana with the correct kanji:")
     for idx, (sentence, answer) in enumerate(selected):
