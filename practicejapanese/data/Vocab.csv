@@ -506,172 +506,499 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 上,うえ,on top of,0,0,5
 八つ,やっつ,eight,0,0,5
 二,に,two,0,0,5
-洋,ヨウ,ocean; sea; foreign; Western style,1,1,4
-心,シン・こころ・~ごころ,heart; mind; spirit; heart radical (no. 61),1,1,4
-立,リツ・リュウ・リットル・た.つ・~た.つ・た.ち~・た.てる・~た.てる・た.て~・たて~・~た.て・~だ.て・~だ.てる,stand up; rise; set up; erect,1,1,4
-兄,ケイ・キョウ・あに,elder brother; big brother,1,1,4
-病,ビョウ・ヘイ・や.む・~や.み・やまい,ill; sick,1,1,4
-明,メイ・ミョウ・ミン・あ.かり・あか.るい・あか.るむ・あか.らむ・あき.らか・あ.ける・~あ.け・あ.く・あ.くる・あ.かす,bright; light,1,1,4
-音,オン・イン・~ノン・おと・ね,sound; noise,1,1,4
-有,ユウ・ウ・あ.る,possess; have; exist; happen; occur; approx,1,1,4
-題,ダイ,topic; subject,1,1,4
-花,カ・ケ・はな,flower,1,1,4
-通,ツウ・ツ・とお.る・とお.り・~とお.り・~どお.り・とお.す・とお.し・~どお.し・かよ.う,"traffic; pass through; avenue; commute; counter for letters, notes, documents, etc.",1,1,4
-物,ブツ・モツ・もの・もの~,thing; object; matter,1,1,4
-用,ヨウ・もち.いる,utilize; business; service; use; employ,1,1,4
-店,テン・みせ・たな,store; shop,1,1,4
-運,ウン・はこ.ぶ,carry; luck; destiny; fate; lot; transport; progress; advance,1,1,4
-工,コウ・ク・グ,craft; construction; katakana e radical (no. 48),1,1,4
-切,セツ・サイ・き.る・~き.る・き.り・~き.り・~ぎ.り・き.れる・~き.れる・き.れ・~き.れ・~ぎ.れ,cut; cutoff; be sharp,1,1,4
-死,シ・し.ぬ・し.に~,death; die,1,1,4
-安,アン・やす.い・やす.まる・やす・やす.らか,relax; cheap; low; quiet; rested; contented; peaceful,1,1,4
-図,ズ・ト・え・はか.る,map; drawing; plan; extraordinary; audacious,1,1,4
-走,ソウ・はし.る,run,1,1,4
-海,カイ・うみ,sea; ocean,1,1,4
-味,ミ・あじ・あじ.わう,flavor; taste,1,1,4
-力,リョク・リキ・リイ・ちから,power; strength; strong; strain; bear up; exert,1,1,4
-問,モン・と.う・と.い・とん,question; ask; problem,1,1,4
-口,コウ・ク・くち,mouth,1,1,4
-夜,ヤ・よ・よる,night; evening,1,1,4
-画,ガ・カク・エ・カイ・えが.く・かく.する・かぎ.る・はかりごと・はか.る,brush-stroke; picture,1,1,4
-院,イン,Inst.; institution; temple; mansion; school,1,1,4
-田,デン・た,rice field; rice paddy,1,1,4
-業,ギョウ・ゴウ・わざ,business; vocation; arts; performance,1,1,4
-別,ベツ・わか.れる・わ.ける,separate; branch off; diverge; fork; another; extra; specially,1,1,4
-社,シャ・やしろ,company; firm; office; association; shrine,1,1,4
-映,エイ・うつ.る・うつ.す・は.える・~ば.え,reflect; reflection; projection,1,1,4
-事,ジ・ズ・こと・つか.う・つか.える,matter; thing; fact; business; reason; possibly,1,1,4
-主,シュ・ス・シュウ・ぬし・おも・あるじ,lord; chief; master; main thing; principal,1,1,4
-週,シュウ,week,1,1,4
-多,タ・おお.い・まさ.に・まさ.る,many; frequent; much,1,1,4
-試,シ・こころ.みる・ため.す,test; try; attempt; experiment; ordeal,1,1,4
-肉,ニク・しし,meat,1,1,4
-界,カイ,world; boundary,1,1,4
-同,ドウ・おな.じ,same; agree; equal,1,1,4
-医,イ・い.やす・い.する・くすし,doctor; medicine,1,1,4
-集,シュウ・あつ.まる・あつ.める・つど.う,gather; meet; congregate; swarm; flock,1,1,4
-古,コ・ふる.い・ふる~・~ふる.す,old,1,1,4
-知,チ・し.る・し.らせる,know; wisdom,1,1,4
-買,バイ・か.う,buy,1,1,4
-考,コウ・かんが.える・かんが.え,consider; think over,1,1,4
-弟,テイ・ダイ・デ・おとうと,younger brother; faithful service to elders,1,1,4
-言,ゲン・ゴン・い.う・こと,say; word,1,1,4
-質,シツ・シチ・チ・たち・ただ.す・もと・わりふ,substance; quality; matter; temperament,1,1,4
-少,ショウ・すく.ない・すこ.し,few; little,1,1,4
-牛,ギュウ・うし,cow,1,1,4
-特,トク,special,1,1,4
-京,キョウ・ケイ・キン・みやこ,capital; 10**16,1,1,4
-去,キョ・コ・さ.る・~さ.る,gone; past; quit; leave; elapse; eliminate; divorce,1,1,4
-料,リョウ,fee; materials,1,1,4
-地,チ・ジ,ground; earth,1,1,4
-飲,イン・オン・の.む・~の.み,drink; smoke; take,1,1,4
-思,シ・おも.う・おもえら.く・おぼ.す,think,1,1,4
-住,ジュウ・ヂュウ・チュウ・す.む・す.まう・~ず.まい,dwell; reside; live; inhabit,1,1,4
-広,コウ・ひろ.い・ひろ.まる・ひろ.める・ひろ.がる・ひろ.げる,wide; broad; spacious,1,1,4
-妹,マイ・いもうと,younger sister,1,1,4
-赤,セキ・シャク・あか・あか~・あか.い・あか.らむ・あか.らめる,red,1,1,4
-旅,リョ・たび,trip; travel,1,1,4
-家,カ・ケ・いえ・や・うち,house; home; family; professional; expert; performer,1,1,4
-姉,シ・あね・はは,elder sister,1,1,4
-駅,エキ,station,1,1,4
-送,ソウ・おく.る,escort; send,1,1,4
-度,ド・ト・タク・たび・~た.い,degrees; occurrence; time; counter for occurrences; consider; attitude,1,1,4
-重,ジュウ・チョウ・え・おも.い・おも.り・おも.なう・かさ.ねる・かさ.なる・おも,heavy; important; esteem; respect; heap up; pile up; nest of boxes; -fold,1,1,4
-館,カン・やかた・たて,building; mansion; large building; palace,1,1,4
-元,ゲン・ガン・もと,beginning; former time; origin,1,1,4
-色,ショク・シキ・いろ,color,1,1,4
-代,ダイ・タイ・か.わる・かわ.る・かわ.り・か.わり・~がわ.り・~が.わり・か.える・よ・しろ,"substitute; change; convert; replace; period; age; counter for decades of ages, eras, etc.; generation; charge; rate; fee",1,1,4
-注,チュウ・そそ.ぐ・さ.す・つ.ぐ,pour; irrigate; shed (tears); flow into; concentrate on; notes; comment; annotate,1,1,4
-屋,オク・や,roof; house; shop; dealer; seller,1,1,4
-計,ケイ・はか.る・はか.らう,plot; plan; scheme; measure,1,1,4
-曜,ヨウ,weekday,1,1,4
-字,ジ・あざ・あざな・~な,character; letter; word; section of village,1,1,4
-待,タイ・ま.つ・~ま.ち,wait; depend on,1,1,4
-習,シュウ・ジュ・なら.う・なら.い,learn,1,1,4
-動,ドウ・うご.く・うご.かす,move; motion; change; confusion; shift; shake,1,1,4
-使,シ・つか.う・つか.い・~つか.い・~づか.い,use; send on a mission; order; messenger; envoy; ambassador; cause,1,1,4
-理,リ・ことわり,logic; arrangement; reason; justice; truth,1,1,4
-魚,ギョ・うお・さかな・~ざかな,fish,1,1,4
-教,キョウ・おし.える・おそ.わる,teach; faith; doctrine,1,1,4
-空,クウ・そら・あ.く・あ.き・あ.ける・から・す.く・す.かす・むな.しい,empty; sky; void; vacant; vacuum,1,1,4
-野,ヤ・ショ・の・の~,plains; field; rustic; civilian life,1,1,4
-台,ダイ・タイ・うてな・われ・つかさ,pedestal; a stand; counter for machines and vehicles,1,1,4
-以,イ・もっ.て,by means of; because; in view of; compared with,1,1,4
-終,シュウ・お.わる・~お.わる・おわ.る・お.える・つい・つい.に,end; finish,1,1,4
-昼,チュウ・ひる,daytime; noon,1,1,4
-鳥,チョウ・とり,bird; chicken,1,1,4
-新,シン・あたら.しい・あら.た・あら~・にい~,new,1,1,4
-夏,カ・ガ・ゲ・なつ,summer,1,1,4
-服,フク,clothing; admit; obey; discharge,1,1,4
-英,エイ・はなぶさ,England; English; hero; outstanding; calyx,1,1,4
-転,テン・ころ.がる・ころ.げる・ころ.がす・ころ.ぶ・まろ.ぶ・うたた・うつ.る・くる.めく,revolve; turn around; change,1,1,4
-品,ヒン・ホン・しな,goods; refinement; dignity; article; counter for meal courses,1,1,4
-止,シ・と.まる・~ど.まり・と.める・~と.める・~ど.め・とど.める・とど.め・とど.まる・や.める・や.む・~や.む・よ.す・~さ.す・~さ.し,stop; halt,1,1,4
-近,キン・コン・ちか.い,near; early; akin; tantamount,1,1,4
-足,ソク・あし・た.りる・た.る・た.す,leg; foot; be sufficient; counter for pairs of footwear,1,1,4
-研,ケン・と.ぐ,polish; study of; sharpen,1,1,4
-紙,シ・かみ,paper,1,1,4
-場,ジョウ・チョウ・ば,location; place,1,1,4
-開,カイ・ひら.く・ひら.き・~びら.き・ひら.ける・あ.く・あ.ける,open; unfold; unseal,1,1,4
-貸,タイ・か.す・か.し~・かし~,lend,1,1,4
-帰,キ・かえ.る・かえ.す・おく.る・とつ.ぐ,homecoming; arrive at; lead to; result in,1,1,4
-員,イン,employee; member; number; the one in charge,1,1,4
-歩,ホ・ブ・フ・ある.く・あゆ.む,walk; counter for steps,1,1,4
-私,シ・わたくし・わたし,private; I; me,1,1,4
-堂,ドウ,public chamber; hall,1,1,4
-町,チョウ・まち,town; village; block; street,1,1,4
-体,タイ・テイ・からだ・かたち,body; substance; object; reality; counter for images,1,1,4
-発,ハツ・ホツ・た.つ・あば.く・おこ.る・つか.わす・はな.つ,departure; discharge; publish; emit; start from; disclose; counter for gunshots,1,1,4
-起,キ・お.きる・お.こる・お.こす・おこ.す・た.つ,rouse; wake up; get up,1,1,4
-室,シツ・むろ,room; apartment; chamber; greenhouse; cellar,1,1,4
-朝,チョウ・あさ,morning; dynasty; regime; epoch; period; (North) Korea,1,1,4
-売,バイ・う.る・う.れる,sell,1,1,4
-者,シャ・もの,someone; person,1,1,4
-借,シャク・か.りる,borrow; rent,1,1,4
-勉,ベン・つと.める,exertion; endeavour; encourage; strive; make effort; diligent,1,1,4
-漢,カン,Sino-; China,1,1,4
-道,ドウ・トウ・みち・いう,road-way; street; district; journey; course; moral; teachings,1,1,4
-目,モク・ボク・め・~め・ま~,eye; class; look; insight; experience; care; favor,1,1,4
-自,ジ・シ・みずか.ら・おの.ずから・おの.ずと,oneself,1,1,4
-持,ジ・も.つ・~も.ち・も.てる,hold; have,1,1,4
-歌,カ・うた・うた.う,song; sing,1,1,4
-風,フウ・フ・かぜ・かざ~・~かぜ,wind; air; style; manner,1,1,4
-早,ソウ・サッ・はや.い・はや・はや~・はや.まる・はや.める・さ~,early; fast,1,1,4
-方,ホウ・かた・~かた・~がた,direction; person; alternative,1,1,4
-作,サク・サ・つく.る・つく.り・~づく.り,make; production; prepare; build,1,1,4
-写,シャ・ジャ・うつ.す・うつ.る・うつ~・うつ.し,copy; be photographed; describe,1,1,4
-真,シン・ま・ま~・まこと,true; reality; Buddhist sect,1,1,4
-正,セイ・ショウ・ただ.しい・ただ.す・まさ・まさ.に,correct; justice; righteous; 10**40,1,1,4
-茶,チャ・サ,tea,1,1,4
-手,シュ・ズ・て・て~・~て・た~,hand,1,1,4
-青,セイ・ショウ・あお・あお~・あお.い,blue; green,1,1,4
-答,トウ・こた.える・こた.え,solution; answer,1,1,4
-仕,シ・ジ・つか.える,attend; doing; official; serve,1,1,4
-急,キュウ・いそ.ぐ・いそ.ぎ,hurry; emergency; sudden; steep,1,1,4
-着,チャク・ジャク・き.る・~ぎ・き.せる・~き.せ・つ.く・つ.ける,don; arrive; wear; counter for suits of clothing,1,1,4
-黒,コク・くろ・くろ.ずむ・くろ.い,black,1,1,4
-始,シ・はじ.める・~はじ.める・はじ.まる,commence; begin,1,1,4
-悪,アク・オ・わる.い・わる~・あ.し・にく.い・~にく.い・ああ・いずくに・いずくんぞ・にく.む,bad; vice; rascal; false; evil; wrong,1,1,4
-犬,ケン・いぬ・いぬ~,dog,1,1,4
-意,イ,idea; mind; heart; taste; thought; desire; care; liking,1,1,4
-楽,ガク・ラク・ゴウ・たの.しい・たの.しむ・この.む,music; comfort; ease,1,1,4
-究,キュウ・ク・きわ.める,research; study,1,1,4
-飯,ハン・めし,meal; boiled rice,1,1,4
-春,シュン・はる,springtime; spring (season),1,1,4
-夕,セキ・ゆう,evening,1,1,4
-親,シン・おや・おや~・した.しい・した.しむ,parent; intimacy; relative; familiarity; dealer (cards),1,1,4
-会,カイ・エ・あ.う・あ.わせる・あつ.まる,meeting; meet; party; association; interview; join,1,1,4
-験,ケン・ゲン・あかし・しるし・ため.す・ためし,verification; effect; testing,1,1,4
-世,セイ・セ・ソウ・よ,generation; world; society; public,1,1,4
-不,フ・ブ,negative; non-; bad; ugly; clumsy,1,1,4
-公,コウ・ク・おおやけ,public; prince; official; governmental,1,1,4
-文,ブン・モン・ふみ・あや,sentence; literature; style; art; decoration; figures; plan; literary radical (no. 67),1,1,4
-冬,トウ・ふゆ,winter,1,1,4
-秋,シュウ・あき・とき,autumn,1,1,4
-銀,ギン・しろがね,silver,1,1,4
-族,ゾク,tribe; family,1,1,4
-建,ケン・コン・た.てる・た.て・~だ.て・た.つ,build,1,1,4
-強,キョウ・ゴウ・つよ.い・つよ.まる・つよ.める・し.いる・こわ.い,strong,1,1,4
+会場,かいじょう,assembly hall or meeting place
+会場,てんいん,shop assistant
+地震,じしん,earthquake
+法律,ほうりつ,law
+確か,たしか,definite
+彼,かれ,"he,boyfriend"
+火,ひ,fire
+決して,けっして,never
+受ける,うける,to take a lesson or test
+無くなる,なくなる,"to disappear,to get lost"
+連絡,れんらく,contact
+進む,すすむ,to make progress
+間に合う,まにあう,to be in time for
+電報,でんぽう,telegram
+不便,ふべん,inconvenience
+息子,むすこ,(humble) son
+卒業,そつぎょう,graduation
+味,あじ,flavour
+喜ぶ,よろこぶ,to be delighted
+近所,きんじょ,neighbourhood
+泳ぎ方,およぎかた,way of swimming
+小鳥,ことり,small bird
+払う,はらう,to pay
+開く,ひらく,to open an event
+億,おく,one hundred million
+普通,ふつう,"usually, or a train that stops at every station"
+戦争,せんそう,war
+経験,けいけん,to experience
+見える,みえる,to be in sight
+技術,ぎじゅつ,"art,technology,skill"
+代わり,かわり,"substitute,alternate"
+非常に,ひじょうに,extremely
+続ける,つづける,to continue
+急行,きゅうこう,"speedy, express"
+中学校,ちゅうがっこう,"junior high school,middle school"
+裏,うら,reverse side
+売り場,うりば,place where things are sold
+故障,こしょう,to break-down
+新聞社,しんぶんしゃ,newspaper company
+金持ち,かねもち,rich man
+尋ねる,たずねる,to ask
+致す,いたす,(humble) to do
+機会,きかい,opportunity
+凄い,すごい,terrific
+用意,ようい,preparation
+試合,しあい,"match,game"
+腕,うで,arm
+十分,じゅうぶん,enough
+場所,ばしょ,location
+部長,ぶちょう,head of a section
+さ来月,さらいげつ,the month after next
+昔,むかし,"olden days, former"
+ご存じ,ごぞんじ,"knowing,acquaintance"
+以上,いじょう,"more than,this is all"
+着物,きもの,kimono
+夫,おっと,husband
+変,へん,strange
+投げる,なげる,to throw or cast away
+暮れる,くれる,"to get dark,to come to an end"
+正しい,ただしい,correct
+天気予報,てんきよほう,weather forecast
+隅,すみ,"corner,nook"
+味噌,みそ,bean paste
+気,き,"spirit,mood"
+研究室,けんきゅうしつ,"study room,laboratory"
+深い,ふかい,deep
+番組,ばんぐみ,television or radio program
+教育,きょういく,education
+日記,にっき,journal
+大事,だいじ,"important,valuable,serious matter"
+滑る,すべる,"to slide,to slip"
+焼ける,やける,"to burn,to be roasted"
+空気,くうき,"air,atmosphere"
+飾る,かざる,to decorate
+校長,こうちょう,headmaster
+星,ほし,star
+決める,きめる,to decide
+一度,いちど,once
+辞典,じてん,dictionary
+訳,わけ,"meaning,reason"
+安心,あんしん,relief
+西洋,せいよう,western countries
+家内,かない,housewife
+真中,まんなか,middle
+競争,きょうそう,competition
+柔らかい,やわらかい,soft
+予約,よやく,reservation
+今度,こんど,"now,next time"
+皆,みな,everybody
+沸く,わく,"to boil, to grow hot,to get excited"
+指,ゆび,finger
+経済,けいざい,"finance,economy"
+降り出す,ふりだす,to start to rain
+試験,しけん,examination
+仕方,しかた,method
+硬い,かたい,hard
+召し上がる,めしあがる,(polite) to eat
+包む,つつむ,to wrap
+申す,もうす,"(humble) to be called,to say"
+台風,たいふう,typhoon
+娘,むすめ,(humble) daughter
+眠い,ねむい,sleepy
+用,よう,use
+拝見,はいけん,(humble) to look at
+漫画,まんが,comic
+教会,きょうかい,church
+旅館,りょかん,Japanese hotel
+道具,どうぐ,"tool,means"
+落る,おちる,to fall or drop
+寺,てら,temple
+釣る,つる,to fish
+放送,ほうそう,to broadcast
+下りる,おりる,to get off
+落す,おとす,to drop
+案内,あんない,to guide
+お見舞い,おみまい,"calling on someone who is ill,enquiry"
+関係,かんけい,relationship
+必ず,かならず,"certainly,necessarily"
+火事,かじ,fire
+思う,おもう,"to think,to feel"
+運ぶ,はこぶ,to transport
+消しゴム,けしゴム,eraser
+伝える,つたえる,to report
+御主人,ごしゅじん,(honorable) your husband
+文法,ぶんぽう,grammar
+米,こめ,uncooked rice
+直す,なおす,"to fix,to repair"
+彼女,かのじょ,"she,girlfriend"
+運転手,うんてんしゅ,driver
+拾う,ひろう,"to pick up,to gather"
+入院,にゅういん,to hospitalise
+遠慮,えんりょ,"to be reserved, to be restrained"
+地理,ちり,geography
+役に立つ,やくにたつ,to be helpful
+揺れる,ゆれる,"to shake,to sway"
+医学,いがく,medical science
+砂,すな,sand
+回る,まわる,to go around
+神社,じんじゃ,Shinto shrine
+支度,したく,to prepare
+君,きみ,(informal) You (used by men towards women)
+相談,そうだん,to discuss
+産業,さんぎょう,industry
+工業,こうぎょう,the manufacturing industry
+特別,とくべつ,special
+恥ずかしい,はずかしい,embarrassed
+屋上,おくじょう,rooftop
+輸入,ゆにゅう,to import
+下げる,さげる,"to hang,to lower,to move back"
+久しぶり,ひさしぶり,after a long time
+今夜,こんや,tonight
+移る,うつる,to move house or transfer
+引き出す,ひきだす,to withdraw
+光る,ひかる,"to shine,to glitter"
+政治,せいじ,"politics,government"
+反対,はんたい,opposition
+光,ひかり,light
+亡くなる,なくなる,to die
+注射,ちゅうしゃ,injection
+心,こころ,"core,heart"
+贈り物,おくりもの,gift
+例えば,たとえば,for example
+大体,だいたい,generally
+水泳,すいえい,swimming
+港,みなと,harbour
+厳しい,きびしい,strict
+研究,けんきゅう,research
+葉,は,leaf
+触る,さわる,to touch
+美術館,びじゅつかん,art gallery
+自由,じゆう,freedom
+割合,わりあい,"rate,ratio,percentage"
+注意,ちゅうい,caution
+表,おもて,the front
+楽む,たのしむ,to enjoy oneself
+高校生,こうこうせい,high school student
+乾く,かわく,to get dry
+間違える,まちがえる,to make a mistake
+沸かす,わかす,"to boil,to heat"
+熱,ねつ,fever
+君,くん,suffix for familiar young male
+写す,うつす,to copy or photograph
+気持ち,きもち,"feeling,mood"
+社会,しゃかい,"society,public"
+空く,あく,"to open, to become empty"
+約束,やくそく,promise
+泊まる,とまる,to lodge at
+考える,かんがえる,to consider
+間,あいだ,a space
+小説,しょうせつ,novel
+決る,きまる,to be decided
+席,せき,seat
+打つ,うつ,to hit
+花見,はなみ,cherry-blossom viewing
+木綿,もめん,cotton
+季節,きせつ,season
+警察,けいさつ,police
+彼ら,かれら,they
+輸出,ゆしゅつ,to export
+興味,きょうみ,an interest
+虫,むし,insect
+割れる,われる,to break
+手袋,てぶくろ,glove
+倍,ばい,double
+珍しい,めずらしい,rare
+社長,しゃちょう,company president
+会話,かいわ,conversation
+日,ひ,"day, sun"
+焼く,やく,"to bake,to grill"
+探す,さがす,to look for
+駐車場,ちゅうしゃじょう,parking lot
+首,くび,neck
+合う,あう,to match
+子,こ,child
+驚く,おどろく,to be surprised
+人形,にんぎょう,"doll, figure"
+危険,きけん,danger
+込む,こむ,to be crowded
+踊る,おどる,to dance
+祈る,いのる,to pray
+親,おや,parents
+布団,ふとん,"Japanese bedding, futon"
+鏡,かがみ,mirror
+踏む,ふむ,to step on
+市民,しみん,citizen
+講義,こうぎ,lecture
+捕まえる,つかまえる,to seize
+最近,さいきん,"latest,nowadays"
+飛行場,ひこうじょう,airport
+工場,こうじょう,factory
+海岸,かいがん,coast
+棚,たな,shelves
+看護婦,かんごふ,female nurse
+簡単,かんたん,simple
+お土産,おみやげ,souvenir
+歯医者,はいしゃ,dentist
+運動,うんどう,to exercise
+糸,いと,thread
+予習,よしゅう,preparation for a lesson
+訪ねる,たずねる,to visit
+会議室,かいぎしつ,meeting room
+連れる,つれる,to lead
+公務員,こうむいん,government worker
+動く,うごく,to move
+下着,したぎ,underwear
+無理,むり,impossible
+以外,いがい,with the exception of
+寂しい,さびしい,lonely
+安全,あんぜん,safety
+空港,くうこう,airport
+お祝い,おいわい,congratulation
+育てる,そだてる,"to rear,to bring up"
+国際,こくさい,international
+気分,きぶん,mood
+比べる,くらべる,to compare
+背中,せなか,back of the body
+済む,すむ,to finish
+お嬢さん,おじょうさん,young lady
+心配,しんぱい,to worry
+折れる,おれる,to break or be folded
+準備,じゅんび,to prepare
+招待,しょうたい,to invite
+交通,こうつう,"traffic,transportation"
+寄る,よる,to visit
+科学,かがく,science
+赤ん坊,あかんぼう,baby
+大分,だいぶ,greatly
+祖母,そぼ,grandmother
+高校,こうこう,high school
+遊び,あそび,play
+起す,おこす,to wake
+止める,とめる,to stop something
+事務所,じむしょ,office
+食料品,しょくりょうひん,groceries
+お宅,おたく,(polite) your house
+特に,とくに,"particularly,especially"
+湖,みずうみ,lake
+出発,しゅっぱつ,to depart
+以下,いか,less than
+適当,てきとう,suitability
+漬ける,つける,"to soak,to pickle"
+選ぶ,えらぶ,to choose
+乗り換える,のりかえる,to change between buses or trains
+夢,ゆめ,dream
+見つかる,みつかる,to be discovered
+冷える,ひえる,to grow cold
+女性,じょせい,woman
+壊す,こわす,to break
+祖父,そふ,grandfather
+血,ち,blood
+終わり,おわり,the end
+動物園,どうぶつえん,zoo
+失敗,しっぱい,"failure,mistake"
+周り,まわり,surroundings
+運転,うんてん,to drive
+市,し,city
+過ぎる,すぎる,to exceed
+手伝う,てつだう,to assist
+先輩,せんぱい,senior
+髪,かみ,hair
+戻る,もどる,to turn back
+昼休み,ひるやすみ,noon break
+説明,せつめい,explanation
+生活,せいかつ,to live
+両方,りょうほう,both sides
+遠く,とおく,distant
+生産,せいさん,to produce
+上る,あがる,to rise
+壁,かべ,wall
+線,せん,line
+足す,たす,to add a number
+力,ちから,"strength,power"
+翻訳,ほんやく,translation
+将来,しょうらい,"future,prospects"
+理由,りゆう,reason
+枝,えだ,"branch, twig"
+字,じ,character
+展覧会,てんらんかい,exhibition
+植える,うえる,"to plant,to grow"
+都合,つごう,"circumstances,convenience"
+騒ぐ,さわぐ,"to make noise,to be excited"
+最後,さいご,"last,end"
+具合,ぐあい,"condition,health"
+親切,しんせつ,kindness
+妻,つま,(humble) wife
+遅れる,おくれる,to be late
+直る,なおる,"to be fixed,to be repaired"
+止む,やむ,to stop
+規則,きそく,regulations
+集る,あつまる,to gather
+指輪,ゆびわ,finger ring
+数学,すうがく,"mathematics,arithmetic"
+治る,なおる,"to be cured,to heal"
+歴史,れきし,history
+参る,まいる,"(humble) to go,to come"
+行う,おこなう,to do
+押し入れ,おしいれ,closet
+鳴る,なる,to sound
+美しい,うつくしい,beautiful
+発音,はつおん,pronunciation
+意見,いけん,opinion
+噛む,かむ,"to bite,to chew"
+送る,おくる,to send
+通る,とおる,to go through
+冷房,れいぼう,air conditioning
+謝る,あやまる,to apologize
+客,きゃく,"guest,customer"
+高等学校,こうとうがっこう,high school
+原因,げんいん,"cause,source"
+留守,るす,absence
+帰り,かえり,return
+途中,とちゅう,on the way
+汚れる,よごれる,to get dirty
+浅い,あさい,"shallow,superficial"
+怒る,おこる,"to get angry,to be angry"
+絹,きぬ,silk
+時代,じだい,era
+細かい,こまかい,"small, fine"
+林,はやし,"woods,forester"
+付く,つく,to be attached
+下宿,げしゅく,lodging
+楽しみ,たのしみ,joy
+森,もり,forest
+住所,じゅうしょ,"an address,a residence"
+捨てる,すてる,to throw away
+承知,しょうち,to consent
+湯,ゆ,hot water
+畳,たたみ,Japanese straw mat
+品物,しなもの,goods
+答,こたえ,response
+届ける,とどける,to reach
+貿易,ぼうえき,trade
+取り替える,とりかえる,to exchange
+思い出す,おもいだす,to remember
+知らせる,しらせる,to notify
+必要,ひつよう,necessary
+明日,あす,tomorrow
+計画,けいかく,to plan
+音,おと,"sound,note"
+舟,ふね,ship
+別れる,わかれる,to separate
+忘れ物,わすれもの,lost article
+お礼,おれい,expression of gratitude
+課長,かちょう,section manager
+笑う,わらう,"to laugh,to smile"
+勝つ,かつ,to win
+壊れる,こわれる,to be broken
+雲,くも,cloud
+通う,かよう,to commute
+僕,ぼく,I (used by males)
+男性,だんせい,male
+続く,つづく,to be continued
+利用,りよう,utilization
+止める,やめる,to stop
+負ける,まける,to lose
+迎える,むかえる,to go out to meet
+聞こえる,きこえる,to be heard
+申し上げる,もうしあげる,"(humble) to say,to tell"
+集める,あつめる,to collect something
+差し上げる,さしあげる,(polite) to give
+向かう,むかう,to face
+坂,さか,"slope,hill"
+見つける,みつける,to discover
+調べる,しらべる,to investigate
+柔道,じゅうどう,judo
+復習,ふくしゅう,revision
+倒れる,たおれる,to break down
+世界,せかい,the world
+人口,じんこう,population
+下る,さがる,"to get down,to descend"
+さ来週,さらいしゅう,the week after next
+眠る,ねむる,to sleep
+怖い,こわい,frightening
+趣味,しゅみ,hobby
+片付ける,かたづける,to tidy up
+引っ越す,ひっこす,to move house
+別,べつ,different
+習慣,しゅうかん,"custom,manners"
+苦い,にがい,bitter
+郊外,こうがい,outskirts
+受付,うけつけ,receipt
+点,てん,"point,dot"
+草,くさ,grass
+暖房,だんぼう,heating
+悲しい,かなしい,sad
+残る,のこる,to remain
+建てる,たてる,to build
+返事,へんじ,reply
+始める,はじめる,to begin
+二階建て,にかいだて,two storied
+泥棒,どろぼう,thief
+踊り,おどり,a dance
+残念,ざんねん,disappointment
+掛ける,かける,to hang something
+折る,おる,to break or to fold
+都,と,metropolitan
+太る,ふとる,to become fat
+予定,よてい,arrangement
+寝坊,ねぼう,sleeping in late
+水道,すいどう,water supply
+形,かたち,shape
+入学,にゅうがく,to enter school or university
+汽車,きしゃ,steam train
+世話,せわ,to look after
+大学生,だいがくせい,university student
+痩せる,やせる,to become thin
+変わる,かわる,to change
+塗る,ぬる,"to paint,to plaster"
+景色,けしき,"scene,landscape"
+為,ため,in order to
+見物,けんぶつ,sightseeing
+一生懸命,いっしょうけんめい,with utmost effort
+毛,け,hair or fur
+変える,かえる,to change
+慣れる,なれる,to grow accustomed to
+以内,いない,within
+盗む,ぬすむ,to steal
+似る,にる,to be similar
+退院,たいいん,to leave hospital
+石,いし,stone
+泣く,なく,to weep
+盛ん,さかん,"popularity,prosperous"
+足りる,たりる,to be enough
+講堂,こうどう,auditorium
+中々,なかなか,considerably
+丁寧,ていねい,polite
+複雑,ふくざつ,"complexity,complication"
+最初,さいしょ,"beginning,first"
+会議,かいぎ,meeting
+優しい,やさしい,kind
+小学校,しょうがっこう,elementary school
+食事,しょくじ,to have a meal
+島,しま,island
+逃げる,にげる,to escape
+特急,とっきゅう,limited express train (faster than an express train)
+田舎,いなか,countryside
+急ぐ,いそぐ,to hurry
+用事,ようじ,things to do
+場合,ばあい,situation
+出席,しゅっせき,to attend
+紹介,しょうかい,introduction
+急,きゅう,"urgent, steep"
+電灯,でんとう,electric light
+事故,じこ,accident
+引き出し,ひきだし,"drawer,drawing out"
+増える,ふえる,to increase
+文学,ぶんがく,literature
+昼間,ひるま,"daytime,during the day"
+乗り物,のりもの,vehicle
+立てる,たてる,to stand something up
+生きる,いきる,to live
+お祭り,おまつり,festival
+文化,ぶんか,culture
 見舞い,みまい,"enquiry,expression of sympathy,expression of concern",2,2,3
 援助,えんじょ,"assistance,aid,support",2,2,3
 黙る,だまる,to be silent,2,2,3
