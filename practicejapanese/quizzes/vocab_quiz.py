@@ -37,6 +37,9 @@ def ask_question(vocab_list):
     item = random.choice(vocab_list)
     print()  # Add empty line before the question
     # Always ask for the reading
+    level = item[-1] if len(item) > 5 else ""
+    if level:
+        print(f"[Level {level}]")
     print(f"Kanji: {item[0]}")
     print(f"Meaning: {item[2]}")
     answer = _normalize_reading(input("What is the Reading? "))

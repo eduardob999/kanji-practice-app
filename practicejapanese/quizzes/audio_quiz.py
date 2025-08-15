@@ -37,6 +37,9 @@ def ask_question(vocab_list):
         kanji = word[0]
         reading = word[1]
         meaning = word[2]
+        level = word[-1] if len(word) > 5 else ""
+        if level:
+            print(f"[Level {level}]")
         play_tts(f"問題の漢字は{kanji}")
         print(f"Meaning: {meaning}")
         play_tts(f"読み方は{reading}")
@@ -57,6 +60,9 @@ def ask_question(vocab_list):
         selected = [questions[0]]
     kanji = selected[0][1]
     print()  # Add empty line before the question
+    level = word[-1] if len(word) > 5 else ""
+    if level:
+        print(f"[Level {level}]")
     print("Replace the highlighted hiragana with the correct kanji:")
     print("(The sentences will be played as audio)")
     play_tts(f"問題の漢字は{kanji}")

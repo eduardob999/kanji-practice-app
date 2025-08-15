@@ -9,6 +9,9 @@ CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data",
 def ask_question(kanji_list):
     item = random.choice(kanji_list)
     print()  # Add empty line before the question
+    level = item[-1] if len(item) > 4 else ""
+    if level:
+        print(f"[Level {level}]")
     print(f"Readings: {item[1]}")
     print(f"Meaning: {item[2]}")
     answer = input("What is the Kanji? ")

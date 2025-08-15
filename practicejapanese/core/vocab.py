@@ -7,5 +7,14 @@ def load_vocab(path):
         for row in reader:
             if not row.get("Kanji"):
                 continue
-            vocab_list.append((row["Kanji"].strip(), row["Reading"].strip(), row["Meaning"].strip(), row["VocabScore"].strip(), row["FillingScore"].strip()))
+            # Keep original tuple order so existing index usage is unchanged, append Level at end
+            level = (row.get("Level") or "").strip()
+            vocab_list.append((
+                row["Kanji"].strip(),
+                row["Reading"].strip(),
+                row["Meaning"].strip(),
+                row["VocabScore"].strip(),
+                row["FillingScore"].strip(),
+                level
+            ))
     return vocab_list

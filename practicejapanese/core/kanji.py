@@ -7,5 +7,12 @@ def load_kanji(path):
         for row in reader:
             if not row.get("Kanji"):
                 continue
-            kanji_list.append((row["Kanji"].strip(), row["Readings"].strip(), row["Meaning"].strip(), row["Score"].strip()))
+            level = (row.get("Level") or "").strip()
+            kanji_list.append((
+                row["Kanji"].strip(),
+                row["Readings"].strip(),
+                row["Meaning"].strip(),
+                row["Score"].strip(),
+                level
+            ))
     return kanji_list
