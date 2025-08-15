@@ -38,8 +38,11 @@ def ask_question(vocab_list):
     print()  # Add empty line before the question
     # Always ask for the reading
     level = item[-1] if len(item) > 5 else ""
+    # Vocab score index 3
+    vocab_score = item[3] if len(item) > 3 else ""
     if level:
-        print(f"[Level {level}]")
+        # Show level then current quiz score so user can see selection rationale
+        print(f"[Level {level} | Score {vocab_score}]")
     print(f"Kanji: {item[0]}")
     print(f"Meaning: {item[2]}")
     answer = _normalize_reading(input("What is the Reading? "))

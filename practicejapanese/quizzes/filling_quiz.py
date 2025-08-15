@@ -19,8 +19,9 @@ def ask_question(vocab_list):
         meaning = word[2]
         kanji = word[0]
         level = word[-1] if len(word) > 5 else ""
+        filling_score = word[4] if len(word) > 4 else ""
         if level:
-            print(f"[Level {level}]")
+            print(f"[Level {level} | Score {filling_score}]")
         print(f"Reading: {reading}")
         print(f"Meaning: {meaning}")
         user_input = input("Your answer (kanji): ").strip()
@@ -38,8 +39,9 @@ def ask_question(vocab_list):
     else:
         selected = [questions[0]]
     level = word[-1] if len(word) > 5 else ""
+    filling_score = word[4] if len(word) > 4 else ""
     if level:
-        print(f"[Level {level}]")
+        print(f"[Level {level} | Score {filling_score}]")
     print("Replace the highlighted hiragana with the correct kanji:")
     for idx, (sentence, answer) in enumerate(selected):
         print(f"{sentence}")
