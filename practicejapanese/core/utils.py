@@ -67,55 +67,94 @@ def quiz_loop(quiz_func, data):
 # --- DRY helpers for quizzes ---
 
 
-def update_score(csv_path, key, correct, score_col=-1, reading=None, level=None):
-    """Update the score for a given row.
+def update_score(
+    csv_path,
+    key,
+    correct,
+    score_col=-1,
+    reading=None,
+    level=None,
+    meaning=None,
+    unique_id=None,
+    update_all=False,
+):
+    """Update the score for a (single) vocab / kanji row.
 
-    Parameters:
-        csv_path (str): Path to CSV.
-        key (str): Kanji (primary key).
-        correct (bool): If True increment, else reset to 0.
-        score_col (int): Index of score column to mutate.
-        reading (str|None): Optional reading to disambiguate duplicates.
-        level (str|int|None): Optional level to disambiguate duplicates.
+    Disambiguation hierarchy (first match wins unless update_all=True):
+      1. If unique_id provided and CSV has column 'ID', update rows whose ID matches only.
+      2. Else filter by Kanji == key.
+         a. If reading provided, require exact match against 'Reading' or 'Readings'.
+         b. If level provided, require Level match.
+         c. If meaning provided, require Meaning match.
 
-    Behavior:
-        If reading/level supplied, only the row whose Kanji matches AND whose
-        reading (matches either 'Reading' or 'Readings' column) AND/OR level
-        (if provided) matches will be updated. Other duplicate variants keep
-        their scores, preventing unintended resets.
+    By default only the *first* matching row is updated, preventing accidental
+    increments on duplicate homographs. Set update_all=True to opt-in to the
+    legacy behaviour of modifying every matching duplicate.
     """
     temp_path = csv_path + '.temp'
     updated_rows = []
+    updated_once = False
+
     with open(csv_path, 'r', encoding='utf-8') as infile:
         reader = csv.DictReader(infile)
         fieldnames = reader.fieldnames
+        if not fieldnames:
+            return  # nothing to do
+        score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
+        has_id = 'ID' in fieldnames
+
         for row in reader:
-            if row and row.get("Kanji") == key:
-                do_update = True
-                # Reading disambiguation
+            if not row:
+                updated_rows.append(row)
+                continue
+
+            should_attempt = False
+            # Unique ID match has highest priority if provided
+            if unique_id is not None and has_id:
+                if str(row.get('ID','')).strip() == str(unique_id).strip():
+                    should_attempt = True
+                else:
+                    should_attempt = False
+            else:
+                # Base Kanji match required
+                if row.get('Kanji') == key:
+                    should_attempt = True
+                else:
+                    should_attempt = False
+
+            if should_attempt and (not updated_once or update_all):
+                disamb_ok = True
+                # Reading check
                 if reading is not None:
+                    r_val = str(reading).strip()
                     r_match = False
-                    for rf in ("Reading", "Readings"):
-                        if rf in row and (row.get(rf) or '').strip() == str(reading).strip():
+                    for rf in ('Reading', 'Readings'):
+                        if rf in row and (row.get(rf) or '').strip() == r_val:
                             r_match = True
                             break
                     if not r_match:
-                        do_update = False
-                # Level disambiguation
-                if level is not None:
-                    lvl_val = (row.get('Level') or '').strip()
-                    if lvl_val != str(level).strip():
-                        do_update = False
-                if do_update:
-                    score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
+                        disamb_ok = False
+                # Level check
+                if disamb_ok and level is not None:
+                    if (row.get('Level') or '').strip() != str(level).strip():
+                        disamb_ok = False
+                # Meaning check
+                if disamb_ok and meaning is not None:
+                    if (row.get('Meaning') or '').strip() != str(meaning).strip():
+                        disamb_ok = False
+
+                if disamb_ok:
                     if correct:
                         try:
-                            row[score_field] = str(int(row[score_field]) + 1)
-                        except (ValueError, IndexError):
+                            row[score_field] = str(int(row.get(score_field, '0')) + 1)
+                        except ValueError:
                             row[score_field] = '1'
                     else:
                         row[score_field] = '0'
+                    if not update_all:
+                        updated_once = True
             updated_rows.append(row)
+
     with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()

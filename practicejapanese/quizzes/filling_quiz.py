@@ -33,7 +33,15 @@ def ask_question(vocab_list):
             print("Correct!")
         else:
             print(f"Wrong. Correct kanji: {kanji}")
-        update_score(CSV_PATH, kanji, correct, score_col=4, reading=reading, level=level)
+        update_score(
+            CSV_PATH,
+            kanji,
+            correct,
+            score_col=4,
+            reading=reading,
+            meaning=meaning,
+            level=level,
+        )
         print()
         return
     # Select two distinct questions for context
@@ -60,7 +68,15 @@ def ask_question(vocab_list):
     else:
         print(f"Wrong. Correct kanji: {answer}")
     # Score column is 'FillingScore' (index 4)
-    update_score(CSV_PATH, answer, correct, score_col=4, reading=word[1], level=level)
+    update_score(
+        CSV_PATH,
+        answer,
+        correct,
+        score_col=4,
+        reading=word[1],
+        meaning=word[2],
+        level=level,
+    )
     print()
 
 

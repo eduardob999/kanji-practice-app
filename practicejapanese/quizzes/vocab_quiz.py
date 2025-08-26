@@ -57,7 +57,15 @@ def ask_question(vocab_list):
         show = item[1]
         print(f"Incorrect. The correct Reading is: {show}")
     # Score column is 'VocabScore' (index 3)
-    update_score(CSV_PATH, item[0], correct, score_col=3, reading=item[1], level=level)
+    update_score(
+        CSV_PATH,
+        item[0],
+        correct,
+        score_col=3,
+        reading=item[1],
+        meaning=item[2],
+        level=level,
+    )
     print()  # Add empty line after the question
 
 def run():
