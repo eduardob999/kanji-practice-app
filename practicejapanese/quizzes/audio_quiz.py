@@ -44,11 +44,11 @@ def ask_question(vocab_list):
                 print(f"[Level {level} | Score {filling_score}]")
             else:
                 print(f"[Level {level}]")
-        play_tts(f"問題の漢字は{kanji}")
+        play_tts(f"問題の言葉は{kanji}")
         print(f"Meaning: {meaning}")
         play_tts(f"読み方は{reading}")
-        play_tts(f"問題の漢字は{kanji}")
-        user_input = input("Your answer (kanji): ").strip()
+        play_tts(f"問題の言葉は{kanji}")
+        user_input = input("Your answer (kanji and/or okurigana): ").strip()
         correct = (user_input == kanji)
         if correct:
             print("Correct!")
@@ -81,13 +81,13 @@ def ask_question(vocab_list):
             print(f"[Level {level}]")
     print("Replace the highlighted hiragana with the correct kanji:")
     print("(The sentences will be played as audio)")
-    play_tts(f"問題の漢字は{kanji}")
+    play_tts(f"問題の言葉は{kanji}")
     for idx, (sentence, answer) in enumerate(selected):
         play_tts(sentence)
-    play_tts(f"問題の漢字は{kanji}")
+    play_tts(f"問題の言葉は{kanji}")
     # Use the first question's answer for checking
     answer = selected[0][1]
-    user_input = input("Your answer (kanji): ").strip()
+    user_input = input("Your answer (kanji and/or okurigana): ").strip()
     correct = (user_input == answer)
     if correct:
         print("Correct!")

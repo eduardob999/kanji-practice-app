@@ -27,7 +27,7 @@ def ask_question(vocab_list):
                 print(f"[Level {level}]")
         print(f"Reading: {reading}")
         print(f"Meaning: {meaning}")
-        user_input = input("Your answer (kanji): ").strip()
+        user_input = input("Your answer (kanji and/or okurigana): ").strip()
         correct = (user_input == kanji)
         if correct:
             print("Correct!")
@@ -61,7 +61,7 @@ def ask_question(vocab_list):
         print(f"{sentence}")
     # Use the first question's answer for checking
     answer = selected[0][1]
-    user_input = input("Your answer (kanji): ").strip()
+    user_input = input("Your answer (kanji and/or okurigana): ").strip()
     correct = (user_input == answer)
     if correct:
         print("Correct!")

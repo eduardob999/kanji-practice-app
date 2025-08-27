@@ -74,9 +74,10 @@ def run_dev_mode():
             print(f"Failed to read {in_file}: {e}")
             return
 
-        # Parse sections
-        kanji_scores = {}
-        vocab_scores = {}  # word -> (vocab_score, filling_score)
+        # Parse sections, collecting duplicates
+        from collections import defaultdict
+        kanji_scores = defaultdict(list)       # kanji -> [score1, score2, ...]
+        vocab_scores = defaultdict(list)       # word -> [(vocab_score, filling_score), ...]
         section = None
         for line in raw_lines:
             if not line.strip():
@@ -88,7 +89,6 @@ def run_dev_mode():
                 section = "vocab"
                 continue
             if section == "kanji":
-                # Format: <kanji>: <score>
                 if ':' in line:
                     parts = line.split(':', 1)
                     k = parts[0].strip()
@@ -96,13 +96,11 @@ def run_dev_mode():
                         sc = int(parts[1].strip())
                     except ValueError:
                         continue
-                    kanji_scores[k] = sc
+                    kanji_scores[k].append(sc)
             elif section == "vocab":
-                # Format: <word>: Vocab Quiz Score = X, Filling Quiz Score = Y
                 if ':' in line:
                     word, rest = line.split(':', 1)
                     word = word.strip()
-                    # Extract numbers
                     vs = None
                     fs = None
                     for piece in rest.split(','):
@@ -118,13 +116,12 @@ def run_dev_mode():
                             except ValueError:
                                 pass
                     if vs is not None or fs is not None:
-                        vocab_scores[word] = (vs if vs is not None else 0, fs if fs is not None else 0)
+                        vocab_scores[word].append((vs if vs is not None else 0, fs if fs is not None else 0))
 
         # Update Kanji.csv
         kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
         vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
         import csv
-        # Kanji
         try:
             temp_path = kanji_path + '.temp'
             with open(kanji_path, 'r', encoding='utf-8') as infile, open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
@@ -134,15 +131,15 @@ def run_dev_mode():
                 writer.writeheader()
                 for row in reader:
                     k = (row.get('Kanji') or '').strip()
-                    if k in kanji_scores and 'Score' in fieldnames:
-                        row['Score'] = str(kanji_scores[k])
+                    if k in kanji_scores and 'Score' in fieldnames and kanji_scores[k]:
+                        row['Score'] = str(kanji_scores[k].pop(0))
                     writer.writerow(row)
             os.replace(temp_path, kanji_path)
             print(f"Updated Kanji scores in {kanji_path}")
         except OSError as e:
             print(f"Failed updating Kanji.csv: {e}")
 
-        # Vocab
+        # Vocab update
         try:
             temp_path = vocab_path + '.temp'
             with open(vocab_path, 'r', encoding='utf-8') as infile, open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
@@ -152,8 +149,8 @@ def run_dev_mode():
                 writer.writeheader()
                 for row in reader:
                     w = (row.get('Kanji') or '').strip()
-                    if w in vocab_scores:
-                        vs, fs = vocab_scores[w]
+                    if w in vocab_scores and vocab_scores[w]:
+                        vs, fs = vocab_scores[w].pop(0)
                         if 'VocabScore' in fieldnames:
                             row['VocabScore'] = str(vs)
                         if 'FillingScore' in fieldnames:
