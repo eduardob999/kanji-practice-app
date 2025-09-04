@@ -24,7 +24,7 @@ pip install pjapp
 
 ## Features
 
-- Practice Japanese quizzes: vocab, kanji, audio, and fill-in.
+- Practice Japanese quizzes: vocab, kanji, audio, and fill-in quizzes.
 
 
 ## Known issues:
