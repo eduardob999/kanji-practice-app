@@ -18,6 +18,10 @@ pkg install mpv
 
 3. Install the app via pip
 
+```bash
+pip install pjapp
+```
+
 ## Features
 
 - Practice Japanese quizzes: vocab, kanji, audio, and fill-in.
