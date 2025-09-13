@@ -67,6 +67,7 @@ def ask_question(vocab_list):
         print("Correct!")
     else:
         print(f"Wrong. Correct kanji: {answer}")
+    print(f"Meaning: {word[2]}")
     # Score column is 'FillingScore' (index 4)
     update_score(
         CSV_PATH,
