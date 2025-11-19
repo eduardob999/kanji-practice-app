@@ -7,7 +7,13 @@ import subprocess
 import tempfile
 import time
 from practicejapanese.core.vocab import load_vocab
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
+from practicejapanese.core.utils import (
+    is_verbose,
+    is_undo_command,
+    lowest_score_items,
+    run_quiz_with_undo,
+    update_score,
+)
 
 CSV_PATH = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "data", "Vocab.csv"))
@@ -27,9 +33,9 @@ def play_tts(sentence):
     except Exception as e:
         print(f"[TTS Error] {e}")
 
-def ask_question(vocab_list):
+def ask_question(vocab_list, *, item_override=None):
     """Audio quiz: print instructions and cues, only play sentences as audio."""
-    word = random.choice(vocab_list)
+    word = item_override or random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
         print()
@@ -49,12 +55,14 @@ def ask_question(vocab_list):
         play_tts(f"読み方は{reading}")
         play_tts(f"問題の言葉は{kanji}")
         user_input = input("Your answer (kanji and/or okurigana): ").strip()
+        if is_undo_command(user_input):
+            return {"undo_requested": True, "item": word}
         correct = (user_input == kanji)
         if correct:
             print("Correct!")
         else:
             print(f"Wrong. Correct kanji: {kanji}")
-        update_score(
+        change = update_score(
             CSV_PATH,
             kanji,
             correct,
@@ -62,9 +70,10 @@ def ask_question(vocab_list):
             reading=reading,
             meaning=meaning,
             level=level,
+            return_change=True,
         )
         print()
-        return
+        return {"item": word, "change": change}
     # Select two distinct questions for context
     if len(questions) >= 2:
         selected = random.sample(questions, 2)
@@ -88,6 +97,8 @@ def ask_question(vocab_list):
     # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji and/or okurigana): ").strip()
+    if is_undo_command(user_input):
+        return {"undo_requested": True, "item": word}
     correct = (user_input == answer)
     if correct:
         print("Correct!")
@@ -95,7 +106,7 @@ def ask_question(vocab_list):
         print(f"Wrong. Correct kanji: {answer}")
     print(f"Meaning: {word[2]}")
     # Score column is 'FillingScore' (index 4)
-    update_score(
+    change = update_score(
         CSV_PATH,
         answer,
         correct,
@@ -103,24 +114,19 @@ def ask_question(vocab_list):
         reading=word[1],
         meaning=word[2],
         level=level,
+        return_change=True,
     )
     print()
+    return {"item": word, "change": change}
 
 
 def run():
-    def dynamic_quiz_loop():
-        try:
-            while True:
-                vocab_list = load_vocab(CSV_PATH)
-                lowest_vocab = lowest_score_items(
-                    CSV_PATH, vocab_list, score_col=4)
-                if not lowest_vocab:
-                    print("No vocab found.")
-                    return
-                ask_question(lowest_vocab)
-        except KeyboardInterrupt:
-            print("\nExiting quiz. Goodbye!")
-    dynamic_quiz_loop()
+    def fetch_items():
+        vocab_list = load_vocab(CSV_PATH)
+        return lowest_score_items(
+            CSV_PATH, vocab_list, score_col=4)
+
+    run_quiz_with_undo(fetch_items, ask_question, "No vocab found.")
 
 
 @lru_cache(maxsize=128)

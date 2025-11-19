@@ -1,5 +1,11 @@
 from practicejapanese.core.vocab import load_vocab
-from practicejapanese.core.utils import quiz_loop, update_score, lowest_score_items, is_verbose
+from practicejapanese.core.utils import (
+    is_verbose,
+    is_undo_command,
+    lowest_score_items,
+    run_quiz_with_undo,
+    update_score,
+)
 import random
 import os
 import re
@@ -33,8 +39,8 @@ def _expand_readings(reading_field: str):
     return uniq
 
 
-def ask_question(vocab_list):
-    item = random.choice(vocab_list)
+def ask_question(vocab_list, *, item_override=None):
+    item = item_override or random.choice(vocab_list)
     print()  # Add empty line before the question
     # Always ask for the reading
     level = item[-1] if len(item) > 5 else ""
@@ -48,6 +54,8 @@ def ask_question(vocab_list):
     print(f"Kanji: {item[0]}")
     print(f"Meaning: {item[2]}")
     answer = _normalize_reading(input("What is the Reading? "))
+    if is_undo_command(answer):
+        return {"undo_requested": True, "item": item}
     valid_readings = _expand_readings(item[1])
     correct = answer in valid_readings
     if correct:
@@ -57,7 +65,7 @@ def ask_question(vocab_list):
         show = item[1]
         print(f"Incorrect. The correct Reading is: {show}")
     # Score column is 'VocabScore' (index 3)
-    update_score(
+    change = update_score(
         CSV_PATH,
         item[0],
         correct,
@@ -65,19 +73,14 @@ def ask_question(vocab_list):
         reading=item[1],
         meaning=item[2],
         level=level,
+        return_change=True,
     )
     print()  # Add empty line after the question
+    return {"item": item, "change": change}
 
 def run():
-    def dynamic_quiz_loop():
-        try:
-            while True:
-                vocab_list = load_vocab(CSV_PATH)
-                lowest_vocab = lowest_score_items(CSV_PATH, vocab_list, score_col=3)
-                if not lowest_vocab:
-                    print("No vocab found.")
-                    return
-                ask_question(lowest_vocab)
-        except KeyboardInterrupt:
-            print("\nExiting quiz. Goodbye!")
-    dynamic_quiz_loop()
+    def fetch_items():
+        vocab_list = load_vocab(CSV_PATH)
+        return lowest_score_items(CSV_PATH, vocab_list, score_col=3)
+
+    run_quiz_with_undo(fetch_items, ask_question, "No vocab found.")

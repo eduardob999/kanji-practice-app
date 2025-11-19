@@ -2,6 +2,8 @@ import random
 import os
 import csv
 
+UNDO_KEYWORD = "undo"
+
 # --- Global config flags ---
 VERBOSE = False
 
@@ -64,6 +66,94 @@ def quiz_loop(quiz_func, data):
         print("\nExiting quiz. Goodbye!")
 
 
+def is_undo_command(value: str) -> bool:
+    return (value or "").strip().lower() == UNDO_KEYWORD
+
+
+def undo_score_change(change_record):
+    if not change_record:
+        return False
+    csv_path = change_record.get("csv_path")
+    score_field = change_record.get("score_field")
+    target_index = change_record.get("row_index")
+    if not csv_path or score_field is None or target_index is None:
+        return False
+    temp_path = csv_path + '.temp'
+    updated_rows = []
+    changed = False
+
+    try:
+        with open(csv_path, 'r', encoding='utf-8') as infile:
+            reader = csv.DictReader(infile)
+            fieldnames = reader.fieldnames
+            if not fieldnames or score_field not in fieldnames:
+                return False
+            row_index = -1
+            for row in reader:
+                row_index += 1
+                if not row:
+                    updated_rows.append(row)
+                    continue
+                if row_index == target_index:
+                    row[score_field] = change_record.get("prev_value", "0")
+                    changed = True
+                updated_rows.append(row)
+    except OSError:
+        return False
+
+    if not changed:
+        return False
+
+    with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
+        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(updated_rows)
+    os.replace(temp_path, csv_path)
+    return True
+
+
+def run_quiz_with_undo(fetch_items, ask_question, empty_message="No items found."):
+    history = []
+    pending_stack = []
+    try:
+        while True:
+            if pending_stack:
+                item_override = pending_stack.pop()
+                question_pool = [item_override]
+            else:
+                question_pool = fetch_items()
+                item_override = None
+                if not question_pool:
+                    print(empty_message)
+                    return
+
+            result = ask_question(question_pool, item_override=item_override)
+            if not result:
+                continue
+            current_item = result.get("item") or item_override
+
+            if result.get("undo_requested"):
+                if current_item is not None:
+                    pending_stack.append(current_item)
+                if not history:
+                    print("Nothing to undo.")
+                    continue
+                undone_entry = history.pop()
+                undo_score_change(undone_entry.get("change"))
+                print("Previous answer undone. Re-asking it now.")
+                pending_stack.append(undone_entry["item"])
+                continue
+
+            if current_item is None:
+                continue
+            history.append({
+                "item": current_item,
+                "change": result.get("change"),
+            })
+    except KeyboardInterrupt:
+        print("\nExiting quiz. Goodbye!")
+
+
 # --- DRY helpers for quizzes ---
 
 
@@ -77,6 +167,7 @@ def update_score(
     meaning=None,
     unique_id=None,
     update_all=False,
+    return_change=False,
 ):
     """Update the score for a (single) vocab / kanji row.
 
@@ -95,15 +186,19 @@ def update_score(
     updated_rows = []
     updated_once = False
 
+    change_record = None
+
     with open(csv_path, 'r', encoding='utf-8') as infile:
         reader = csv.DictReader(infile)
         fieldnames = reader.fieldnames
         if not fieldnames:
-            return  # nothing to do
+            return change_record if return_change else None
         score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
         has_id = 'ID' in fieldnames
+        row_index = -1
 
         for row in reader:
+            row_index += 1
             if not row:
                 updated_rows.append(row)
                 continue
@@ -144,13 +239,23 @@ def update_score(
                         disamb_ok = False
 
                 if disamb_ok:
+                    prev_value = row.get(score_field, '0')
                     if correct:
                         try:
-                            row[score_field] = str(int(row.get(score_field, '0')) + 1)
+                            new_value = str(int(row.get(score_field, '0')) + 1)
                         except ValueError:
-                            row[score_field] = '1'
+                            new_value = '1'
                     else:
-                        row[score_field] = '0'
+                        new_value = '0'
+                    row[score_field] = new_value
+                    if return_change and change_record is None:
+                        change_record = {
+                            "csv_path": csv_path,
+                            "row_index": row_index,
+                            "score_field": score_field,
+                            "prev_value": prev_value,
+                            "new_value": new_value,
+                        }
                     if not update_all:
                         updated_once = True
             updated_rows.append(row)
@@ -160,6 +265,9 @@ def update_score(
         writer.writeheader()
         writer.writerows(updated_rows)
     os.replace(temp_path, csv_path)
+
+    if return_change:
+        return change_record
 
 
 def lowest_score_items(csv_path, vocab_list, score_col):
