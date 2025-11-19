@@ -87,7 +87,7 @@ def ask_question(
         play_tts(f"読み方は{reading}")
         play_tts(f"問題の言葉は{kanji}です")
         user_input = input(
-            green_text("Your answer (kanji and/or okurigana): ", bold=True)
+            "Your answer (kanji and/or okurigana): "
         ).strip()
         if is_undo_command(user_input):
             return {"undo_requested": True, "item": word}
@@ -95,7 +95,7 @@ def ask_question(
         if correct:
             print(green_text("Correct!"))
         else:
-            print(blue_text(f"Wrong. Correct kanji: {kanji}"))
+            print(f'{blue_text("Incorrect")}. The correct Kanji is: {kanji}')
         change = update_score(
             CSV_PATH,
             kanji,
@@ -111,14 +111,14 @@ def ask_question(
 
     sample_size = 2 if len(questions) >= 2 else 1
     selected = random.sample(questions, sample_size)
-    print(blue_text("Replace with kanji (+ okurigana):", bold=True))
-    print(blue_text("(The sentences will be played as audio)"))
+    print("Replace with kanji (+ okurigana):")
+    print("(The sentences will be played as audio)")
     play_tts(f"問題の言葉は{kanji}です")
     for sentence, _ in selected:
         play_tts(sentence)
     play_tts(f"問題の言葉は{kanji}です")
     user_input = input(
-        green_text("Your answer (kanji and/or okurigana): ", bold=True)
+        "Your answer (kanji and/or okurigana): "
     ).strip()
     if is_undo_command(user_input):
         return {"undo_requested": True, "item": word}
@@ -126,8 +126,8 @@ def ask_question(
     if correct:
         print(green_text("Correct!"))
     else:
-        print(blue_text(f"Wrong. Correct kanji: {kanji}"))
-    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+        print(f'{blue_text("Incorrect")}. The correct Kanji is: {kanji}')
+    print(f"Meaning: {meaning}")
     change = update_score(
         CSV_PATH,
         kanji,

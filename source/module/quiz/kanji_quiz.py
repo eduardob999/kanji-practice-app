@@ -35,16 +35,16 @@ def ask_question(
 
     print()
     display_level_info(level, score)
-    print(f"{blue_text('Readings:', bold=True)} {readings}")
-    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
-    answer = input(green_text("What is the Kanji? ", bold=True)).strip()
+    print(f"Readings: {readings}")
+    print(f"Meaning: {meaning}")
+    answer = input("What is the Kanji? ").strip()
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
     correct = answer == kanji
     if correct:
         print(green_text("Correct!"))
     else:
-        print(blue_text(f"Incorrect. The correct Kanji is: {kanji}"))
+        print(f'{blue_text("Incorrect")}. The correct Kanji is: {kanji}')
     change = update_score(
         CSV_PATH,
         kanji,

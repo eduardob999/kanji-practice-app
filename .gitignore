@@ -211,3 +211,4 @@ backup/
 scripts/
 dev/
 tests/
+.env.local

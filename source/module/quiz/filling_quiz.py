@@ -43,10 +43,10 @@ def ask_question(
     display_level_info(level, filling_score)
 
     if not questions:
-        print(f"{blue_text('Reading:', bold=True)} {reading}")
-        print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+        print(f"Reading: {reading}")
+        print(f"Meaning: {meaning}")
         user_input = input(
-            green_text("Your answer (kanji and/or okurigana): ", bold=True)
+            "Your answer (kanji and/or okurigana): "
         ).strip()
         if is_undo_command(user_input):
             return {"undo_requested": True, "item": word}
@@ -54,7 +54,7 @@ def ask_question(
         if correct:
             print(green_text("Correct!"))
         else:
-            print(blue_text(f"Wrong. Correct kanji: {kanji}"))
+            print(f'{blue_text("Incorrect")}. The correct Kanji is: {kanji}')
         change = update_score(
             CSV_PATH,
             kanji,
@@ -70,11 +70,11 @@ def ask_question(
 
     sample_size = 2 if len(questions) >= 2 else 1
     selected = random.sample(questions, sample_size)
-    print(blue_text("Replace with kanji (+ okurigana):", bold=True))
+    print("Replace with kanji (+ okurigana):")
     for sentence, _ in selected:
         print(sentence)
     user_input = input(
-        green_text("Your answer (kanji and/or okurigana): ", bold=True)
+        "Your answer (kanji and/or okurigana): "
     ).strip()
     if is_undo_command(user_input):
         return {"undo_requested": True, "item": word}
@@ -82,8 +82,8 @@ def ask_question(
     if correct:
         print(green_text("Correct!"))
     else:
-        print(blue_text(f"Wrong. Correct kanji: {kanji}"))
-    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+        print(f'{blue_text("Incorrect")}. The correct Kanji is: {kanji}')
+    print(f"Meaning: {meaning}")
     change = update_score(
         CSV_PATH,
         kanji,

@@ -60,10 +60,10 @@ def ask_question(
 
     print()
     display_level_info(level, vocab_score)
-    print(f"{blue_text('Kanji:', bold=True)} {kanji}")
-    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+    print(f"Kanji: {kanji}")
+    print(f"Meaning: {meaning}")
     answer = _normalize_reading(
-        input(green_text("What is the Reading? ", bold=True))
+        input("What is the Reading? ")
     )
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
@@ -72,7 +72,7 @@ def ask_question(
     if correct:
         print(green_text("Correct!"))
     else:
-        print(blue_text(f"Incorrect. The correct Reading is: {reading}"))
+        print(f'{blue_text("Incorrect")}. The correct Reading is: {reading}')
     change = update_score(
         CSV_PATH,
         kanji,
