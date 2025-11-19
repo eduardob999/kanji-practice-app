@@ -1,19 +1,18 @@
-"""Command-line entry point for the PracticeJapanese application."""
+"""CLI menu orchestration for the PracticeJapanese application."""
 
 from __future__ import annotations
 
 import csv
 import logging
-import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Dict, Iterable, Optional, Tuple
 
-from practicejapanese import __version__ as VERSION
-from practicejapanese.core.dev_mode import run_dev_mode
-from practicejapanese.core.quiz_runner import random_quiz
-from practicejapanese.core.sentence_cache import start_sentence_prefetcher
-from practicejapanese.core.utils import (
+from source import __version__ as VERSION
+from source.core.dev_mode import run_dev_mode
+from source.core.quiz_runner import random_quiz
+from source.core.sentence_cache import start_sentence_prefetcher
+from source.core.utils import (
     blue_text,
     get_score_output_dir,
     green_text,
@@ -21,8 +20,7 @@ from practicejapanese.core.utils import (
     reset_scores,
     set_verbose,
 )
-from practicejapanese.module.quiz import audio_quiz, kanji_quiz
-from practicejapanese.module.quiz import vocab_quiz
+from source.module.quiz import audio_quiz, kanji_quiz, vocab_quiz
 
 HELP_TEXT = f"""PracticeJapanese {VERSION}
 Usage: pjapp [options]
@@ -157,6 +155,7 @@ def _show_title_screen() -> None:
     print(green_text(f"Version {VERSION}".center(width)))
     print(green_text("A command-line Japanese learning application".center(width)))
     print("by eduardob999 (github) ©2025".center(width))
+    print("Press Ctrl+C at any time to exit safely.".center(width))
     print(separator)
 
     kanji_progress = _compute_level_progress(
@@ -212,13 +211,21 @@ def _parse_flags(args: Iterable[str]) -> Optional[str]:
     return None
 
 
-def main() -> None:
+def _run_filling_quiz() -> None:
+    from source.module.quiz import filling_quiz
+
+    filling_quiz.run()
+
+
+def run_application(args: Iterable[str]) -> None:
+    """Entrypoint for the CLI menu flow."""
+
     _configure_logging()
 
     try:
         start_sentence_prefetcher()
 
-        args = sys.argv[1:]
+        args = list(args)
         if args:
             handled = _parse_flags(args)
             if handled:
@@ -227,7 +234,9 @@ def main() -> None:
         _show_title_screen()
 
         actions: Dict[str, MenuAction] = {
-            "1": MenuAction("Random Quiz (random category each time)", random_quiz, _post_quiz_hook),
+            "1": MenuAction(
+                "Random Quiz (random category each time)", random_quiz, _post_quiz_hook
+            ),
             "2": MenuAction("Vocab Quiz", vocab_quiz.run, _post_quiz_hook),
             "3": MenuAction("Kanji Quiz", kanji_quiz.run, _post_quiz_hook),
             "4": MenuAction("Kanji Fill-in Quiz", _run_filling_quiz, _post_quiz_hook),
@@ -248,11 +257,4 @@ def main() -> None:
         print(f"\nAn unexpected error occurred. See {destination} for details.")
 
 
-def _run_filling_quiz() -> None:
-    from practicejapanese.module.quiz import filling_quiz
-
-    filling_quiz.run()
-
-
-if __name__ == "__main__":
-    main()
+__all__ = ["run_application", "HELP_TEXT"]

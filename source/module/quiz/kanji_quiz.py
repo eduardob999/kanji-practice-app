@@ -5,14 +5,16 @@ from __future__ import annotations
 import random
 from typing import MutableMapping, Optional, Sequence
 
-from practicejapanese.module.kanji import KanjiRow, load_kanji
-from practicejapanese.core.utils import (
+from source.module.kanji import KanjiRow, load_kanji
+from source.core.utils import (
+    blue_text,
+    green_text,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.module.quiz.common import display_level_info, kanji_csv_path
+from source.module.quiz.common import display_level_info, kanji_csv_path
 
 CSV_PATH = kanji_csv_path()
 
@@ -33,13 +35,16 @@ def ask_question(
 
     print()
     display_level_info(level, score)
-    print(f"Readings: {readings}")
-    print(f"Meaning: {meaning}")
-    answer = input("What is the Kanji? ").strip()
+    print(f"{blue_text('Readings:', bold=True)} {readings}")
+    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+    answer = input(green_text("What is the Kanji? ", bold=True)).strip()
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
     correct = answer == kanji
-    print("Correct!" if correct else f"Incorrect. The correct Kanji is: {kanji}")
+    if correct:
+        print(green_text("Correct!"))
+    else:
+        print(blue_text(f"Incorrect. The correct Kanji is: {kanji}"))
     change = update_score(
         CSV_PATH,
         kanji,

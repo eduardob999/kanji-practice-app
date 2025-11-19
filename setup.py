@@ -7,7 +7,7 @@ import shutil
 
 class PostInstallCommand(install):
     """
-    Custom install command to copy bundled public assets to ~/Public/PracticeJapanese
+    Custom install command to copy bundled public assets to ~/Public/source
     so the app can use user-writable/shared location after installation.
     """
 
@@ -18,9 +18,9 @@ class PostInstallCommand(install):
         try:
             home_dir = os.path.expanduser("~")
             public_dir = os.path.join(home_dir, "public")
-            target_dir = os.path.join(public_dir, "practiceJapanese")
+            target_dir = os.path.join(public_dir, "source")
 
-            source_dir = os.path.join(os.path.dirname(__file__), "practicejapanese", "public")
+            source_dir = os.path.join(os.path.dirname(__file__), "source", "public")
 
             # Ensure destination exists
             os.makedirs(target_dir, exist_ok=True)
@@ -40,7 +40,7 @@ class PostInstallCommand(install):
             pass
 
 def read_version(): 
-    init_path = os.path.join(os.path.dirname(__file__), "practicejapanese", "__init__.py")
+    init_path = os.path.join(os.path.dirname(__file__), "source", "__init__.py")
     with open(init_path, "r") as f:
         content = f.read()
     match = re.search(r'__version__\s*=\s*[\'"]([^\'"]+)[\'"]', content)
@@ -59,7 +59,7 @@ setup(
     install_requires=read_requirements(),
     entry_points={
         "console_scripts": [
-            "kanjiba=practicejapanese.main:main"
+            "kanjiba=source.main:main"
         ]
     },
     include_package_data=True,

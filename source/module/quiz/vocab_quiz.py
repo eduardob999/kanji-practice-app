@@ -4,14 +4,16 @@ import random
 import re
 from typing import List, MutableMapping, Optional, Sequence
 
-from practicejapanese.core.utils import (
+from source.core.utils import (
+    blue_text,
+    green_text,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.module.vocab import VocabRow, load_vocab
-from practicejapanese.module.quiz.common import display_level_info, vocab_csv_path
+from source.module.vocab import VocabRow, load_vocab
+from source.module.quiz.common import display_level_info, vocab_csv_path
 
 CSV_PATH = vocab_csv_path()
 
@@ -58,17 +60,19 @@ def ask_question(
 
     print()
     display_level_info(level, vocab_score)
-    print(f"Kanji: {kanji}")
-    print(f"Meaning: {meaning}")
-    answer = _normalize_reading(input("What is the Reading? "))
+    print(f"{blue_text('Kanji:', bold=True)} {kanji}")
+    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+    answer = _normalize_reading(
+        input(green_text("What is the Reading? ", bold=True))
+    )
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
     valid_readings = _expand_readings(reading)
     correct = answer in valid_readings
     if correct:
-        print("Correct!")
+        print(green_text("Correct!"))
     else:
-        print(f"Incorrect. The correct Reading is: {reading}")
+        print(blue_text(f"Incorrect. The correct Reading is: {reading}"))
     change = update_score(
         CSV_PATH,
         kanji,

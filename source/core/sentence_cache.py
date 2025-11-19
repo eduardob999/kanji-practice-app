@@ -11,8 +11,8 @@ from typing import Any, Dict, List, MutableMapping, Optional
 
 import requests
 
-from practicejapanese.module.vocab import load_vocab
-from practicejapanese.core.utils import (
+from source.module.vocab import load_vocab
+from source.core.utils import (
     get_sentence_cache_file,
     get_sentence_cache_settings,
     lowest_score_items,

@@ -5,18 +5,20 @@ from __future__ import annotations
 import random
 from typing import List, MutableMapping, Optional, Sequence, Tuple
 
-from practicejapanese.core.sentence_cache import (
+from source.core.sentence_cache import (
     get_or_fetch_sentences,
     start_sentence_prefetcher,
 )
-from practicejapanese.core.utils import (
+from source.core.utils import (
+    blue_text,
+    green_text,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.module.vocab import VocabRow, load_vocab
-from practicejapanese.module.quiz.common import display_level_info, vocab_csv_path
+from source.module.vocab import VocabRow, load_vocab
+from source.module.quiz.common import display_level_info, vocab_csv_path
 
 CSV_PATH = vocab_csv_path()
 Question = Tuple[str, str]
@@ -41,13 +43,18 @@ def ask_question(
     display_level_info(level, filling_score)
 
     if not questions:
-        print(f"Reading: {reading}")
-        print(f"Meaning: {meaning}")
-        user_input = input("Your answer (kanji and/or okurigana): ").strip()
+        print(f"{blue_text('Reading:', bold=True)} {reading}")
+        print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+        user_input = input(
+            green_text("Your answer (kanji and/or okurigana): ", bold=True)
+        ).strip()
         if is_undo_command(user_input):
             return {"undo_requested": True, "item": word}
         correct = user_input == kanji
-        print("Correct!" if correct else f"Wrong. Correct kanji: {kanji}")
+        if correct:
+            print(green_text("Correct!"))
+        else:
+            print(blue_text(f"Wrong. Correct kanji: {kanji}"))
         change = update_score(
             CSV_PATH,
             kanji,
@@ -63,15 +70,20 @@ def ask_question(
 
     sample_size = 2 if len(questions) >= 2 else 1
     selected = random.sample(questions, sample_size)
-    print("Replace the highlighted hiragana with the correct kanji:")
+    print(blue_text("Replace with kanji (+ okurigana):", bold=True))
     for sentence, _ in selected:
         print(sentence)
-    user_input = input("Your answer (kanji and/or okurigana): ").strip()
+    user_input = input(
+        green_text("Your answer (kanji and/or okurigana): ", bold=True)
+    ).strip()
     if is_undo_command(user_input):
         return {"undo_requested": True, "item": word}
     correct = user_input == kanji
-    print("Correct!" if correct else f"Wrong. Correct kanji: {kanji}")
-    print(f"Meaning: {meaning}")
+    if correct:
+        print(green_text("Correct!"))
+    else:
+        print(blue_text(f"Wrong. Correct kanji: {kanji}"))
+    print(f"{blue_text('Meaning:', bold=True)} {meaning}")
     change = update_score(
         CSV_PATH,
         kanji,

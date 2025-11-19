@@ -7,8 +7,8 @@ import sys
 from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
-from practicejapanese import __version__ as VERSION
-from practicejapanese.core.utils import get_score_output_dir, resolve_data_path
+from source import __version__ as VERSION
+from source.core.utils import get_score_output_dir, resolve_data_path
 
 
 KANJI_FILE = resolve_data_path("Kanji.csv")

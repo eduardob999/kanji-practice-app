@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional
 
-from practicejapanese.core.utils import is_verbose
+from source.core.utils import blue_text, green_text, is_verbose
 
 # Resolve data directory relative to package root so packaged CSVs are always found.
 _PACKAGE_ROOT = Path(__file__).resolve().parents[2]
@@ -31,7 +31,9 @@ def display_level_info(level: str, score: Optional[str], score_label: str = "Sco
     score = (score or "").strip()
     if not level:
         return
+    level_text = blue_text(f"Level {level}", bold=True)
     if is_verbose() and score:
-        print(f"[Level {level} | {score_label} {score}]")
+        score_text = green_text(f"{score_label} {score}", bold=True)
+        print(f"[{level_text} | {score_text}]")
     else:
-        print(f"[Level {level}]")
+        print(f"[{level_text}]")
