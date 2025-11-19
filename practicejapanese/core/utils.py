@@ -1,8 +1,10 @@
 import random
 import os
 import csv
+import json
 
 UNDO_KEYWORD = "undo"
+_CONFIG_CACHE = None
 
 # --- Global config flags ---
 VERBOSE = False
@@ -13,6 +15,33 @@ def set_verbose(flag: bool):
 
 def is_verbose() -> bool:
     return VERBOSE
+
+
+def _config_path():
+    # config.json lives at repo root (two levels up from this file)
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "config.json"))
+
+
+def load_config():
+    global _CONFIG_CACHE
+    if _CONFIG_CACHE is not None:
+        return _CONFIG_CACHE
+    config_file = _config_path()
+    try:
+        with open(config_file, "r", encoding="utf-8") as fh:
+            _CONFIG_CACHE = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        _CONFIG_CACHE = {}
+    return _CONFIG_CACHE
+
+
+def get_score_output_dir():
+    config = load_config()
+    configured = config.get("score_output_dir") if isinstance(config, dict) else None
+    if configured:
+        return os.path.expanduser(configured)
+    home_dir = os.path.expanduser("~")
+    return os.path.join(home_dir, "public", "practicejapanese")
 
 
 def reset_scores():

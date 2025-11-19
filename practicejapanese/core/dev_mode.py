@@ -1,6 +1,7 @@
 import sys
 import os
 from practicejapanese import __version__ as VERSION
+from practicejapanese.core.utils import get_score_output_dir
 
 def run_dev_mode():
     print("Developer mode activated!")
@@ -17,8 +18,7 @@ def run_dev_mode():
         vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
         kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
         # Determine output directory and ensure it exists
-        home_dir = os.path.expanduser("~")
-        out_dir = os.path.join(home_dir, "public", "practicejapanese")
+        out_dir = get_score_output_dir()
         os.makedirs(out_dir, exist_ok=True)
         out_file = os.path.join(out_dir, "scores.txt")
 
@@ -62,8 +62,7 @@ def run_dev_mode():
             print(f"Failed to save scores to {out_file}: {e}")
     elif dev_choice == "2":
         # Load scores from saved file and overwrite CSV score columns
-        home_dir = os.path.expanduser("~")
-        in_file = os.path.join(home_dir, "public", "practicejapanese", "scores.txt")
+        in_file = os.path.join(get_score_output_dir(), "scores.txt")
         if not os.path.exists(in_file):
             print(f"Scores file not found: {in_file}")
             return
