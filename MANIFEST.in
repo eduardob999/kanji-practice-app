@@ -1,2 +1,2 @@
 include requirements.txt
-recursive-include practicejapanese/data *.csv
+recursive-include source/data *.csv
