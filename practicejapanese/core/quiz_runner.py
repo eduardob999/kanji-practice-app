@@ -4,7 +4,8 @@ import random
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
 from practicejapanese.core.utils import lowest_score_items, resolve_data_path, undo_score_change
-from practicejapanese.quizzes import audio_quiz, filling_quiz, kanji_quiz, vocab_quiz
+from practicejapanese.module.quiz import audio_quiz, filling_quiz, kanji_quiz
+from practicejapanese.module.quiz import vocab_quiz
 
 QuizItem = Sequence[Any]
 QuizPool = Sequence[QuizItem]
@@ -42,8 +43,8 @@ def _build_quizzes(
 def random_quiz() -> None:
     """Run randomised quizzes until the user exits."""
 
-    from practicejapanese.core.vocab import load_vocab
-    from practicejapanese.core.kanji import load_kanji
+    from practicejapanese.module.vocab import load_vocab
+    from practicejapanese.module.kanji import load_kanji
 
     quizzes = _build_quizzes(load_vocab, load_kanji)
     history: List[UndoEntry] = []

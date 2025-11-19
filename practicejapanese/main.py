@@ -11,7 +11,8 @@ from practicejapanese.core.dev_mode import run_dev_mode
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.sentence_cache import start_sentence_prefetcher
 from practicejapanese.core.utils import reset_scores, set_verbose
-from practicejapanese.quizzes import audio_quiz, kanji_quiz, vocab_quiz
+from practicejapanese.module.quiz import audio_quiz, kanji_quiz
+from practicejapanese.module.quiz import vocab_quiz
 
 HELP_TEXT = f"""PracticeJapanese {VERSION}
 Usage: pjapp [options]
@@ -100,7 +101,7 @@ def main() -> None:
 
 
 def _run_filling_quiz() -> None:
-    from practicejapanese.quizzes import filling_quiz
+    from practicejapanese.module.quiz import filling_quiz
 
     filling_quiz.run()
 

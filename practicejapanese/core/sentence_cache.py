@@ -9,7 +9,7 @@ from typing import Any, Dict, List, MutableMapping, Optional
 
 import requests
 
-from practicejapanese.core.vocab import load_vocab
+from practicejapanese.module.vocab import load_vocab
 from practicejapanese.core.utils import (
     get_sentence_cache_file,
     get_sentence_cache_settings,
