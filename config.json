@@ -1,3 +1,11 @@
 {
-  "score_output_dir": "~/public/practicejapanese"
+  "score_output_dir": "~/public/practicejapanese",
+  "sentence_cache_file": "~/public/practicejapanese/sentence_cache.json",
+  "sentence_cache_settings": {
+    "enabled": true,
+    "prefetch_interval_seconds": 18,
+    "batch_fetch_size": 6,
+    "api_limit": 5,
+    "min_sentences": 2
+  }
 }

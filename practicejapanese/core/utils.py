@@ -1,4 +1,3 @@
-import random
 import os
 import csv
 import json
@@ -42,6 +41,31 @@ def get_score_output_dir():
         return os.path.expanduser(configured)
     home_dir = os.path.expanduser("~")
     return os.path.join(home_dir, "public", "practicejapanese")
+
+
+def get_sentence_cache_file():
+    config = load_config()
+    configured = config.get("sentence_cache_file") if isinstance(config, dict) else None
+    if not configured:
+        configured = os.path.join(get_score_output_dir(), "sentence_cache.json")
+    return os.path.expanduser(configured)
+
+
+def get_sentence_cache_settings():
+    defaults = {
+        "enabled": True,
+        "prefetch_interval_seconds": 30,
+        "batch_fetch_size": 3,
+        "api_limit": 5,
+        "min_sentences": 1,
+    }
+    config = load_config()
+    settings = config.get("sentence_cache_settings") if isinstance(config, dict) else None
+    if isinstance(settings, dict):
+        merged = defaults.copy()
+        merged.update(settings)
+        return merged
+    return defaults
 
 
 def reset_scores():

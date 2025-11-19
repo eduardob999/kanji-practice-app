@@ -284,7 +284,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 消す,けす,"to erase, to turn off power",0,0,5
 明日,あした,tomorrow (し),0,0,5
 嫌,いや,unpleasant,0,0,5
-嫌い,きらい,Hate,0,0,5
+嫌い,きらい,Hate,1,0,5
 来る,くる,to come,0,0,5
 留学生,りゅうがくせい,overseas student,0,0,5
 借りる,かりる,to borrow,0,0,5

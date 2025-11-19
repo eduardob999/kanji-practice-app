@@ -1,11 +1,9 @@
 import os
 import random
-import requests
-from functools import lru_cache
-from gtts import gTTS
 import subprocess
 import tempfile
-import time
+from gtts import gTTS
+
 from practicejapanese.core.vocab import load_vocab
 from practicejapanese.core.utils import (
     is_verbose,
@@ -13,6 +11,10 @@ from practicejapanese.core.utils import (
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
+)
+from practicejapanese.core.sentence_cache import (
+    get_or_fetch_sentences,
+    start_sentence_prefetcher,
 )
 
 CSV_PATH = os.path.abspath(os.path.join(
@@ -24,7 +26,6 @@ def play_tts(sentence):
         tts = gTTS(text=sentence, lang='ja')
         with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
             tts.save(fp.name)
-            # Only use mpv for audio playback
             try:
                 subprocess.run(['mpv', '--really-quiet', fp.name], check=True)
             except Exception as e:
@@ -33,13 +34,13 @@ def play_tts(sentence):
     except Exception as e:
         print(f"[TTS Error] {e}")
 
+
 def ask_question(vocab_list, *, item_override=None):
     """Audio quiz: print instructions and cues, only play sentences as audio."""
     word = item_override or random.choice(vocab_list)
     questions = generate_questions(word)
     if not questions:
         print()
-        # Define variables before using them
         kanji = word[0]
         reading = word[1]
         meaning = word[2]
@@ -74,13 +75,13 @@ def ask_question(vocab_list, *, item_override=None):
         )
         print()
         return {"item": word, "change": change}
-    # Select two distinct questions for context
+
     if len(questions) >= 2:
         selected = random.sample(questions, 2)
     else:
         selected = [questions[0]]
     kanji = selected[0][1]
-    print()  # Add empty line before the question
+    print()
     level = word[-1] if len(word) > 5 else ""
     filling_score = word[4] if len(word) > 4 else ""
     if level:
@@ -91,10 +92,9 @@ def ask_question(vocab_list, *, item_override=None):
     print("Replace the highlighted hiragana with the correct kanji:")
     print("(The sentences will be played as audio)")
     play_tts(f"問題の言葉は{kanji}")
-    for idx, (sentence, answer) in enumerate(selected):
+    for sentence, answer in selected:
         play_tts(sentence)
     play_tts(f"問題の言葉は{kanji}")
-    # Use the first question's answer for checking
     answer = selected[0][1]
     user_input = input("Your answer (kanji and/or okurigana): ").strip()
     if is_undo_command(user_input):
@@ -105,7 +105,6 @@ def ask_question(vocab_list, *, item_override=None):
     else:
         print(f"Wrong. Correct kanji: {answer}")
     print(f"Meaning: {word[2]}")
-    # Score column is 'FillingScore' (index 4)
     change = update_score(
         CSV_PATH,
         answer,
@@ -121,6 +120,8 @@ def ask_question(vocab_list, *, item_override=None):
 
 
 def run():
+    start_sentence_prefetcher()
+
     def fetch_items():
         vocab_list = load_vocab(CSV_PATH)
         return lowest_score_items(
@@ -129,26 +130,10 @@ def run():
     run_quiz_with_undo(fetch_items, ask_question, "No vocab found.")
 
 
-@lru_cache(maxsize=128)
-def cached_fetch_sentences(reading, kanji, limit=5):
-    url = f"https://tatoeba.org/en/api_v0/search?from=jpn&query={reading}&limit={limit}"
-    try:
-        resp = requests.get(url)
-        data = resp.json()
-    except Exception:
-        return tuple()
-    sentences = []
-    for item in data.get("results", []):
-        text = item.get("text", "")
-        if reading in text or kanji in text:
-            sentences.append(text)
-    return tuple(sentences)
-
-
 def generate_questions(vocab_list):
     questions = []
     reading, kanji = vocab_list[1], vocab_list[0]
-    sentences = cached_fetch_sentences(reading, kanji, 5)
+    sentences = get_or_fetch_sentences(reading, kanji, 5)
     for sentence in sentences:
         if kanji in sentence:
             questions.append((sentence, kanji))

@@ -4,6 +4,7 @@ from practicejapanese.quizzes import audio_quiz, vocab_quiz, kanji_quiz
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.dev_mode import run_dev_mode
 from practicejapanese.core.utils import set_verbose
+from practicejapanese.core.sentence_cache import start_sentence_prefetcher
 
 HELP_TEXT = f"""PracticeJapanese {VERSION}
 Usage: pjapp [options]
@@ -19,6 +20,7 @@ You can also combine -verbose with the menu (e.g. pjapp -verbose).
 """
 
 def main():
+    start_sentence_prefetcher()
     # Parse simple flags (order-insensitive, no args needed)
     args = sys.argv[1:]
     if args:
