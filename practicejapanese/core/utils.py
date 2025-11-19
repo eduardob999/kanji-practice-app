@@ -1,3 +1,5 @@
+"""Shared helpers for path resolution, configuration, and quiz score handling."""
+
 from __future__ import annotations
 
 import csv
@@ -65,25 +67,43 @@ def load_config() -> MutableMapping[str, Any]:
     return _CONFIG_CACHE
 
 
+def _expand_configured_path(config: MutableMapping[str, Any] | None, *keys: str) -> Optional[Path]:
+    """Return the first existing config path among ``keys`` as a ``Path``."""
+
+    if not isinstance(config, MutableMapping):
+        return None
+    for key in keys:
+        raw_value = config.get(key)
+        if raw_value:
+            return Path(os.path.expanduser(str(raw_value)))
+    return None
+
+
+def get_storage_root() -> Path:
+    """Return the root directory used for cached files and score exports."""
+
+    config = load_config()
+    configured = _expand_configured_path(config, "storage_root", "score_output_dir")
+    if configured:
+        return configured
+    home_dir = Path(os.path.expanduser("~"))
+    return home_dir / "public" / "practicejapanese"
+
+
 def get_score_output_dir() -> Path:
     """Return the directory where score exports should be written."""
 
-    config = load_config()
-    configured = config.get("score_output_dir") if isinstance(config, dict) else None
-    if configured:
-        return Path(os.path.expanduser(str(configured)))
-    home_dir = Path(os.path.expanduser("~"))
-    return home_dir / "public" / "practicejapanese"
+    return get_storage_root()
 
 
 def get_sentence_cache_file() -> Path:
     """Return the path to the JSON file storing cached example sentences."""
 
     config = load_config()
-    configured = config.get("sentence_cache_file") if isinstance(config, dict) else None
-    if configured:
-        return Path(os.path.expanduser(str(configured)))
-    return get_score_output_dir() / "sentence_cache.json"
+    legacy_file = _expand_configured_path(config, "sentence_cache_file")
+    if legacy_file:
+        return legacy_file
+    return get_storage_root() / "sentence_cache.json"
 
 
 def get_sentence_cache_settings() -> Dict[str, Any]:

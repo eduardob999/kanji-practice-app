@@ -1,3 +1,5 @@
+"""Load vocabulary entries while preserving legacy tuple ordering."""
+
 from __future__ import annotations
 
 import csv

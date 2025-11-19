@@ -1,3 +1,5 @@
+"""Audio-based quiz that uses TTS to drill vocabulary recall."""
+
 from __future__ import annotations
 
 import random
@@ -129,6 +131,8 @@ def ask_question(
 
 
 def run() -> None:
+    """Launch the audio quiz loop, prefetching sentences when allowed."""
+
     start_sentence_prefetcher()
 
     def fetch_items() -> Sequence[VocabRow]:

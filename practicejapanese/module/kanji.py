@@ -1,3 +1,5 @@
+"""Load kanji data structures from the packaged CSV files."""
+
 from __future__ import annotations
 
 import csv

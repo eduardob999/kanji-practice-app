@@ -1,3 +1,5 @@
+"""Shared utilities for quiz modules, including CSV path helpers."""
+
 from __future__ import annotations
 
 from pathlib import Path

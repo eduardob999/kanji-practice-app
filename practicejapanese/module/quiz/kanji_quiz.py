@@ -1,3 +1,5 @@
+"""Kanji reading quiz with undo-aware scoring updates."""
+
 from __future__ import annotations
 
 import random
@@ -53,6 +55,8 @@ def ask_question(
 
 
 def run() -> None:
+    """Run the interactive kanji quiz until the user exits."""
+
     def fetch_items() -> Sequence[KanjiRow]:
         kanji_list = load_kanji(CSV_PATH)
         return lowest_score_items(CSV_PATH, kanji_list, score_col=3)

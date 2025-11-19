@@ -1,3 +1,5 @@
+"""Kanji fill-in quiz that replaces readings with blanks in sentences."""
+
 from __future__ import annotations
 
 import random
@@ -85,6 +87,8 @@ def ask_question(
 
 
 def run() -> None:
+    """Start the fill-in quiz loop using the undo-enabled runner."""
+
     start_sentence_prefetcher()
 
     def fetch_items() -> Sequence[VocabRow]:

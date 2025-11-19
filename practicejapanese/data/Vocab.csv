@@ -488,7 +488,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 話す,はなす,to speak,0,0,5
 生徒,せいと,Pupil,0,0,5
 雪,ゆき,snow,0,0,5
-叔父,おじさん,"uncle, middle aged gentleman",0,0,5
+叔父,おじ,"uncle, middle aged gentleman",0,0,5
 靴下,くつした,Socks,0,0,5
 勉強,べんきょう,to study,0,0,5
 旅行,りょこう,travel,0,0,5
@@ -506,8 +506,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 上,うえ,on top of,0,0,5
 八つ,やっつ,eight,0,0,5
 二,に,two,0,0,5
-会場,かいじょう,assembly hall or meeting place,1,1,4
-会場,てんいん,shop assistant,1,1,4
+会場,かいじょう,assembly hall,1,1,4
+会場,かいじょう,meeting place,1,1,4
 地震,じしん,earthquake,1,1,4
 法律,ほうりつ,law,1,1,4
 確か,たしか,definite,1,1,4
@@ -2538,7 +2538,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 引退,いんたい,retire,2,2,3
 喧嘩,けんか,"quarrel,(drunken) brawl,failure",2,2,3
 行動,こうどう,"action,conduct,behaviour,mobilization",2,2,3
-賛成,Uӣ[い,"approval,agreement,support,favour",2,2,3
+賛成,さんせい,"approval,agreement,support,favour",2,2,3
 処理,しょり,"processing,dealing with,treatment,disposition,disposal",2,2,3
 気に入る,きにいる,"to be pleased with,to suit",2,2,3
 土,つち,"earth,soil",2,2,3
@@ -2917,7 +2917,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 陽射,ひざし,"sunlight,rays of the sun",3,3,2
 親類,しんるい,"relation,kin",3,3,2
 勝敗,しょうはい,"victory or defeat,issue (of battle)",3,3,2
-伯父さん,おじさん,"middle-aged gentleman,uncle",3,3,2
+伯父さん,おじ,"middle-aged gentleman,uncle",3,3,2
 髭,ひげ,"moustache,beard,whiskers",3,3,2
 腰掛ける,こしかける,to sit (down),3,3,2
 纏める,まとめる,"to put in order,to collect,to bring to a conclusion",3,3,2
@@ -4028,7 +4028,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 突き当たり,つきあたり,end (e.g. of street),3,3,2
 閉会,へいかい,closure,3,3,2
 蓄える,たくわえる,"to store,to lay in stock",3,3,2
-小父さん,おじさん,"middle-aged gentleman,uncle",3,3,2
+小父さん,おじさん,"middle-aged gentleman,uncle (double Kanji)",3,3,2
 湯飲み,ゆのみ,teacup,3,3,2
 近寄る,ちかよる,"to approach,to draw near",3,3,2
 四角,しかく,square,3,3,2

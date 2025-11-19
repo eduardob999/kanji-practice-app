@@ -1,3 +1,5 @@
+"""Co-ordinate quiz selection and execution with undo support."""
+
 from __future__ import annotations
 
 import random
@@ -31,6 +33,8 @@ def _make_lowest_score_fetcher(
 def _build_quizzes(
     load_vocab: Callable[[str], QuizPool], load_kanji: Callable[[str], QuizPool]
 ) -> List[Tuple[str, QuizFetch, QuizAsk]]:
+    """Return the configured quiz roster pairing loaders to ask functions."""
+
     fill_fetcher = _make_lowest_score_fetcher(load_vocab, str(VOCAB_FILE), 4)
     return [
         ("Vocab Quiz", _make_lowest_score_fetcher(load_vocab, str(VOCAB_FILE), 3), vocab_quiz.ask_question),

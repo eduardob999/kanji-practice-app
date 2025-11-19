@@ -1,3 +1,5 @@
+"""Maintain a cache of example sentences and prefetch them in the background."""
+
 from __future__ import annotations
 
 import json
@@ -25,6 +27,8 @@ _PREFETCH_THREAD: Optional[threading.Thread] = None
 
 
 def _ensure_cache_loaded() -> None:
+    """Initialise the in-memory cache by reading the persisted JSON file."""
+
     global _CACHE
     if _CACHE is not None:
         return
@@ -38,6 +42,8 @@ def _ensure_cache_loaded() -> None:
 
 
 def _persist_cache() -> None:
+    """Durably store the in-memory cache contents to disk."""
+
     cache_path = get_sentence_cache_file()
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     temp_path = cache_path.with_suffix(cache_path.suffix + ".tmp")
@@ -47,6 +53,8 @@ def _persist_cache() -> None:
 
 
 def get_cached_sentences(kanji: str) -> List[str]:
+    """Return cached example sentences for ``kanji`` if available."""
+
     _ensure_cache_loaded()
     with _CACHE_LOCK:
         if _CACHE is None:
@@ -58,6 +66,8 @@ def get_cached_sentences(kanji: str) -> List[str]:
 
 
 def _store_sentences(kanji: str, reading: str, sentences: List[str]) -> None:
+    """Save new sentences for ``kanji`` with metadata and persist them."""
+
     if not sentences:
         return
     _ensure_cache_loaded()
@@ -73,6 +83,8 @@ def _store_sentences(kanji: str, reading: str, sentences: List[str]) -> None:
 
 
 def _fetch_sentences_from_api(reading: str, kanji: str, limit: int) -> List[str]:
+    """Retrieve example sentences from Tatoeba for the given reading/kanji."""
+
     url = f"https://tatoeba.org/en/api_v0/search?from=jpn&query={reading}&limit={limit}"
     try:
         resp = requests.get(url, timeout=10)
@@ -89,6 +101,8 @@ def _fetch_sentences_from_api(reading: str, kanji: str, limit: int) -> List[str]
 
 
 def get_or_fetch_sentences(reading: str, kanji: str, limit: int = 5) -> List[str]:
+    """Return cached sentences when present, otherwise fetch from the API."""
+
     sentences = get_cached_sentences(kanji)
     if sentences:
         return sentences[:limit]
@@ -99,6 +113,8 @@ def get_or_fetch_sentences(reading: str, kanji: str, limit: int = 5) -> List[str
 
 
 def start_sentence_prefetcher() -> None:
+    """Start the background thread that prefetches sentences when enabled."""
+
     settings = get_sentence_cache_settings()
     if not settings.get("enabled", True):
         return
@@ -112,6 +128,8 @@ def start_sentence_prefetcher() -> None:
 
 
 def _prefetch_loop(settings: MutableMapping[str, Any]) -> None:
+    """Background worker that periodically fetches low-score vocabulary sentences."""
+
     vocab_path = resolve_data_path("Vocab.csv")
     interval = max(5, int(settings.get("prefetch_interval_seconds", 30)))
     batch_size = max(1, int(settings.get("batch_fetch_size", 3)))

@@ -2,15 +2,23 @@
 
 from __future__ import annotations
 
+import csv
+import logging
 import sys
 from dataclasses import dataclass
-from typing import Callable, Dict, Iterable, Optional
+from pathlib import Path
+from typing import Callable, Dict, Iterable, Optional, Tuple
 
 from practicejapanese import __version__ as VERSION
 from practicejapanese.core.dev_mode import run_dev_mode
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.sentence_cache import start_sentence_prefetcher
-from practicejapanese.core.utils import reset_scores, set_verbose
+from practicejapanese.core.utils import (
+    get_score_output_dir,
+    resolve_data_path,
+    reset_scores,
+    set_verbose,
+)
 from practicejapanese.module.quiz import audio_quiz, kanji_quiz
 from practicejapanese.module.quiz import vocab_quiz
 
@@ -33,6 +41,133 @@ class MenuAction:
     label: str
     handler: Callable[[], None]
     post_hook: Optional[Callable[[], None]] = None
+
+
+LOG_FILE: Optional[Path] = None
+_LOGGING_CONFIGURED = False
+logger = logging.getLogger(__name__)
+
+
+def _configure_logging() -> None:
+    """Ensure errors are persisted to ``error.log`` for troubleshooting."""
+
+    global _LOGGING_CONFIGURED
+    if _LOGGING_CONFIGURED:
+        return
+
+    log_dir = get_score_output_dir()
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    log_path = log_dir / "error.log"
+    log_path.touch(exist_ok=True)
+
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler.setLevel(logging.ERROR)
+    handler.setFormatter(
+        logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
+    )
+
+    root_logger = logging.getLogger()
+    root_logger.addHandler(handler)
+    if root_logger.level > logging.WARNING:
+        root_logger.setLevel(logging.WARNING)
+
+    global LOG_FILE
+    LOG_FILE = log_path
+
+    _LOGGING_CONFIGURED = True
+
+
+def _safe_int(value: object, default: int = 0) -> int:
+    """Convert ``value`` to ``int`` when possible, otherwise return ``default``."""
+
+    try:
+        text = str(value).strip()
+    except Exception:
+        return default
+    if not text:
+        return default
+    try:
+        return int(text)
+    except (TypeError, ValueError):
+        return default
+
+
+def _compute_level_progress(
+    csv_path: Path, score_getter: Callable[[Dict[str, str]], int]
+) -> Dict[int, Tuple[int, int]]:
+    """Return completed/total counts per JLPT level for ``csv_path``."""
+
+    totals: Dict[int, int] = {level: 0 for level in range(1, 6)}
+    completed: Dict[int, int] = {level: 0 for level in range(1, 6)}
+
+    try:
+        with csv_path.open("r", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            for row in reader:
+                if not row:
+                    continue
+                level = _safe_int(row.get("Level"), default=0)
+                if level not in totals:
+                    continue
+                totals[level] += 1
+                score_value = score_getter(row)
+                threshold = 6 - level
+                if score_value >= threshold:
+                    completed[level] += 1
+    except (OSError, csv.Error):
+        return {level: (0, 0) for level in range(1, 6)}
+
+    return {level: (completed[level], totals[level]) for level in totals}
+
+
+def _progress_bar(fraction: float, width: int = 24) -> str:
+    """Render a simple ASCII progress bar for ``fraction`` in ``[0, 1]``."""
+
+    fraction = max(0.0, min(1.0, fraction))
+    filled = min(width, max(0, int(round(fraction * width))))
+    return "[" + "#" * filled + "-" * (width - filled) + "]"
+
+
+def _render_progress_section(title: str, progress: Dict[int, Tuple[int, int]]) -> None:
+    """Print a labelled block of JLPT progress bars."""
+
+    print(title)
+    for level in range(5, 0, -1):
+        done, total = progress.get(level, (0, 0))
+        fraction = (done / total) if total else 0.0
+        label = f"N{level}"
+        bar = _progress_bar(fraction)
+        percentage = fraction * 100.0
+        print(f"  {label:<3} {bar} {percentage:6.2f}% ({done}/{total})")
+    print()
+
+
+def _show_title_screen() -> None:
+    """Display the application banner and current kanji/vocabulary progress."""
+
+    width = 50
+    separator = "=" * width
+    print(separator)
+    print("PracticeJapanese".center(width))
+    print(f"Version {VERSION}".center(width))
+    print("A command-line Japanese learning application".center(width))
+    print("by eduardob999 (github) ©2025".center(width))
+    print(separator)
+
+    kanji_progress = _compute_level_progress(
+        resolve_data_path("Kanji.csv"),
+        lambda row: _safe_int(row.get("Score")),
+    )
+
+    def _vocab_score(row: Dict[str, str]) -> int:
+        scores = [_safe_int(row.get(field)) for field in ("VocabScore", "FillingScore")]
+        return max(scores) if scores else 0
+
+    vocab_progress = _compute_level_progress(resolve_data_path("Vocab.csv"), _vocab_score)
+
+    _render_progress_section("Kanji Progress", kanji_progress)
+    _render_progress_section("Vocabulary Progress", vocab_progress)
 
 
 def _display_menu(actions: Dict[str, MenuAction]) -> None:
@@ -73,31 +208,39 @@ def _parse_flags(args: Iterable[str]) -> Optional[str]:
 
 
 def main() -> None:
-    start_sentence_prefetcher()
+    _configure_logging()
 
-    args = sys.argv[1:]
-    if args:
-        handled = _parse_flags(args)
-        if handled:
-            return
-
-    actions: Dict[str, MenuAction] = {
-        "1": MenuAction("Random Quiz (random category each time)", random_quiz, _post_quiz_hook),
-        "2": MenuAction("Vocab Quiz", vocab_quiz.run, _post_quiz_hook),
-        "3": MenuAction("Kanji Quiz", kanji_quiz.run, _post_quiz_hook),
-        "4": MenuAction("Kanji Fill-in Quiz", _run_filling_quiz, _post_quiz_hook),
-        "5": MenuAction("Audio Quiz", audio_quiz.run, _post_quiz_hook),
-        "6": MenuAction("Reset all scores", reset_scores),
-    }
-
-    _display_menu(actions)
     try:
+        start_sentence_prefetcher()
+
+        args = sys.argv[1:]
+        if args:
+            handled = _parse_flags(args)
+            if handled:
+                return
+
+        _show_title_screen()
+
+        actions: Dict[str, MenuAction] = {
+            "1": MenuAction("Random Quiz (random category each time)", random_quiz, _post_quiz_hook),
+            "2": MenuAction("Vocab Quiz", vocab_quiz.run, _post_quiz_hook),
+            "3": MenuAction("Kanji Quiz", kanji_quiz.run, _post_quiz_hook),
+            "4": MenuAction("Kanji Fill-in Quiz", _run_filling_quiz, _post_quiz_hook),
+            "5": MenuAction("Audio Quiz", audio_quiz.run, _post_quiz_hook),
+            "6": MenuAction("Reset all scores", reset_scores),
+        }
+
+        _display_menu(actions)
         choice = input("Enter number: ").strip()
         _handle_choice(choice, actions)
     except KeyboardInterrupt:
         print("\nInterrupted. Goodbye!")
     except EOFError:
         print("\nNo input received. Goodbye!")
+    except Exception:
+        logger.exception("Unhandled error during PracticeJapanese execution")
+        destination = str(LOG_FILE) if LOG_FILE else "error.log"
+        print(f"\nAn unexpected error occurred. See {destination} for details.")
 
 
 def _run_filling_quiz() -> None:
