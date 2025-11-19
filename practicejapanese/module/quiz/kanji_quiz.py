@@ -3,14 +3,14 @@ from __future__ import annotations
 import random
 from typing import MutableMapping, Optional, Sequence
 
-from practicejapanese.core.kanji import KanjiRow, load_kanji
+from practicejapanese.module.kanji import KanjiRow, load_kanji
 from practicejapanese.core.utils import (
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.quizzes.common import display_level_info, kanji_csv_path
+from practicejapanese.module.quiz.common import display_level_info, kanji_csv_path
 
 CSV_PATH = kanji_csv_path()
 

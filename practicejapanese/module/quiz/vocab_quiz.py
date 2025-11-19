@@ -10,8 +10,8 @@ from practicejapanese.core.utils import (
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.core.vocab import VocabRow, load_vocab
-from practicejapanese.quizzes.common import display_level_info, vocab_csv_path
+from practicejapanese.module.vocab import VocabRow, load_vocab
+from practicejapanese.module.quiz.common import display_level_info, vocab_csv_path
 
 CSV_PATH = vocab_csv_path()
 

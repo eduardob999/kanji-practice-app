@@ -1,7 +1,12 @@
 from __future__ import annotations
 
 import random
+import subprocess
+import tempfile
+from pathlib import Path
 from typing import List, MutableMapping, Optional, Sequence, Tuple
+
+from gtts import gTTS
 
 from practicejapanese.core.sentence_cache import (
     get_or_fetch_sentences,
@@ -13,11 +18,45 @@ from practicejapanese.core.utils import (
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.core.vocab import VocabRow, load_vocab
-from practicejapanese.quizzes.common import display_level_info, vocab_csv_path
+from practicejapanese.module.vocab import VocabRow, load_vocab
+from practicejapanese.module.quiz.common import display_level_info, vocab_csv_path
 
 CSV_PATH = vocab_csv_path()
+TTS_LANG = "ja"
+_PLAYER_CMD = ("mpv", "--really-quiet")
 Question = Tuple[str, str]
+
+
+def _save_tts_audio(sentence: str) -> Optional[Path]:
+    """Generate a temporary MP3 file for the provided sentence."""
+
+    tmp_path: Optional[Path] = None
+    try:
+        tts = gTTS(text=sentence, lang=TTS_LANG)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+            tmp_path = Path(tmp.name)
+        tts.save(tmp_path.as_posix())
+    except Exception as exc:  # pragma: no cover - gTTS/network dependent
+        print(f"[TTS Error] {exc}")
+        if tmp_path and tmp_path.exists():
+            tmp_path.unlink()
+        return None
+    return tmp_path
+
+
+def play_tts(sentence: str) -> None:
+    """Speak the sentence via gTTS and a command-line audio player."""
+
+    audio_path = _save_tts_audio(sentence)
+    if audio_path is None:
+        return
+    try:
+        subprocess.run((*_PLAYER_CMD, audio_path.as_posix()), check=True)
+    except subprocess.CalledProcessError as exc:
+        print(f"[TTS Error] {exc}")
+    finally:
+        if audio_path.exists():
+            audio_path.unlink()
 
 
 def ask_question(
@@ -25,7 +64,7 @@ def ask_question(
     *,
     item_override: Optional[VocabRow] = None,
 ) -> Optional[MutableMapping[str, object]]:
-    """Ask the user to replace hiragana with the correct kanji."""
+    """Run a single audio-based vocab question."""
 
     if not vocab_list:
         return None
@@ -39,8 +78,10 @@ def ask_question(
     display_level_info(level, filling_score)
 
     if not questions:
-        print(f"Reading: {reading}")
+        play_tts(f"問題の言葉は{kanji}")
         print(f"Meaning: {meaning}")
+        play_tts(f"読み方は{reading}")
+        play_tts(f"問題の言葉は{kanji}")
         user_input = input("Your answer (kanji and/or okurigana): ").strip()
         if is_undo_command(user_input):
             return {"undo_requested": True, "item": word}
@@ -62,8 +103,11 @@ def ask_question(
     sample_size = 2 if len(questions) >= 2 else 1
     selected = random.sample(questions, sample_size)
     print("Replace the highlighted hiragana with the correct kanji:")
+    print("(The sentences will be played as audio)")
+    play_tts(f"問題の言葉は{kanji}")
     for sentence, _ in selected:
-        print(sentence)
+        play_tts(sentence)
+    play_tts(f"問題の言葉は{kanji}")
     user_input = input("Your answer (kanji and/or okurigana): ").strip()
     if is_undo_command(user_input):
         return {"undo_requested": True, "item": word}
@@ -95,17 +139,11 @@ def run() -> None:
 
 
 def generate_questions(vocab_item: VocabRow) -> List[Question]:
-    """Produce sentences with highlighted reading placeholders."""
+    """Return example sentences that include the kanji in context."""
 
     reading, kanji = vocab_item[1], vocab_item[0]
     sentences = get_or_fetch_sentences(reading, kanji, 5)
-    questions: List[Question] = []
-    for sentence in sentences:
-        if kanji not in sentence:
-            continue
-        formatted = sentence.replace(kanji, f"[{reading}]")
-        questions.append((formatted, kanji))
-    return questions
+    return [(sentence, kanji) for sentence in sentences if kanji in sentence]
 
 
 if __name__ == "__main__":
