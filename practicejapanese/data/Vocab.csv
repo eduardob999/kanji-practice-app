@@ -1,6 +1,6 @@
 Kanji,Reading,Meaning,VocabScore,FillingScore,Level
-毎月,まいげつ,every month,0,0,5
-毎月,まいつき,every month,0,0,5
+毎月,まいげつ,every month (げ),0,0,5
+毎月,まいつき,every month (き),0,0,5
 太い,ふとい,fat,0,0,5
 五日,いつか,"five days, fifth day",0,0,5
 出る,でる,"to appear,to leave",0,0,5
@@ -34,7 +34,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 終る,おわる,to finish,0,0,5
 お兄さん,おにいさん,(honorable) older brother,0,0,5
 目,め,eye,0,0,5
-門,もん,gate,0,0,5
+門,もん,gate (か),0,0,5
 読む,よむ,to read,0,0,5
 冷たい,つめたい,cold to the touch,0,0,5
 地図,ちず,map,0,0,5
@@ -71,7 +71,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 降る,ふる,"to fall, e.g. rain or snow",0,0,5
 暇,ひま,free time,0,0,5
 飴,あめ,candy,0,0,5
-灰皿,はいざら,ashtray,0,0,5
+灰皿,はいざら,ashtray (さ),0,0,5
 違う,ちがう,to differ,0,0,5
 交差点,こうさてん,intersection,0,0,5
 宿題,しゅくだい,homework,0,0,5
@@ -91,7 +91,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 戸,と,Japanese style door,0,0,5
 村,むら,village,0,0,5
 午前,ごぜん,morning,0,0,5
-前,まえ,before,0,0,5
+前,まえ,before (せ),0,0,5
 姉,あね,(humble) older sister,0,0,5
 閉める,しめる,to close something,0,0,5
 大人,おとな,Adult,0,0,5
@@ -109,7 +109,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 切符,きっぷ,Ticket,0,0,5
 一つ,ひとつ,one,0,0,5
 八日,ようか,"eight days, eighth day of the month",0,0,5
-一人,ひとり,one person,0,0,5
+一人,ひとり,one person (い),0,0,5
 食べ物,たべもの,food,0,0,5
 磨く,みがく,"to brush teeth, to polish",0,0,5
 自分,じぶん,Oneself,0,0,5
@@ -128,7 +128,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 細い,ほそい,thin,0,0,5
 無くす,なくす,to lose something,0,0,5
 時計,とけい,"watch,clock",0,0,5
-行く,ゆく,to go,0,0,5
+行く,ゆく,to go (い),0,0,5
 鳥,とり,bird,0,0,5
 開ける,あける,to open,0,0,5
 春,はる,spring,0,0,5
@@ -136,7 +136,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 日曜日,にちようび,Sunday,0,0,5
 女,おんな,Woman,0,0,5
 閉まる,しまる,"to close, to be closed",0,0,5
-言う,いう,to say,0,0,5
+言う,いう,to say (い),0,0,5
 風,かぜ,Wind,0,0,5
 女の子,おんなのこ,Girl,0,0,5
 今朝,けさ,this morning,0,0,5
@@ -150,8 +150,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 声,こえ,Voice,0,0,5
 人,ひと,person,0,0,5
 食堂,しょくどう,dining hall,0,0,5
-毎年,まいねん,every year,0,0,5
-毎年,まいとし,every year,0,0,5
+毎年,まいねん,every year (と),0,0,5
+毎年,まいとし,every year (ね),0,0,5
 四つ,よっつ,four,0,0,5
 池,いけ,pond,0,0,5
 貸す,かす,to lend,0,0,5
@@ -172,7 +172,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 練習,れんしゅう,to practice,0,0,5
 牛乳,ぎゅうにゅう,Milk,0,0,5
 歌う,うたう,to sing,0,0,5
-一昨年,おととし,year before last,0,0,5
+一昨年,おととし,year before last (い),0,0,5
 箱,はこ,box,0,0,5
 同じ,おなじ,same,0,0,5
 困る,こまる,to be worried,0,0,5
@@ -237,7 +237,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 零,れい,zero,0,0,5
 暗い,くらい,Gloomy,0,0,5
 奥さん,おくさん,(honorable) wife,0,0,5
-黄色,きいろ,yellow,0,0,5
+黄色,きいろ,yellow (お),0,0,5
 乗る,のる,"to get on,to ride",0,0,5
 今月,こんげつ,this month,0,0,5
 高い,たかい,"tall, expensive",0,0,5
@@ -282,7 +282,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 自転車,じてんしゃ,Bicycle,0,0,5
 撮る,とる,to take a photo or record a film,0,0,5
 消す,けす,"to erase, to turn off power",0,0,5
-明日,あした,tomorrow,0,0,5
+明日,あした,tomorrow (し),0,0,5
 嫌,いや,unpleasant,0,0,5
 嫌い,きらい,Hate,0,0,5
 来る,くる,to come,0,0,5
@@ -294,7 +294,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 病院,びょういん,hospital,0,0,5
 果物,くだもの,Fruit,0,0,5
 私,わたくし,"(humble) I,myself",0,0,5
-一昨日,おととい,day before yesterday,0,0,5
+一昨日,おととい,day before yesterday (っ),0,0,5
 初め,はじめ,beginning,0,0,5
 始め,はじめ,beginning,0,0,5
 木曜日,もくようび,Thursday,0,0,5
@@ -336,7 +336,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 体,からだ,Body,0,0,5
 降りる,おりる,"to get off, to descend",0,0,5
 元気,げんき,"health, vitality",0,0,5
-夜,よる,"evening,night",0,0,5
+夜,よる,"evening,night (よ)",0,0,5
 並ぶ,ならぶ,"to line up,to stand in a line",0,0,5
 牛肉,ぎゅうにく,Beef,0,0,5
 とり肉,とりにく,chicken meat,0,0,5
@@ -458,8 +458,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 弟,おとうと,younger brother,0,0,5
 歯,は,tooth,0,0,5
 飛行機,ひこうき,aeroplane,0,0,5
-南,みなみ,south,0,0,5
-行く,いく,to go,0,0,5
+南,みなみ,south (ん),0,0,5
+行く,いく,to go (ゆ),0,0,5
 川,かわ,River,0,0,5
 薄い,うすい,"thin,weak",0,0,5
 登る,のぼる,to climb,0,0,5
@@ -700,7 +700,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 席,せき,seat,1,1,4
 打つ,うつ,to hit,1,1,4
 花見,はなみ,cherry-blossom viewing,1,1,4
-木綿,もめん,cotton,1,1,4
+木綿,もめん,cotton (き),1,1,4
 季節,きせつ,season,1,1,4
 警察,けいさつ,police,1,1,4
 彼ら,かれら,they,1,1,4
@@ -882,9 +882,9 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 思い出す,おもいだす,to remember,1,1,4
 知らせる,しらせる,to notify,1,1,4
 必要,ひつよう,necessary,1,1,4
-明日,あす,tomorrow,1,1,4
+明日,あす,tomorrow (す),1,1,4
 計画,けいかく,to plan,1,1,4
-音,おと,"sound,note",1,1,4
+音,おと,"sound,note (と)",1,1,4
 舟,ふね,ship,1,1,4
 別れる,わかれる,to separate,1,1,4
 忘れ物,わすれもの,lost article,1,1,4
@@ -915,7 +915,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 倒れる,たおれる,to break down,1,1,4
 世界,せかい,the world,1,1,4
 人口,じんこう,population,1,1,4
-下る,さがる,"to get down,to descend",1,1,4
+下る,さがる,"to get down,to descend (く)",1,1,4
 さ来週,さらいしゅう,the week after next,1,1,4
 眠る,ねむる,to sleep,1,1,4
 怖い,こわい,frightening,1,1,4
@@ -1006,7 +1006,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 目標,もくひょう,"mark,objective,target",2,2,3
 睡眠,すいみん,sleep,2,2,3
 調査,ちょうさ,"investigation,examination,inquiry,survey",2,2,3
-夜,よ,"evening,night",2,2,3
+夜,よ,"evening,night (る)",2,2,3
 汚染,おせん,"pollution,contamination",2,2,3
 現代,げんだい,"nowadays,modern times,present-day",2,2,3
 土地,とち,"plot of land,lot,soil",2,2,3
@@ -1024,7 +1024,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 休憩,きゅうけい,"rest,break,recess,intermission",2,2,3
 加える,くわえる,"to append,to sum up,to add (up)",2,2,3
 怪我,けが,"injury (to animate object),hurt",2,2,3
-姉妹,しまい,sisters,2,2,3
+姉妹,しまい,sisters (き),2,2,3
 個人,こじん,"individual,private person,personal,private",2,2,3
 読み,よみ,reading,2,2,3
 巨大,きょだい,"huge,gigantic,enormous",2,2,3
@@ -1086,7 +1086,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 座席,ざせき,seat,2,2,3
 役,やく,"use,service,role,position",2,2,3
 克服,こくふく,"subjugation,conquest",2,2,3
-唯,ただ,"free of charge,mere,sole,only,usual,common",2,2,3
+唯,ただ,"free of charge,mere,sole,only,usual,common (だ)",2,2,3
 筋,すじ,"muscle,string,line",2,2,3
 速度,そくど,"speed,velocity,rate",2,2,3
 主張,しゅちょう,"claim,request,insistence,assertion",2,2,3
@@ -1110,7 +1110,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 分析,ぶんせき,analysis,2,2,3
 記事,きじ,"article,news story,report,account",2,2,3
 腰,こし,hip,2,2,3
-不,ぶ,"un,non,negative prefix",2,2,3
+不,ぶ,"un,non,negative prefix (ふ)",2,2,3
 任せる,まかせる,"to entrust to another,to leave to",2,2,3
 暮らす,くらす,"to live,to get along",2,2,3
 及ぼす,およぼす,"to exert,to cause,to exercise",2,2,3
@@ -1128,7 +1128,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 満ちる,みちる,"to be full,to rise (tide),to mature,to expire",2,2,3
 公平,こうへい,"fairness,impartial,justice",2,2,3
 愛する,あいする,to love,2,2,3
-銃,じゅう,gun,2,2,3
+銃,じゅう,gun (じ),2,2,3
 礼儀,れいぎ,"manners,courtesy,etiquette",2,2,3
 理解,りかい,"understanding,comprehension",2,2,3
 考慮,こうりょ,"consideration,taking into account",2,2,3
@@ -1158,7 +1158,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 利口,りこう,"clever,shrewd,bright,sharp,wise,intelligent",2,2,3
 骨,ほね,bone,2,2,3
 長期,ちょうき,long time period,2,2,3
-生,なま,"(1) draft (beer),(2) raw,unprocessed",2,2,3
+生,なま,"(1) draft (beer),(2) raw,unprocessed (せ)",2,2,3
 相当,そうとう,"suitable,fair,tolerable,proper",2,2,3
 粗,あら,"defect,flaw,blemish,weak point",2,2,3
 全,ぜん,"all,whole,entire,complete,overall,pan",2,2,3
@@ -1182,7 +1182,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 希望,きぼう,"hope,wish,aspiration",2,2,3
 油,あぶら,oil,2,2,3
 交際,こうさい,"company,friendship,association,society,acquaintance",2,2,3
-頬,ほほ,cheek (of face),2,2,3
+頬,ほほ,cheek (of face) (お),2,2,3
 膝,ひざ,"knee,lap",2,2,3
 悲しむ,かなしむ,"to be sad,to mourn for,to regret",2,2,3
 生まれ,うまれ,"birth,birth-place",2,2,3
@@ -1190,8 +1190,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 一般,いっぱん,"general,liberal,universal,ordinary,average",2,2,3
 岩,いわ,"rock,crag",2,2,3
 濡れる,ぬれる,to get wet,2,2,3
-描く,えがく,"to draw,to paint,to sketch,to depict,to describe",2,2,3
-四,し,four,2,2,3
+描く,えがく,"to draw,to paint,to sketch,to depict,to describe (え)",2,2,3
+四,し,four (し),2,2,3
 玉,たま,"ball,sphere,coin",2,2,3
 貧しい,まずしい,"poor,needy",2,2,3
 覚ます,さます,to awaken,2,2,3
@@ -1204,7 +1204,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 日曜,にちよう,Sunday,2,2,3
 外す,はずす,"to unfasten,to remove",2,2,3
 航空,こうくう,"aviation,flying",2,2,3
-国境,こっきょう,national or state border,2,2,3
+国境,こっきょう,national or state border (く),2,2,3
 金額,きんがく,amount of money,2,2,3
 印刷,いんさつ,printing,2,2,3
 散歩,さんぽ,"walk,stroll",2,2,3
@@ -1235,7 +1235,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 消費,しょうひ,"consumption,expenditure",2,2,3
 底,そこ,"bottom,sole",2,2,3
 発行,はっこう,issue (publications),2,2,3
-濠,ほり,moat,2,2,3
+濠,ほり,moat (ご),2,2,3
 盛り,さかり,"helping,serving",2,2,3
 所為,せい,"cause,reason,fault",2,2,3
 結ぶ,むすぶ,"to tie,to bind,to link",2,2,3
@@ -1278,7 +1278,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 人物,じんぶつ,"character,personality,person,man,personage,talented man",2,2,3
 患者,かんじゃ,a patient,2,2,3
 検査,けんさ,"inspection (e.g. customs, factory),examination",2,2,3
-額,がく,"forehead,brow",2,2,3
+額,がく,"forehead,brow (が)",2,2,3
 通す,とおす,"to let pass,to overlook,to continue",2,2,3
 何とか,なんとか,"somehow,anyhow,one way or another",2,2,3
 苦労,くろう,"troubles,hardships",2,2,3
@@ -1327,21 +1327,21 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 沈む,しずむ,"to sink,to feel depressed",2,2,3
 向かい,むかい,"facing,opposite,across the street,other side",2,2,3
 裸,はだか,"naked,nude",2,2,3
-梅雨,つゆ,"rainy season,rain during the rainy season",2,2,3
+梅雨,つゆ,"rainy season,rain during the rainy season (つ)",2,2,3
 商品,しょうひん,"commodity,article of commerce,goods,stock,merchandise",2,2,3
 陽気,ようき,"season,weather,cheerfulness",2,2,3
 空き,あき,"room,time to spare,emptiness",2,2,3
 猿,さる,monkey,2,2,3
-軒,のき,eaves,2,2,3
+軒,のき,eaves (け),2,2,3
 混雑,こんざつ,"confusion,congestion",2,2,3
-音,おん,"sound,note",2,2,3
+音,おん,"sound,note (ん)",2,2,3
 消防,しょうぼう,"fire fighting,fire department",2,2,3
 続き,つづき,"sequel,continuation",2,2,3
 日中,にっちゅう,"daytime,broad daylight",2,2,3
 多分,たぶん,"perhaps,probably",2,2,3
 熱中,ねっちゅう,"nuts!,enthusiasm,zeal,mania",2,2,3
 作法,さほう,"manners,etiquette,propriety",2,2,3
-方々,かたがた,"persons,this and that,here and there,everywhere",2,2,3
+方々,かたがた,"persons,this and that,here and there,everywhere (か)",2,2,3
 戦い,たたかい,"battle,fight,struggle,conflict",2,2,3
 離婚,りこん,divorce,2,2,3
 勘,かん,"perception,intuition,the sixth sense",2,2,3
@@ -1400,7 +1400,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 年齢,ねんれい,"age,years",2,2,3
 記録,きろく,"record,minutes,document",2,2,3
 金持ち,かねもち,rich man,2,2,3
-円,まる,"circle,money",2,2,3
+円,まる,"circle,money (え)",2,2,3
 丸い,まるい,"round,circular,spherical",2,2,3
 合わせる,あわせる,"to join together,to be opposite,to face,to unite",2,2,3
 影,かげ,"shade,shadow,other side",2,2,3
@@ -1457,7 +1457,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 囲む,かこむ,"to surround,to encircle",2,2,3
 表,ひょう,"table (e.g. Tab 1),chart,list",2,2,3
 付ける,つける,"to attach,to join,to add,to append",2,2,3
-行き,ゆき,going,2,2,3
+行き,ゆき,going (い),2,2,3
 率,りつ,"rate,ratio,proportion,percentage",2,2,3
 関心,かんしん,"concern,interest",2,2,3
 万一,まんいち,"by some chance,by some possibility,if by any chance,10E4:1 odds",2,2,3
@@ -1478,7 +1478,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 相続,そうぞく,"succession,inheritance",2,2,3
 贈る,おくる,"to send,to give to,to award to,to confer on",2,2,3
 炎,ほのお,flame,2,2,3
-為る,する,"to change,to be of use,to reach to",2,2,3
+為る,する,"to change,to be of use,to reach to (す)",2,2,3
 苦痛,くつう,"pain,agony",2,2,3
 単に,たんに,"simply,merely,only,solely",2,2,3
 試す,ためす,"to attempt,to test",2,2,3
@@ -1488,14 +1488,14 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 達する,たっする,"to reach,to get to",2,2,3
 信じる,しんじる,"to believe,to place trust in",2,2,3
 越える,こえる,"to exceed,to cross over,to cross",2,2,3
-灯,ひ,light,2,2,3
+灯,ひ,light (と),2,2,3
 酒,さけ,"alcohol,sake",2,2,3
 椅子,いす,chair,2,2,3
 差別,さべつ,"discrimination,distinction,differentiation",2,2,3
 自慢,じまん,"pride,boast",2,2,3
 お目に掛かる,おめにかかる,,2,2,3
 ジェット機,ジェットき,jet aeroplane,2,2,3
-乗客,じょうきゃく,passenger,2,2,3
+乗客,じょうきゃく,passenger (か),2,2,3
 切れる,きれる,"(1) to cut well,to be sharp,(2) to break (off)",2,2,3
 加わる,くわわる,"to join in,to accede to,to increase,to gain in (influence)",2,2,3
 望む,のぞむ,"to desire,to wish for,to see,to command (a view of)",2,2,3
@@ -1510,7 +1510,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 幼い,おさない,"very young,childish",2,2,3
 整理,せいり,"sorting,arrangement,adjustment,regulation",2,2,3
 組む,くむ,to put together,2,2,3
-日本,にほん,Japan,2,2,3
+日本,にほん,Japan (っ),2,2,3
 事態,じたい,"situation,present state of affairs",2,2,3
 主に,おもに,"mainly,primarily",2,2,3
 谷,たに,valley,2,2,3
@@ -1539,7 +1539,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 本物,ほんもの,genuine article,2,2,3
 損害,そんがい,"damage,injury,loss",2,2,3
 貢献,こうけん,"contribution,services",2,2,3
-身体,しんたい,the body,2,2,3
+身体,しんたい,the body (か),2,2,3
 起こる,おこる,"to occur,to happen",2,2,3
 女優,じょゆう,actress,2,2,3
 先ず,まず,"first (of all),to start with,about,almost,hardly (with neg. verb)",2,2,3
@@ -1549,7 +1549,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 就く,つく,"to settle in (place),to take (seat, position),to study (under teacher)",2,2,3
 住宅,じゅうたく,"resident,housing",2,2,3
 動詞,どうし,verb,2,2,3
-後,うしろ,"afterwards,since then,in the future",2,2,3
+後,うしろ,"afterwards,since then,in the future (う)",2,2,3
 意識,いしき,"consciousness,senses",2,2,3
 爆発,ばくはつ,"explosion,detonation,eruption",2,2,3
 組織,そしき,"(1) organization,(2) structure,construction,(3) tissue,(4) system",2,2,3
@@ -1610,11 +1610,11 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 取れる,とれる,"to come off,to be taken off,to be removed",2,2,3
 抱える,かかえる,to hold or carry under or in the arms,2,2,3
 医師,いし,"doctor,physician",2,2,3
-方々,ほうぼう,"persons,this and that,here and there,everywhere",2,2,3
+方々,ほうぼう,"persons,this and that,here and there,everywhere (ほ)",2,2,3
 順,じゅん,"order,turn",2,2,3
 勢い,いきおい,"force,vigor,energy,spirit",2,2,3
 事,こと,"thing,matter,fact,circumstances",2,2,3
-数,すう,"number,figure",2,2,3
+数,すう,"number,figure (か)",2,2,3
 機械,きかい,"machine,mechanism",2,2,3
 毛布,もうふ,blanket,2,2,3
 瓶,びん,bottle,2,2,3
@@ -1632,7 +1632,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 入院,にゅういん,hospitalization,2,2,3
 需要,じゅよう,"demand,request",2,2,3
 進学,しんがく,going on to university,2,2,3
-他,ほか,other (esp. places and things),2,2,3
+他,ほか,other (esp. places and things) (た),2,2,3
 独身,どくしん,"bachelorhood,single,unmarried,celibate",2,2,3
 構成,こうせい,"organization,composition",2,2,3
 祝い,いわい,"celebration,festival",2,2,3
@@ -1644,11 +1644,11 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 利益,りえき,"profits,gains,(political, economic) interest",2,2,3
 移す,うつす,"to remove,to transfer,to infect",2,2,3
 審判,しんぱん,"refereeing,trial,judgement,umpire,referee",2,2,3
-七,しち,seven,2,2,3
+七,しち,seven (し),2,2,3
 劣る,おとる,"to fall behind,to be inferior to",2,2,3
 止す,よす,"to cease,to abolish,to resign,to give up",2,2,3
-行き,いき,going,2,2,3
-金,かね,"(1) gold,(2) gold general (shogi) (abbr)",2,2,3
+行き,いき,going (ゆ),2,2,3
+金,かね,"(1) gold,(2) gold general (shogi) (abbr) (か)",2,2,3
 香り,かおり,"aroma,fragrance,scent,smell",2,2,3
 切れ,きれ,"cloth,piece,cut,chop",2,2,3
 鬼,おに,"ogre,demon,it (i.e., in a game of tag)",2,2,3
@@ -1660,7 +1660,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 換える,かえる,"to exchange,to interchange,to substitute,to replace",2,2,3
 記念,きねん,"commemoration,memory",2,2,3
 与える,あたえる,"to give,to present,to award",2,2,3
-十,じゅう,"10,ten",2,2,3
+十,じゅう,"10,ten (じ)",2,2,3
 奇妙,きみょう,"strange,queer,curious",2,2,3
 参考,さんこう,"reference,consultation",2,2,3
 態度,たいど,"attitude,manner",2,2,3
@@ -1669,7 +1669,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 縄,なわ,"rope,hemp",2,2,3
 転ぶ,ころぶ,"to fall down,to fall over",2,2,3
 莫大,ばくだい,"enormous,vast",2,2,3
-品,しな,"thing,article,goods,dignity,article (goods),counter for meal courses",2,2,3
+品,しな,"thing,article,goods,dignity,article (goods),counter for meal courses (し)",2,2,3
 根,ね,root,2,2,3
 格好,かっこう,"shape,form,posture,suitability",2,2,3
 効果,こうか,"effect,effectiveness,efficacy,result",2,2,3
@@ -1684,12 +1684,12 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 馬鹿,ばか,"fool,idiot,trivial matter,folly",2,2,3
 優秀,ゆうしゅう,"superiority,excellence",2,2,3
 税,ぜい,,2,2,3
-得る,える,"to get,to gain,to win",2,2,3
+得る,える,"to get,to gain,to win (う)",2,2,3
 実現,じつげん,"implementation,materialization,realization",2,2,3
 負け,まけ,"defeat,loss,losing (a game)",2,2,3
 迎え,むかえ,"meeting,person sent to pick up an arrival",2,2,3
 通学,つうがく,commuting to school,2,2,3
-七,なな,seven,2,2,3
+七,なな,seven (な),2,2,3
 舌,した,tongue,2,2,3
 汗,あせ,"sweat,perspiration",2,2,3
 設備,せつび,"equipment,device,facilities,installation",2,2,3
@@ -1725,7 +1725,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 完全,かんぜん,"perfection,completeness",2,2,3
 直に,じかに,"immediately,readily,directly",2,2,3
 熱帯,ねったい,tropics,2,2,3
-年月,としつき,months and years,2,2,3
+年月,としつき,months and years (と),2,2,3
 役割,やくわり,"part,assigning (allotment of) parts,role,duties",2,2,3
 幸運,こううん,"good luck,fortune",2,2,3
 男子,だんし,"youth,young man",2,2,3
@@ -1741,7 +1741,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 至る,いたる,"to come,to arrive",2,2,3
 飛行,ひこう,aviation,2,2,3
 真剣,しんけん,"seriousness,earnestness",2,2,3
-球,たま,"globe,sphere,ball",2,2,3
+球,たま,"globe,sphere,ball (き)",2,2,3
 組合,くみあい,"association,union",2,2,3
 豊富,ほうふ,"abundance,wealth,plenty,bounty",2,2,3
 担当,たんとう,(in) charge,2,2,3
@@ -1758,7 +1758,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 独特,どくとく,"peculiarity,uniqueness,characteristic",2,2,3
 団体,だんたい,"organization,association",2,2,3
 欠席,けっせき,"absence,non-attendance",2,2,3
-下,しも,"under,below,beneath",2,2,3
+下,しも,"under,below,beneath (げ)",2,2,3
 罰する,ばっする,"to punish,to penalize",2,2,3
 好む,このむ,"to like,to prefer",2,2,3
 提案,ていあん,"proposal,proposition,suggestion",2,2,3
@@ -1766,7 +1766,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 上等,じょうとう,"superiority,first class,very good",2,2,3
 局,きょく,"court lady,lady in waiting",2,2,3
 手間,てま,"time,labour",2,2,3
-得る,うる,"to get,to gain,to win",2,2,3
+得る,うる,"to get,to gain,to win (え)",2,2,3
 下り,くだり,down-train (going away from Tokyo),2,2,3
 一生,いっしょう,"whole life,a lifetime,all through life",2,2,3
 妙,みょう,"strange,unusual",2,2,3
@@ -1784,7 +1784,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 訓,くん,native Japanese reading of a Chinese character,2,2,3
 お腹,おなか,stomach,2,2,3
 髪の毛,かみのけ,hair (head),2,2,3
-四,よん,four,2,2,3
+四,よん,four (よ),2,2,3
 否定,ひてい,"negation,denial,repudiation",2,2,3
 適用,てきよう,applying,2,2,3
 観察,かんさつ,"observation,survey",2,2,3
@@ -1797,7 +1797,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 嵐,あらし,"storm,tempest",2,2,3
 出会う,であう,"to meet by chance,to come across,to happen to encounter",2,2,3
 好み,このみ,"liking,taste,choice",2,2,3
-軒,けん,eaves,2,2,3
+軒,けん,eaves (の),2,2,3
 王子,おうじ,prince,2,2,3
 省く,はぶく,"to omit,to eliminate,to curtail,to economize",2,2,3
 基,もと,basis,2,2,3
@@ -1816,10 +1816,10 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 昨,さく,"last (year),yesterday",2,2,3
 農家,のうか,"farmer,farm family",2,2,3
 今回,こんかい,"now,this time,lately",2,2,3
-上,じょう,"(1) first volume,(2) superior quality,(3) governmental",2,2,3
+上,じょう,"(1) first volume,(2) superior quality,(3) governmental (か)",2,2,3
 無し,なし,without,2,2,3
 親しい,したしい,"intimate,close (e.g. friend)",2,2,3
-本当,ほんと,"truth,reality",2,2,3
+本当,ほんと,"truth,reality (う)",2,2,3
 共通,きょうつう,"commonness,community",2,2,3
 出身,しゅっしん,"graduate from,come from",2,2,3
 準備,じゅんび,"preparation,arrangements,provision,reserve",2,2,3
@@ -1828,8 +1828,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 女子,じょし,"woman,girl",2,2,3
 筋肉,きんにく,"muscle,sinew",2,2,3
 滞在,たいざい,"stay,sojourn",2,2,3
-一言,ひとこと,single word,2,2,3
-描く,かく,"to draw,to paint,to sketch,to depict,to describe",2,2,3
+一言,ひとこと,single word (い),2,2,3
+描く,かく,"to draw,to paint,to sketch,to depict,to describe (か)",2,2,3
 女王,じょおう,queen,2,2,3
 決まり,きまり,"settlement,conclusion,regulation,rule",2,2,3
 体温,たいおん,temperature (body),2,2,3
@@ -1838,10 +1838,10 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 夫婦,ふうふ,"married couple,husband and wife",2,2,3
 今にも,いまにも,"at any time,soon",2,2,3
 分,ぶん,"dividing,part,segment",2,2,3
-金,きん,"(1) gold,(2) gold general (shogi) (abbr)",2,2,3
+金,きん,"(1) gold,(2) gold general (shogi) (abbr) (き)",2,2,3
 対する,たいする,"to face,to confront,to oppose",2,2,3
 被る,かぶる,to suffer,2,2,3
-十,とお,"10,ten",2,2,3
+十,とお,"10,ten (と)",2,2,3
 都会,とかい,city,2,2,3
 美人,びじん,beautiful person (woman),2,2,3
 信仰,しんこう,"(religious) faith,belief,creed",2,2,3
@@ -1862,7 +1862,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 居間,いま,living room (western style),2,2,3
 拍手,はくしゅ,"clapping hands,applause",2,2,3
 徹夜,てつや,"all night,all night vigil,sleepless night",2,2,3
-為る,なる,"to change,to be of use,to reach to",2,2,3
+為る,なる,"to change,to be of use,to reach to (な)",2,2,3
 吐く,はく,"(1) to breathe,(2) to tell (lies),(3) to vomit,to disgorge",2,2,3
 委員,いいん,committee member,2,2,3
 積極的,せっきょくてき,"positive,active,proactive",2,2,3
@@ -1870,12 +1870,12 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 友人,ゆうじん,friend,2,2,3
 務め,つとめ,"(1) service,duty,(2) Buddhist religious services",2,2,3
 金融,きんゆう,"monetary circulation,credit situation",2,2,3
-梅雨,ばいう,"rainy season,rain during the rainy season",2,2,3
+梅雨,ばいう,"rainy season,rain during the rainy season (ば)",2,2,3
 絶対,ぜったい,"absolute,unconditional,absoluteness",2,2,3
 模様,もよう,"pattern,figure,design",2,2,3
-綿,わた,"cotton,padding",2,2,3
+綿,わた,"cotton,padding (め)",2,2,3
 旧,きゅう,ex-,2,2,3
-雷,かみなり,thunder,2,2,3
+雷,かみなり,thunder (い),2,2,3
 溺れる,おぼれる,"to be drowned,to indulge in",2,2,3
 時期,じき,"time,season,period",2,2,3
 支出,ししゅつ,"expenditure,expenses",2,2,3
@@ -1928,7 +1928,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 羽,はね,"counter for birds,counter for rabbits",2,2,3
 刑事,けいじ,"criminal case,(police) detective",2,2,3
 順番,じゅんばん,"turn (in line),order of things",2,2,3
-無,ぶ,"nothing,naught,nil,zero",2,2,3
+無,ぶ,"nothing,naught,nil,zero (ぶ)",2,2,3
 受け取る,うけとる,"to receive,to get,to accept,to take",2,2,3
 元,もと,"(1) origin,original,(2) former",2,2,3
 喜び,よろこび,"(a) joy,(a) delight,rapture,pleasure,gratification,rejoicing,congratulations,felicitations",2,2,3
@@ -2006,7 +2006,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 通り過ぎる,とおりすぎる,"to pass,to pass through",2,2,3
 横切る,よこぎる,"to cross (e.g. arms),to traverse",2,2,3
 柄,がら,"hilt (of a sword),haft (of a dagger),handgrip",2,2,3
-他,た,other (esp. places and things),2,2,3
+他,た,other (esp. places and things) (ほ),2,2,3
 流す,ながす,"to drain,to float,to shed (blood, tears),to cruise (e.g. taxi)",2,2,3
 帰宅,きたく,returning home,2,2,3
 推薦,すいせん,recommendation,2,2,3
@@ -2050,14 +2050,14 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 知能,ちのう,"intelligence,brains",2,2,3
 言わば,いわば,so to speak,2,2,3
 秒,びょう,second (60th min),2,2,3
-解く,とく,to unfasten,2,2,3
+解く,とく,to unfasten (と),2,2,3
 生産,せいさん,"production,manufacture",2,2,3
 何,なに,what,2,2,3
 最低,さいてい,"least,lowest,worst",2,2,3
 噂,うわさ,"rumour,report,gossip,common talk",2,2,3
 自然,しぜん,"nature,spontaneous",2,2,3
 優れる,すぐれる,"to surpass,to outstrip,to excel",2,2,3
-言う,ゆう,to say,2,2,3
+言う,ゆう,to say (ゆ),2,2,3
 印象,いんしょう,impression,2,2,3
 厄介,やっかい,"trouble,burden,care,bother",2,2,3
 論争,ろんそう,"controversy,dispute",2,2,3
@@ -2128,7 +2128,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 刀,かたな,"sword,saber,knife,engraving tool",2,2,3
 都市,とし,"town,city,municipal,urban",2,2,3
 田,た,rice field,2,2,3
-唯,たった,"free of charge,mere,sole,only,usual,common",2,2,3
+唯,たった,"free of charge,mere,sole,only,usual,common (っ)",2,2,3
 貯金,ちょきん,(bank) savings,2,2,3
 以来,いらい,"since,henceforth",2,2,3
 投票,とうひょう,"voting,poll",2,2,3
@@ -2137,9 +2137,9 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 正午,しょうご,"noon,mid-day",2,2,3
 放送,ほうそう,"broadcast,broadcasting",2,2,3
 生命,せいめい,"life,existence",2,2,3
-度,たび,counter for occurrences,2,2,3
+度,たび,counter for occurrences (た),2,2,3
 典型,てんけい,"type,pattern,archetypal",2,2,3
-後,ご,"afterwards,since then,in the future",2,2,3
+後,ご,"afterwards,since then,in the future (ご)",2,2,3
 欠ける,かける,to be lacking,2,2,3
 是非,ぜひ,"certainly,without fail",2,2,3
 塔,とう,"tower,pagoda",2,2,3
@@ -2154,7 +2154,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 幸福,こうふく,"happiness,blessedness",2,2,3
 対象,たいしょう,"target,object (of worship, study, etc),subject (of taxation, etc)",2,2,3
 残す,のこす,"to leave (behind, over),to bequeath,to save,to reserve",2,2,3
-何,なん,what,2,2,3
+何,なん,what (ん),2,2,3
 昇る,のぼる,"to arise,to ascend,to go up",2,2,3
 来,らい,",for (10 days),next (year)",2,2,3
 無視,むし,"disregard,ignore",2,2,3
@@ -2212,7 +2212,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 不満,ふまん,"dissatisfaction,displeasure,discontent,complaints,unhappiness",2,2,3
 完了,かんりょう,"completion,conclusion",2,2,3
 木曜,もくよう,Thursday,2,2,3
-上,かみ,"(1) first volume,(2) superior quality,(3) governmental",2,2,3
+上,かみ,"(1) first volume,(2) superior quality,(3) governmental (じ)",2,2,3
 魚,うお,fish,2,2,3
 発見,はっけん,"discovery,detection,finding",2,2,3
 包み,つつみ,"bundle,package,parcel,bale",2,2,3
@@ -2228,14 +2228,14 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 表情,ひょうじょう,facial expression,2,2,3
 正式,せいしき,"due form,official,formality",2,2,3
 傾向,けいこう,"tendency,trend,inclination",2,2,3
-綿,めん,"cotton,padding",2,2,3
+綿,めん,"cotton,padding (わ)",2,2,3
 必ずしも,かならずしも,"(not) always,(not) necessarily,(not) all,(not) entirely",2,2,3
 指す,さす,"to point,to put up umbrella,to play",2,2,3
 予算,よさん,"estimate,budget",2,2,3
 文字,もんじ,"letter (of alphabet),character",2,2,3
 想像,そうぞう,"imagination,guess",2,2,3
 会計,かいけい,"account,finance,accountant",2,2,3
-無,む,"nothing,naught,nil,zero",2,2,3
+無,む,"nothing,naught,nil,zero (む)",2,2,3
 表現,ひょうげん,"expression,presentation,representation (math)",2,2,3
 唯一,ゆいいつ,"only,sole,unique",2,2,3
 非常,ひじょう,"emergency,extraordinary,unusual",2,2,3
@@ -2248,15 +2248,15 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 職,しょく,employment,2,2,3
 学期,がっき,term (school),2,2,3
 針,はり,"needle,hand (e.g. clock)",2,2,3
-日本,にっぽん,Japan,2,2,3
+日本,にっぽん,Japan (ほ),2,2,3
 軍隊,ぐんたい,"army,troops",2,2,3
 徹底,てってい,"thoroughness,completeness",2,2,3
-下,げ,"under,below,beneath",2,2,3
+下,げ,"under,below,beneath (し)",2,2,3
 景気,けいき,"condition,state,business (condition)",2,2,3
 酸素,さんそ,oxygen,2,2,3
 割る,わる,"to divide,to cut,to break,to halve",2,2,3
 恋人,こいびと,"lover,sweetheart",2,2,3
-九,きゅう,nine,2,2,3
+九,きゅう,nine (き),2,2,3
 原,はら,"field,plain,prairie,tundra,moor,wilderness",2,2,3
 勝ち,かち,"win,victory",2,2,3
 黒板,こくばん,blackboard,2,2,3
@@ -2278,7 +2278,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 中央,ちゅうおう,"centre,central,center,middle",2,2,3
 神,かみ,god,2,2,3
 終える,おえる,to finish,2,2,3
-後,のち,"afterwards,since then,in the future",2,2,3
+後,のち,"afterwards,since then,in the future (の)",2,2,3
 経つ,たつ,"to pass,to lapse",2,2,3
 追い付く,おいつく,"to overtake,to catch up (with)",2,2,3
 回復,かいふく,"recovery (from illness),improvement,rehabilitation,restoration",2,2,3
@@ -2313,7 +2313,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 適度,てきど,moderate,2,2,3
 例,れい,"instance,example,case",2,2,3
 節,ふし,"tune,tone,knot,knob,point",2,2,3
-年月,ねんげつ,months and years,2,2,3
+年月,ねんげつ,months and years (ね),2,2,3
 恐れる,おそれる,"to fear,to be afraid of",2,2,3
 滅多に,めったに,"rarely (with neg. verb),seldom",2,2,3
 掛かる,かかる,"to take (e.g. time, money, etc),to hang",2,2,3
@@ -2325,7 +2325,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 応じる,おうじる,"to respond,to satisfy,to accept,to comply with,to apply for",2,2,3
 首相,しゅしょう,Prime Minister,2,2,3
 愉快,ゆかい,"pleasant,happy",2,2,3
-品,ひん,"thing,article,goods,dignity,article (goods),counter for meal courses",2,2,3
+品,ひん,"thing,article,goods,dignity,article (goods),counter for meal courses (ひ)",2,2,3
 会,かい,"meeting,assembly,party,association,club",2,2,3
 実は,じつは,"as a matter of fact,by the way",2,2,3
 医療,いりょう,"medical care,medical treatment",2,2,3
@@ -2362,15 +2362,15 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 又,また,"again,and",2,2,3
 記入,きにゅう,"entry,filling in of forms",2,2,3
 予測,よそく,"prediction,estimation",2,2,3
-数,かず,"number,figure",2,2,3
-不,ふ,"un,non,negative prefix",2,2,3
+数,かず,"number,figure (す)",2,2,3
+不,ふ,"un,non,negative prefix (ぶ)",2,2,3
 活気,かっき,"energy,liveliness",2,2,3
 近代,きんだい,present day,2,2,3
 大使,たいし,ambassador,2,2,3
 一家,いっか,"a house,a home,a family,a household",2,2,3
 哀れ,あわれ,"helpless,pity,sorrow,grief",2,2,3
 抱く,いだく,"(sl) to embrace,to hug,to harbour,to entertain",2,2,3
-額,ひたい,"forehead,brow",2,2,3
+額,ひたい,"forehead,brow (ひ)",2,2,3
 筆,ふで,writing brush,2,2,3
 式,しき,"equation,formula,ceremony",2,2,3
 今日,こんにち,"today,this day",2,2,3
@@ -2383,7 +2383,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 機関,きかん,"organ,mechanism,facility,engine",2,2,3
 握る,にぎる,"to grasp,to seize,to mould sushi",2,2,3
 遅刻,ちこく,"lateness,late coming",2,2,3
-九,く,nine,2,2,3
+九,く,nine (く),2,2,3
 清潔,せいけつ,clean,2,2,3
 都,みやこ,capital,2,2,3
 飯,めし,"(sl) meals,food",2,2,3
@@ -2403,7 +2403,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 奨学金,しょうがくきん,scholarship,2,2,3
 最高,さいこう,"highest,supreme,the most",2,2,3
 皆,みんな,"all,everyone,everybody",2,2,3
-円,えん,"circle,money",2,2,3
+円,えん,"circle,money (ま)",2,2,3
 陸,りく,six (used in legal documents),2,2,3
 増す,ます,"to increase,to grow",2,2,3
 輸入,ゆにゅう,"importation,import,introduction",2,2,3
@@ -2412,7 +2412,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 既に,すでに,"already,too late",2,2,3
 結論,けつろん,conclusion,2,2,3
 単純,たんじゅん,simplicity,2,2,3
-球,きゅう,"globe,sphere,ball",2,2,3
+球,きゅう,"globe,sphere,ball (た)",2,2,3
 大半,たいはん,"majority,mostly,generally",2,2,3
 確実,かくじつ,"certainty,reliability,soundness",2,2,3
 避ける,さける,"(1) to avoid (physical contact ),(2) to ward off,to avert",2,2,3
@@ -2450,7 +2450,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 逮捕,たいほ,"arrest,apprehension,capture",2,2,3
 鎖,くさり,chain,2,2,3
 夢中,むちゅう,"daze,(in a) trance,ecstasy,delirium,engrossment",2,2,3
-明後日,みょうごにち,day after tomorrow,2,2,3
+明後日,みょうごにち,day after tomorrow (あ),2,2,3
 一度に,いちどに,all at once,2,2,3
 出発,しゅっぱつ,departure,2,2,3
 仏,ほとけ,"Buddha,merciful person,Buddhist image,the dead",2,2,3
@@ -2461,7 +2461,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 延期,えんき,"postponement,adjournment",2,2,3
 支度,したく,preparation,2,2,3
 船,ふね,"ship,boat,watercraft,shipping,vessel,steamship",2,2,3
-度,ど,counter for occurrences,2,2,3
+度,ど,counter for occurrences (ど),2,2,3
 犯人,はんにん,"offender,criminal",2,2,3
 流れる,ながれる,"to stream,to flow,to run (ink),to be washed away",2,2,3
 差,さ,"difference,variation",2,2,3
@@ -2514,7 +2514,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 技師,ぎし,"engineer,technician",2,2,3
 際,さい,"on the occasion of,circumstances",2,2,3
 鉄道,てつどう,railroad,2,2,3
-文字,もじ,"letter (of alphabet),character",2,2,3
+文字,もじ,"letter (of alphabet),character (ん)",2,2,3
 常に,つねに,"always,constantly",2,2,3
 迷子,まいご,lost (stray) child,2,2,3
 持ち上げる,もちあげる,"to raise,to lift up,to flatter",2,2,3
@@ -2552,7 +2552,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 安定,あんてい,"stability,equilibrium",2,2,3
 宇宙,うちゅう,"universe,cosmos,space",2,2,3
 身長,しんちょう,"height (of body),stature",2,2,3
-生,せい,"(1) draft (beer),(2) raw,unprocessed",2,2,3
+生,せい,"(1) draft (beer),(2) raw,unprocessed (な)",2,2,3
 表す,あらわす,"to express,to show,to reveal",2,2,3
 泡,あわ,"bubble,foam,froth,head on beer",2,2,3
 意志,いし,"will,volition",2,2,3
@@ -2614,7 +2614,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 直径,ちょっけい,diameter,3,3,2
 早口,はやくち,fast-talking,3,3,2
 煙い,けむい,smoky,3,3,2
-紅葉,もみじ,(1) (Japanese) maple,3,3,2
+紅葉,もみじ,(1) (Japanese) maple (こ),3,3,2
 明け方,あけがた,dawn,3,3,2
 正門,せいもん,"main gate,main entrance",3,3,2
 不通,ふつう,"suspension,interruption,stoppage,tie-up,cessation",3,3,2
@@ -2722,7 +2722,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 広場,ひろば,plaza,3,3,2
 薬缶,やかん,kettle,3,3,2
 学級,がっきゅう,grade in school,3,3,2
-下る,くだる,"to get down,to descend",3,3,2
+下る,くだる,"to get down,to descend (さ)",3,3,2
 内線,ないせん,"phone extension,indoor wiring,inner line",3,3,2
 雑音,ざつおん,"noise (jarring, grating)",3,3,2
 下町,したまち,"Shitamachi,lower parts of town",3,3,2
@@ -2874,14 +2874,14 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 紙幣,しへい,"paper money,notes,bills",3,3,2
 尖る,とがる,"to taper to a point,to become sharp,to be sour,to look displeased",3,3,2
 売買,ばいばい,"trade,buying and selling",3,3,2
-銅,どう,copper,3,3,2
+銅,どう,copper (あ),3,3,2
 反映,はんえい,"reflection,influence",3,3,2
 教養,きょうよう,"culture,education,refinement,cultivation",3,3,2
 増減,ぞうげん,"increase and decrease,fluctuation",3,3,2
 養分,ようぶん,"nourishment,nutrient",3,3,2
 名物,めいぶつ,"famous product,special product,speciality",3,3,2
 歌謡,かよう,"song,ballad",3,3,2
-湿気,しっけ,"moisture,humidity,dampness",3,3,2
+湿気,しっけ,"moisture,humidity,dampness (き)",3,3,2
 覗く,のぞく,"to peep in,to look in,to peek in,to stick out",3,3,2
 血液,けつえき,blood,3,3,2
 幼児,ようじ,"infant,baby,child",3,3,2
@@ -2995,14 +2995,14 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 鳴らす,ならす,"to ring,to sound,to chime,to beat,to snort (nose)",3,3,2
 英文,えいぶん,sentence in English,3,3,2
 碗,わん,bowl,3,3,2
-一昨年,いっさくねん,year before last,3,3,2
+一昨年,いっさくねん,year before last (お),3,3,2
 公務,こうむ,"official business,public business",3,3,2
 蒸気,じょうき,"steam,vapour",3,3,2
 縛る,しばる,"to tie,to bind",3,3,2
 締切,しめきり,"closing,cut-off,end,deadline,Closed,No Entrance",3,3,2
 撮影,さつえい,photographing,3,3,2
 絞る,しぼる,"to press,to wring,to squeeze",3,3,2
-剃る,そる,to shave,3,3,2
+剃る,そる,to shave (す),3,3,2
 構造,こうぞう,"structure,construction",3,3,2
 偉い,えらい,"great,celebrated,eminent,terrible,awful,famous,remarkable,excellent",3,3,2
 酔っ払い,よっぱらい,drunkard,3,3,2
@@ -3305,7 +3305,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 流域,りゅういき,(river) basin,3,3,2
 流石,さすが,"clever,adept,good,expectations,as one would expect",3,3,2
 出入口,でいりぐち,exit and entrance,3,3,2
-家主,やぬし,landlord,3,3,2
+家主,やぬし,landlord (い),3,3,2
 退ける,どける,"to remove,to take away,to dislodge,to put something out of the way",3,3,2
 国立,こくりつ,national,3,3,2
 坊や,ぼうや,boy,3,3,2
@@ -3324,7 +3324,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 言葉遣い,ことばづかい,"speech,expression,wording",3,3,2
 副詞,ふくし,adverb,3,3,2
 記号,きごう,"symbol,code",3,3,2
-湿気,しっき,"moisture,humidity,dampness",3,3,2
+湿気,しっき,"moisture,humidity,dampness (け)",3,3,2
 納める,おさめる,"to obtain,to reap,to pay,to supply,to accept",3,3,2
 窓口,まどぐち,ticket window,3,3,2
 加速,かそく,acceleration,3,3,2
@@ -3443,7 +3443,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 論ずる,ろんずる,"to argue,to discuss,to debate",3,3,2
 和服,わふく,Japanese clothes,3,3,2
 定規,じょうぎ,(measuring) ruler,3,3,2
-鈍い,のろい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid",3,3,2
+鈍い,のろい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (に)",3,3,2
 五十音,ごじゅうおん,the Japanese syllabary,3,3,2
 筆者,ひっしゃ,"writer,author",3,3,2
 相違,そうい,"difference,discrepancy,variation",3,3,2
@@ -3489,7 +3489,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 命ずる,めいずる,"to command,to appoint",3,3,2
 格別,かくべつ,exceptional,3,3,2
 混ざる,まざる,"to be mixed,to be blended with,to associate with,to mingle with,to join",3,3,2
-留まる,とどまる,"(1) to be fixed,(2) to abide,to stay (in the one place)",3,3,2
+留まる,とどまる,"(1) to be fixed,(2) to abide,to stay (in the one place) (ど)",3,3,2
 自衛,じえい,self-defense,3,3,2
 過程,かてい,process,3,3,2
 測る,はかる,"to measure,to weigh,to survey",3,3,2
@@ -3531,7 +3531,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 附属,ふぞく,"attached,belonging,affiliated",3,3,2
 独り言,ひとりごと,"a soliloquy,a monologue,speaking to oneself",3,3,2
 点々,てんてん,"here and there,little by little",3,3,2
-中指,なかゆび,middle finger,3,3,2
+中指,なかゆび,middle finger (ち),3,3,2
 制作,せいさく,"work (film, book)",3,3,2
 請う,こう,"to ask,to request",3,3,2
 Ͼ立,たいりつ,"confrontation,opposition,antagonism",3,3,2
@@ -3613,7 +3613,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 彫刻,ちょうこく,"carving,engraving,sculpture",3,3,2
 製作,せいさく,"manufacture,production",3,3,2
 太鼓,たいこ,"drum,tambourine",3,3,2
-鈍い,にぶい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid",3,3,2
+鈍い,にぶい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (の)",3,3,2
 蚊,か,mosquito,3,3,2
 麓,ふもと,"the foot,the bottom,the base (of a mountain)",3,3,2
 測定,そくてい,measurement,3,3,2
@@ -3644,7 +3644,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 差し支え,さしつかえ,"hindrance,impediment",3,3,2
 毛皮,けがわ,"fur,skin,pelt",3,3,2
 児童,じどう,"children,juvenile",3,3,2
-紅葉,こうよう,(1) (Japanese) maple,3,3,2
+紅葉,こうよう,(1) (Japanese) maple (も),3,3,2
 漁師,りょうし,fisherman,3,3,2
 幼稚園,ようちえん,kindergarten,3,3,2
 片付く,かたづく,"to put in order,to dispose of,to solve",3,3,2
@@ -3727,7 +3727,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 休講,きゅうこう,lecture cancelled,3,3,2
 羊毛,ようもう,wool,3,3,2
 摩擦,まさつ,"friction,rubbing,rubdown,chafe",3,3,2
-天皇,てんのう,Emperor of Japan,3,3,2
+天皇,てんのう,Emperor of Japan (す),3,3,2
 増大,ぞうだい,enlargement,3,3,2
 実力,じつりょく,"merit,efficiency,arms,force",3,3,2
 募集,ぼしゅう,"recruiting,taking applications",3,3,2
@@ -3774,7 +3774,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 険しい,けわしい,"inaccessible place,sharp eyes",3,3,2
 着々,ちゃくちゃく,steadily,3,3,2
 真っ白,まっしろ,pure white,3,3,2
-一昨日,いっさくじつ,day before yesterday,3,3,2
+一昨日,いっさくじつ,day before yesterday (お),3,3,2
 派手,はで,"showy,loud,gay,flashy,gaudy",3,3,2
 お手伝いさん,おてつだいさん,maid,3,3,2
 懐かしい,なつかしい,"dear,desired,missed",3,3,2
@@ -4287,7 +4287,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 区切り,くぎり,"an end, a stop, punctuation",4,4,1
 着席,ちゃくせき,"sit down, seat",4,4,1
 酷い,ひどい,"cruel, awful, severe, very bad, serious, terrible, heavy, violent",4,4,1
-一言,いちげん,single word,4,4,1
+一言,いちげん,single word (ひ),4,4,1
 座標,ざひょう,coordinate(s),4,4,1
 要請,ようせい,"claim, demand, request, application",4,4,1
 塾,じゅく,"coaching school, lessons",4,4,1
@@ -4422,7 +4422,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 丸々,まるまる,completely,4,4,1
 頃,けい,"time, about, toward, approximately (time)",4,4,1
 結合,けつごう,"combination, union",4,4,1
-弟,おと,younger brother,4,4,1
+弟,おと,younger brother (う),4,4,1
 手際,てぎわ,"performance, skill, tact",4,4,1
 根気,こんき,"patience, perseverance, energy",4,4,1
 婿,むこ,son-in-law,4,4,1
@@ -4495,7 +4495,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 機構,きこう,"mechanism, organization",4,4,1
 融資,ゆうし,"financing, loan",4,4,1
 軍事,ぐんじ,military affairs,4,4,1
-彼方此方,あちらこちら,here and there,4,4,1
+彼方此方,あちらこちら,here and there (ら),4,4,1
 温和,おんわ,"gentle, mild, moderate",4,4,1
 挑む,いどむ,"to challenge, to contend for, to make love to",4,4,1
 渦,うず,swirl,4,4,1
@@ -4537,7 +4537,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 使い道,つかいみち,use,4,4,1
 通常,つうじょう,"common, general, usually",4,4,1
 侮辱,ぶじょく,"insult, contempt, slight",4,4,1
-雷,いかずち,thunder,4,4,1
+雷,いかずち,thunder (み),4,4,1
 封鎖,ふうさ,"blockade, freezing (funds)",4,4,1
 区画,くかく,"division, section, compartment, boundary, area, block",4,4,1
 召す,めす,"to call, to send for, to put on, to wear, to take (a bath), to ride in, to buy, to eat, to drink, to catch (a",4,4,1
@@ -4583,7 +4583,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 代わる代わる,かわるがわる,alternately,4,4,1
 民族,みんぞく,"people, race, nation, racial customs, folk customs",4,4,1
 完璧,かんぺき,"perfection, completeness, flawless",4,4,1
-解く,ほどく,to unfasten,4,4,1
+解く,ほどく,to unfasten (ほ),4,4,1
 原油,げんゆ,crude oil,4,4,1
 慎む,つつしむ,"to be careful, to be chaste or discreet, to abstain or refrain",4,4,1
 商,しょう,quotient,4,4,1
@@ -4602,7 +4602,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 的,まと,"mark, target",4,4,1
 衆議院,しゅうぎいん,"Lower House, House of Representatives",4,4,1
 番目,ばんめ,cardinal number suffix,4,4,1
-中指,ちゅうし,middle finger,4,4,1
+中指,ちゅうし,middle finger (な),4,4,1
 敗戦,はいせん,"defeat, losing a war",4,4,1
 然しながら,しかしながら,"nevertheless, however",4,4,1
 若しも,もしも,if,4,4,1
@@ -4644,7 +4644,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 苦しめる,くるしめる,"to torment, to harass, to inflict pain",4,4,1
 契機,けいき,"opportunity, chance",4,4,1
 長大,ちょうだい,"very long, great length",4,4,1
-門,かど,gate,4,4,1
+門,かど,gate (も),4,4,1
 理論,りろん,theory,4,4,1
 諦め,あきらめ,"resignation, acceptance, consolation",4,4,1
 悲観,ひかん,"pessimism, disappointment",4,4,1
@@ -4677,7 +4677,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 富む,とむ,"to be rich, to become rich",4,4,1
 生まれつき,うまれつき,"by nature, by birth, native",4,4,1
 末期,まっき,"closing years (period days), last stage",4,4,1
-国境,くにざかい,national or state border,4,4,1
+国境,くにざかい,national or state border (こ),4,4,1
 未婚,みこん,unmarried,4,4,1
 計器,けいき,"meter, gauge",4,4,1
 救援,きゅうえん,"relief, rescue, reinforcement",4,4,1
@@ -4706,7 +4706,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 演出,えんしゅつ,"production (e.g. play), direction",4,4,1
 死刑,しけい,"death penalty, capital punishment",4,4,1
 初耳,はつみみ,something heard for the first time,4,4,1
-姉妹,きょうだい,sisters,4,4,1
+姉妹,きょうだい,sisters (し),4,4,1
 篭る,こもる,"to seclude oneself, to be confined in, to be implied, to be stuffy",4,4,1
 初,はつ,"first, new",4,4,1
 にも拘らず,にもかかわらず,"in spite of, nevertheless",4,4,1
@@ -4845,8 +4845,8 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 生温い,なまぬるい,"lukewarm, halfhearted",4,4,1
 捕吏,ほり,constable,4,4,1
 夜中,やちゅう,"all night, the whole night",4,4,1
-乗客,じょうかく,passenger,4,4,1
-基,もとい,basis,4,4,1
+乗客,じょうかく,passenger (き),4,4,1
+基,もとい,basis (い),4,4,1
 衰える,おとろえる,"to become weak, to decline, to wear, to abate, to decay, to wither, to waste away",4,4,1
 藍褸,ぼろ,"rag, scrap, tattered clothes, fault (esp. in a pretense), defect, run-down or junky",4,4,1
 尚,なお,"furthermore, still, yet, more, still more, greater, further, less",4,4,1
@@ -4973,7 +4973,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 産婦人科,さんふじんか,maternity and gynecology department,4,4,1
 似通う,にかよう,to resemble closely,4,4,1
 憎しみ,にくしみ,hatred,4,4,1
-一人,いちにん,one person,4,4,1
+一人,いちにん,one person (ひ),4,4,1
 高,たか,"quantity, amount, volume, number, amount of money",4,4,1
 詰まり,つまり,"in short, in brief, in other words, that is to say, in the long run, after all, blockade, stuffing, ultimate",4,4,1
 雇用,こよう,"employment (long term), hire",4,4,1
@@ -5181,7 +5181,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 暫く,しばらく,little while,4,4,1
 緩む,ゆるむ,"to become loose, to slacken",4,4,1
 恐らく,おそらく,perhaps,4,4,1
-南,なん,south,4,4,1
+南,なん,south (み),4,4,1
 孤立,こりつ,"isolation, helplessness",4,4,1
 運賃,うんちん,"freight rates, shipping expenses, fare",4,4,1
 安っぽい,やすっぽい,"cheap-looking, tawdry, insignificant",4,4,1
@@ -5231,7 +5231,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 臆病,おくびょう,"cowardice, timidity",4,4,1
 前もって,まえもって,"in advance, beforehand, previously",4,4,1
 迚も,とても,"very, awfully, exceedingly",4,4,1
-銃,つつ,gun,4,4,1
+銃,つつ,gun (つ),4,4,1
 再,さい,"re-, again, repeated",4,4,1
 耕作,こうさく,"cultivation, farming",4,4,1
 脱出,だっしゅつ,escape,4,4,1
@@ -5326,7 +5326,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 諮る,はかる,"to consult with, to confer",4,4,1
 実態,じったい,"truth, fact",4,4,1
 経る,へる,"to pass, to elapse, to experience",4,4,1
-銅,あかがね,copper,4,4,1
+銅,あかがね,copper (ど),4,4,1
 御,ご,"go-, honourable",4,4,1
 逸らす,そらす,"to turn away, to avert",4,4,1
 吝嗇,けち,"stinginess, miser, miserliness, skinflint, tightwad, niggard, pinching pennies",4,4,1
@@ -5668,7 +5668,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 粥,かゆ,(rice) gruel,4,4,1
 転換,てんかん,"convert, divert",4,4,1
 終始,しゅうし,"beginning and end, from beginning to end, doing a thing from beginning to end",4,4,1
-濠,ごう,moat,4,4,1
+濠,ごう,moat (ほ),4,4,1
 陰気,いんき,"gloom, melancholy",4,4,1
 区間,くかん,section (of track etc),4,4,1
 海峡,かいきょう,channel,4,4,1
@@ -5748,7 +5748,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 屡,しばしば,"often, again and again, frequently",4,4,1
 短波,たんぱ,short wave,4,4,1
 真に,まことに,"truly, actually, really",4,4,1
-木綿,きわた,cotton,4,4,1
+木綿,きわた,cotton (も),4,4,1
 天災,てんさい,"natural calamity, disaster",4,4,1
 報ずる,ほうずる,"to inform, to report",4,4,1
 感度,かんど,"sensitivity, severity (quake)",4,4,1
@@ -5795,7 +5795,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 成熟,せいじゅく,"maturity, ripeness",4,4,1
 助,じょ,"help, rescue, assistant",4,4,1
 野生,やせい,wild,4,4,1
-灯,ともしび,light,4,4,1
+灯,ともしび,light (ひ),4,4,1
 所謂,いわゆる,"the so-called, so to speak",4,4,1
 喋る,しゃべる,"to talk, to chat, to chatter",4,4,1
 況して,まして,"still more, still less (with neg. verb), to say nothing of, not to mention",4,4,1
@@ -5825,7 +5825,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 蜜,みつ,"nectar, honey",4,4,1
 些とも,ちっとも,not at all (neg. verb),4,4,1
 模型,もけい,"model, dummy, maquette",4,4,1
-側,かわ,"side, row, surroundings, part, (watch) case",4,4,1
+側,かわ,"side, row, surroundings, part, (watch) case (か)",4,4,1
 親善,しんぜん,friendship,4,4,1
 疾っくに,とっくに,"long ago, already, a long time ago",4,4,1
 把握,はあく,"grasp, catch, understanding",4,4,1
@@ -5895,7 +5895,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 反乱,はんらん,"insurrection, mutiny, rebellion, revolt, uprising",4,4,1
 何気ない,なにげない,"casual, unconcerned",4,4,1
 際,きわ,"edge, brink, verge, side",4,4,1
-堪える,たえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t",4,4,1
+堪える,たえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (こた)",4,4,1
 窮屈,きゅうくつ,"narrow, tight, stiff, rigid, uneasy, formal, constrained",4,4,1
 就業,しゅうぎょう,"employment, starting work",4,4,1
 発条,ばね,spring (e.g. coil leaf),4,4,1
@@ -6143,7 +6143,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 嗚呼,ああ,"Ah!, Oh!, Alas!",4,4,1
 混む,こむ,to be crowded,4,4,1
 換算,かんさん,"conversion, change, exchange",4,4,1
-身体,からだ,the body,4,4,1
+身体,からだ,the body (し),4,4,1
 真下,ました,"right under, directly below",4,4,1
 進行,しんこう,advance,4,4,1
 人体,じんたい,human body,4,4,1
@@ -6202,7 +6202,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 軌道,きどう,"orbit, railroad track",4,4,1
 連休,れんきゅう,consecutive holidays,4,4,1
 残高,ざんだか,"(bank) balance, remainder",4,4,1
-家主,いえぬし,landlord,4,4,1
+家主,いえぬし,landlord (や),4,4,1
 優,やさ,"gentle, affectionate",4,4,1
 絶つ,たつ,"to sever, to cut off, to suppress, to abstain (from)",4,4,1
 残金,ざんきん,remaining money,4,4,1
@@ -6314,7 +6314,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 恐れ入る,おそれいる,"to be filled with awe, to feel small, to be amazed, to be surprised, to be disconcerted, to be sorry, to b",4,4,1
 施す,ほどこす,"to donate, to give, to conduct, to apply, to perform",4,4,1
 脚色,きゃくしょく,dramatization (e.g. film),4,4,1
-剃る,する,to shave,4,4,1
+剃る,する,to shave (そ),4,4,1
 指差す,ゆびさす,to point at,4,4,1
 調和,ちょうわ,harmony,4,4,1
 小柄,こがら,short (build),4,4,1
@@ -6339,7 +6339,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 捕らえる,とらえる,"to seize, to grasp, to capture, to arrest",4,4,1
 比例,ひれい,proportion,4,4,1
 世辞,せじ,"flattery, compliment",4,4,1
-堪える,こらえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t",4,4,1
+堪える,こらえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (ら)",4,4,1
 採掘,さいくつ,mining,4,4,1
 云々,うんぬん,"and so on, and so forth, comment",4,4,1
 増し,まし,"extra, additional, less objectionable, better, preferable",4,4,1
@@ -6378,7 +6378,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 消去,しょうきょ,"elimination, erasing, dying out, melting away",4,4,1
 鈍る,なまる,"to become less capable, to grow dull, to become blunt, to weaken",4,4,1
 年寄り,としより,"old people, the aged",4,4,1
-前,せん,before,4,4,1
+前,せん,before (ま),4,4,1
 当人,とうにん,"the one concerned, the said person",4,4,1
 周,しゅう,"circuit, lap, circumference, vicinity, Chou (dynasty)",4,4,1
 体格,たいかく,"physique, constitution",4,4,1
@@ -6428,12 +6428,12 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 雑貨,ざっか,"miscellaneous goods, general goods, sundries",4,4,1
 何とも,なんとも,"nothing (with neg. verb), quite, not a bit",4,4,1
 防衛,ぼうえい,"defense, protection, self-defense",4,4,1
-明後日,あさって,day after tomorrow,4,4,1
+明後日,あさって,day after tomorrow (み),4,4,1
 可成,かなり,"considerably, fairly, quite",4,4,1
 甘える,あまえる,"to behave like a spoiled child, to fawn on",4,4,1
 立法,りっぽう,"legislation, lawmaking",4,4,1
 辞退,じたい,refusal,4,4,1
-側,がわ,"side, row, surroundings, part, (watch) case",4,4,1
+側,がわ,"side, row, surroundings, part, (watch) case (が)",4,4,1
 突破,とっぱ,"breaking through, breakthrough, penetration",4,4,1
 個々,ここ,"individual, one by one",4,4,1
 乗っ取る,のっとる,"to capture, to occupy, to usurp",4,4,1
@@ -6722,7 +6722,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 其れ程,それほど,"to that degree, extent",4,4,1
 微か,かすか,"faint, dim, weak, indistinct, hazy, poor, wretched",4,4,1
 囀る,さえずる,"to sing, to chirp, to twitter",4,4,1
-堪える,こたえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t",4,4,1
+堪える,こたえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (たえる)",4,4,1
 照り返す,てりかえす,"to reflect, to throw back light",4,4,1
 一人でに,ひとりでに,"by itself, automatically, naturally",4,4,1
 海運,かいうん,"maritime, marine transportation",4,4,1
@@ -7045,7 +7045,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 産後,さんご,"postpartum, after childbirth",4,4,1
 偏る,かたよる,"to be one-sided, to incline, to be partial, to be prejudiced, to lean, to be biased",4,4,1
 誤る,あやまる,to make a mistake,4,4,1
-黄色,おうしょく,yellow,4,4,1
+黄色,おうしょく,yellow (き),4,4,1
 旧事,くじ,"past events, bygones",4,4,1
 急かす,せかす,"to hurry, to urge on",4,4,1
 選考,せんこう,"selection, screening",4,4,1
@@ -7080,7 +7080,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 矢鱈に,やたらに,"randomly, recklessly, blindly",4,4,1
 若し,もし,"if, in case, supposing",4,4,1
 何方,どなた,who?,4,4,1
-灰皿,はいさら,ashtray,4,4,1
+灰皿,はいさら,ashtray (ざ),4,4,1
 伝達,でんたつ,"transmission (e.g. news), communication, delivery",4,4,1
 自惚れ,うぬぼれ,"pretension, conceit, hubris",4,4,1
 問う,とう,"to ask, to question, to charge (i.e. with a crime), to accuse, without regard to (neg)",4,4,1
@@ -7106,7 +7106,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 断然,だんぜん,"firmly, absolutely, definitely",4,4,1
 著名,ちょめい,"well-known, noted, celebrated",4,4,1
 あざ笑う,あざわらう,"to sneer at, to ridicule",4,4,1
-天皇,すめらぎ,Emperor of Japan,4,4,1
+天皇,すめらぎ,Emperor of Japan (て),4,4,1
 敏感,びんかん,"sensibility, susceptibility, sensitive (to), well attuned to",4,4,1
 この間,このあいだ,"the other day, lately, recently",4,4,1
 上位,じょうい,"superior (rank not class), higher order (e.g. byte), host computer (of connected device)",4,4,1
