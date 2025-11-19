@@ -14,7 +14,9 @@ from practicejapanese.core.dev_mode import run_dev_mode
 from practicejapanese.core.quiz_runner import random_quiz
 from practicejapanese.core.sentence_cache import start_sentence_prefetcher
 from practicejapanese.core.utils import (
+    blue_text,
     get_score_output_dir,
+    green_text,
     resolve_data_path,
     reset_scores,
     set_verbose,
@@ -132,14 +134,16 @@ def _progress_bar(fraction: float, width: int = 24) -> str:
 def _render_progress_section(title: str, progress: Dict[int, Tuple[int, int]]) -> None:
     """Print a labelled block of JLPT progress bars."""
 
-    print(title)
+    print(blue_text(title, bold=True))
     for level in range(5, 0, -1):
         done, total = progress.get(level, (0, 0))
         fraction = (done / total) if total else 0.0
-        label = f"N{level}"
-        bar = _progress_bar(fraction)
+        raw_label = f"N{level}"
+        label = blue_text(f"{raw_label:<3}", bold=True)
+        bar = green_text(_progress_bar(fraction))
         percentage = fraction * 100.0
-        print(f"  {label:<3} {bar} {percentage:6.2f}% ({done}/{total})")
+        pct = green_text(f"{percentage:6.2f}%")
+        print(f"  {label} {bar} {pct} ({done}/{total})")
     print()
 
 
@@ -147,11 +151,11 @@ def _show_title_screen() -> None:
     """Display the application banner and current kanji/vocabulary progress."""
 
     width = 50
-    separator = "=" * width
+    separator = blue_text("=" * width)
     print(separator)
-    print("PracticeJapanese".center(width))
-    print(f"Version {VERSION}".center(width))
-    print("A command-line Japanese learning application".center(width))
+    print(blue_text("PracticeJapanese".center(width), bold=True))
+    print(green_text(f"Version {VERSION}".center(width)))
+    print(green_text("A command-line Japanese learning application".center(width)))
     print("by eduardob999 (github) ©2025".center(width))
     print(separator)
 
@@ -171,10 +175,11 @@ def _show_title_screen() -> None:
 
 
 def _display_menu(actions: Dict[str, MenuAction]) -> None:
-    print("Select quiz type:")
+    print(blue_text("Select quiz type:", bold=True))
     for key, action in actions.items():
-        print(f"{key}. {action.label}")
-    print("(Run 'pjapp -h' for command-line options)")
+        key_display = green_text(key, bold=True)
+        print(f"{key_display}. {action.label}")
+    print(green_text("(Run 'pjapp -h' for command-line options)"))
 
 
 def _handle_choice(choice: str, actions: Dict[str, MenuAction]) -> None:
@@ -231,7 +236,7 @@ def main() -> None:
         }
 
         _display_menu(actions)
-        choice = input("Enter number: ").strip()
+        choice = input(green_text("Enter number: ", bold=True)).strip()
         _handle_choice(choice, actions)
     except KeyboardInterrupt:
         print("\nInterrupted. Goodbye!")

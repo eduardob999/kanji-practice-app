@@ -53,13 +53,13 @@ def read_requirements():
     return [line.strip() for line in lines if line.strip() and not line.startswith('#')]
 
 setup(
-    name="pjapp",
+    name="kanjiba",
     version=read_version(),
     packages=find_packages(),
     install_requires=read_requirements(),
     entry_points={
         "console_scripts": [
-            "pjapp=practicejapanese.main:main"
+            "kanjiba=practicejapanese.main:main"
         ]
     },
     include_package_data=True,

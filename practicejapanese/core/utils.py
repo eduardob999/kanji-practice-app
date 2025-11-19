@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any, Callable, Dict, List, MutableMapping, Optional, Sequence
 
@@ -19,6 +20,50 @@ _DATA_DIR = _PACKAGE_ROOT / "data"
 
 # --- Global config flags ---
 VERBOSE = False
+
+ANSI_RESET = "\033[0m"
+ANSI_BOLD = "\033[1m"
+ANSI_BLUE = "\033[34m"
+ANSI_GREEN = "\033[32m"
+
+
+def _detect_color_support() -> bool:
+    """Return True when stdout can render ANSI colours."""
+
+    if os.environ.get("NO_COLOR"):
+        return False
+    stream = sys.stdout
+    if not hasattr(stream, "isatty") or not stream.isatty():
+        return False
+    term = os.environ.get("TERM", "")
+    return bool(term) and term.lower() != "dumb"
+
+
+def _color_enabled() -> bool:
+    """Return whether ANSI colours should be emitted for the current stdout."""
+
+    return _detect_color_support()
+
+
+def _wrap_color(text: str, color_code: str, *, bold: bool = False) -> str:
+    """Return ``text`` wrapped in ``color_code`` when supported."""
+
+    if not _color_enabled():
+        return text
+    prefix = ANSI_BOLD if bold else ""
+    return f"{prefix}{color_code}{text}{ANSI_RESET}"
+
+
+def blue_text(text: str, *, bold: bool = False) -> str:
+    """Return ``text`` stylised in the default blue accent."""
+
+    return _wrap_color(text, ANSI_BLUE, bold=bold)
+
+
+def green_text(text: str, *, bold: bool = False) -> str:
+    """Return ``text`` stylised in the default green accent."""
+
+    return _wrap_color(text, ANSI_GREEN, bold=bold)
 
 
 def resolve_project_path(*parts: str) -> Path:

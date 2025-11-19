@@ -142,7 +142,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 今朝,けさ,this morning,0,0,5
 夏,なつ,summer,0,0,5
 着る,きる,to put on from the shoulders down,0,0,5
-授業,じゅぎょう,"lesson, class work",0,0,5
+授業,じゅぎょう,"lesson, class work",0,1,5
 空,そら,Sky,0,0,5
 働く,はたらく,to work,0,0,5
 次,つぎ,next,0,0,5
@@ -207,7 +207,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 鼻,はな,nose,0,0,5
 六つ,むっつ,six,0,0,5
 曲る,まがる,"to turn,to bend",0,0,5
-花,はな,flower,0,0,5
+花,はな,flower,0,1,5
 犬,いぬ,dog,0,0,5
 着く,つく,to arrive at,0,0,5
 橋,はし,bridge,0,0,5
@@ -307,7 +307,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 三,さん,Three,0,0,5
 もう一度,もういちど,again,0,0,5
 差す,さす,"to stretch out hands, to raise an umbrella",0,0,5
-耳,みみ,ear,0,0,5
+耳,みみ,ear,0,1,5
 消える,きえる,to disappear,0,0,5
 建物,たてもの,building,0,0,5
 出す,だす,to put out,0,0,5
@@ -379,7 +379,7 @@ Kanji,Reading,Meaning,VocabScore,FillingScore,Level
 紅茶,こうちゃ,black tea,0,0,5
 風邪,かぜ,a cold,0,0,5
 眼鏡,めがね,glasses,0,0,5
-好き,すき,Likeable,0,0,5
+好き,すき,Likeable,0,1,5
 男の子,おとこのこ,Boy,0,0,5
 忙しい,いそがしい,"busy, irritated",0,0,5
 売る,うる,to sell,0,0,5

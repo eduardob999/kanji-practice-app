@@ -7,7 +7,9 @@ from typing import Optional
 
 from practicejapanese.core.utils import is_verbose
 
-_DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+# Resolve data directory relative to package root so packaged CSVs are always found.
+_PACKAGE_ROOT = Path(__file__).resolve().parents[2]
+_DATA_DIR = _PACKAGE_ROOT / "data"
 
 
 def vocab_csv_path() -> Path:
