@@ -1,48 +1,51 @@
-import os
-import random
+from __future__ import annotations
 
-from practicejapanese.core.vocab import load_vocab
+import random
+from typing import List, MutableMapping, Optional, Sequence, Tuple
+
+from practicejapanese.core.sentence_cache import (
+    get_or_fetch_sentences,
+    start_sentence_prefetcher,
+)
 from practicejapanese.core.utils import (
-    is_verbose,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-from practicejapanese.core.sentence_cache import (
-    get_or_fetch_sentences,
-    start_sentence_prefetcher,
-)
+from practicejapanese.core.vocab import VocabRow, load_vocab
+from practicejapanese.quizzes.common import display_level_info, vocab_csv_path
 
-CSV_PATH = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "..", "data", "Vocab.csv"))
+CSV_PATH = vocab_csv_path()
+Question = Tuple[str, str]
 
 
-def ask_question(vocab_list, *, item_override=None):
+def ask_question(
+    vocab_list: Sequence[VocabRow],
+    *,
+    item_override: Optional[VocabRow] = None,
+) -> Optional[MutableMapping[str, object]]:
     """Ask the user to replace hiragana with the correct kanji."""
+
+    if not vocab_list:
+        return None
     word = item_override or random.choice(vocab_list)
+    kanji, reading, meaning = word[0], word[1], word[2]
+    filling_score = word[4] if len(word) > 4 else ""
+    level = word[5] if len(word) > 5 else ""
     questions = generate_questions(word)
+
+    print()
+    display_level_info(level, filling_score)
+
     if not questions:
-        reading = word[1]
-        meaning = word[2]
-        kanji = word[0]
-        level = word[-1] if len(word) > 5 else ""
-        filling_score = word[4] if len(word) > 4 else ""
-        if level:
-            if is_verbose():
-                print(f"[Level {level} | Score {filling_score}]")
-            else:
-                print(f"[Level {level}]")
         print(f"Reading: {reading}")
         print(f"Meaning: {meaning}")
         user_input = input("Your answer (kanji and/or okurigana): ").strip()
         if is_undo_command(user_input):
             return {"undo_requested": True, "item": word}
-        correct = (user_input == kanji)
-        if correct:
-            print("Correct!")
-        else:
-            print(f"Wrong. Correct kanji: {kanji}")
+        correct = user_input == kanji
+        print("Correct!" if correct else f"Wrong. Correct kanji: {kanji}")
         change = update_score(
             CSV_PATH,
             kanji,
@@ -56,37 +59,24 @@ def ask_question(vocab_list, *, item_override=None):
         print()
         return {"item": word, "change": change}
 
-    if len(questions) >= 2:
-        selected = random.sample(questions, 2)
-    else:
-        selected = [questions[0]]
-    level = word[-1] if len(word) > 5 else ""
-    filling_score = word[4] if len(word) > 4 else ""
-    if level:
-        if is_verbose():
-            print(f"[Level {level} | Score {filling_score}]")
-        else:
-            print(f"[Level {level}]")
+    sample_size = 2 if len(questions) >= 2 else 1
+    selected = random.sample(questions, sample_size)
     print("Replace the highlighted hiragana with the correct kanji:")
-    for sentence, answer in selected:
+    for sentence, _ in selected:
         print(sentence)
-    answer = selected[0][1]
     user_input = input("Your answer (kanji and/or okurigana): ").strip()
     if is_undo_command(user_input):
         return {"undo_requested": True, "item": word}
-    correct = (user_input == answer)
-    if correct:
-        print("Correct!")
-    else:
-        print(f"Wrong. Correct kanji: {answer}")
-    print(f"Meaning: {word[2]}")
+    correct = user_input == kanji
+    print("Correct!" if correct else f"Wrong. Correct kanji: {kanji}")
+    print(f"Meaning: {meaning}")
     change = update_score(
         CSV_PATH,
-        answer,
+        kanji,
         correct,
         score_col=4,
-        reading=word[1],
-        meaning=word[2],
+        reading=reading,
+        meaning=meaning,
         level=level,
         return_change=True,
     )
@@ -94,29 +84,30 @@ def ask_question(vocab_list, *, item_override=None):
     return {"item": word, "change": change}
 
 
-def run():
+def run() -> None:
     start_sentence_prefetcher()
 
-    def fetch_items():
+    def fetch_items() -> Sequence[VocabRow]:
         vocab_list = load_vocab(CSV_PATH)
         return lowest_score_items(CSV_PATH, vocab_list, score_col=4)
 
     run_quiz_with_undo(fetch_items, ask_question, "No vocab found.")
 
 
-def generate_questions(vocab_list):
-    questions = []
-    reading, kanji = vocab_list[1], vocab_list[0]
+def generate_questions(vocab_item: VocabRow) -> List[Question]:
+    """Produce sentences with highlighted reading placeholders."""
+
+    reading, kanji = vocab_item[1], vocab_item[0]
     sentences = get_or_fetch_sentences(reading, kanji, 5)
+    questions: List[Question] = []
     for sentence in sentences:
-        if kanji in sentence:
-            formatted = sentence.replace(kanji, f"[{reading}]")
-            questions.append((formatted, kanji))
+        if kanji not in sentence:
+            continue
+        formatted = sentence.replace(kanji, f"[{reading}]")
+        questions.append((formatted, kanji))
     return questions
 
 
 if __name__ == "__main__":
-    print("Running Kanji Fill-in Quiz in DEV mode...")
-    run()
     print("Running Kanji Fill-in Quiz in DEV mode...")
     run()

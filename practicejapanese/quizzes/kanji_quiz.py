@@ -1,56 +1,60 @@
-from practicejapanese.core.kanji import load_kanji
+from __future__ import annotations
+
+import random
+from typing import MutableMapping, Optional, Sequence
+
+from practicejapanese.core.kanji import KanjiRow, load_kanji
 from practicejapanese.core.utils import (
-    is_verbose,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-import random
-import os
+from practicejapanese.quizzes.common import display_level_info, kanji_csv_path
+
+CSV_PATH = kanji_csv_path()
 
 
-CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Kanji.csv"))
+def ask_question(
+    kanji_list: Sequence[KanjiRow],
+    *,
+    item_override: Optional[KanjiRow] = None,
+) -> Optional[MutableMapping[str, object]]:
+    """Quiz the user on a kanji entry."""
 
-def ask_question(kanji_list, *, item_override=None):
+    if not kanji_list:
+        return None
     item = item_override or random.choice(kanji_list)
-    print()  # Add empty line before the question
-    level = item[-1] if len(item) > 4 else ""
+    kanji, readings, meaning = item[0], item[1], item[2]
     score = item[3] if len(item) > 3 else ""
-    if level:
-        if is_verbose():
-            print(f"[Level {level} | Score {score}]")
-        else:
-            print(f"[Level {level}]")
-    print(f"Readings: {item[1]}")
-    print(f"Meaning: {item[2]}")
-    answer = input("What is the Kanji? ")
+    level = item[4] if len(item) > 4 else ""
+
+    print()
+    display_level_info(level, score)
+    print(f"Readings: {readings}")
+    print(f"Meaning: {meaning}")
+    answer = input("What is the Kanji? ").strip()
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
-    correct = (answer == item[0])
-    if correct:
-        print("Correct!")
-    else:
-        print(f"Incorrect. The correct Kanji is: {item[0]}")
-    # Score column is 'Score' (index 3)
+    correct = answer == kanji
+    print("Correct!" if correct else f"Incorrect. The correct Kanji is: {kanji}")
     change = update_score(
         CSV_PATH,
-        item[0],
+        kanji,
         correct,
         score_col=3,
-        reading=item[1],
-        meaning=item[2],
+        reading=readings,
+        meaning=meaning,
         level=level,
         return_change=True,
     )
-    print()  # Add empty line after the question
+    print()
     return {"item": item, "change": change}
 
-def run():
-    def fetch_items():
+
+def run() -> None:
+    def fetch_items() -> Sequence[KanjiRow]:
         kanji_list = load_kanji(CSV_PATH)
         return lowest_score_items(CSV_PATH, kanji_list, score_col=3)
 
     run_quiz_with_undo(fetch_items, ask_question, "No kanji found.")
-
-# --- Score update helper removed, now using core.utils ---

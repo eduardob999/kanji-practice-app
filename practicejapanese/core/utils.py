@@ -1,58 +1,95 @@
-import os
+from __future__ import annotations
+
 import csv
 import json
+import os
+from pathlib import Path
+from typing import Any, Callable, Dict, List, MutableMapping, Optional, Sequence
 
 UNDO_KEYWORD = "undo"
-_CONFIG_CACHE = None
+
+_CONFIG_CACHE: Optional[MutableMapping[str, Any]] = None
+
+_MODULE_DIR = Path(__file__).resolve().parent
+_PACKAGE_ROOT = _MODULE_DIR.parent
+_PROJECT_ROOT = _MODULE_DIR.parents[2]
+_DATA_DIR = _PACKAGE_ROOT / "data"
 
 # --- Global config flags ---
 VERBOSE = False
 
-def set_verbose(flag: bool):
+
+def resolve_project_path(*parts: str) -> Path:
+    """Return a project-root-relative path as an absolute Path."""
+
+    return _PROJECT_ROOT.joinpath(*parts)
+
+
+def resolve_data_path(*parts: str) -> Path:
+    """Return a path inside the packaged data directory."""
+
+    return _DATA_DIR.joinpath(*parts)
+
+
+def set_verbose(flag: bool) -> None:
+    """Enable or disable verbose console output for the package."""
+
     global VERBOSE
     VERBOSE = bool(flag)
 
+
 def is_verbose() -> bool:
+    """Return the current verbosity flag."""
+
     return VERBOSE
 
 
-def _config_path():
-    # config.json lives at repo root (two levels up from this file)
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "config.json"))
+def _config_path() -> Path:
+    """Return the absolute path to the shared configuration file."""
+
+    return resolve_project_path("config.json")
 
 
-def load_config():
+def load_config() -> MutableMapping[str, Any]:
+    """Load the shared configuration file once and memoise the result."""
+
     global _CONFIG_CACHE
     if _CONFIG_CACHE is not None:
         return _CONFIG_CACHE
     config_file = _config_path()
     try:
-        with open(config_file, "r", encoding="utf-8") as fh:
+        with config_file.open("r", encoding="utf-8") as fh:
             _CONFIG_CACHE = json.load(fh)
     except (OSError, json.JSONDecodeError):
         _CONFIG_CACHE = {}
     return _CONFIG_CACHE
 
 
-def get_score_output_dir():
+def get_score_output_dir() -> Path:
+    """Return the directory where score exports should be written."""
+
     config = load_config()
     configured = config.get("score_output_dir") if isinstance(config, dict) else None
     if configured:
-        return os.path.expanduser(configured)
-    home_dir = os.path.expanduser("~")
-    return os.path.join(home_dir, "public", "practicejapanese")
+        return Path(os.path.expanduser(str(configured)))
+    home_dir = Path(os.path.expanduser("~"))
+    return home_dir / "public" / "practicejapanese"
 
 
-def get_sentence_cache_file():
+def get_sentence_cache_file() -> Path:
+    """Return the path to the JSON file storing cached example sentences."""
+
     config = load_config()
     configured = config.get("sentence_cache_file") if isinstance(config, dict) else None
-    if not configured:
-        configured = os.path.join(get_score_output_dir(), "sentence_cache.json")
-    return os.path.expanduser(configured)
+    if configured:
+        return Path(os.path.expanduser(str(configured)))
+    return get_score_output_dir() / "sentence_cache.json"
 
 
-def get_sentence_cache_settings():
-    defaults = {
+def get_sentence_cache_settings() -> Dict[str, Any]:
+    """Return the merged default + user-defined sentence cache settings."""
+
+    defaults: Dict[str, Any] = {
         "enabled": True,
         "prefetch_interval_seconds": 30,
         "batch_fetch_size": 3,
@@ -68,50 +105,45 @@ def get_sentence_cache_settings():
     return defaults
 
 
-def reset_scores():
+def reset_scores() -> None:
+    """Normalise quiz scores based on JLPT level metadata."""
+
     print("Resetting scores based on Level (5→0, 4→1, 3→2, 2→3, 1→4)...")
-    for csv_path in [
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Kanji.csv")),
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Vocab.csv")),
-    ]:
-        temp_path = csv_path + '.temp'
-        updated_rows = []
-        with open(csv_path, 'r', encoding='utf-8') as infile:
+    for csv_path in (resolve_data_path("Kanji.csv"), resolve_data_path("Vocab.csv")):
+        temp_path = csv_path.with_suffix(csv_path.suffix + ".temp")
+        updated_rows: List[Dict[str, Any]] = []
+        with csv_path.open("r", encoding="utf-8") as infile:
             reader = csv.DictReader(infile)
-            fieldnames = reader.fieldnames
+            fieldnames = reader.fieldnames or []
             for row in reader:
                 if row:
-                    # Determine reset value from Level column: 5->0, 4->1, 3->2, 2->3, 1->4
-                    level_raw = (row.get('Level') or '').strip()
+                    level_raw = (row.get("Level") or "").strip()
                     try:
                         level = int(level_raw)
-                        # Map so higher level number -> lower starting score
-                        # For typical JLPT levels (1..5), this yields: 5→0, 4→1, 3→2, 2→3, 1→4
                         reset_value = max(0, 5 - level)
                     except ValueError:
-                        # Fallback if Level is missing/invalid
                         reset_value = 0
 
-                    if os.path.basename(csv_path) == "Vocab.csv":
-                        # Reset both score columns if present
-                        if 'VocabScore' in fieldnames:
-                            row['VocabScore'] = str(reset_value)
-                        if 'FillingScore' in fieldnames:
-                            row['FillingScore'] = str(reset_value)
-                    else:
-                        # Only last column is score or explicit Score column
-                        if 'Score' in fieldnames:
-                            row['Score'] = str(reset_value)
+                    if csv_path.name == "Vocab.csv":
+                        if "VocabScore" in fieldnames:
+                            row["VocabScore"] = str(reset_value)
+                        if "FillingScore" in fieldnames:
+                            row["FillingScore"] = str(reset_value)
+                    elif "Score" in fieldnames:
+                        row["Score"] = str(reset_value)
                 updated_rows.append(row)
-        with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
+
+        with temp_path.open("w", encoding="utf-8", newline="") as outfile:
             writer = csv.DictWriter(outfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(updated_rows)
-        os.replace(temp_path, csv_path)
+        temp_path.replace(csv_path)
     print("All scores reset based on Level.")
 
 
-def quiz_loop(quiz_func, data):
+def quiz_loop(quiz_func: Callable[[Any], None], data: Any) -> None:
+    """Call the supplied quiz function until the user interrupts."""
+
     try:
         while True:
             quiz_func(data)
@@ -120,25 +152,29 @@ def quiz_loop(quiz_func, data):
 
 
 def is_undo_command(value: str) -> bool:
+    """Return True when the user typed the undo sentinel."""
+
     return (value or "").strip().lower() == UNDO_KEYWORD
 
 
-def undo_score_change(change_record):
+def undo_score_change(change_record: Optional[MutableMapping[str, Any]]) -> bool:
+    """Revert a previously recorded score modification."""
+
     if not change_record:
         return False
-    csv_path = change_record.get("csv_path")
+    csv_path = Path(change_record.get("csv_path", ""))
     score_field = change_record.get("score_field")
     target_index = change_record.get("row_index")
     if not csv_path or score_field is None or target_index is None:
         return False
-    temp_path = csv_path + '.temp'
-    updated_rows = []
+    temp_path = csv_path.with_suffix(csv_path.suffix + ".temp")
+    updated_rows: List[Dict[str, Any]] = []
     changed = False
 
     try:
-        with open(csv_path, 'r', encoding='utf-8') as infile:
+        with csv_path.open("r", encoding="utf-8") as infile:
             reader = csv.DictReader(infile)
-            fieldnames = reader.fieldnames
+            fieldnames = reader.fieldnames or []
             if not fieldnames or score_field not in fieldnames:
                 return False
             row_index = -1
@@ -157,17 +193,23 @@ def undo_score_change(change_record):
     if not changed:
         return False
 
-    with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
+    with temp_path.open("w", encoding="utf-8", newline="") as outfile:
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(updated_rows)
-    os.replace(temp_path, csv_path)
+    temp_path.replace(csv_path)
     return True
 
 
-def run_quiz_with_undo(fetch_items, ask_question, empty_message="No items found."):
-    history = []
-    pending_stack = []
+def run_quiz_with_undo(
+    fetch_items: Callable[[], Sequence[Any]],
+    ask_question: Callable[[Sequence[Any]], Optional[MutableMapping[str, Any]]],
+    empty_message: str = "No items found.",
+) -> None:
+    """Launch a quiz loop that supports undoing the previous answer."""
+
+    history: List[MutableMapping[str, Any]] = []
+    pending_stack: List[Any] = []
     try:
         while True:
             if pending_stack:
@@ -180,7 +222,7 @@ def run_quiz_with_undo(fetch_items, ask_question, empty_message="No items found.
                     print(empty_message)
                     return
 
-            result = ask_question(question_pool, item_override=item_override)
+            result = ask_question(question_pool, item_override=item_override)  # type: ignore[arg-type]
             if not result:
                 continue
             current_item = result.get("item") or item_override
@@ -194,60 +236,48 @@ def run_quiz_with_undo(fetch_items, ask_question, empty_message="No items found.
                 undone_entry = history.pop()
                 undo_score_change(undone_entry.get("change"))
                 print("Previous answer undone. Re-asking it now.")
-                pending_stack.append(undone_entry["item"])
+                pending_stack.append(undone_entry["item"])  # type: ignore[index]
                 continue
 
             if current_item is None:
                 continue
-            history.append({
-                "item": current_item,
-                "change": result.get("change"),
-            })
+            history.append(
+                {
+                    "item": current_item,
+                    "change": result.get("change"),
+                }
+            )
     except KeyboardInterrupt:
         print("\nExiting quiz. Goodbye!")
 
 
-# --- DRY helpers for quizzes ---
-
-
 def update_score(
-    csv_path,
-    key,
-    correct,
-    score_col=-1,
-    reading=None,
-    level=None,
-    meaning=None,
-    unique_id=None,
-    update_all=False,
-    return_change=False,
-):
-    """Update the score for a (single) vocab / kanji row.
+    csv_path: os.PathLike[str] | str,
+    key: str,
+    correct: bool,
+    score_col: int = -1,
+    reading: Optional[str] = None,
+    level: Optional[str] = None,
+    meaning: Optional[str] = None,
+    unique_id: Optional[str] = None,
+    update_all: bool = False,
+    return_change: bool = False,
+) -> Optional[MutableMapping[str, Any]]:
+    """Update the score column for the row matching the provided key."""
 
-    Disambiguation hierarchy (first match wins unless update_all=True):
-      1. If unique_id provided and CSV has column 'ID', update rows whose ID matches only.
-      2. Else filter by Kanji == key.
-         a. If reading provided, require exact match against 'Reading' or 'Readings'.
-         b. If level provided, require Level match.
-         c. If meaning provided, require Meaning match.
-
-    By default only the *first* matching row is updated, preventing accidental
-    increments on duplicate homographs. Set update_all=True to opt-in to the
-    legacy behaviour of modifying every matching duplicate.
-    """
-    temp_path = csv_path + '.temp'
-    updated_rows = []
+    csv_path = Path(csv_path)
+    temp_path = csv_path.with_suffix(csv_path.suffix + ".temp")
+    updated_rows: List[Dict[str, Any]] = []
     updated_once = False
+    change_record: Optional[MutableMapping[str, Any]] = None
 
-    change_record = None
-
-    with open(csv_path, 'r', encoding='utf-8') as infile:
+    with csv_path.open("r", encoding="utf-8") as infile:
         reader = csv.DictReader(infile)
-        fieldnames = reader.fieldnames
+        fieldnames = reader.fieldnames or []
         if not fieldnames:
             return change_record if return_change else None
         score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
-        has_id = 'ID' in fieldnames
+        has_id = "ID" in fieldnames
         row_index = -1
 
         for row in reader:
@@ -257,99 +287,98 @@ def update_score(
                 continue
 
             should_attempt = False
-            # Unique ID match has highest priority if provided
             if unique_id is not None and has_id:
-                if str(row.get('ID','')).strip() == str(unique_id).strip():
+                if str(row.get("ID", "")).strip() == str(unique_id).strip():
                     should_attempt = True
-                else:
-                    should_attempt = False
-            else:
-                # Base Kanji match required
-                if row.get('Kanji') == key:
-                    should_attempt = True
-                else:
-                    should_attempt = False
+            elif row.get("Kanji") == key:
+                should_attempt = True
 
             if should_attempt and (not updated_once or update_all):
-                disamb_ok = True
-                # Reading check
                 if reading is not None:
-                    r_val = str(reading).strip()
-                    r_match = False
-                    for rf in ('Reading', 'Readings'):
-                        if rf in row and (row.get(rf) or '').strip() == r_val:
-                            r_match = True
-                            break
+                    r_val = reading.strip()
+                    r_match = any(
+                        (row.get(rf) or "").strip() == r_val for rf in ("Reading", "Readings") if rf in row
+                    )
                     if not r_match:
-                        disamb_ok = False
-                # Level check
-                if disamb_ok and level is not None:
-                    if (row.get('Level') or '').strip() != str(level).strip():
-                        disamb_ok = False
-                # Meaning check
-                if disamb_ok and meaning is not None:
-                    if (row.get('Meaning') or '').strip() != str(meaning).strip():
-                        disamb_ok = False
+                        updated_rows.append(row)
+                        continue
+                if level is not None and (row.get("Level") or "").strip() != str(level).strip():
+                    updated_rows.append(row)
+                    continue
+                if meaning is not None and (row.get("Meaning") or "").strip() != str(meaning).strip():
+                    updated_rows.append(row)
+                    continue
 
-                if disamb_ok:
-                    prev_value = row.get(score_field, '0')
-                    if correct:
-                        try:
-                            new_value = str(int(row.get(score_field, '0')) + 1)
-                        except ValueError:
-                            new_value = '1'
-                    else:
-                        new_value = '0'
-                    row[score_field] = new_value
-                    if return_change and change_record is None:
-                        change_record = {
-                            "csv_path": csv_path,
-                            "row_index": row_index,
-                            "score_field": score_field,
-                            "prev_value": prev_value,
-                            "new_value": new_value,
-                        }
-                    if not update_all:
-                        updated_once = True
+                prev_value = row.get(score_field, "0")
+                if correct:
+                    try:
+                        new_value = str(int(row.get(score_field, "0")) + 1)
+                    except ValueError:
+                        new_value = "1"
+                else:
+                    new_value = "0"
+                row[score_field] = new_value
+                if return_change and change_record is None:
+                    change_record = {
+                        "csv_path": str(csv_path),
+                        "row_index": row_index,
+                        "score_field": score_field,
+                        "prev_value": prev_value,
+                        "new_value": new_value,
+                    }
+                if not update_all:
+                    updated_once = True
             updated_rows.append(row)
 
-    with open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
+    with temp_path.open("w", encoding="utf-8", newline="") as outfile:
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(updated_rows)
-    os.replace(temp_path, csv_path)
+    temp_path.replace(csv_path)
 
     if return_change:
         return change_record
+    return None
 
 
-def lowest_score_items(csv_path, vocab_list, score_col):
-    """
-    Returns only those items whose Kanji has the global minimum score AND whose
-    own tuple score equals that minimum (prevents higher-score duplicates of the
-    same Kanji from being selected randomly).
-    """
-    with open(csv_path, encoding="utf-8") as f:
+def lowest_score_items(
+    csv_path: os.PathLike[str] | str,
+    vocab_list: Sequence[Sequence[Any]],
+    score_col: int,
+) -> List[Sequence[Any]]:
+    """Return the tuples whose score matches the minimum value found in the CSV."""
+
+    csv_path = Path(csv_path)
+    with csv_path.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames
+        fieldnames = reader.fieldnames or []
         score_field = fieldnames[score_col] if score_col >= 0 else fieldnames[-1]
-        scores = [(row["Kanji"], int(row[score_field]) if row.get(score_field) and row[score_field].isdigit() else 0)
-                  for row in reader if row and row.get("Kanji")]
+        scores = [
+            (
+                row.get("Kanji"),
+                int(row.get(score_field, "0")) if (row.get(score_field) or "").isdigit() else 0,
+            )
+            for row in reader
+            if row and row.get("Kanji")
+        ]
     if not scores:
         return []
     min_score = min(score for _, score in scores)
-    # For quick lookup of min score per key
-    key_min_scores = {}
-    for k, s in scores:
-        if k not in key_min_scores or s < key_min_scores[k]:
-            key_min_scores[k] = s
-    score_index = score_col  # tuple index aligns with csv order in loaders
-    filtered = []
+    key_min_scores: Dict[str, int] = {}
+    for kanji, score in scores:
+        if kanji is None:
+            continue
+        if kanji not in key_min_scores or score < key_min_scores[kanji]:
+            key_min_scores[kanji] = score
+
+    filtered: List[Sequence[Any]] = []
     for item in vocab_list:
+        if not item:
+            continue
         try:
-            item_score = int(item[score_index])
-        except (ValueError, IndexError):
+            item_score = int(item[score_col])
+        except (ValueError, IndexError, TypeError):
             item_score = 0
-        if item_score == min_score and key_min_scores.get(item[0], None) == min_score:
+        if item[0] in key_min_scores and key_min_scores[item[0]] == min_score and item_score == min_score:
             filtered.append(item)
     return filtered

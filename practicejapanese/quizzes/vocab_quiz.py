@@ -1,85 +1,90 @@
-from practicejapanese.core.vocab import load_vocab
+from __future__ import annotations
+
+import random
+import re
+from typing import List, MutableMapping, Optional, Sequence
+
 from practicejapanese.core.utils import (
-    is_verbose,
     is_undo_command,
     lowest_score_items,
     run_quiz_with_undo,
     update_score,
 )
-import random
-import os
-import re
+from practicejapanese.core.vocab import VocabRow, load_vocab
+from practicejapanese.quizzes.common import display_level_info, vocab_csv_path
 
-CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Vocab.csv"))
-
-def _normalize_reading(s: str) -> str:
-    # Normalize spaces (including full-width), trim
-    return (s or "").replace("\u3000", " ").strip()
+CSV_PATH = vocab_csv_path()
 
 
-def _expand_readings(reading_field: str):
-    # Split multiple possible readings on common delimiters
+def _normalize_reading(raw: str) -> str:
+    """Normalise spacing for reading strings."""
+
+    return (raw or "").replace("\u3000", " ").strip()
+
+
+def _expand_readings(reading_field: str) -> List[str]:
+    """Expand a combined reading field into distinct normalised readings."""
+
     parts = re.split(r"[;/、・,]", reading_field or "")
-    # Remove bracketed hints like (する) if they appear; keep base
-    cleaned = []
-    for p in parts:
-        p = _normalize_reading(p)
-        if not p:
+    cleaned: List[str] = []
+    for part in parts:
+        token = _normalize_reading(part)
+        if not token:
             continue
-        # Drop surrounding parentheses if the entire token is parenthesized
-        p = re.sub(r"^[\(（]\s*(.+?)\s*[\)）]$", r"\1", p)
-        cleaned.append(p)
-    # Ensure unique values, preserve order
-    seen = set()
-    uniq = []
-    for c in cleaned:
-        if c not in seen:
-            seen.add(c)
-            uniq.append(c)
-    return uniq
+        token = re.sub(r"^[\(（]\s*(.+?)\s*[\)）]$", r"\1", token)
+        cleaned.append(token)
+    seen: set[str] = set()
+    unique: List[str] = []
+    for value in cleaned:
+        if value not in seen:
+            seen.add(value)
+            unique.append(value)
+    return unique
 
 
-def ask_question(vocab_list, *, item_override=None):
+def ask_question(
+    vocab_list: Sequence[VocabRow],
+    *,
+    item_override: Optional[VocabRow] = None,
+) -> Optional[MutableMapping[str, object]]:
+    """Quiz the user on a vocabulary reading."""
+
+    if not vocab_list:
+        return None
     item = item_override or random.choice(vocab_list)
-    print()  # Add empty line before the question
-    # Always ask for the reading
-    level = item[-1] if len(item) > 5 else ""
-    # Vocab score index 3
+    kanji, reading, meaning = item[0], item[1], item[2]
     vocab_score = item[3] if len(item) > 3 else ""
-    if level:
-        if is_verbose():
-            print(f"[Level {level} | Score {vocab_score}]")
-        else:
-            print(f"[Level {level}]")
-    print(f"Kanji: {item[0]}")
-    print(f"Meaning: {item[2]}")
+    level = item[5] if len(item) > 5 else ""
+
+    print()
+    display_level_info(level, vocab_score)
+    print(f"Kanji: {kanji}")
+    print(f"Meaning: {meaning}")
     answer = _normalize_reading(input("What is the Reading? "))
     if is_undo_command(answer):
         return {"undo_requested": True, "item": item}
-    valid_readings = _expand_readings(item[1])
+    valid_readings = _expand_readings(reading)
     correct = answer in valid_readings
     if correct:
         print("Correct!")
     else:
-        # Show canonical reading(s)
-        show = item[1]
-        print(f"Incorrect. The correct Reading is: {show}")
-    # Score column is 'VocabScore' (index 3)
+        print(f"Incorrect. The correct Reading is: {reading}")
     change = update_score(
         CSV_PATH,
-        item[0],
+        kanji,
         correct,
         score_col=3,
-        reading=item[1],
-        meaning=item[2],
+        reading=reading,
+        meaning=meaning,
         level=level,
         return_change=True,
     )
-    print()  # Add empty line after the question
+    print()
     return {"item": item, "change": change}
 
-def run():
-    def fetch_items():
+
+def run() -> None:
+    def fetch_items() -> Sequence[VocabRow]:
         vocab_list = load_vocab(CSV_PATH)
         return lowest_score_items(CSV_PATH, vocab_list, score_col=3)
 

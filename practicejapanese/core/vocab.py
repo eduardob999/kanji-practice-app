@@ -1,20 +1,28 @@
-import csv
+from __future__ import annotations
 
-def load_vocab(path):
-    vocab_list = []
+import csv
+import os
+from typing import List, Tuple
+
+VocabRow = Tuple[str, str, str, str, str, str]
+
+
+def load_vocab(path: os.PathLike[str] | str) -> List[VocabRow]:
+    """Load vocabulary entries while preserving legacy tuple ordering."""
+
+    vocab_list: List[VocabRow] = []
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if not row.get("Kanji"):
+            kanji = (row.get("Kanji") or "").strip()
+            if not kanji:
                 continue
-            # Keep original tuple order so existing index usage is unchanged, append Level at end
+            reading = (row.get("Reading") or "").strip()
+            meaning = (row.get("Meaning") or "").strip()
+            vocab_score = (row.get("VocabScore") or "").strip()
+            filling_score = (row.get("FillingScore") or "").strip()
             level = (row.get("Level") or "").strip()
-            vocab_list.append((
-                row["Kanji"].strip(),
-                row["Reading"].strip(),
-                row["Meaning"].strip(),
-                row["VocabScore"].strip(),
-                row["FillingScore"].strip(),
-                level
-            ))
+            vocab_list.append(
+                (kanji, reading, meaning, vocab_score, filling_score, level)
+            )
     return vocab_list

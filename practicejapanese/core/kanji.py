@@ -1,18 +1,25 @@
-import csv
+from __future__ import annotations
 
-def load_kanji(path):
-    kanji_list = []
+import csv
+import os
+from typing import List, Tuple
+
+KanjiRow = Tuple[str, str, str, str, str]
+
+
+def load_kanji(path: os.PathLike[str] | str) -> List[KanjiRow]:
+    """Load kanji entries from the provided CSV file."""
+
+    kanji_list: List[KanjiRow] = []
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if not row.get("Kanji"):
+            kanji = (row.get("Kanji") or "").strip()
+            if not kanji:
                 continue
+            readings = (row.get("Readings") or "").strip()
+            meaning = (row.get("Meaning") or "").strip()
+            score = (row.get("Score") or "").strip()
             level = (row.get("Level") or "").strip()
-            kanji_list.append((
-                row["Kanji"].strip(),
-                row["Readings"].strip(),
-                row["Meaning"].strip(),
-                row["Score"].strip(),
-                level
-            ))
+            kanji_list.append((kanji, readings, meaning, score, level))
     return kanji_list

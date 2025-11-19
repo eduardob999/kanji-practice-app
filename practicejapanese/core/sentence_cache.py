@@ -1,10 +1,11 @@
+from __future__ import annotations
+
 import json
-import os
 import random
 import threading
 import time
 from datetime import datetime
-from typing import List
+from typing import Any, Dict, List, MutableMapping, Optional
 
 import requests
 
@@ -13,53 +14,56 @@ from practicejapanese.core.utils import (
     get_sentence_cache_file,
     get_sentence_cache_settings,
     lowest_score_items,
+    resolve_data_path,
 )
 
-_CACHE = None
+CacheData = Dict[str, Any]
+
+_CACHE: Optional[MutableMapping[str, CacheData]] = None
 _CACHE_LOCK = threading.Lock()
-_PREFETCH_THREAD = None
+_PREFETCH_THREAD: Optional[threading.Thread] = None
 
 
-def _ensure_cache_loaded():
+def _ensure_cache_loaded() -> None:
     global _CACHE
     if _CACHE is not None:
         return
     cache_path = get_sentence_cache_file()
-    dir_path = os.path.dirname(cache_path)
-    if dir_path:
-        os.makedirs(dir_path, exist_ok=True)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     try:
-        with open(cache_path, "r", encoding="utf-8") as fh:
+        with cache_path.open("r", encoding="utf-8") as fh:
             _CACHE = json.load(fh)
     except (OSError, json.JSONDecodeError):
         _CACHE = {}
 
 
-def _persist_cache():
+def _persist_cache() -> None:
     cache_path = get_sentence_cache_file()
-    dir_path = os.path.dirname(cache_path)
-    if dir_path:
-        os.makedirs(dir_path, exist_ok=True)
-    temp_path = cache_path + ".tmp"
-    with open(temp_path, "w", encoding="utf-8") as fh:
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    temp_path = cache_path.with_suffix(cache_path.suffix + ".tmp")
+    with temp_path.open("w", encoding="utf-8") as fh:
         json.dump(_CACHE, fh, ensure_ascii=False, indent=2)
-    os.replace(temp_path, cache_path)
+    temp_path.replace(cache_path)
 
 
 def get_cached_sentences(kanji: str) -> List[str]:
     _ensure_cache_loaded()
     with _CACHE_LOCK:
+        if _CACHE is None:
+            return []
         entry = _CACHE.get(kanji)
         if not entry:
             return []
         return list(entry.get("sentences", []))
 
 
-def _store_sentences(kanji: str, reading: str, sentences: List[str]):
+def _store_sentences(kanji: str, reading: str, sentences: List[str]) -> None:
     if not sentences:
         return
     _ensure_cache_loaded()
     with _CACHE_LOCK:
+        if _CACHE is None:
+            return
         _CACHE[kanji] = {
             "reading": reading,
             "sentences": sentences,
@@ -94,7 +98,7 @@ def get_or_fetch_sentences(reading: str, kanji: str, limit: int = 5) -> List[str
     return api_sentences
 
 
-def start_sentence_prefetcher():
+def start_sentence_prefetcher() -> None:
     settings = get_sentence_cache_settings()
     if not settings.get("enabled", True):
         return
@@ -107,8 +111,8 @@ def start_sentence_prefetcher():
     _PREFETCH_THREAD.start()
 
 
-def _prefetch_loop(settings):
-    vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Vocab.csv"))
+def _prefetch_loop(settings: MutableMapping[str, Any]) -> None:
+    vocab_path = resolve_data_path("Vocab.csv")
     interval = max(5, int(settings.get("prefetch_interval_seconds", 30)))
     batch_size = max(1, int(settings.get("batch_fetch_size", 3)))
     api_limit = max(1, int(settings.get("api_limit", 5)))
@@ -116,12 +120,12 @@ def _prefetch_loop(settings):
 
     while True:
         try:
-            vocab_list = load_vocab(vocab_path)
+            vocab_list = load_vocab(str(vocab_path))
             if not vocab_list:
                 time.sleep(interval)
                 continue
             lowest = lowest_score_items(vocab_path, vocab_list, score_col=4)
-            candidates = lowest if lowest else vocab_list
+            candidates = list(lowest) if lowest else list(vocab_list)
             random.shuffle(candidates)
             fetched = 0
             for word in candidates:

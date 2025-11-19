@@ -1,163 +1,212 @@
-import sys
-import os
-from practicejapanese import __version__ as VERSION
-from practicejapanese.core.utils import get_score_output_dir
+from __future__ import annotations
 
-def run_dev_mode():
+import csv
+import sys
+from pathlib import Path
+from typing import Dict, Iterable, List, Tuple
+
+from practicejapanese import __version__ as VERSION
+from practicejapanese.core.utils import get_score_output_dir, resolve_data_path
+
+
+KANJI_FILE = resolve_data_path("Kanji.csv")
+VOCAB_FILE = resolve_data_path("Vocab.csv")
+
+
+def _prompt_choice() -> str:
+    """Solicit a developer-mode action from the user."""
+
     print("Developer mode activated!")
     print(f"Python version: {sys.version}")
-    print(f"Current working directory: {os.getcwd()}")
-    print(f"Available quizzes: vocab_quiz, kanji_quiz, filling_quiz")
+    print(f"Current working directory: {Path.cwd()}")
+    print("Available quizzes: vocab_quiz, kanji_quiz, filling_quiz")
     print("Dev options:")
     print("1. Save all scores")
     print("2. Load all scores (overwrite current)")
     print("3. Exit dev mode")
-    dev_choice = input("Enter dev option: ").strip()
-    if dev_choice == "1":
-        # Use CSV headers directly (DictReader) so we don't depend on tuple ordering
-        vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
-        kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
-        # Determine output directory and ensure it exists
-        out_dir = get_score_output_dir()
-        os.makedirs(out_dir, exist_ok=True)
-        out_file = os.path.join(out_dir, "scores.txt")
+    return input("Enter dev option: ").strip()
 
-        # Build content to write
-        lines = []
-        lines.append(f"PracticeJapanese Scores (version {VERSION})")
-        lines.append("")
-        import csv
-        lines.append("Kanji Scores:")
-        try:
-            with open(kanji_path, encoding="utf-8") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    kanji = (row.get("Kanji") or "").strip()
-                    if not kanji:
-                        continue
-                    score = (row.get("Score") or "").strip()
-                    lines.append(f"{kanji}: {score}")
-        except OSError as e:
-            lines.append(f"[Error reading Kanji.csv: {e}]")
-        lines.append("")
-        lines.append("Vocab Scores:")
-        try:
-            with open(vocab_path, encoding="utf-8") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    word = (row.get("Kanji") or "").strip()
-                    if not word:
-                        continue
-                    vocab_score = (row.get("VocabScore") or "").strip()
-                    filling_score = (row.get("FillingScore") or "").strip()
-                    lines.append(f"{word}: Vocab Quiz Score = {vocab_score}, Filling Quiz Score = {filling_score}")
-        except OSError as e:
-            lines.append(f"[Error reading Vocab.csv: {e}]")
 
-        try:
-            with open(out_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines) + "\n")
-            print(f"All scores saved to: {out_file}")
-        except OSError as e:
-            print(f"Failed to save scores to {out_file}: {e}")
-    elif dev_choice == "2":
-        # Load scores from saved file and overwrite CSV score columns
-        in_file = os.path.join(get_score_output_dir(), "scores.txt")
-        if not os.path.exists(in_file):
-            print(f"Scores file not found: {in_file}")
-            return
-        try:
-            with open(in_file, encoding="utf-8") as f:
-                raw_lines = [l.rstrip('\n') for l in f]
-        except OSError as e:
-            print(f"Failed to read {in_file}: {e}")
-            return
+def _score_header_lines() -> List[str]:
+    return [
+        f"PracticeJapanese Scores (version {VERSION})",
+        "",
+    ]
 
-        # Parse sections, collecting duplicates
-        from collections import defaultdict
-        kanji_scores = defaultdict(list)       # kanji -> [score1, score2, ...]
-        vocab_scores = defaultdict(list)       # word -> [(vocab_score, filling_score), ...]
-        section = None
-        for line in raw_lines:
-            if not line.strip():
+
+def _collect_kanji_score_lines(path: Path) -> List[str]:
+    lines = ["Kanji Scores:"]
+    try:
+        with path.open(encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            for row in reader:
+                kanji = (row.get("Kanji") or "").strip()
+                if not kanji:
+                    continue
+                score = (row.get("Score") or "").strip()
+                lines.append(f"{kanji}: {score}")
+    except OSError as exc:
+        lines.append(f"[Error reading {path.name}: {exc}]")
+    return lines + [""]
+
+
+def _collect_vocab_score_lines(path: Path) -> List[str]:
+    lines = ["Vocab Scores:"]
+    try:
+        with path.open(encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            for row in reader:
+                word = (row.get("Kanji") or "").strip()
+                if not word:
+                    continue
+                vocab_score = (row.get("VocabScore") or "").strip()
+                filling_score = (row.get("FillingScore") or "").strip()
+                lines.append(
+                    f"{word}: Vocab Quiz Score = {vocab_score}, Filling Quiz Score = {filling_score}"
+                )
+    except OSError as exc:
+        lines.append(f"[Error reading {path.name}: {exc}]")
+    return lines
+
+
+def _save_all_scores() -> None:
+    out_dir = get_score_output_dir()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_file = out_dir / "scores.txt"
+    lines: List[str] = []
+    lines.extend(_score_header_lines())
+    lines.extend(_collect_kanji_score_lines(KANJI_FILE))
+    lines.extend(_collect_vocab_score_lines(VOCAB_FILE))
+    try:
+        out_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print(f"All scores saved to: {out_file}")
+    except OSError as exc:
+        print(f"Failed to save scores to {out_file}: {exc}")
+
+
+def _parse_score_file(lines: Iterable[str]) -> Tuple[Dict[str, List[int]], Dict[str, List[Tuple[int, int]]]]:
+    kanji_scores: Dict[str, List[int]] = {}
+    vocab_scores: Dict[str, List[Tuple[int, int]]] = {}
+    section = None
+    for raw_line in lines:
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith("Kanji Scores:"):
+            section = "kanji"
+            continue
+        if line.startswith("Vocab Scores:"):
+            section = "vocab"
+            continue
+        if section == "kanji" and ":" in line:
+            key, _, value = line.partition(":")
+            try:
+                score = int(value.strip())
+            except ValueError:
                 continue
-            if line.startswith("Kanji Scores:"):
-                section = "kanji"
-                continue
-            if line.startswith("Vocab Scores:"):
-                section = "vocab"
-                continue
-            if section == "kanji":
-                if ':' in line:
-                    parts = line.split(':', 1)
-                    k = parts[0].strip()
+            kanji_scores.setdefault(key.strip(), []).append(score)
+        elif section == "vocab" and ":" in line:
+            word, _, rest = line.partition(":")
+            vocab_score = None
+            filling_score = None
+            for piece in rest.split(","):
+                piece = piece.strip()
+                if piece.startswith("Vocab Quiz Score ="):
                     try:
-                        sc = int(parts[1].strip())
+                        vocab_score = int(piece.split("=", 1)[1].strip())
                     except ValueError:
-                        continue
-                    kanji_scores[k].append(sc)
-            elif section == "vocab":
-                if ':' in line:
-                    word, rest = line.split(':', 1)
-                    word = word.strip()
-                    vs = None
-                    fs = None
-                    for piece in rest.split(','):
-                        piece = piece.strip()
-                        if piece.startswith('Vocab Quiz Score ='):
-                            try:
-                                vs = int(piece.split('=')[1].strip())
-                            except ValueError:
-                                pass
-                        elif piece.startswith('Filling Quiz Score ='):
-                            try:
-                                fs = int(piece.split('=')[1].strip())
-                            except ValueError:
-                                pass
-                    if vs is not None or fs is not None:
-                        vocab_scores[word].append((vs if vs is not None else 0, fs if fs is not None else 0))
+                        vocab_score = None
+                elif piece.startswith("Filling Quiz Score ="):
+                    try:
+                        filling_score = int(piece.split("=", 1)[1].strip())
+                    except ValueError:
+                        filling_score = None
+            if vocab_score is not None or filling_score is not None:
+                vocab_scores.setdefault(word.strip(), []).append(
+                    (vocab_score or 0, filling_score or 0)
+                )
+    return kanji_scores, vocab_scores
 
-        # Update Kanji.csv
-        kanji_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Kanji.csv"))
-        vocab_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/Vocab.csv"))
-        import csv
-        try:
-            temp_path = kanji_path + '.temp'
-            with open(kanji_path, 'r', encoding='utf-8') as infile, open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
-                reader = csv.DictReader(infile)
-                fieldnames = reader.fieldnames
-                writer = csv.DictWriter(outfile, fieldnames=fieldnames)
-                writer.writeheader()
-                for row in reader:
-                    k = (row.get('Kanji') or '').strip()
-                    if k in kanji_scores and 'Score' in fieldnames and kanji_scores[k]:
-                        row['Score'] = str(kanji_scores[k].pop(0))
-                    writer.writerow(row)
-            os.replace(temp_path, kanji_path)
-            print(f"Updated Kanji scores in {kanji_path}")
-        except OSError as e:
-            print(f"Failed updating Kanji.csv: {e}")
 
-        # Vocab update
-        try:
-            temp_path = vocab_path + '.temp'
-            with open(vocab_path, 'r', encoding='utf-8') as infile, open(temp_path, 'w', encoding='utf-8', newline='') as outfile:
-                reader = csv.DictReader(infile)
-                fieldnames = reader.fieldnames
-                writer = csv.DictWriter(outfile, fieldnames=fieldnames)
-                writer.writeheader()
-                for row in reader:
-                    w = (row.get('Kanji') or '').strip()
-                    if w in vocab_scores and vocab_scores[w]:
-                        vs, fs = vocab_scores[w].pop(0)
-                        if 'VocabScore' in fieldnames:
-                            row['VocabScore'] = str(vs)
-                        if 'FillingScore' in fieldnames:
-                            row['FillingScore'] = str(fs)
-                    writer.writerow(row)
-            os.replace(temp_path, vocab_path)
-            print(f"Updated Vocab scores in {vocab_path}")
-        except OSError as e:
-            print(f"Failed updating Vocab.csv: {e}")
-    else:
+def _apply_kanji_scores(updates: Dict[str, List[int]]) -> None:
+    if not updates:
+        return
+    temp_path = KANJI_FILE.with_suffix(KANJI_FILE.suffix + ".temp")
+    try:
+        with KANJI_FILE.open("r", encoding="utf-8") as infile, temp_path.open(
+            "w", encoding="utf-8", newline=""
+        ) as outfile:
+            reader = csv.DictReader(infile)
+            fieldnames = reader.fieldnames or []
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in reader:
+                kanji = (row.get("Kanji") or "").strip()
+                if kanji in updates and updates[kanji]:
+                    if "Score" in fieldnames:
+                        row["Score"] = str(updates[kanji].pop(0))
+                writer.writerow(row)
+        temp_path.replace(KANJI_FILE)
+        print(f"Updated Kanji scores in {KANJI_FILE}")
+    except OSError as exc:
+        if temp_path.exists():
+            temp_path.unlink(missing_ok=True)
+        print(f"Failed updating {KANJI_FILE.name}: {exc}")
+
+
+def _apply_vocab_scores(updates: Dict[str, List[Tuple[int, int]]]) -> None:
+    if not updates:
+        return
+    temp_path = VOCAB_FILE.with_suffix(VOCAB_FILE.suffix + ".temp")
+    try:
+        with VOCAB_FILE.open("r", encoding="utf-8") as infile, temp_path.open(
+            "w", encoding="utf-8", newline=""
+        ) as outfile:
+            reader = csv.DictReader(infile)
+            fieldnames = reader.fieldnames or []
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in reader:
+                word = (row.get("Kanji") or "").strip()
+                if word in updates and updates[word]:
+                    vocab_score, filling_score = updates[word].pop(0)
+                    if "VocabScore" in fieldnames:
+                        row["VocabScore"] = str(vocab_score)
+                    if "FillingScore" in fieldnames:
+                        row["FillingScore"] = str(filling_score)
+                writer.writerow(row)
+        temp_path.replace(VOCAB_FILE)
+        print(f"Updated Vocab scores in {VOCAB_FILE}")
+    except OSError as exc:
+        if temp_path.exists():
+            temp_path.unlink(missing_ok=True)
+        print(f"Failed updating {VOCAB_FILE.name}: {exc}")
+
+
+def _load_all_scores() -> None:
+    in_file = get_score_output_dir() / "scores.txt"
+    if not in_file.exists():
+        print(f"Scores file not found: {in_file}")
+        return
+    try:
+        lines = in_file.read_text(encoding="utf-8").splitlines()
+    except OSError as exc:
+        print(f"Failed to read {in_file}: {exc}")
+        return
+
+    kanji_updates, vocab_updates = _parse_score_file(lines)
+    _apply_kanji_scores(kanji_updates)
+    _apply_vocab_scores(vocab_updates)
+
+
+def run_dev_mode() -> None:
+    handlers = {
+        "1": _save_all_scores,
+        "2": _load_all_scores,
+    }
+    choice = _prompt_choice()
+    handler = handlers.get(choice)
+    if handler is None:
         print("Exiting dev mode.")
+        return
+    handler()
