@@ -1,0 +1,575 @@
+GroupID,Count,RowNumbers,Kanji,Readings,Meaning,AllKanjiValues,InstanceRowNumber,InstanceKanji,InstanceReading,InstanceMeaning
+1,2,2,毎月,げ,every month (げ),毎月,2,毎月,まいげつ,every month (げ)
+1,2,3,毎月,き,every month (げ),毎月,3,毎月,まいつき,every month (き)
+2,2,13,掃除,そうじ,"to clean, to sweep",掃除,13,掃除,そうじ,"to clean, to sweep"
+2,2,2047,掃除,そうじ,"to clean, to sweep",掃除,2047,掃除,そうじ,"cleaning,sweeping"
+3,2,16,店,み,shop,店,16,店,みせ,shop
+3,2,6112,店,て,shop,店,6112,店,てん,"store, shop, establishment"
+4,3,18,誰,か,somebody,誰,18,誰,だれか,somebody
+4,3,183,誰,だれ,somebody,誰,183,誰,だれ,who
+4,3,5981,誰,た,somebody,誰,5981,誰,たれ,adjectival suffix for a person
+5,2,19,丈夫,ぶ,"strong, durable",丈夫,19,丈夫,じょうぶ,"strong, durable"
+5,2,6482,丈夫,ふ,"strong, durable",丈夫,6482,丈夫,じょうふ,"1. hero, gentleman, warrior, manly person, 2. good health, robustness, strong, solid, durable"
+6,4,32,後,あ,afterwards,後,32,後,あと,afterwards
+6,4,1552,後,う,afterwards,後,1552,後,うしろ,"afterwards,since then,in the future (う)"
+6,4,2142,後,ご,afterwards,後,2142,後,ご,"afterwards,since then,in the future (ご)"
+6,4,2281,後,の,afterwards,後,2281,後,のち,"afterwards,since then,in the future (の)"
+7,2,37,門,も,gate (か),門,37,門,もん,gate (か)
+7,2,4647,門,か,gate (か),門,4647,門,かど,gate (も)
+8,2,48,二人,ふ,two people,二人,48,二人,ふたり,two people
+8,2,6804,二人,に,two people,二人,6804,二人,ににん,"two persons, two people, pair, couple"
+9,3,52,四,よん,Four,四,52,四,よん,Four
+9,3,1194,四,し,Four,四,1194,四,し,four (し)
+9,3,1787,四,よん,Four,四,1787,四,よん,four (よ)
+10,3,53,私,わたし,"I,myself",私,53,私,わたし,"I,myself"
+10,3,296,私,く,"I,myself",私,296,私,わたくし,"(humble) I,myself"
+10,3,4548,私,あ,"I,myself",私,4548,私,あたし,I (fem)
+11,2,72,暇,ひ,free time,暇,72,暇,ひま,free time
+11,2,6267,暇,い,free time,暇,6267,暇,いとま,"free time, leisure, leave, spare time, farewell"
+12,2,74,灰皿,ざ,ashtray (さ),灰皿,74,灰皿,はいざら,ashtray (さ)
+12,2,7083,灰皿,さ,ashtray (さ),灰皿,7083,灰皿,はいさら,ashtray (ざ)
+13,2,90,万,ま,ten thousand,万,90,万,まん,ten thousand
+13,2,4483,万,ば,ten thousand,万,4483,万,ばん,"many, all"
+14,2,91,戸,と,Japanese style door,戸,91,戸,と,Japanese style door
+14,2,5779,戸,こ,Japanese style door,戸,5779,戸,こ,counter for houses
+15,2,94,前,ま,before (せ),前,94,前,まえ,before (せ)
+15,2,6381,前,せ,before (せ),前,6381,前,せん,before (ま)
+16,3,108,一日,た,first of month,一日,108,一日,ついたち,first of month
+16,3,446,一日,に,first of month,一日,446,一日,いちにち,first of the month
+16,3,6778,一日,じ,first of month,一日,6778,一日,いちじつ,"1. one day, 2. first of month"
+17,2,112,一人,ひ,one person (い),一人,112,一人,ひとり,one person (い)
+17,2,4976,一人,い,one person (い),一人,4976,一人,いちにん,one person (ひ)
+18,2,116,魚,さ,Fish,魚,116,魚,さかな,Fish
+18,2,2216,魚,う,Fish,魚,2216,魚,うお,fish
+19,2,124,東,ひ,east,東,124,東,ひがし,east
+19,2,4143,東,あ,east,東,4143,東,あずま,"east, Eastern Japan"
+20,2,125,中,な,middle,中,125,中,なか,middle
+20,2,2427,中,ち,middle,中,2427,中,ちゅう,"inside,middle,among"
+21,2,131,行く,ゆ,to go (い),行く,131,行く,ゆく,to go (い)
+21,2,462,行く,い,to go (い),行く,462,行く,いく,to go (ゆ)
+22,2,139,言う,い,to say (い),言う,139,言う,いう,to say (い)
+22,2,2060,言う,ゆ,to say (い),言う,2060,言う,ゆう,to say (ゆ)
+23,2,146,空,そ,Sky,空,146,空,そら,Sky
+23,2,2207,空,か,Sky,空,2207,空,から,sky
+24,2,148,次,つ,next,次,148,次,つぎ,next
+24,2,6041,次,し,next,次,6041,次,し,"order, sequence, times, next, below"
+25,2,151,人,ひ,person,人,151,人,ひと,person
+25,2,4196,人,じ,person,人,4196,人,じん,"man, person, people"
+26,2,153,毎年,ね,every year (と),毎年,153,毎年,まいねん,every year (と)
+26,2,154,毎年,と,every year (と),毎年,154,毎年,まいとし,every year (ね)
+27,2,160,入口,ぐ,entrance,入口,160,入口,いりぐち,entrance
+27,2,5793,入口,く,entrance,入口,5793,入口,いりくち,"entrance, gate, approach, mouth"
+28,2,166,入る,は,"to enter,to contain",入る,166,入る,はいる,"to enter,to contain"
+28,2,5588,入る,いる,"to enter,to contain",入る,5588,入る,いる,"to get in, to go in, to come in, to flow into, to set, to set in"
+29,2,171,辛い,か,Spicy,辛い,171,辛い,からい,Spicy
+29,2,2111,辛い,つ,Spicy,辛い,2111,辛い,つらい,"painful,heart-breaking"
+30,2,172,練習,れんしゅう,to practice,練習,172,練習,れんしゅう,to practice
+30,2,1472,練習,れんしゅう,to practice,練習,1472,練習,れんしゅう,practice
+31,2,175,一昨年,お,year before last (い),一昨年,175,一昨年,おととし,year before last (い)
+31,2,2998,一昨年,い,year before last (い),一昨年,2998,一昨年,いっさくねん,year before last (お)
+32,2,185,方,か,"person, way of doing",方,185,方,かた,"person, way of doing"
+32,2,1869,方,ほ,"person, way of doing",方,1869,方,ほう,side
+33,2,197,弾く,ひ,"to play an instrument with strings, including piano",弾く,197,弾く,ひく,"to play an instrument with strings, including piano"
+33,2,4089,弾く,は,"to play an instrument with strings, including piano",弾く,4089,弾く,はじく,"to flip, to snap"
+34,2,221,居る,い,"to be, to have (used for people and animals)",居る,221,居る,いる,"to be, to have (used for people and animals)"
+34,2,2121,居る,お,"to be, to have (used for people and animals)",居る,2121,居る,おる,"to be (animate),to be,to exist"
+35,2,240,黄色,き,yellow (お),黄色,240,黄色,きいろ,yellow (お)
+35,2,7048,黄色,お,yellow (お),黄色,7048,黄色,おうしょく,yellow (き)
+36,2,244,開く,あ,"to open, to become open",開く,244,開く,あく,"to open, to become open"
+36,2,532,開く,ひ,"to open, to become open",開く,532,開く,ひらく,to open an event
+37,2,261,上手,じ,Skillful,上手,261,上手,じょうず,Skillful
+37,2,5893,上手,わ,Skillful,上手,5893,上手,うわて,"1. upper part, upper stream, left side (of a stage), 2. skillful (only in comparisons), dexterity (on"
+38,2,271,六,ろ,six,六,271,六,ろく,six
+38,2,4921,六,む,six,六,4921,六,む,(num) six
+39,2,285,明日,し,tomorrow (し),明日,285,明日,あした,tomorrow (し)
+39,2,885,明日,す,tomorrow (し),明日,885,明日,あす,tomorrow (す)
+40,2,288,来る,く,to come,来る,288,来る,くる,to come
+40,2,4572,来る,き,to come,来る,4572,来る,きたる,"to come, to arrive, to be due to, to be next, to be forthcoming"
+41,2,291,散歩,さんぽ,to stroll,散歩,291,散歩,さんぽ,to stroll
+41,2,1210,散歩,さんぽ,to stroll,散歩,1210,散歩,さんぽ,"walk,stroll"
+42,2,297,一昨日,お,day before yesterday (っ),一昨日,297,一昨日,おととい,day before yesterday (っ)
+42,2,3777,一昨日,っ,day before yesterday (っ),一昨日,3777,一昨日,いっさくじつ,day before yesterday (お)
+43,2,299,始め,はじめ,beginning,始め,299,始め,はじめ,beginning
+43,2,6932,始め,はじめ,beginning,始め,6932,始め,はじめ,"beginning, start, origin"
+44,2,306,作る,つくる,to make,作る,306,作る,つくる,to make
+44,2,2779,作る,つくる,to make,作る,2779,作る,つくる,"to make,to create"
+45,2,307,三,さ,Three,三,307,三,さん,Three
+45,2,5819,三,み,Three,三,5819,三,み,(num) three
+46,2,316,七日,の,"seven days,the seventh day",七日,316,七日,なのか,"seven days,the seventh day"
+46,2,6875,七日,ぬ,"seven days,the seventh day",七日,6875,七日,なぬか,"seven days, the seventh day (of the month)"
+47,2,320,塩,し,Salt,塩,320,塩,しお,Salt
+47,2,4968,塩,え,Salt,塩,4968,塩,えん,salt
+48,2,322,見る,みる,"to see, to watch",見る,322,見る,みる,"to see, to watch"
+48,2,2026,見る,みる,"to see, to watch",見る,2026,見る,みる,"to see,to watch"
+49,2,328,今日,き,Today,今日,328,今日,きょう,Today
+49,2,2376,今日,こ,Today,今日,2376,今日,こんにち,"today,this day"
+50,2,329,叔母さん,おばさん,Aunt,叔母さん,329,叔母さん,おばさん,Aunt
+50,2,3017,叔母さん,おばさん,Aunt,叔母さん,3017,叔母さん,おばさん,"(1) aunt,(2) middle-aged lady"
+51,2,332,叔父,い,"grandfather, male senior citizen",叔父,332,叔父,おじいさん,"grandfather, male senior citizen"
+51,2,491,叔父,おじ,"grandfather, male senior citizen",叔父,491,叔父,おじ,"uncle, middle aged gentleman"
+52,2,336,体,か,Body,体,336,体,からだ,Body
+52,2,6937,体,て,Body,体,6937,体,てい,"appearance, air, condition, state, form"
+53,2,339,夜,る,"evening,night (よ)",夜,339,夜,よる,"evening,night (よ)"
+53,2,1009,夜,よ,"evening,night (よ)",夜,1009,夜,よ,"evening,night (る)"
+54,3,348,角,ど,a corner,角,348,角,かど,a corner
+54,3,1147,角,す,a corner,角,1147,角,すみ,horn
+54,3,6526,角,く,a corner,角,6526,角,かく,"1. angle, 2. bishop (shogi)"
+55,3,349,十,じゅう,Ten,十,349,十,じゅう,Ten
+55,3,1663,十,じゅう,Ten,十,1663,十,じゅう,"10,ten (じ)"
+55,3,1844,十,と,Ten,十,1844,十,とお,"10,ten (と)"
+56,3,363,九,きゅう,Nine,九,363,九,きゅう,Nine
+56,3,2259,九,きゅう,Nine,九,2259,九,きゅう,nine (き)
+56,3,2386,九,く,Nine,九,2386,九,く,nine (く)
+57,3,364,下,た,Below,下,364,下,した,Below
+57,3,1761,下,も,Below,下,1761,下,しも,"under,below,beneath (げ)"
+57,3,2254,下,げ,Below,下,2254,下,げ,"under,below,beneath (し)"
+58,3,372,何,なに,what,何,372,何,なに,what
+58,3,2055,何,なに,what,何,2055,何,なに,what
+58,3,2157,何,ん,what,何,2157,何,なん,what (ん)
+59,2,377,悪い,わ,bad,悪い,377,悪い,わるい,bad
+59,2,5518,悪い,に,bad,悪い,5518,悪い,にくい,"hateful, abominable, poor-looking"
+60,2,381,眼鏡,め,glasses,眼鏡,381,眼鏡,めがね,glasses
+60,2,6377,眼鏡,ん,glasses,眼鏡,6377,眼鏡,がんきょう,"spectacles, glasses"
+61,2,402,暖かい,あたたかい,warm,暖かい,402,暖かい,あたたかい,warm
+61,2,2206,暖かい,あたたかい,warm,暖かい,2206,暖かい,あたたかい,"warm,mild"
+62,2,405,甘い,あ,sweet,甘い,405,甘い,あまい,sweet
+62,2,6213,甘い,う,sweet,甘い,6213,甘い,うまい,delicious
+63,2,432,丸い,まるい,"round,circular",丸い,432,丸い,まるい,"round,circular"
+63,2,1404,丸い,まるい,"round,circular",丸い,1404,丸い,まるい,"round,circular,spherical"
+64,3,456,七,なな,Seven,七,456,七,なな,Seven
+64,3,1647,七,し,Seven,七,1647,七,しち,seven (し)
+64,3,1692,七,なな,Seven,七,1692,七,なな,seven (な)
+65,2,458,弟,う,younger brother,弟,458,弟,おとうと,younger brother
+65,2,4425,弟,おと,younger brother,弟,4425,弟,おと,younger brother (う)
+66,2,461,南,み,south (ん),南,461,南,みなみ,south (ん)
+66,2,5184,南,ん,south (ん),南,5184,南,なん,south (み)
+67,2,463,川,かわ,River,川,463,川,かわ,River
+67,2,1018,川,かわ,River,川,1018,川,かわ,river
+68,2,478,外,そ,Outside,外,478,外,そと,Outside
+68,2,1640,外,ほ,Outside,外,1640,外,ほか,"other place,the rest"
+69,2,480,背,せ,"height, stature",背,480,背,せ,"height, stature"
+69,2,1947,背,い,"height, stature",背,1947,背,せい,"height,stature"
+70,2,493,勉強,べんきょう,to study,勉強,493,勉強,べんきょう,to study
+70,2,2498,勉強,べんきょう,to study,勉強,2498,勉強,べんきょう,"study,diligence,discount,reduction"
+71,2,498,止まる,とま,to come to a halt,止まる,498,止まる,とまる,to come to a halt
+71,2,6759,止まる,ど,to come to a halt,止まる,6759,止まる,とどまる,to be limited to
+72,4,506,上,え,on top of,上,506,上,うえ,on top of
+72,4,1410,上,わ,on top of,上,1410,上,うわ,"upper,outer,surface"
+72,4,1819,上,じ,on top of,上,1819,上,じょう,"(1) first volume,(2) superior quality,(3) governmental (か)"
+72,4,2215,上,か,on top of,上,2215,上,かみ,"(1) first volume,(2) superior quality,(3) governmental (じ)"
+73,2,509,会場,かいじょう,assembly hall,会場,509,会場,かいじょう,assembly hall
+73,2,510,会場,かいじょう,assembly hall,会場,510,会場,かいじょう,meeting place
+74,2,523,不便,べ,inconvenience,不便,523,不便,ふべん,inconvenience
+74,2,4887,不便,び,inconvenience,不便,4887,不便,ふびん,"pity, compassion"
+75,2,536,経験,けいけん,to experience,経験,536,経験,けいけん,to experience
+75,2,2410,経験,けいけん,to experience,経験,2410,経験,けいけん,experience
+76,2,546,故障,こしょう,to break-down,故障,546,故障,こしょう,to break-down
+76,2,1804,故障,こしょう,to break-down,故障,1804,故障,こしょう,"break-down,failure,accident,out of order"
+77,2,548,金持ち,かねもち,rich man,金持ち,548,金持ち,かねもち,rich man
+77,2,1402,金持ち,かねもち,rich man,金持ち,1402,金持ち,かねもち,rich man
+78,2,556,十分,ゅ,enough,十分,556,十分,じゅうぶん,enough
+78,2,5215,十分,っ,enough,十分,5215,十分,じっぷん,10 minutes
+79,2,578,大事,だ,"important,valuable,serious matter",大事,578,大事,だいじ,"important,valuable,serious matter"
+79,2,5716,大事,お,"important,valuable,serious matter",大事,5716,大事,おおごと,"important, valuable, serious matter"
+80,2,588,訳,わ,"meaning,reason",訳,588,訳,わけ,"meaning,reason"
+80,2,1464,訳,や,"meaning,reason",訳,1464,訳,やく,"meaning,reason,circumstances,can be deduced,situation"
+81,2,597,皆,みな,everybody,皆,597,皆,みな,everybody
+81,2,2405,皆,ん,everybody,皆,2405,皆,みんな,"all,everyone,everybody"
+82,2,604,硬い,かたい,hard,硬い,604,硬い,かたい,hard
+82,2,2091,硬い,かたい,hard,硬い,2091,硬い,かたい,"solid,hard (esp. metal, stone),unpolished writing"
+83,2,606,包む,つ,to wrap,包む,606,包む,つつむ,to wrap
+83,2,6620,包む,く,to wrap,包む,6620,包む,くるむ,"to be engulfed in, to be enveloped by, to wrap up, to tuck in, to pack, to do up, to cover with, to dress i"
+84,2,612,拝見,はいけん,(humble) to look at,拝見,612,拝見,はいけん,(humble) to look at
+84,2,3441,拝見,はいけん,(humble) to look at,拝見,3441,拝見,はいけん,"(hum) (pol) seeing,look at"
+85,2,620,放送,ほうそう,to broadcast,放送,620,放送,ほうそう,to broadcast
+85,2,2138,放送,ほうそう,to broadcast,放送,2138,放送,ほうそう,"broadcast,broadcasting"
+86,2,623,案内,あんない,to guide,案内,623,案内,あんない,to guide
+86,2,1521,案内,あんない,to guide,案内,1521,案内,あんない,"information,guidance,leading"
+87,2,639,入院,にゅういん,to hospitalise,入院,639,入院,にゅういん,to hospitalise
+87,2,1632,入院,にゅういん,to hospitalise,入院,1632,入院,にゅういん,hospitalization
+88,2,640,遠慮,えんりょ,"to be reserved, to be restrained",遠慮,640,遠慮,えんりょ,"to be reserved, to be restrained"
+88,2,2444,遠慮,えんりょ,"to be reserved, to be restrained",遠慮,2444,遠慮,えんりょ,"diffidence,restraint,reserve"
+89,2,648,支度,したく,to prepare,支度,648,支度,したく,to prepare
+89,2,2462,支度,したく,to prepare,支度,2462,支度,したく,preparation
+90,2,649,君,き,(informal) You (used by men towards women),君,649,君,きみ,(informal) You (used by men towards women)
+90,2,689,君,く,(informal) You (used by men towards women),君,689,君,くん,suffix for familiar young male
+91,2,650,相談,そうだん,to discuss,相談,650,相談,そうだん,to discuss
+91,2,2152,相談,そうだん,to discuss,相談,2152,相談,そうだん,"consultation,discussion"
+92,2,656,輸入,ゆにゅう,to import,輸入,656,輸入,ゆにゅう,to import
+92,2,2409,輸入,ゆにゅう,to import,輸入,2409,輸入,ゆにゅう,"importation,import,introduction"
+93,2,682,表,お,the front,表,682,表,おもて,the front
+93,2,1458,表,ひ,the front,表,1458,表,ひょう,"table (e.g. Tab 1),chart,list"
+94,2,693,空く,あ,"to open, to become empty",空く,693,空く,あく,"to open, to become empty"
+94,2,1907,空く,す,"to open, to become empty",空く,1907,空く,すく,"(1) to open,to become empty,(2) to be less crowded"
+95,2,697,間,あ,a space,間,697,間,あいだ,a space
+95,2,2496,間,ま,a space,間,2496,間,ま,"space,room,time,pause"
+96,2,701,打つ,う,to hit,打つ,701,打つ,うつ,to hit
+96,2,1312,打つ,ぶ,to hit,打つ,1312,打つ,ぶつ,"to hit,to strike"
+97,2,703,木綿,も,cotton (き),木綿,703,木綿,もめん,cotton (き)
+97,2,5751,木綿,き,cotton (き),木綿,5751,木綿,きわた,cotton (も)
+98,2,707,輸出,ゆしゅつ,to export,輸出,707,輸出,ゆしゅつ,to export
+98,2,1708,輸出,ゆしゅつ,to export,輸出,1708,輸出,ゆしゅつ,export
+99,2,716,日,ひ,"day, sun",日,716,日,ひ,"day, sun"
+99,2,2023,日,に,"day, sun",日,2023,日,にち,"sun,sunshine,day"
+100,2,738,工場,じ,factory,工場,738,工場,こうじょう,factory
+100,2,1946,工場,ば,factory,工場,1946,工場,こうば,"factory,plant,mill,workshop"
+101,2,745,運動,うんどう,to exercise,運動,745,運動,うんどう,to exercise
+101,2,1246,運動,うんどう,to exercise,運動,1246,運動,うんどう,"motion,exercise"
+102,2,767,心配,しんぱい,to worry,心配,767,心配,しんぱい,to worry
+102,2,2429,心配,しんぱい,to worry,心配,2429,心配,しんぱい,"worry,concern,anxiety,care"
+103,2,769,準備,じゅんび,to prepare,準備,769,準備,じゅんび,to prepare
+103,2,1825,準備,じゅんび,to prepare,準備,1825,準備,じゅんび,"preparation,arrangements,provision,reserve"
+104,2,770,招待,しょうたい,to invite,招待,770,招待,しょうたい,to invite
+104,2,1733,招待,しょうたい,to invite,招待,1733,招待,しょうたい,invitation
+105,2,775,大分,だいぶ,greatly,大分,775,大分,だいぶ,greatly
+105,2,3737,大分,ん,greatly,大分,3737,大分,だいぶん,"considerably,greatly,a lot"
+106,3,780,止める,とめ,to stop something,止める,780,止める,とめる,to stop something
+106,3,902,止める,や,to stop something,止める,902,止める,やめる,to stop
+106,3,4469,止める,ど,to stop something,止める,4469,止める,とどめる,"to stop, to cease, to put an end to"
+107,2,786,出発,しゅっぱつ,to depart,出発,786,出発,しゅっぱつ,to depart
+107,2,2455,出発,しゅっぱつ,to depart,出発,2455,出発,しゅっぱつ,departure
+108,2,803,運転,うんてん,to drive,運転,803,運転,うんてん,to drive
+108,2,1630,運転,うんてん,to drive,運転,1630,運転,うんてん,"operation,motion,driving"
+109,2,804,市,し,city,市,804,市,し,city
+109,2,5247,市,い,city,市,5247,市,いち,"market, fair"
+110,2,815,生産,せいさん,to produce,生産,815,生産,せいさん,to produce
+110,2,2054,生産,せいさん,to produce,生産,2054,生産,せいさん,"production,manufacture"
+111,2,816,上る,あ,to rise,上る,816,上る,あがる,to rise
+111,2,3025,上る,の,to rise,上る,3025,上る,のぼる,"to ascend,to go up,to climb"
+112,2,825,字,じ,character,字,825,字,じ,character
+112,2,6710,字,あ,character,字,6710,字,あざ,section of village
+113,2,860,途中,と,on the way,途中,860,途中,とちゅう,on the way
+113,2,7245,途中,つ,on the way,途中,7245,途中,つちゅう,"on the way, en route"
+114,2,861,汚れる,よ,to get dirty,汚れる,861,汚れる,よごれる,to get dirty
+114,2,5131,汚れる,け,to get dirty,汚れる,5131,汚れる,けがれる,"to get dirty, to become dirty"
+115,2,863,怒る,お,"to get angry,to be angry",怒る,863,怒る,おこる,"to get angry,to be angry"
+115,2,5922,怒る,い,"to get angry,to be angry",怒る,5922,怒る,いかる,"to get angry, to be angry"
+116,2,874,承知,しょうち,to consent,承知,874,承知,しょうち,to consent
+116,2,1023,承知,しょうち,to consent,承知,1023,承知,しょうち,"consent,acceptance,assent,admitting"
+117,2,876,畳,た,Japanese straw mat,畳,876,畳,たたみ,Japanese straw mat
+117,2,5388,畳,じ,Japanese straw mat,畳,5388,畳,じょう,#NAME?
+118,2,886,計画,けいかく,to plan,計画,886,計画,けいかく,to plan
+118,2,1837,計画,けいかく,to plan,計画,1837,計画,けいかく,"plan,project,schedule,scheme,program"
+119,3,887,音,と,"sound,note (と)",音,887,音,おと,"sound,note (と)"
+119,3,1337,音,ん,"sound,note (と)",音,1337,音,おん,"sound,note (ん)"
+119,3,6574,音,ね,"sound,note (と)",音,6574,音,ね,"sound, note"
+120,2,898,僕,ぼ,I (used by males),僕,898,僕,ぼく,I (used by males)
+120,2,5974,僕,し,I (used by males),僕,5974,僕,しもべ,"manservant, servant (of God)"
+121,2,918,下る,さ,"to get down,to descend (く)",下る,918,下る,さがる,"to get down,to descend (く)"
+121,2,2725,下る,く,"to get down,to descend (く)",下る,2725,下る,くだる,"to get down,to descend (さ)"
+122,2,944,都,と,metropolitan,都,944,都,と,metropolitan
+122,2,2388,都,み,metropolitan,都,2388,都,みやこ,capital
+123,2,950,入学,にゅうがく,to enter school or university,入学,950,入学,にゅうがく,to enter school or university
+123,2,2162,入学,にゅうがく,to enter school or university,入学,2162,入学,にゅうがく,"entry to school or university,matriculation"
+124,2,952,世話,せわ,to look after,世話,952,世話,せわ,to look after
+124,2,2245,世話,せわ,to look after,世話,2245,世話,せわ,"looking after,help,aid,assistance"
+125,2,967,退院,たいいん,to leave hospital,退院,967,退院,たいいん,to leave hospital
+125,2,3358,退院,たいいん,to leave hospital,退院,3358,退院,たいいん,leaving hospital
+126,2,980,食事,しょくじ,to have a meal,食事,980,食事,しょくじ,to have a meal
+126,2,2551,食事,しょくじ,to have a meal,食事,2551,食事,しょくじ,meal
+127,2,988,出席,しゅっせき,to attend,出席,988,出席,しゅっせき,to attend
+127,2,2399,出席,しゅっせき,to attend,出席,2399,出席,しゅっせき,"attendance,presence"
+128,2,996,昼間,ひ,"daytime,during the day",昼間,996,昼間,ひるま,"daytime,during the day"
+128,2,6042,昼間,ち,"daytime,during the day",昼間,6042,昼間,ちゅうかん,"daytime, during the day"
+129,2,1015,作物,も,"produce (e.g. agricultural),crops",作物,1015,作物,さくもつ,"produce (e.g. agricultural),crops"
+129,2,6025,作物,ぶ,"produce (e.g. agricultural),crops",作物,6025,作物,さくぶつ,literary work
+130,2,1027,姉妹,し,sisters (き),姉妹,1027,姉妹,しまい,sisters (き)
+130,2,4709,姉妹,き,sisters (き),姉妹,4709,姉妹,きょうだい,sisters (し)
+131,3,1048,分,ぶ,"dividing,part",分,1048,分,ぶ,"dividing,part"
+131,3,1840,分,ぶん,"dividing,part",分,1840,分,ぶん,"dividing,part,segment"
+131,3,4453,分,ふ,"dividing,part",分,4453,分,ふん,minute
+132,2,1061,少女,し,"daughter,young lady,virgin,maiden,little girl",少女,1061,少女,しょうじょ,"daughter,young lady,virgin,maiden,little girl"
+132,2,6853,少女,お,"daughter,young lady,virgin,maiden,little girl",少女,6853,少女,おとめ,"daughter, young lady, virgin, maiden, little girl"
+133,2,1087,役,や,"use,service,role,position",役,1087,役,やく,"use,service,role,position"
+133,2,4357,役,え,"use,service,role,position",役,4357,役,えき,"war, campaign, battle"
+134,2,1089,唯,だ,"free of charge,mere,sole,only,usual,common (だ)",唯,1089,唯,ただ,"free of charge,mere,sole,only,usual,common (だ)"
+134,2,2131,唯,っ,"free of charge,mere,sole,only,usual,common (だ)",唯,2131,唯,たった,"free of charge,mere,sole,only,usual,common (っ)"
+135,2,1113,不,ぶ,"un,non,negative prefix (ふ)",不,1113,不,ぶ,"un,non,negative prefix (ふ)"
+135,2,2366,不,ふ,"un,non,negative prefix (ふ)",不,2366,不,ふ,"un,non,negative prefix (ぶ)"
+136,2,1131,銃,じ,gun (じ),銃,1131,銃,じゅう,gun (じ)
+136,2,5234,銃,つ,gun (じ),銃,5234,銃,つつ,gun (つ)
+137,2,1159,骨,ほ,bone,骨,1159,骨,ほね,bone
+137,2,6802,骨,こ,bone,骨,6802,骨,こつ,"knack, skill"
+138,3,1161,生,な,"(1) draft (beer),(2) raw,unprocessed (せ)",生,1161,生,なま,"(1) draft (beer),(2) raw,unprocessed (せ)"
+138,3,2555,生,せ,"(1) draft (beer),(2) raw,unprocessed (せ)",生,2555,生,せい,"(1) draft (beer),(2) raw,unprocessed (な)"
+138,3,5475,生,き,"(1) draft (beer),(2) raw,unprocessed (せ)",生,5475,生,き,"pure, undiluted, raw, crude"
+139,2,1185,頬,ほほ,cheek (of face) (お),頬,1185,頬,ほほ,cheek (of face) (お)
+139,2,2575,頬,お,cheek (of face) (お),頬,2575,頬,ほお,cheek (of face)
+140,2,1193,描く,え,"to draw,to paint,to sketch,to depict,to describe (え)",描く,1193,描く,えがく,"to draw,to paint,to sketch,to depict,to describe (え)"
+140,2,1832,描く,か,"to draw,to paint,to sketch,to depict,to describe (え)",描く,1832,描く,かく,"to draw,to paint,to sketch,to depict,to describe (か)"
+141,2,1195,玉,た,"ball,sphere,coin",玉,1195,玉,たま,"ball,sphere,coin"
+141,2,5942,玉,ぎ,"ball,sphere,coin",玉,5942,玉,ぎょく,king (shogi)
+142,2,1199,未だ,まだ,"yet,still,more,besides",未だ,1199,未だ,まだ,"yet,still,more,besides"
+142,2,6557,未だ,い,"yet,still,more,besides",未だ,6557,未だ,いまだ,"as yet, hitherto, not yet (neg)"
+143,2,1207,国境,こ,national or state border (く),国境,1207,国境,こっきょう,national or state border (く)
+143,2,4680,国境,く,national or state border (く),国境,4680,国境,くにざかい,national or state border (こ)
+144,2,1238,濠,ほ,moat (ご),濠,1238,濠,ほり,moat (ご)
+144,2,5671,濠,ご,moat (ご),濠,5671,濠,ごう,moat (ほ)
+145,2,1262,流行,ゅ,"fashionable,fad,in vogue,prevailing",流行,1262,流行,りゅうこう,"fashionable,fad,in vogue,prevailing"
+145,2,4723,流行,は,"fashionable,fad,in vogue,prevailing",流行,4723,流行,はやり,"fashionable, fad, in vogue, prevailing"
+146,2,1281,額,が,"forehead,brow (が)",額,1281,額,がく,"forehead,brow (が)"
+146,2,2373,額,ひ,"forehead,brow (が)",額,2373,額,ひたい,"forehead,brow (ひ)"
+147,2,1330,梅雨,つ,"rainy season,rain during the rainy season (つ)",梅雨,1330,梅雨,つゆ,"rainy season,rain during the rainy season (つ)"
+147,2,1873,梅雨,ば,"rainy season,rain during the rainy season (つ)",梅雨,1873,梅雨,ばいう,"rainy season,rain during the rainy season (ば)"
+148,2,1335,軒,の,eaves (け),軒,1335,軒,のき,eaves (け)
+148,2,1800,軒,け,eaves (け),軒,1800,軒,けん,eaves (の)
+149,2,1344,方々,か,"persons,this and that,here and there,everywhere (か)",方々,1344,方々,かたがた,"persons,this and that,here and there,everywhere (か)"
+149,2,1613,方々,ほ,"persons,this and that,here and there,everywhere (か)",方々,1613,方々,ほうぼう,"persons,this and that,here and there,everywhere (ほ)"
+150,2,1349,等,な,"et cetera,etc.,and the like",等,1349,等,など,"et cetera,etc.,and the like"
+150,2,4722,等,と,"et cetera,etc.,and the like",等,4722,等,とう,"et cetera, etc., and the like"
+151,2,1354,街,ま,"(1) town,(2) street,road",街,1354,街,まち,"(1) town,(2) street,road"
+151,2,4552,街,が,"(1) town,(2) street,road",街,4552,街,がい,"~street, ~quarters"
+152,2,1365,認める,み,"to recognize,to appreciate,to approve,to admit,to notice",認める,1365,認める,みとめる,"to recognize,to appreciate,to approve,to admit,to notice"
+152,2,4512,認める,し,"to recognize,to appreciate,to approve,to admit,to notice",認める,4512,認める,したためる,to write up
+153,2,1367,柄,え,"handle,grip",柄,1367,柄,え,"handle,grip"
+153,2,2008,柄,が,"handle,grip",柄,2008,柄,がら,"hilt (of a sword),haft (of a dagger),handgrip"
+154,2,1403,円,ま,"circle,money (え)",円,1403,円,まる,"circle,money (え)"
+154,2,2406,円,え,"circle,money (え)",円,2406,円,えん,"circle,money (ま)"
+155,2,1430,面,め,"face,mug,surface,facial features,mask,face guard,side or facet,corner,page",面,1430,面,めん,"face,mug,surface,facial features,mask,face guard,side or facet,corner,page"
+155,2,6120,面,お,"face,mug,surface,facial features,mask,face guard,side or facet,corner,page",面,6120,面,おも,face
+156,2,1434,夜中,よ,"midnight,dead of night",夜中,1434,夜中,よなか,"midnight,dead of night"
+156,2,4847,夜中,や,"midnight,dead of night",夜中,4847,夜中,やちゅう,"all night, the whole night"
+157,2,1451,金庫,き,"safe,vault,treasury,provider of funds",金庫,1451,金庫,きんこ,"safe,vault,treasury,provider of funds"
+157,2,5363,金庫,か,"safe,vault,treasury,provider of funds",金庫,5363,金庫,かねぐら,"safe, vault, treasury, provider of funds"
+158,2,1460,行き,ゆ,going (い),行き,1460,行き,ゆき,going (い)
+158,2,1650,行き,い,going (い),行き,1650,行き,いき,going (ゆ)
+159,2,1470,敵,て,"enemy,rival",敵,1470,敵,てき,"enemy,rival"
+159,2,6264,敵,か,"enemy,rival",敵,6264,敵,かたき,"enemy, rival"
+160,2,1481,為る,す,"to change,to be of use,to reach to (す)",為る,1481,為る,する,"to change,to be of use,to reach to (す)"
+160,2,1865,為る,な,"to change,to be of use,to reach to (す)",為る,1865,為る,なる,"to change,to be of use,to reach to (な)"
+161,2,1491,灯,ひ,light (と),灯,1491,灯,ひ,light (と)
+161,2,5798,灯,と,light (と),灯,5798,灯,ともしび,light (ひ)
+162,2,1498,乗客,き,passenger (か),乗客,1498,乗客,じょうきゃく,passenger (か)
+162,2,4848,乗客,か,passenger (か),乗客,4848,乗客,じょうかく,passenger (き)
+163,2,1513,日本,ほ,Japan (っ),日本,1513,日本,にほん,Japan (っ)
+163,2,2251,日本,っ,Japan (っ),日本,2251,日本,にっぽん,Japan (ほ)
+164,2,1536,末,す,"the end of,powder",末,1536,末,すえ,"the end of,powder"
+164,2,6947,末,う,"the end of,powder",末,6947,末,うら,"top end, tip"
+165,2,1542,身体,し,the body (か),身体,1542,身体,しんたい,the body (か)
+165,2,6146,身体,か,the body (か),身体,6146,身体,からだ,the body (し)
+166,2,1562,氏,し,"family name,lineage,birth",氏,1562,氏,し,"family name,lineage,birth"
+166,2,6420,氏,う,"family name,lineage,birth",氏,6420,氏,うじ,family name
+167,2,1588,灰,は,ash,灰,1588,灰,はい,ash
+167,2,4717,灰,あ,ash,灰,4717,灰,あく,puckery juice
+168,2,1595,幕,ま,"curtain,bunting,act (in play)",幕,1595,幕,まく,"curtain,bunting,act (in play)"
+168,2,4285,幕,と,"curtain,bunting,act (in play)",幕,4285,幕,とばり,"curtain, bunting, act (in play)"
+169,2,1617,数,す,"number,figure (か)",数,1617,数,すう,"number,figure (か)"
+169,2,2365,数,か,"number,figure (か)",数,2365,数,かず,"number,figure (す)"
+170,2,1620,瓶,び,bottle,瓶,1620,瓶,びん,bottle
+170,2,5647,瓶,か,bottle,瓶,5647,瓶,かめ,earthenware pot
+171,2,1635,他,ほ,other (esp. places and things) (た),他,1635,他,ほか,other (esp. places and things) (た)
+171,2,2009,他,た,other (esp. places and things) (た),他,2009,他,た,other (esp. places and things) (ほ)
+172,2,1646,審判,ぱ,"refereeing,trial,judgement,umpire,referee",審判,1646,審判,しんぱん,"refereeing,trial,judgement,umpire,referee"
+172,2,6981,審判,ば,"refereeing,trial,judgement,umpire,referee",審判,6981,審判,しんばん,"refereeing, trial, judgement, umpire, referee"
+173,2,1651,金,か,"(1) gold,(2) gold general (shogi) (abbr) (か)",金,1651,金,かね,"(1) gold,(2) gold general (shogi) (abbr) (か)"
+173,2,1841,金,き,"(1) gold,(2) gold general (shogi) (abbr) (か)",金,1841,金,きん,"(1) gold,(2) gold general (shogi) (abbr) (き)"
+174,2,1672,品,し,"thing,article,goods,dignity,article (goods),counter for meal courses (し)",品,1672,品,しな,"thing,article,goods,dignity,article (goods),counter for meal courses (し)"
+174,2,2328,品,ひ,"thing,article,goods,dignity,article (goods),counter for meal courses (し)",品,2328,品,ひん,"thing,article,goods,dignity,article (goods),counter for meal courses (ひ)"
+175,2,1683,土産,み,"present,souvenir",土産,1683,土産,みやげ,"present,souvenir"
+175,2,6119,土産,ど,"present,souvenir",土産,6119,土産,どさん,product of the land
+176,2,1687,得る,え,"to get,to gain,to win (う)",得る,1687,得る,える,"to get,to gain,to win (う)"
+176,2,1769,得る,う,"to get,to gain,to win (う)",得る,1769,得る,うる,"to get,to gain,to win (え)"
+177,2,1712,値,ね,"value,price,cost",値,1712,値,ね,"value,price,cost"
+177,2,5521,値,あ,"value,price,cost",値,5521,値,あたい,"value, price, cost, worth, merit"
+178,2,1717,傷,き,"wound,injury,hurt,cut",傷,1717,傷,きず,"wound,injury,hurt,cut"
+178,2,7077,傷,し,"wound,injury,hurt,cut",傷,7077,傷,しょう,"wound, injury, hurt, cut, gash, bruise, scratch, scar, weak point"
+179,2,1728,年月,と,months and years (と),年月,1728,年月,としつき,months and years (と)
+179,2,2316,年月,ね,months and years (と),年月,2316,年月,ねんげつ,months and years (ね)
+180,2,1744,球,た,"globe,sphere,ball (き)",球,1744,球,たま,"globe,sphere,ball (き)"
+180,2,2415,球,き,"globe,sphere,ball (き)",球,2415,球,きゅう,"globe,sphere,ball (た)"
+181,2,1756,本当,う,"truth,reality",本当,1756,本当,ほんとう,"truth,reality"
+181,2,1822,本当,ほんと,"truth,reality",本当,1822,本当,ほんと,"truth,reality (う)"
+182,2,1803,基,もと,basis,基,1803,基,もと,basis
+182,2,4849,基,い,basis,基,4849,基,もとい,basis (い)
+183,2,1809,悪口,わ,"abuse,insult,slander,evil speaking",悪口,1809,悪口,わるくち,"abuse,insult,slander,evil speaking"
+183,2,5951,悪口,あ,"abuse,insult,slander,evil speaking",悪口,5951,悪口,あっこう,"abuse, insult, slander, evil speaking"
+184,2,1828,女子,じ,"woman,girl",女子,1828,女子,じょし,"woman,girl"
+184,2,4736,女子,お,"woman,girl",女子,4736,女子,おなご,"woman, girl"
+185,2,1831,一言,ひ,single word (い),一言,1831,一言,ひとこと,single word (い)
+185,2,4290,一言,い,single word (い),一言,4290,一言,いちげん,single word (ひ)
+186,2,1866,吐く,は,"(1) to breathe,(2) to tell (lies),(3) to vomit,to disgorge",吐く,1866,吐く,はく,"(1) to breathe,(2) to tell (lies),(3) to vomit,to disgorge"
+186,2,4405,吐く,つ,"(1) to breathe,(2) to tell (lies),(3) to vomit,to disgorge",吐く,4405,吐く,つく,"1. to breathe, 2. to tell (lies), 3. to vomit, to disgorge"
+187,2,1876,綿,わ,"cotton,padding (め)",綿,1876,綿,わた,"cotton,padding (め)"
+187,2,2231,綿,め,"cotton,padding (め)",綿,2231,綿,めん,"cotton,padding (わ)"
+188,2,1878,雷,み,thunder (い),雷,1878,雷,かみなり,thunder (い)
+188,2,4540,雷,い,thunder (い),雷,4540,雷,いかずち,thunder (み)
+189,2,1918,余り,あま,"not very (used as adverb),not much",余り,1918,余り,あまり,"not very (used as adverb),not much"
+189,2,5858,余り,ん,"not very (used as adverb),not much",余り,5858,余り,あんまり,"not very (this form only used as adverb), not much, remainder, rest, remnant, surplus, balance, excess, rema"
+190,3,1919,側,そ,"side,edge,third person",側,1919,側,そば,"side,edge,third person"
+190,3,5828,側,か,"side,edge,third person",側,5828,側,かわ,"side, row, surroundings, part, (watch) case (か)"
+190,3,6436,側,が,"side,edge,third person",側,6436,側,がわ,"side, row, surroundings, part, (watch) case (が)"
+191,2,1931,無,ぶ,"nothing,naught,nil,zero (ぶ)",無,1931,無,ぶ,"nothing,naught,nil,zero (ぶ)"
+191,2,2238,無,む,"nothing,naught,nil,zero (ぶ)",無,2238,無,む,"nothing,naught,nil,zero (む)"
+192,2,1942,頃,こ,"time,about,toward,approximately (time)",頃,1942,頃,ころ,"time,about,toward,approximately (time)"
+192,2,4423,頃,け,"time,about,toward,approximately (time)",頃,4423,頃,けい,"time, about, toward, approximately (time)"
+193,2,1960,注ぐ,そ,"to pour (into),to irrigate,to pay,to fill,to feed (e.g. a fire)",注ぐ,1960,注ぐ,そそぐ,"to pour (into),to irrigate,to pay,to fill,to feed (e.g. a fire)"
+193,2,2449,注ぐ,つ,"to pour (into),to irrigate,to pay,to fill,to feed (e.g. a fire)",注ぐ,2449,注ぐ,つぐ,"to pour (into),to irrigate,to pay"
+194,2,1972,現場,ば,"actual spot,scene,scene of the crime",現場,1972,現場,げんば,"actual spot,scene,scene of the crime"
+194,2,6418,現場,じ,"actual spot,scene,scene of the crime",現場,6418,現場,げんじょう,"actual spot, scene, scene of the crime"
+195,2,2053,解く,と,to unfasten (と),解く,2053,解く,とく,to unfasten (と)
+195,2,4586,解く,ほ,to unfasten (と),解く,4586,解く,ほどく,to unfasten (ほ)
+196,2,2093,文,ぶ,sentence,文,2093,文,ぶん,sentence
+196,2,7267,文,ふ,sentence,文,7267,文,ふみ,"letter, writings"
+197,2,2103,日付,ひ,"date,dating",日付,2103,日付,ひづけ,"date,dating"
+197,2,4833,日付,か,"date,dating",日付,4833,日付,かづけ,"date, dating"
+198,2,2113,平均,へ,"equilibrium,balance,average,mean",平均,2113,平均,へいきん,"equilibrium,balance,average,mean"
+198,2,5011,平均,な,"equilibrium,balance,average,mean",平均,5011,平均,ならし,"equilibrium, balance, average, mean"
+199,2,2119,鼠,み,"(1) mouse,rat,(2) dark gray,slate color",鼠,2119,鼠,ねずみ,"(1) mouse,rat,(2) dark gray,slate color"
+199,2,4362,鼠,ねず,"(1) mouse,rat,(2) dark gray,slate color",鼠,4362,鼠,ねず,"1. mouse, rat, 2. dark gray, slate color"
+200,2,2122,留める,とめ,"to fasten,to turn off,to detain",留める,2122,留める,とめる,"to fasten,to turn off,to detain"
+200,2,4216,留める,ど,"to fasten,to turn off,to detain",留める,4216,留める,とどめる,"to stop, to cease, to put an end to"
+201,2,2140,度,た,counter for occurrences (た),度,2140,度,たび,counter for occurrences (た)
+201,2,2464,度,ど,counter for occurrences (た),度,2464,度,ど,counter for occurrences (ど)
+202,2,2161,商人,し,"trader,shopkeeper,merchant",商人,2161,商人,しょうにん,"trader,shopkeeper,merchant"
+202,2,4825,商人,あ,"trader,shopkeeper,merchant",商人,4825,商人,あきうど,"trader, shopkeeper, merchant"
+203,2,2169,否,や,"no,the noes",否,2169,否,いや,"no,the noes"
+203,2,6636,否,え,"no,the noes",否,6636,否,いいえ,"no, nay, yes, well"
+204,2,2180,管,く,"pipe,tube",管,2180,管,くだ,"pipe,tube"
+204,2,5846,管,か,"pipe,tube",管,5846,管,かん,"pipe, tube"
+205,2,2188,床,ゆ,floor,床,2188,床,ゆか,floor
+205,2,5045,床,と,floor,床,5045,床,とこ,"bed, sickbed, alcove, padding"
+206,2,2194,御,お,honourable,御,2194,御,お,honourable
+206,2,5330,御,ご,honourable,御,5330,御,ご,"go-, honourable"
+207,2,2222,他人,た,"another person,unrelated person,outsider,stranger",他人,2222,他人,たにん,"another person,unrelated person,outsider,stranger"
+207,2,5102,他人,あ,"another person,unrelated person,outsider,stranger",他人,5102,他人,あだびと,"another person, unrelated person, outsider, stranger"
+208,2,2235,文字,ん,"letter (of alphabet),character",文字,2235,文字,もんじ,"letter (of alphabet),character"
+208,2,2517,文字,もじ,"letter (of alphabet),character",文字,2517,文字,もじ,"letter (of alphabet),character (ん)"
+209,2,2244,辺り,あ,"vicinity,nearby",辺り,2244,辺り,あたり,"vicinity,nearby"
+209,2,5430,辺り,ほ,"vicinity,nearby",辺り,5430,辺り,ほとり,"(in the) neighbourhood, vicinity, nearby"
+210,2,2260,原,は,"field,plain,prairie,tundra,moor,wilderness",原,2260,原,はら,"field,plain,prairie,tundra,moor,wilderness"
+210,2,5808,原,げ,"field,plain,prairie,tundra,moor,wilderness",原,5808,原,げん,"original, primitive, primary, fundamental, raw"
+211,2,2289,種,た,"(1) seed,(2) material,(3) cause,source",種,2289,種,たね,"(1) seed,(2) material,(3) cause,source"
+211,2,7043,種,し,"(1) seed,(2) material,(3) cause,source",種,7043,種,しゅ,"kind, variety, species"
+212,2,2303,縁,ふ,"a means, e.g. of living",縁,2303,縁,ふち,"a means, e.g. of living"
+212,2,4304,縁,え,"a means, e.g. of living",縁,4304,縁,えん,"chance, fate, destiny, relation, bonds, connection, karma"
+213,2,2311,実,み,"fruit,nut,seed,content,good result",実,2311,実,み,"fruit,nut,seed,content,good result"
+213,2,6118,実,じ,"fruit,nut,seed,content,good result",実,6118,実,じつ,"truth, reality, sincerity, fidelity, kindness, faith, substance, essence"
+214,2,2314,例,れ,"instance,example,case",例,2314,例,れい,"instance,example,case"
+214,2,4154,例,た,"instance,example,case",例,4154,例,ためし,"instance, example, case, precedent, experience, custom, usage, parallel, illustration"
+215,2,2315,節,ふ,"tune,tone,knot,knob,point",節,2315,節,ふし,"tune,tone,knot,knob,point"
+215,2,5628,節,せ,"tune,tone,knot,knob,point",節,5628,節,せつ,"node, section, occasion, time"
+216,2,2329,会,か,"meeting,assembly,party,association,club",会,2329,会,かい,"meeting,assembly,party,association,club"
+216,2,7275,会,え,"meeting,assembly,party,association,club",会,7275,会,え,understanding
+217,2,2350,輪,わ,"ring,hoop,circle",輪,2350,輪,わ,"ring,hoop,circle"
+217,2,5780,輪,り,"ring,hoop,circle",輪,5780,輪,りん,counter for wheels and flowers
+218,2,2421,印,し,"(1) mark,(2) symbol,(3) evidence",印,2421,印,しるし,"(1) mark,(2) symbol,(3) evidence"
+218,2,5921,印,い,"(1) mark,(2) symbol,(3) evidence",印,5921,印,いん,"seal, stamp, mark, print"
+219,2,2453,明後日,み,day after tomorrow (あ),明後日,2453,明後日,みょうごにち,day after tomorrow (あ)
+219,2,6431,明後日,あ,day after tomorrow (あ),明後日,6431,明後日,あさって,day after tomorrow (み)
+220,2,2456,仏,ほ,"Buddha,merciful person,Buddhist image,the dead",仏,2456,仏,ほとけ,"Buddha,merciful person,Buddhist image,the dead"
+220,2,5600,仏,ふ,"Buddha,merciful person,Buddhist image,the dead",仏,5600,仏,ふつ,French
+221,2,2476,様,よ,"way,manner,kind",様,2476,様,よう,"way,manner,kind"
+221,2,5065,様,さ,"way,manner,kind",様,5065,様,さま,"Mr. or Mrs., manner, kind, appearance"
+222,2,2494,地方,ち,"area,locality,district,region,the coast",地方,2494,地方,ちほう,"area,locality,district,region,the coast"
+222,2,6929,地方,じ,"area,locality,district,region,the coast",地方,6929,地方,じかた,"area, locality, district, region, the coast"
+223,2,2499,軍,ぐ,"army,force,troops",軍,2499,軍,ぐん,"army,force,troops"
+223,2,5016,軍,い,"army,force,troops",軍,5016,軍,いくさ,"war, battle, campaign, fight"
+224,2,2515,際,さ,"on the occasion of,circumstances",際,2515,際,さい,"on the occasion of,circumstances"
+224,2,5897,際,き,"on the occasion of,circumstances",際,5897,際,きわ,"edge, brink, verge, side"
+225,2,2541,賛成,さんせい,"approval,agreement,support,favour",賛成,2541,賛成,さんせい,"approval,agreement,support,favour"
+225,2,7198,賛成,さんせい,"approval,agreement,support,favour",賛成,7198,賛成,さんせい,"approval, agreement, support, favour"
+226,2,2562,象,ぞ,elephant,象,2562,象,ぞう,elephant
+226,2,6689,象,し,elephant,象,6689,象,しょう,phenomenon
+227,2,2603,梯子,は,"ladder,stairs",梯子,2603,梯子,はしご,"ladder,stairs"
+227,2,4779,梯子,て,"ladder,stairs",梯子,4779,梯子,ていし,"ladder, stairs"
+228,2,2617,紅葉,も,(1) (Japanese) maple (こ),紅葉,2617,紅葉,もみじ,(1) (Japanese) maple (こ)
+228,2,3647,紅葉,こ,(1) (Japanese) maple (こ),紅葉,3647,紅葉,こうよう,(1) (Japanese) maple (も)
+229,2,2783,近々,ち,"nearness,before long",近々,2783,近々,ちかぢか,"nearness,before long"
+229,2,6410,近々,き,"nearness,before long",近々,6410,近々,きんきん,"nearness, before long"
+230,2,2792,突く,つく,"(1) to thrust,to strike,(2) to poke",突く,2792,突く,つく,"(1) to thrust,to strike,(2) to poke"
+230,2,4817,突く,つつ,"(1) to thrust,to strike,(2) to poke",突く,4817,突く,つつく,"1. to thrust, to strike, to attack, 2. to poke, to nudge, to pick at"
+231,2,2873,月日,つ,"time,years,days",月日,2873,月日,つきひ,"time,years,days"
+231,2,4159,月日,が,"time,years,days",月日,4159,月日,がっぴ,(the) date
+232,2,2877,銅,ど,copper (あ),銅,2877,銅,どう,copper (あ)
+232,2,5329,銅,あ,copper (あ),銅,5329,銅,あかがね,copper (ど)
+233,2,2884,湿気,け,"moisture,humidity,dampness (き)",湿気,2884,湿気,しっけ,"moisture,humidity,dampness (き)"
+233,2,3327,湿気,き,"moisture,humidity,dampness (き)",湿気,3327,湿気,しっき,"moisture,humidity,dampness (け)"
+234,2,3005,剃る,そ,to shave (す),剃る,3005,剃る,そる,to shave (す)
+234,2,6317,剃る,す,to shave (す),剃る,6317,剃る,する,to shave (そ)
+235,2,3030,火傷,や,"burn,scald",火傷,3030,火傷,やけど,"burn,scald"
+235,2,5342,火傷,か,"burn,scald",火傷,5342,火傷,かしょう,"burn, scald"
+236,2,3032,夜行,こ,"walking around at night,night train,night travel",夜行,3032,夜行,やこう,"walking around at night,night train,night travel"
+236,2,6788,夜行,ぎ,"walking around at night,night train,night travel",夜行,6788,夜行,やぎょう,"walking around at night, night train, night travel"
+237,2,3130,汚す,よ,"(1) to disgrace,to dishonour,(2) to pollute,to contaminate,to soil,to make dirty,to stain",汚す,3130,汚す,よごす,"(1) to disgrace,to dishonour,(2) to pollute,to contaminate,to soil,to make dirty,to stain"
+237,2,4863,汚す,け,"(1) to disgrace,to dishonour,(2) to pollute,to contaminate,to soil,to make dirty,to stain",汚す,4863,汚す,けがす,"to disgrace, to dishonour"
+238,2,3153,蓋,ふ,"cover,lid,cap",蓋,3153,蓋,ふた,"cover,lid,cap"
+238,2,6805,蓋,が,"cover,lid,cap",蓋,6805,蓋,がい,"cover, lid, cap"
+239,2,3174,冠,む,"crown,diadem,first,best",冠,3174,冠,かんむり,"crown,diadem,first,best"
+239,2,4254,冠,かん,"crown,diadem,first,best",冠,4254,冠,かん,"crown, diadem, first, best, peerless, cap, naming, designating, initiating on coming of age, top character ra"
+240,2,3184,潜る,も,"(1) to drive,to pass through,(2) to evade,to hide,(3) to dive (into or under water),to go undergroun",潜る,3184,潜る,もぐる,"(1) to drive,to pass through,(2) to evade,to hide,(3) to dive (into or under water),to go undergroun"
+240,2,5579,潜る,く,"(1) to drive,to pass through,(2) to evade,to hide,(3) to dive (into or under water),to go undergroun",潜る,5579,潜る,くぐる,"1. to drive, to pass through, 2. to evade, to hide, 3. to dive (into or under water), to go undergro"
+241,2,3235,上下,じ,"high and low,up and down,unloading and loading,praising and blaming",上下,3235,上下,じょうげ,"high and low,up and down,unloading and loading,praising and blaming"
+241,2,4751,上下,え,"high and low,up and down,unloading and loading,praising and blaming",上下,4751,上下,うえした,"high and low, up and down, unloading and loading, praising and blaming"
+242,2,3260,洒落,れ,"joke,pun,witticism",洒落,3260,洒落,しゃれ,"joke,pun,witticism"
+242,2,6581,洒落,ら,"joke,pun,witticism",洒落,6581,洒落,しゃらく,"frank, open-hearted"
+243,2,3269,消耗,も,"exhaustion,consumption",消耗,3269,消耗,しょうもう,"exhaustion,consumption"
+243,2,5605,消耗,こ,"exhaustion,consumption",消耗,5605,消耗,しょうこう,"exhaustion, consumption"
+244,2,3277,傾く,む,"to incline toward,to slant,to lurch",傾く,3277,傾く,かたむく,"to incline toward,to slant,to lurch"
+244,2,6367,傾く,ぶ,"to incline toward,to slant,to lurch",傾く,6367,傾く,かたぶく,"to incline toward, to slant, to lurch, to heel over, to be disposed to, to trend toward, to be prone to, to"
+245,2,3308,家主,や,landlord (い),家主,3308,家主,やぬし,landlord (い)
+245,2,6205,家主,い,landlord (い),家主,6205,家主,いえぬし,landlord (や)
+246,2,3309,退ける,ど,"to remove,to take away,to dislodge,to put something out of the way",退ける,3309,退ける,どける,"to remove,to take away,to dislodge,to put something out of the way"
+246,2,4574,退ける,し,"to remove,to take away,to dislodge,to put something out of the way",退ける,4574,退ける,しりぞける,"to repel, to drive away"
+247,2,3313,退く,ど,"(1) to retreat,to recede,to withdraw",退く,3313,退く,どく,"(1) to retreat,to recede,to withdraw"
+247,2,4384,退く,し,"(1) to retreat,to recede,to withdraw",退く,4384,退く,しりぞく,"to retreat, to recede, to withdraw"
+248,2,3446,鈍い,の,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (に)",鈍い,3446,鈍い,のろい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (に)"
+248,2,3616,鈍い,に,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (に)",鈍い,3616,鈍い,にぶい,"dull (e.g. a knife),thickheaded,slow (opposite of fast),stupid (の)"
+249,2,3453,盛る,も,"(1) to serve (food, etc.),(2) to fill up,(3) to prescribe",盛る,3453,盛る,もる,"(1) to serve (food, etc.),(2) to fill up,(3) to prescribe"
+249,2,7059,盛る,さ,"(1) to serve (food, etc.),(2) to fill up,(3) to prescribe",盛る,7059,盛る,さかる,"to prosper, to flourish, to copulate (animals)"
+250,2,3454,重なる,か,"to be piled up,lie on top of one another,overlap each other",重なる,3454,重なる,かさなる,"to be piled up,lie on top of one another,overlap each other"
+250,2,4914,重なる,お,"to be piled up,lie on top of one another,overlap each other",重なる,4914,重なる,おもなる,"main, principal, important"
+251,2,3492,留まる,ど,"(1) to be fixed,(2) to abide,to stay (in the one place) (ど)",留まる,3492,留まる,とどまる,"(1) to be fixed,(2) to abide,to stay (in the one place) (ど)"
+251,2,4003,留まる,とま,"(1) to be fixed,(2) to abide,to stay (in the one place) (ど)",留まる,4003,留まる,とまる,"(1) to be fixed,(2) to abide,to stay (in the one place)"
+252,2,3503,背負う,せ,"to be burdened with,to carry on back or shoulder",背負う,3503,背負う,せおう,"to be burdened with,to carry on back or shoulder"
+252,2,4383,背負う,し,"to be burdened with,to carry on back or shoulder",背負う,4383,背負う,しょう,"to be burdened with, to carry on back or shoulder"
+253,2,3534,中指,な,middle finger (ち),中指,3534,中指,なかゆび,middle finger (ち)
+253,2,4605,中指,ち,middle finger (ち),中指,4605,中指,ちゅうし,middle finger (な)
+254,2,3562,重役,じ,"director,high executive",重役,3562,重役,じゅうやく,"director,high executive"
+254,2,5229,重役,お,"director,high executive",重役,5229,重役,おもやく,"heavy responsibilities, director"
+255,2,3582,各々,お,"each,every,either,respectively,severally",各々,3582,各々,おのおの,"each,every,either,respectively,severally"
+255,2,4526,各々,そ,"each,every,either,respectively,severally",各々,4526,各々,それぞれ,"each, every, either, respectively, severally"
+256,2,3591,強気,つ,"firm,strong",強気,3591,強気,つよき,"firm,strong"
+256,2,5420,強気,ご,"firm,strong",強気,5420,強気,ごうぎ,"great, grand"
+257,2,3604,艶,つ,"gloss,glaze",艶,3604,艶,つや,"gloss,glaze"
+257,2,4462,艶,え,"gloss,glaze",艶,4462,艶,えん,"charming, fascinating, voluptuous"
+258,2,3674,三日月,づ,"new moon,crescent moon",三日月,3674,三日月,みかづき,"new moon,crescent moon"
+258,2,7180,三日月,ず,"new moon,crescent moon",三日月,7180,三日月,みかずき,"new moon, crescent moon"
+259,2,3722,何々,な,"such and such,What?",何々,3722,何々,なになに,"such and such,What?"
+259,2,7246,何々,ど,"such and such,What?",何々,7246,何々,どれどれ,which (emphatic)
+260,2,3730,天皇,て,Emperor of Japan (す),天皇,3730,天皇,てんのう,Emperor of Japan (す)
+260,2,7109,天皇,す,Emperor of Japan (す),天皇,7109,天皇,すめらぎ,Emperor of Japan (て)
+261,2,3844,父母,ふ,"father and mother,parents",父母,3844,父母,ふぼ,"father and mother,parents"
+261,2,6969,父母,ち,"father and mother,parents",父母,6969,父母,ちちはは,"father and mother, parents"
+262,2,3863,下品,げ,"vulgarity,meanness,indecency,coarseness",下品,3863,下品,げひん,"vulgarity,meanness,indecency,coarseness"
+262,2,6894,下品,か,"vulgarity,meanness,indecency,coarseness",下品,6894,下品,かひん,inferior article
+263,2,3892,気配,け,"indication,market trend,worry",気配,3892,気配,けはい,"indication,market trend,worry"
+263,2,6456,気配,き,"indication,market trend,worry",気配,6456,気配,きはい,"indication, market trend, worry"
+264,2,3919,一定,っ,"fixed,settled,definite",一定,3919,一定,いってい,"fixed,settled,definite"
+264,2,6737,一定,ち,"fixed,settled,definite",一定,6737,一定,いちじょう,"fixed, settled, definite, uniform, regularized, defined, standardized, certain, prescribed"
+265,2,3976,擦る,こ,"to rub,to chafe,to file,to frost (glass),to strike (match)",擦る,3976,擦る,こする,"to rub,to chafe,to file,to frost (glass),to strike (match)"
+265,2,6874,擦る,か,"to rub,to chafe,to file,to frost (glass),to strike (match)",擦る,6874,擦る,かする,"to touch lightly, to take a percentage (from)"
+266,2,4076,所々,と,"here and there,some parts (of something)",所々,4076,所々,ところどころ,"here and there,some parts (of something)"
+266,2,6393,所々,し,"here and there,some parts (of something)",所々,6393,所々,しょしょ,"here and there, some parts (of something)"
+267,2,4397,何れ,い,"where, which, who, anyway, anyhow, at any rate",何れ,4397,何れ,いずれ,"where, which, who, anyway, anyhow, at any rate"
+267,2,5048,何れ,ど,"where, which, who, anyway, anyhow, at any rate",何れ,5048,何れ,どれ,"well, now, let me see, which (of three or more)"
+268,2,4464,彼方此方,ちこ,here and there,彼方此方,4464,彼方此方,あちこち,here and there
+268,2,4498,彼方此方,ら,here and there,彼方此方,4498,彼方此方,あちらこちら,here and there (ら)
+269,2,4602,的,ま,"mark, target",的,4602,的,まと,"mark, target"
+269,2,5805,的,て,"mark, target",的,5805,的,てき,"-like, typical"
+270,2,5116,何卒,な,please,何卒,5116,何卒,なにとぞ,please
+270,2,6540,何卒,ど,please,何卒,6540,何卒,どうぞ,"please, kindly, by all means"
+271,2,5394,乾,か,"heaven, emperor",乾,5394,乾,かん,"heaven, emperor"
+271,2,6125,乾,ほ,"heaven, emperor",乾,6125,乾,ほし,"dried, cured"
+272,3,5898,堪える,たえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (こた)",堪える,5898,堪える,たえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (こた)"
+272,3,6342,堪える,ら,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (こた)",堪える,6342,堪える,こらえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (ら)"
+272,3,6725,堪える,こた,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (こた)",堪える,6725,堪える,こたえる,"to bear, to stand, to endure, to put up with, to support, to withstand, to resist, to brave, to be fit for, t (たえる)"
+273,2,5929,館,か,"house, hall, building, hotel, inn, guesthouse",館,5929,館,かん,"house, hall, building, hotel, inn, guesthouse"
+273,2,6654,館,た,"house, hall, building, hotel, inn, guesthouse",館,6654,館,たち,"1. mansion, small castle"
+274,2,6308,何方,ち,"which, who",何方,6308,何方,どちら,"which, who"
+274,2,7082,何方,な,"which, who",何方,7082,何方,どなた,who?
+275,2,6615,園,そ,"garden, park, plantation",園,6615,園,その,"garden, park, plantation"
+275,2,7056,園,え,"garden, park, plantation",園,7056,園,えん,garden (esp. man-made)
+276,2,6697,判,ば,size (of paper or books),判,6697,判,ばん,size (of paper or books)
+276,2,7150,判,は,size (of paper or books),判,7150,判,はん,"seal, stamp, monogram signature, judgment"
+277,2,6701,丈,た,"height, stature, length, measure, all (one has)",丈,6701,丈,たけ,"height, stature, length, measure, all (one has)"
+277,2,7026,丈,だ,"height, stature, length, measure, all (one has)",丈,7026,丈,だけ,"only, just, as"
