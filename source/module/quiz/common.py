@@ -33,7 +33,7 @@ def display_level_info(level: str, score: Optional[str], score_label: str = "Sco
         return
     level_text = blue_text(f"Level {level}", bold=True)
     if is_verbose() and score:
-        score_text = green_text(f"{score_label} {score}", bold=True)
+        score_text = f"{score_label} {score}"
         print(f"[{level_text} | {score_text}]")
     else:
         print(f"[{level_text}]")
