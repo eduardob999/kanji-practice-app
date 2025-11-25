@@ -83,7 +83,7 @@ def ask_question(
 
     if not questions:
         play_tts(f"問題の言葉は{kanji}です")
-        print(f"{blue_text('Meaning:', bold=True)} {meaning}")
+        print(f"Meaning: {meaning}")
         play_tts(f"読み方は{reading}")
         play_tts(f"問題の言葉は{kanji}です")
         user_input = input(
