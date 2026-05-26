@@ -31,26 +31,30 @@ def _make_lowest_score_fetcher(
 
 
 def _build_quizzes(
-    load_vocab: Callable[[str], QuizPool], load_kanji: Callable[[str], QuizPool]
+    load_vocab: Callable[[str], QuizPool],
+    load_kanji: Callable[[str], QuizPool],
+    include_audio: bool = True,
 ) -> List[Tuple[str, QuizFetch, QuizAsk]]:
     """Return the configured quiz roster pairing loaders to ask functions."""
 
     fill_fetcher = _make_lowest_score_fetcher(load_vocab, str(VOCAB_FILE), 4)
-    return [
+    quizzes = [
         ("Vocab Quiz", _make_lowest_score_fetcher(load_vocab, str(VOCAB_FILE), 3), vocab_quiz.ask_question),
         ("Kanji Quiz", _make_lowest_score_fetcher(load_kanji, str(KANJI_FILE), 3), kanji_quiz.ask_question),
         ("Kanji Fill-in Quiz", fill_fetcher, filling_quiz.ask_question),
-        ("Audio Quiz", fill_fetcher, audio_quiz.ask_question),
     ]
+    if include_audio:
+        quizzes.append(("Audio Quiz", fill_fetcher, audio_quiz.ask_question))
+    return quizzes
 
 
-def random_quiz() -> None:
+def random_quiz(include_audio: bool = True) -> None:
     """Run randomised quizzes until the user exits."""
 
     from source.module.vocab import load_vocab
     from source.module.kanji import load_kanji
 
-    quizzes = _build_quizzes(load_vocab, load_kanji)
+    quizzes = _build_quizzes(load_vocab, load_kanji, include_audio=include_audio)
     history: List[UndoEntry] = []
     pending_stack: List[Tuple[QuizAsk, str, Any]] = []
 
@@ -106,3 +110,8 @@ def random_quiz() -> None:
             print()
     except KeyboardInterrupt:
         print("\nQuiz interrupted. Goodbye!")
+
+
+def random_quiz_no_audio() -> None:
+    """Run randomised quizzes without audio quiz questions."""
+    random_quiz(include_audio=False)

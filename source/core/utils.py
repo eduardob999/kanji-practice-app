@@ -170,6 +170,47 @@ def get_sentence_cache_settings() -> Dict[str, Any]:
     return defaults
 
 
+def _parse_level_to_int(level_str: str) -> int:
+    """Convert level string to integer, handling sub-levels like '1a', '1b', etc."""
+    level_str = (level_str or "").strip()
+    if not level_str:
+        return 0
+    try:
+        return int(level_str[0])
+    except (ValueError, IndexError):
+        return 0
+
+
+def _migrate_n1_to_sublevels() -> None:
+    """Migrate old N1 (level='1') entries to N1a (level='1a') for backwards compatibility."""
+    for csv_path in (resolve_data_path("Kanji.csv"), resolve_data_path("Vocab.csv")):
+        try:
+            with csv_path.open("r", encoding="utf-8") as f:
+                content = f.read()
+            if "1a" in content or "1b" in content or "1c" in content or "1d" in content:
+                return
+        except OSError:
+            continue
+
+        try:
+            temp_path = csv_path.with_suffix(csv_path.suffix + ".temp")
+            updated_rows: List[Dict[str, Any]] = []
+            with csv_path.open("r", encoding="utf-8") as infile:
+                reader = csv.DictReader(infile)
+                fieldnames = reader.fieldnames or []
+                for row in reader:
+                    if row and row.get("Level") == "1":
+                        row["Level"] = "1a"
+                    updated_rows.append(row)
+            with temp_path.open("w", encoding="utf-8", newline="") as outfile:
+                writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(updated_rows)
+            temp_path.replace(csv_path)
+        except OSError:
+            continue
+
+
 def reset_scores() -> None:
     """Normalise quiz scores based on JLPT level metadata."""
 
@@ -183,11 +224,8 @@ def reset_scores() -> None:
             for row in reader:
                 if row:
                     level_raw = (row.get("Level") or "").strip()
-                    try:
-                        level = int(level_raw)
-                        reset_value = max(0, 5 - level)
-                    except ValueError:
-                        reset_value = 0
+                    level = _parse_level_to_int(level_raw)
+                    reset_value = max(0, 5 - level) if level > 0 else 0
 
                     if csv_path.name == "Vocab.csv":
                         if "VocabScore" in fieldnames:

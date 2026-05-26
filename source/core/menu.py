@@ -10,7 +10,7 @@ from typing import Callable, Dict, Iterable, Optional, Tuple
 
 from source import __version__ as VERSION
 from source.core.dev_mode import run_dev_mode
-from source.core.quiz_runner import random_quiz
+from source.core.quiz_runner import random_quiz, random_quiz_no_audio
 from source.core.sentence_cache import start_sentence_prefetcher
 from source.core.utils import (
     blue_text,
@@ -77,6 +77,9 @@ def _configure_logging() -> None:
 
     _LOGGING_CONFIGURED = True
 
+    from source.core.utils import _migrate_n1_to_sublevels
+    _migrate_n1_to_sublevels()
+
 
 def _safe_int(value: object, default: int = 0) -> int:
     """Convert ``value`` to ``int`` when possible, otherwise return ``default``."""
@@ -93,6 +96,17 @@ def _safe_int(value: object, default: int = 0) -> int:
         return default
 
 
+def _parse_level_to_int(level_str: str) -> int:
+    """Convert level string to integer, handling sub-levels like '1a', '1b', etc."""
+    level_str = (level_str or "").strip()
+    if not level_str:
+        return 0
+    try:
+        return int(level_str[0])
+    except (ValueError, IndexError):
+        return 0
+
+
 def _compute_level_progress(
     csv_path: Path, score_getter: Callable[[Dict[str, str]], int]
 ) -> Dict[int, Tuple[int, int]]:
@@ -107,7 +121,8 @@ def _compute_level_progress(
             for row in reader:
                 if not row:
                     continue
-                level = _safe_int(row.get("Level"), default=0)
+                level_str = (row.get("Level") or "").strip()
+                level = _parse_level_to_int(level_str)
                 if level not in totals:
                     continue
                 totals[level] += 1
@@ -237,11 +252,16 @@ def run_application(args: Iterable[str]) -> None:
             "1": MenuAction(
                 "Random Quiz (random category each time)", random_quiz, _post_quiz_hook
             ),
-            "2": MenuAction("Vocab Quiz", vocab_quiz.run, _post_quiz_hook),
-            "3": MenuAction("Kanji Quiz", kanji_quiz.run, _post_quiz_hook),
-            "4": MenuAction("Kanji Fill-in Quiz", _run_filling_quiz, _post_quiz_hook),
-            "5": MenuAction("Audio Quiz", audio_quiz.run, _post_quiz_hook),
-            "6": MenuAction("Reset all scores", reset_scores),
+            "2": MenuAction(
+                "Random No Audio",
+                random_quiz_no_audio,
+                _post_quiz_hook,
+            ),
+            "3": MenuAction("Vocab Quiz", vocab_quiz.run, _post_quiz_hook),
+            "4": MenuAction("Kanji Quiz", kanji_quiz.run, _post_quiz_hook),
+            "5": MenuAction("Kanji Fill-in Quiz", _run_filling_quiz, _post_quiz_hook),
+            "6": MenuAction("Audio Quiz", audio_quiz.run, _post_quiz_hook),
+            "7": MenuAction("Reset all scores", reset_scores),
         }
 
         _display_menu(actions)
