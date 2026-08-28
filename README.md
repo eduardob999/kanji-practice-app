@@ -1,3 +1,28 @@
+> ## This project has moved
+>
+> Kanjiba is now a web app: **<https://eduardob999.github.io/kanji-app/>**
+> Source: **<https://github.com/eduardob999/kanji-app>**
+>
+> It does everything this CLI did — the same four quiz types, built from the
+> same `Kanji.csv` and `Vocab.csv` — and the things a terminal could not:
+>
+> - **An adaptive schedule** instead of a score that counts right answers.
+>   FSRS, with its weights fitted to how you actually forget, so an item comes
+>   back just before you would have lost it rather than on a fixed rotation.
+> - **Handwriting**, on a phone screen, for every one of the 2,211 kanji in
+>   the corpus — which is what this CLI always assumed you had an IME for.
+> - **Progress that syncs**, so a phone on a train and a laptop at a desk are
+>   the same study history, and it works with no connection either way.
+>
+> Your scores come with you. `scripts/migrate-scores.mjs` over there reads this
+> app's `scores.txt` and seeds the new schedule from it, spread over a fortnight
+> so day one is not a wall.
+>
+> This repository stays up for anyone still running it, and `pip install pjapp`
+> still works. It is no longer being developed.
+
+---
+
 # Kanjiba
 
 Kanjiba is a lightweight, keyboard-driven CLI that helps you drill JLPT vocabulary, kanji, audio comprehension, and fill-in-the-blank exercises. Keep the app running in a terminal, answer questions in rapid fire, and let it track your progress locally. It is intended to be used along a handwritting japanese input system.
